@@ -5,8 +5,6 @@ export default defineType({
   name: 'siteSettings',
   title: 'Site Settings',
   type: 'document',
-  // Prevent creation of additional documents
-  __experimental_actions: ['update', 'publish'],
   fields: [
     defineField({
       name: 'title',

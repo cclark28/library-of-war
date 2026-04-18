@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
-import { PortableText } from '@portabletext/react'
+import { PortableText, type PortableTextComponents } from '@portabletext/react'
 import { client, articleBySlugQuery, articlesQuery } from '@/lib/sanity'
 import { urlFor } from '@/lib/sanity'
 import { formatDate } from '@/lib/utils'
@@ -19,20 +19,12 @@ export async function generateStaticParams() {
 }
 
 // Portable Text components
-const ptComponents = {
+const ptComponents: PortableTextComponents = {
   block: {
-    normal: ({ children }: { children: React.ReactNode }) => (
-      <p>{children}</p>
-    ),
-    h2: ({ children }: { children: React.ReactNode }) => (
-      <h2>{children}</h2>
-    ),
-    h3: ({ children }: { children: React.ReactNode }) => (
-      <h3>{children}</h3>
-    ),
-    blockquote: ({ children }: { children: React.ReactNode }) => (
-      <blockquote>{children}</blockquote>
-    ),
+    normal: ({ children }) => <p>{children}</p>,
+    h2: ({ children }) => <h2>{children}</h2>,
+    h3: ({ children }) => <h3>{children}</h3>,
+    blockquote: ({ children }) => <blockquote>{children}</blockquote>,
   },
   types: {
     image: ({ value }: { value: { asset: { _ref: string }; alt?: string; caption?: string; sourceUrl?: string } }) => {
@@ -65,11 +57,11 @@ const ptComponents = {
     },
   },
   marks: {
-    link: ({ value, children }: { value: { href: string; blank?: boolean }; children: React.ReactNode }) => (
+    link: ({ value, children }: { value?: { href?: string; blank?: boolean }; children?: React.ReactNode }) => (
       <a
-        href={value.href}
-        target={value.blank ? '_blank' : undefined}
-        rel={value.blank ? 'noopener noreferrer' : undefined}
+        href={value?.href}
+        target={value?.blank ? '_blank' : undefined}
+        rel={value?.blank ? 'noopener noreferrer' : undefined}
       >
         {children}
       </a>
