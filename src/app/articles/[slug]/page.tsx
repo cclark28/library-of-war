@@ -10,13 +10,8 @@ import Footer from '@/components/Footer'
 import VoiceBadge from '@/components/VoiceBadge'
 import ArticleCard from '@/components/ArticleCard'
 
+export const runtime = 'edge'
 export const revalidate = 60
-
-// Static params for ISR
-export async function generateStaticParams() {
-  const articles = await client.fetch(articlesQuery).catch(() => [])
-  return articles.map((a: { slug: { current: string } }) => ({ slug: a.slug.current }))
-}
 
 // Portable Text components
 const ptComponents: PortableTextComponents = {

@@ -6,12 +6,8 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import ArticleCard from '@/components/ArticleCard'
 
+export const runtime = 'edge'
 export const revalidate = 60
-
-export async function generateStaticParams() {
-  const series = await client.fetch(seriesQuery).catch(() => [])
-  return series.map((s: { slug: { current: string } }) => ({ slug: s.slug.current }))
-}
 
 interface Params { params: Promise<{ slug: string }> }
 
