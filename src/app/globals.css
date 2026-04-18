@@ -1,34 +1,30 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-/* ─── Design Tokens (Tailwind v4 @theme) ────────────────────────────────────── */
+/* ─── Design Tokens ──────────────────────────────────────────────────────────── */
 @theme {
-  /* Colors */
-  --color-paper:          #F4EFE4;
+  --color-paper:          #F9F6F0;
   --color-ink:            #0F0E0C;
   --color-rule:           #C8B89A;
   --color-accent:         #8B1A1A;
   --color-olive:          #4A5240;
-  --color-mist:           #6B6560;
-  --color-ghost:          #E8E2D6;
+  --color-mist:           #888078;
+  --color-ghost:          #EFECE5;
   --color-analyst:        #1A2035;
   --color-correspondent:  #2C1810;
 
-  /* Fonts */
   --font-headline: var(--font-playfair), Georgia, "Times New Roman", serif;
   --font-body:     var(--font-source-serif), Georgia, "Times New Roman", serif;
 
-  /* Font sizes with line-heights */
-  --text-body-sm:     1.125rem;
-  --text-body:        1.25rem;
-  --text-body-lg:     1.375rem;
+  --text-body-sm:     1rem;
+  --text-body:        1.125rem;
+  --text-body-lg:     1.25rem;
   --text-display-xs:  1.5rem;
   --text-display-sm:  2rem;
   --text-display:     2.75rem;
   --text-display-lg:  3.5rem;
   --text-display-xl:  4.5rem;
 
-  /* Max widths */
   --width-reading: 68ch;
   --width-tight:   52ch;
 }
@@ -44,24 +40,24 @@ html {
 
 body {
   font-family: var(--font-body);
-  font-size: 1.25rem; /* 20px — WCAG AA minimum */
-  line-height: 1.75;
+  font-size: 1.125rem;
+  line-height: 1.7;
   background-color: var(--color-paper);
   color: var(--color-ink);
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-headline);
-  line-height: 1.15;
+  line-height: 1.12;
   color: var(--color-ink);
 }
 
-/* ─── Rule Lines ─────────────────────────────────────────────────────────────── */
+/* ─── Rules ──────────────────────────────────────────────────────────────────── */
 .rule-top    { border-top: 1px solid var(--color-rule); }
 .rule-bottom { border-bottom: 1px solid var(--color-rule); }
-.rule-heavy  { border-top: 3px solid var(--color-ink); }
+.rule-heavy  { border-top: 2px solid var(--color-ink); }
 
-/* ─── Masthead decorative rule ────────────────────────────────────────────────── */
+/* ─── Masthead rule ─────────────────────────────────────────────────────────── */
 .masthead-rule {
   background: repeating-linear-gradient(
     90deg,
@@ -70,72 +66,99 @@ h1, h2, h3, h4, h5, h6 {
     transparent 3px,
     transparent 6px
   );
-  height: 3px;
+  height: 2px;
 }
 
-/* ─── Voice Badges ───────────────────────────────────────────────────────────── */
-.badge-analyst {
-  background: var(--color-analyst);
-  color: #C8D4E8;
-  font-family: var(--font-body);
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  padding: 0.2em 0.6em;
+/* ─── Drop cap ───────────────────────────────────────────────────────────────── */
+.drop-cap > p:first-of-type::first-letter {
+  font-family: var(--font-headline);
+  font-size: 5.5rem;
+  font-weight: 900;
+  line-height: 0.82;
+  float: left;
+  margin-right: 0.08em;
+  margin-top: 0.04em;
+  color: var(--color-ink);
+  font-style: normal;
 }
 
-.badge-correspondent {
-  background: var(--color-correspondent);
-  color: #E8D4C0;
+/* ─── Article lined title ────────────────────────────────────────────────────── */
+.article-headline {
+  font-family: var(--font-headline);
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 900;
+  line-height: 1.12;
+  text-align: center;
+  color: var(--color-ink);
+}
+
+/* ─── Section era label ──────────────────────────────────────────────────────── */
+.era-label {
   font-family: var(--font-body);
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
-  padding: 0.2em 0.6em;
+  color: var(--color-mist);
 }
 
 /* ─── Card hover ─────────────────────────────────────────────────────────────── */
-.card-hover { transition: opacity 150ms ease; }
-.card-hover:hover { opacity: 0.85; }
+.card-hover { transition: opacity 160ms ease; }
+.card-hover:hover { opacity: 0.82; }
 
-/* ─── Hero gradient overlay ─────────────────────────────────────────────────── */
+/* ─── Tag pill ───────────────────────────────────────────────────────────────── */
+.tag-pill {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-mist);
+  border: 1px solid var(--color-rule);
+  padding: 0.15em 0.55em;
+  line-height: 1.6;
+}
+
+.tag-pill-accent {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+/* ─── Hero gradient ──────────────────────────────────────────────────────────── */
 .hero-gradient {
   background: linear-gradient(
     to top,
-    rgba(10, 8, 6, 0.92) 0%,
-    rgba(10, 8, 6, 0.6) 50%,
-    rgba(10, 8, 6, 0.1) 100%
+    rgba(10, 8, 6, 0.93) 0%,
+    rgba(10, 8, 6, 0.55) 50%,
+    rgba(10, 8, 6, 0.08) 100%
   );
 }
 
-/* ─── Article body prose overrides ─────────────────────────────────────────── */
+/* ─── Article body prose ─────────────────────────────────────────────────────── */
 .article-prose {
   font-family: var(--font-body);
-  font-size: 1.25rem;
-  line-height: 1.8;
+  font-size: 1.175rem;
+  line-height: 1.82;
   color: var(--color-ink);
 }
 
 .article-prose h2 {
   font-family: var(--font-headline);
-  font-size: 1.75rem;
+  font-size: 1.65rem;
   font-weight: 700;
   margin-top: 2.5em;
-  margin-bottom: 0.75em;
+  margin-bottom: 0.6em;
   color: var(--color-ink);
 }
 
 .article-prose h3 {
   font-family: var(--font-headline);
-  font-size: 1.375rem;
+  font-size: 1.3rem;
   font-weight: 600;
   margin-top: 2em;
   margin-bottom: 0.5em;
 }
 
-.article-prose p { margin-top: 1.5em; margin-bottom: 1.5em; }
+.article-prose p { margin-top: 1.4em; margin-bottom: 1.4em; }
 
 .article-prose blockquote {
   font-style: italic;
@@ -143,15 +166,66 @@ h1, h2, h3, h4, h5, h6 {
   padding-left: 1.5em;
   margin-left: 0;
   color: var(--color-mist);
+  font-size: 1.2rem;
 }
 
 .article-prose a { color: var(--color-accent); }
 .article-prose a:hover { text-decoration: underline; }
 
-.article-prose sup a {
-  color: var(--color-accent);
-  text-decoration: none;
-  font-size: 0.75em;
+/* ─── Section number (01, 02…) ───────────────────────────────────────────────── */
+.section-number {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: var(--color-mist);
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+}
+.section-number::before {
+  content: '';
+  display: inline-block;
+  width: 1.5rem;
+  height: 1px;
+  background: var(--color-accent);
+}
+
+/* ─── Newsletter input ───────────────────────────────────────────────────────── */
+.newsletter-input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-rule);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  color: var(--color-ink);
+  padding: 0.4em 0;
+  outline: none;
+  width: 16rem;
+}
+.newsletter-input::placeholder { color: var(--color-mist); opacity: 0.6; }
+
+/* ─── Voice Badges ───────────────────────────────────────────────────────────── */
+.badge-analyst {
+  background: var(--color-analyst);
+  color: #C8D4E8;
+  font-family: var(--font-body);
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.2em 0.55em;
+}
+
+.badge-correspondent {
+  background: var(--color-correspondent);
+  color: #E8D4C0;
+  font-family: var(--font-body);
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.2em 0.55em;
 }
 
 /* ─── Focus / Accessibility ─────────────────────────────────────────────────── */
@@ -166,6 +240,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ─── Scrollbar ─────────────────────────────────────────────────────────────── */
-::-webkit-scrollbar       { width: 6px; }
+::-webkit-scrollbar       { width: 5px; }
 ::-webkit-scrollbar-track { background: var(--color-ghost); }
-::-webkit-scrollbar-thumb { background: var(--color-rule); border-radius: 3px; }
+::-webkit-scrollbar-thumb { background: var(--color-rule); border-radius: 2px; }

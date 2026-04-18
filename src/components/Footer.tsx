@@ -1,38 +1,66 @@
 import Link from 'next/link'
 
+const BROWSE_ERAS = [
+  { label: 'Ancient & Medieval',       slug: 'ancient-medieval' },
+  { label: 'Napoleonic Wars',           slug: 'napoleonic' },
+  { label: 'American Civil War',        slug: 'civil-war' },
+  { label: 'World War I',               slug: 'wwi' },
+  { label: 'World War II',              slug: 'wwii' },
+  { label: 'Korean War',                slug: 'korean-war' },
+  { label: 'Vietnam',                   slug: 'vietnam' },
+  { label: 'Cold War',                  slug: 'cold-war' },
+  { label: 'Modern Conflicts',          slug: 'modern' },
+  { label: 'Technology & Weapons',      slug: 'technology' },
+  { label: 'Intelligence & Spec Ops',   slug: 'intel-specops' },
+]
+
+const SERIES = [
+  { label: 'Weapons That Shouldn\'t Have Worked', href: '/series/weapons-that-shouldnt-have-worked' },
+  { label: 'The Day After',                        href: '/series/the-day-after' },
+  { label: 'Ghost Gear',                           href: '/series/ghost-gear' },
+]
+
 export default function Footer() {
   return (
     <footer className="bg-ink text-paper/80 mt-24">
       <div className="masthead-rule opacity-20" aria-hidden="true" />
 
-      <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8">
+
         {/* Brand */}
-        <div>
-          <h2 className="font-headline text-paper text-2xl font-black uppercase tracking-tight mb-3">
-            Library of War
+        <div className="md:col-span-1">
+          <h2 className="font-headline text-paper text-2xl font-black uppercase tracking-tight leading-none mb-1">
+            Library<br/>of War
           </h2>
-          <p className="font-body text-paper/60 text-base leading-relaxed">
-            Editorial military history archive. AI-written, human-edited. Every claim cited. Every fact verifiable. Public domain imagery only.
+          <div className="w-8 h-px bg-accent mt-3 mb-4" />
+          <p className="font-body text-paper/50 text-sm leading-relaxed">
+            Editorial military history. AI-written, human-edited. Every claim cited. Every fact verifiable. Public domain imagery only.
           </p>
-          <p className="font-body text-paper/40 text-sm mt-4">
+          <p className="font-body text-paper/30 text-xs mt-5">
             hello@libraryofwar.com
           </p>
+          <div className="flex gap-5 mt-4">
+            <a href="https://facebook.com/libraryxwar" target="_blank" rel="noopener noreferrer"
+               className="font-body text-paper/40 hover:text-paper transition-colors text-xs tracking-widest uppercase">
+              Facebook
+            </a>
+            <a href="https://instagram.com/libraryofwar" target="_blank" rel="noopener noreferrer"
+               className="font-body text-paper/40 hover:text-paper transition-colors text-xs tracking-widest uppercase">
+              Instagram
+            </a>
+          </div>
         </div>
 
         {/* Series */}
         <div>
-          <h3 className="font-body text-[0.7rem] tracking-[0.25em] uppercase text-paper/40 mb-4">Flagship Series</h3>
-          <ul className="space-y-2">
-            {[
-              { label: 'Weapons That Shouldn\'t Have Worked', href: '/series/weapons-that-shouldnt-have-worked' },
-              { label: 'The Day After',                       href: '/series/the-day-after' },
-              { label: 'Ghost Gear',                          href: '/series/ghost-gear' },
-            ].map((s) => (
+          <h3 className="font-body text-[0.6rem] tracking-[0.28em] uppercase text-paper/30 mb-5">
+            Flagship Series
+          </h3>
+          <ul className="space-y-3">
+            {SERIES.map((s) => (
               <li key={s.href}>
-                <Link
-                  href={s.href}
-                  className="font-headline text-paper/80 hover:text-paper transition-colors text-lg"
-                >
+                <Link href={s.href}
+                      className="font-headline text-paper/70 hover:text-paper transition-colors text-base leading-snug block">
                   {s.label}
                 </Link>
               </li>
@@ -40,49 +68,68 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Browse + Social */}
+        {/* Browse by Era */}
         <div>
-          <h3 className="font-body text-[0.7rem] tracking-[0.25em] uppercase text-paper/40 mb-4">Browse</h3>
-          <ul className="space-y-1 mb-8">
-            {['World War II', 'Vietnam', 'Cold War', 'Korea', 'World War I'].map((era) => (
-              <li key={era}>
-                <Link
-                  href={`/browse?era=${era.toLowerCase().replace(/\s+/g, '-')}`}
-                  className="font-body text-paper/70 hover:text-paper transition-colors text-base"
-                >
-                  {era}
+          <h3 className="font-body text-[0.6rem] tracking-[0.28em] uppercase text-paper/30 mb-5">
+            Browse by Era
+          </h3>
+          <ul className="space-y-2">
+            {BROWSE_ERAS.slice(0, 6).map((era) => (
+              <li key={era.slug}>
+                <Link href={`/browse?era=${era.slug}`}
+                      className="font-body text-paper/60 hover:text-paper transition-colors text-sm">
+                  {era.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Browse by Era cont. */}
+        <div>
+          <h3 className="font-body text-[0.6rem] tracking-[0.28em] uppercase text-paper/30 mb-5">
+            &nbsp;
+          </h3>
+          <ul className="space-y-2">
+            {BROWSE_ERAS.slice(6).map((era) => (
+              <li key={era.slug}>
+                <Link href={`/browse?era=${era.slug}`}
+                      className="font-body text-paper/60 hover:text-paper transition-colors text-sm">
+                  {era.label}
                 </Link>
               </li>
             ))}
           </ul>
 
-          <h3 className="font-body text-[0.7rem] tracking-[0.25em] uppercase text-paper/40 mb-3">Follow</h3>
-          <div className="flex gap-4">
-            <a
-              href="https://facebook.com/libraryxwar"
-              target="_blank" rel="noopener noreferrer"
-              className="font-body text-paper/70 hover:text-paper transition-colors text-sm tracking-wider uppercase"
-              aria-label="Facebook"
-            >
-              Facebook
-            </a>
-            <a
-              href="https://instagram.com/libraryofwar"
-              target="_blank" rel="noopener noreferrer"
-              className="font-body text-paper/70 hover:text-paper transition-colors text-sm tracking-wider uppercase"
-              aria-label="Instagram"
-            >
-              Instagram
-            </a>
+          {/* Newsletter micro */}
+          <div className="mt-8">
+            <h3 className="font-body text-[0.6rem] tracking-[0.28em] uppercase text-paper/30 mb-3">
+              Newsletter
+            </h3>
+            <form className="flex items-end gap-2" onSubmit={(e) => e.preventDefault()}>
+              <input
+                type="email"
+                placeholder="your@email.com"
+                className="newsletter-input"
+                style={{ borderBottomColor: 'rgba(200,184,154,0.3)', color: 'rgba(249,246,240,0.7)' }}
+              />
+              <button
+                type="submit"
+                className="font-body text-[0.6rem] tracking-[0.2em] uppercase text-paper/50 hover:text-paper transition-colors pb-1 border-b border-paper/20 hover:border-paper/50 whitespace-nowrap"
+              >
+                Subscribe
+              </button>
+            </form>
           </div>
         </div>
       </div>
 
+      {/* Bottom bar */}
       <div className="border-t border-paper/10 px-6 py-5 max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
-        <p className="font-body text-paper/30 text-sm">
+        <p className="font-body text-paper/25 text-xs">
           © {new Date().getFullYear()} Library of War. All imagery public domain.
         </p>
-        <p className="font-body text-paper/20 text-xs tracking-wider uppercase">
+        <p className="font-body text-paper/15 text-xs tracking-widest uppercase">
           libraryofwar.com
         </p>
       </div>

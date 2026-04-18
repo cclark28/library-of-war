@@ -2,8 +2,7 @@ import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
 import { PortableText, type PortableTextComponents } from '@portabletext/react'
-import { client, articleBySlugQuery, articlesQuery } from '@/lib/sanity'
-import { urlFor } from '@/lib/sanity'
+import { client, articleBySlugQuery, articlesQuery, urlFor } from '@/lib/sanity'
 import { formatDate } from '@/lib/utils'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -13,19 +12,19 @@ import ArticleCard from '@/components/ArticleCard'
 export const runtime = 'edge'
 export const revalidate = 60
 
-// Portable Text components
+/* ── Portable Text components ─────────────────────────────────────────────────── */
 const ptComponents: PortableTextComponents = {
   block: {
-    normal: ({ children }) => <p>{children}</p>,
-    h2: ({ children }) => <h2>{children}</h2>,
-    h3: ({ children }) => <h3>{children}</h3>,
+    normal:     ({ children }) => <p>{children}</p>,
+    h2:         ({ children }) => <h2>{children}</h2>,
+    h3:         ({ children }) => <h3>{children}</h3>,
     blockquote: ({ children }) => <blockquote>{children}</blockquote>,
   },
   types: {
     image: ({ value }: { value: { asset: { _ref: string }; alt?: string; caption?: string; sourceUrl?: string } }) => {
       const url = urlFor(value).width(1200).fit('max').url()
       return (
-        <figure className="my-10 -mx-4 md:-mx-0">
+        <figure className="my-10 -mx-4 md:mx-0">
           <Image
             src={url}
             alt={value.alt || ''}
@@ -34,16 +33,11 @@ const ptComponents: PortableTextComponents = {
             className="w-full object-cover"
           />
           {value.caption && (
-            <figcaption className="font-body text-mist text-sm mt-2 text-center">
+            <figcaption className="font-body text-mist text-xs mt-2 text-center tracking-wide">
               {value.caption}
               {value.sourceUrl && (
-                <a
-                  href={value.sourceUrl}
-                  target="_blank" rel="noopener noreferrer"
-                  className="ml-2 text-accent hover:underline"
-                >
-                  ↗ Source
-                </a>
+                <a href={value.sourceUrl} target="_blank" rel="noopener noreferrer"
+                   className="ml-2 text-accent hover:underline">↗ Source</a>
               )}
             </figcaption>
           )}
@@ -64,6 +58,19 @@ const ptComponents: PortableTextComponents = {
   },
 }
 
+/* ── Crest SVG ────────────────────────────────────────────────────────────────── */
+function Crest() {
+  return (
+    <div className="flex justify-center mb-6 mt-2">
+      <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <circle cx="22" cy="22" r="20.5" stroke="#C8B89A" strokeWidth="1"/>
+        <text x="22" y="28.5" textAnchor="middle" fontFamily="Georgia, serif" fontSize="18"
+              fontWeight="bold" fill="#0F0E0C" letterSpacing="-0.5">W</text>
+      </svg>
+    </div>
+  )
+}
+
 interface Params { params: Promise<{ slug: string }> }
 
 export default async function ArticlePage({ params }: Params) {
@@ -75,12 +82,12 @@ export default async function ArticlePage({ params }: Params) {
 
   if (!article) notFound()
 
-  const related = allArticles
-    .filter((a: { _id: string }) => a._id !== article._id)
+  const related = (allArticles as { _id: string }[])
+    .filter((a) => a._id !== article._id)
     .slice(0, 3)
 
   const heroImageUrl = article.mainImage
-    ? urlFor(article.mainImage).width(1800).height(800).fit('crop').url()
+    ? urlFor(article.mainImage).width(1600).height(700).fit('crop').url()
     : null
 
   const isAnalyst = article.voice === 'analyst'
@@ -90,131 +97,110 @@ export default async function ArticlePage({ params }: Params) {
       <Header />
 
       <main>
-        {/* ── Hero Image ─────────────────────────────────────────────── */}
+        {/* ── Crest + Date + Title ────────────────────────────────────── */}
+        <div className="max-w-2xl mx-auto px-6 pt-12 pb-0 text-center">
+          <Crest />
+
+          {/* Date */}
+          {article.publishedAt && (
+            <time
+              dateTime={article.publishedAt}
+              className="font-body text-mist block text-[0.65rem] tracking-[0.35em] uppercase mb-6"
+            >
+              {formatDate(article.publishedAt)}
+            </time>
+          )}
+
+          {/* Headline with ruled lines */}
+          <div className="relative border-t border-rule pt-6 pb-6 border-b border-rule mb-6">
+            <h1 className="article-headline">
+              {article.title}
+            </h1>
+          </div>
+
+          {/* Meta: voice + category + series breadcrumb */}
+          <div className="flex items-center justify-center gap-3 flex-wrap mb-8">
+            <VoiceBadge voice={article.voice} />
+            {article.categories?.[0] && (
+              <Link
+                href={`/browse?era=${article.categories[0].slug.current}`}
+                className="tag-pill hover:border-accent hover:text-accent transition-colors"
+              >
+                {article.categories[0].title}
+              </Link>
+            )}
+            {article.series && (
+              <Link
+                href={`/series/${article.series.slug.current}`}
+                className="tag-pill tag-pill-accent"
+              >
+                {article.series.title}
+              </Link>
+            )}
+            {isAnalyst && (
+              <span
+                className="font-body text-[0.52rem] font-bold tracking-[0.28em] uppercase text-accent border border-accent px-2 py-0.5 opacity-70"
+                style={{ transform: 'rotate(-1deg)', display: 'inline-block' }}
+                aria-hidden="true"
+              >
+                All Sources Verified
+              </span>
+            )}
+          </div>
+        </div>
+
+        {/* ── Hero image ─────────────────────────────────────────────── */}
         {heroImageUrl ? (
-          <div className="relative w-full aspect-[21/8] overflow-hidden bg-ink">
+          <div className="w-full relative overflow-hidden bg-ink mb-0" style={{ aspectRatio: '21/8' }}>
             <Image
               src={heroImageUrl}
               alt={article.mainImage?.alt || article.title}
               fill
               priority
-              className="object-cover opacity-90"
+              className="object-cover opacity-92"
               sizes="100vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-paper via-transparent to-transparent" />
-
             {article.mainImage?.caption && (
-              <p className="absolute bottom-3 right-4 font-body text-mist text-[0.65rem] tracking-wider">
+              <p className="absolute bottom-3 right-4 font-body text-paper/35 text-[0.58rem] tracking-wider">
                 {article.mainImage.caption}
                 {article.mainImage?.sourceUrl && (
-                  <a href={article.mainImage.sourceUrl} target="_blank" rel="noopener noreferrer" className="ml-1 text-accent">
-                    ↗
-                  </a>
+                  <a href={article.mainImage.sourceUrl} target="_blank" rel="noopener noreferrer"
+                     className="ml-1 text-accent">↗</a>
                 )}
               </p>
             )}
           </div>
         ) : (
-          <div className="h-8 rule-heavy" />
+          <div className="rule-heavy mx-6" />
         )}
 
-        {/* ── Article Header ─────────────────────────────────────────── */}
-        <div className="max-w-4xl mx-auto px-6 pt-10 pb-6">
-          {/* Breadcrumb */}
-          <nav aria-label="Breadcrumb" className="mb-6">
-            <ol className="flex items-center gap-2 font-body text-[0.7rem] tracking-[0.15em] uppercase text-mist">
-              <li><Link href="/" className="hover:text-accent transition-colors">Home</Link></li>
-              <li aria-hidden="true" className="text-rule">›</li>
-              {article.series && (
-                <>
-                  <li>
-                    <Link href={`/series/${article.series.slug.current}`} className="hover:text-accent transition-colors">
-                      {article.series.title}
-                    </Link>
-                  </li>
-                  <li aria-hidden="true" className="text-rule">›</li>
-                </>
-              )}
-              <li className="text-ink truncate max-w-[200px]">{article.title}</li>
-            </ol>
-          </nav>
-
-          {/* Voice + Category */}
-          <div className="flex items-center gap-3 mb-5">
-            <VoiceBadge voice={article.voice} />
-            {article.categories?.[0] && (
-              <Link
-                href={`/browse?era=${article.categories[0].slug.current}`}
-                className="font-body text-accent text-[0.7rem] tracking-[0.2em] uppercase hover:underline"
-              >
-                {article.categories[0].title}
-              </Link>
-            )}
-          </div>
-
-          {/* Analyst stamp */}
-          {isAnalyst && (
-            <div className="mb-6">
-              <span
-                className="inline-block border-2 border-accent text-accent font-body text-[0.55rem] font-bold tracking-[0.3em] uppercase px-2 py-1 opacity-70"
-                style={{ transform: 'rotate(-1.5deg)' }}
-                aria-hidden="true"
-              >
-                Classified — All Sources Verified
-              </span>
-            </div>
-          )}
-
-          {/* Headline */}
-          <h1 className="font-headline font-black text-ink text-display-sm md:text-display leading-tight mb-6 max-w-3xl">
-            {article.title}
-          </h1>
-
-          {/* Excerpt / lede */}
-          {article.excerpt && (
-            <p className="font-body text-mist text-body-lg leading-relaxed mb-6 max-w-2xl border-l-2 border-rule pl-4">
+        {/* ── Excerpt / lede ──────────────────────────────────────────── */}
+        {article.excerpt && (
+          <div className="max-w-2xl mx-auto px-6 pt-10">
+            <p className="font-body text-mist text-lg leading-relaxed border-l-2 border-rule pl-5 italic">
               {article.excerpt}
             </p>
-          )}
-
-          {/* Meta */}
-          <div className="flex items-center gap-4 pb-6 rule-bottom">
-            {article.publishedAt && (
-              <time
-                dateTime={article.publishedAt}
-                className="font-body text-mist text-[0.75rem] tracking-[0.2em] uppercase"
-              >
-                {formatDate(article.publishedAt)}
-              </time>
-            )}
-            {article.series && (
-              <Link
-                href={`/series/${article.series.slug.current}`}
-                className="font-body text-[0.7rem] tracking-[0.15em] uppercase text-accent hover:underline"
-              >
-                Series: {article.series.title}
-              </Link>
-            )}
           </div>
-        </div>
+        )}
 
-        {/* ── Article Body ───────────────────────────────────────────── */}
-        <div className="max-w-3xl mx-auto px-6 py-8">
+        {/* ── Body ────────────────────────────────────────────────────── */}
+        <div className="max-w-2xl mx-auto px-6 py-10">
           {article.body ? (
-            <div className="article-prose">
+            <div className="article-prose drop-cap">
               <PortableText value={article.body} components={ptComponents} />
             </div>
           ) : (
-            <p className="font-body text-mist text-center py-16">Article body not yet available.</p>
+            <p className="font-body text-mist text-center py-16 tracking-wider">
+              Article body coming soon.
+            </p>
           )}
         </div>
 
-        {/* ── Sources ────────────────────────────────────────────────── */}
+        {/* ── Sources ─────────────────────────────────────────────────── */}
         {article.sources?.length > 0 && (
-          <div className="max-w-3xl mx-auto px-6 mt-4 mb-12">
+          <div className="max-w-2xl mx-auto px-6 mt-2 mb-14">
             <div className="border-t-2 border-ink pt-8">
-              {/* Analyst: classified style | Correspondent: plain */}
-              <h2 className="font-body text-[0.7rem] tracking-[0.3em] uppercase text-mist mb-6">
+              <h2 className="font-body text-[0.62rem] tracking-[0.32em] uppercase text-mist mb-6">
                 {isAnalyst ? '— Verified Sources —' : 'Sources'}
               </h2>
               <ol className="space-y-3">
@@ -225,16 +211,13 @@ export default async function ArticlePage({ params }: Params) {
                   date?: string
                 }, i: number) => (
                   <li key={i} className="flex gap-3">
-                    <span className="font-body text-accent text-[0.8rem] tabular-nums mt-0.5 min-w-[1.5rem]">
+                    <span className="font-body text-accent text-sm tabular-nums mt-0.5 min-w-[1.75rem]">
                       [{i + 1}]
                     </span>
                     <div>
                       {source.url ? (
-                        <a
-                          href={source.url}
-                          target="_blank" rel="noopener noreferrer"
-                          className="font-body text-base text-ink hover:text-accent transition-colors"
-                        >
+                        <a href={source.url} target="_blank" rel="noopener noreferrer"
+                           className="font-body text-base text-ink hover:text-accent transition-colors">
                           {source.title}
                         </a>
                       ) : (
@@ -253,17 +236,39 @@ export default async function ArticlePage({ params }: Params) {
           </div>
         )}
 
-        {/* ── Related Articles ────────────────────────────────────────── */}
+        {/* ── Breadcrumb back ─────────────────────────────────────────── */}
+        <div className="max-w-2xl mx-auto px-6 pb-8">
+          <nav aria-label="Back navigation">
+            <ol className="flex items-center gap-2 font-body text-[0.65rem] tracking-[0.15em] uppercase text-mist">
+              <li><Link href="/" className="hover:text-accent transition-colors">Home</Link></li>
+              <li aria-hidden="true" className="text-rule">›</li>
+              {article.series && (
+                <>
+                  <li>
+                    <Link href={`/series/${article.series.slug.current}`}
+                          className="hover:text-accent transition-colors">
+                      {article.series.title}
+                    </Link>
+                  </li>
+                  <li aria-hidden="true" className="text-rule">›</li>
+                </>
+              )}
+              <li className="text-ink truncate max-w-[180px]">{article.title}</li>
+            </ol>
+          </nav>
+        </div>
+
+        {/* ── Related ─────────────────────────────────────────────────── */}
         {related.length > 0 && (
-          <section className="bg-ghost mt-8 py-16" aria-label="Related articles">
+          <section className="bg-ghost py-16" aria-label="More from the archive">
             <div className="max-w-7xl mx-auto px-6">
-              <div className="flex items-center gap-4 mb-10">
-                <div className="flex-1 rule-top" />
-                <h2 className="font-body text-[0.65rem] tracking-[0.3em] uppercase text-mist">More from the Archive</h2>
-                <div className="flex-1 rule-top" />
+              <div className="flex items-center gap-5 mb-10">
+                <div className="flex-1 border-t border-rule" />
+                <span className="era-label">More from the Archive</span>
+                <div className="flex-1 border-t border-rule" />
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {related.map((a: Parameters<typeof ArticleCard>[0]['article']) => (
+                {(related as Parameters<typeof ArticleCard>[0]['article'][]).map((a) => (
                   <ArticleCard key={a._id} article={a} size="md" showExcerpt />
                 ))}
               </div>
