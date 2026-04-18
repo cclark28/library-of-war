@@ -1,22 +1,16 @@
 name = "library-of-war"
 compatibility_date = "2024-09-23"
 compatibility_flags = ["nodejs_compat"]
-pages_build_output_dir = ".vercel/output/static"
+main = ".vercel/output/static/_worker.js/index.js"
 
-# Environment variables for Cloudflare Pages
-# Set secrets via: wrangler secret put SECRET_NAME
-# Set public vars in the Cloudflare dashboard under Pages > Settings > Environment Variables
+[assets]
+directory = ".vercel/output/static"
+binding = "ASSETS"
 
 [vars]
 NEXT_PUBLIC_SANITY_DATASET = "production"
 NEXT_PUBLIC_SITE_URL = "https://libraryofwar.com"
 
-# Secrets to set separately (do not put values here):
+# Secrets set via Cloudflare dashboard (Workers > Settings > Variables and Secrets):
 # NEXT_PUBLIC_SANITY_PROJECT_ID
 # SANITY_API_TOKEN
-# SANITY_WEBHOOK_SECRET
-# META_APP_ID
-# META_APP_SECRET
-# META_FB_PAGE_ID
-# META_FB_PAGE_ACCESS_TOKEN
-# META_IG_USER_ID
