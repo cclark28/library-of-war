@@ -1,0 +1,90 @@
+import { createClient } from 'next-sanity'
+import imageUrlBuilder from '@sanity/image-url'
+import type { SanityImageSource } from '@sanity/image-url/lib/types/types'
+
+export const client = createClient({
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
+  apiVersion: '2024-01-01',
+  useCdn: process.env.NODE_ENV === 'production',
+})
+
+const builder = imageUrlBuilder(client)
+
+export function urlFor(source: SanityImageSource) {
+  return builder.image(source)
+}
+
+// ─── GROQ Queries ─────────────────────────────────────────────────────────────
+
+export const articlesQuery = `
+  *[_type == "article" && status == "published"] | order(publishedAt desc) {
+    _id,
+    title,
+    slug,
+    publishedAt,
+    voice,
+    excerpt,
+    mainImage { asset, alt, caption, hotspot },
+    series->{ title, slug },
+    categories[]->{ title, slug }
+  }
+`
+
+export const articleBySlugQuery = `
+  *[_type == "article" && slug.current == $slug][0] {
+    _id,
+    title,
+    slug,
+    publishedAt,
+    voice,
+    excerpt,
+    mainImage { asset, alt, caption, sourceUrl, hotspot },
+    body,
+    sources,
+    series->{ title, slug },
+    categories[]->{ title, slug },
+    seo
+  }
+`
+
+export const seriesQuery = `
+  *[_type == "series"] | order(order asc) {
+    _id,
+    title,
+    slug,
+    description,
+    coverImage { asset, alt, caption, hotspot }
+  }
+`
+
+export const seriesBySlugQuery = `
+  *[_type == "series" && slug.current == $slug][0] {
+    _id,
+    title,
+    slug,
+    description,
+    coverImage { asset, alt, caption, hotspot },
+    "articles": *[_type == "article" && references(^._id) && status == "published"] | order(publishedAt desc) {
+      _id,
+      title,
+      slug,
+      publishedAt,
+      voice,
+      excerpt,
+      mainImage { asset, alt, caption, hotspot }
+    }
+  }
+`
+
+export const siteSettingsQuery = `
+  *[_type == "siteSettings"][0] {
+    title,
+    tagline,
+    description,
+    logo,
+    ogImage,
+    social,
+    contact
+  }
+`
