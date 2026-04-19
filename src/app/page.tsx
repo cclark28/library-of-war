@@ -5,6 +5,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import ArticleCard from '@/components/ArticleCard'
 import VoiceBadge from '@/components/VoiceBadge'
+import NewsletterForm from '@/components/NewsletterForm'
 import { formatDate } from '@/lib/utils'
 
 export const revalidate = 60
@@ -166,19 +167,7 @@ function NewsletterStrip() {
       <p className="font-headline font-bold text-ink text-xl md:text-2xl mb-5">
         Be up to date with the newest dispatches
       </p>
-      <form className="flex items-end justify-center gap-3" onSubmit={(e) => e.preventDefault()}>
-        <input
-          type="email"
-          placeholder="Type your email..."
-          className="newsletter-input"
-        />
-        <button
-          type="submit"
-          className="font-body text-[0.62rem] tracking-[0.22em] uppercase text-ink border-b border-ink hover:text-accent hover:border-accent transition-colors pb-0.5"
-        >
-          Subscribe
-        </button>
-      </form>
+      <NewsletterForm />
     </div>
   )
 }

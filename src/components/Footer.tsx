@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import NewsletterForm from './NewsletterForm'
 
 const BROWSE_ERAS = [
   { label: 'Ancient & Medieval',       slug: 'ancient-medieval' },
@@ -106,20 +107,7 @@ export default function Footer() {
             <h3 className="font-body text-[0.6rem] tracking-[0.28em] uppercase text-paper/30 mb-3">
               Newsletter
             </h3>
-            <form className="flex items-end gap-2" onSubmit={(e) => e.preventDefault()}>
-              <input
-                type="email"
-                placeholder="your@email.com"
-                className="newsletter-input"
-                style={{ borderBottomColor: 'rgba(200,184,154,0.3)', color: 'rgba(249,246,240,0.7)' }}
-              />
-              <button
-                type="submit"
-                className="font-body text-[0.6rem] tracking-[0.2em] uppercase text-paper/50 hover:text-paper transition-colors pb-1 border-b border-paper/20 hover:border-paper/50 whitespace-nowrap"
-              >
-                Subscribe
-              </button>
-            </form>
+            <NewsletterForm dark />
           </div>
         </div>
       </div>
