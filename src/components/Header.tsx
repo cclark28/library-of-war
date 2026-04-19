@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useRef, useCallback } from 'react'
+import { useRouter } from 'next/navigation'
 
 /* ── Data ──────────────────────────────────────────────────────────────────── */
 
@@ -39,6 +40,7 @@ function ChevronDown({ open }: { open?: boolean }) {
 /* ── Component ─────────────────────────────────────────────────────────────── */
 
 export default function Header() {
+  const router = useRouter()
   const [mobileOpen, setMobileOpen]     = useState(false)
   const [mobileEra, setMobileEra]       = useState(false)
   const [mobileSeries, setMobileSeries] = useState(false)
@@ -51,7 +53,7 @@ export default function Header() {
   }, [])
 
   const scheduleClose = useCallback(() => {
-    closeTimer.current = setTimeout(() => setOpenMenu(null), 120)
+    closeTimer.current = setTimeout(() => setOpenMenu(null), 200)
   }, [])
 
   const cancelClose = useCallback(() => {
@@ -137,6 +139,7 @@ export default function Header() {
               className={`${NAV_LINK} flex items-center`}
               aria-expanded={openMenu === 'era'}
               aria-haspopup="true"
+              onClick={() => { setOpenMenu(null); router.push('/browse') }}
             >
               Browse by Era
               <ChevronDown open={openMenu === 'era'} />
@@ -153,6 +156,7 @@ export default function Header() {
               className={`${NAV_LINK} flex items-center`}
               aria-expanded={openMenu === 'series'}
               aria-haspopup="true"
+              onClick={() => { setOpenMenu(null); router.push('/series') }}
             >
               Series
               <ChevronDown open={openMenu === 'series'} />
@@ -188,7 +192,7 @@ export default function Header() {
 
           {/* Mission */}
           <li className="flex items-center">
-            <Link href="/mission" className={NAV_LINK}>Mission</Link>
+            <Link href="/about" className={NAV_LINK}>Mission</Link>
           </li>
 
         </ul>
@@ -294,7 +298,7 @@ export default function Header() {
             Resources
           </Link>
 
-          <Link href="/mission" onClick={() => setMobileOpen(false)}
+          <Link href="/about" onClick={() => setMobileOpen(false)}
             className="block px-6 py-3.5 font-body text-[0.72rem] tracking-[0.14em] uppercase text-ink hover:text-accent transition-colors">
             Mission
           </Link>

@@ -2,7 +2,6 @@ import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
 import { client, articleBySlugQuery, relatedArticlesQuery, urlFor } from '@/lib/sanity'
-import { calcReadTime, DIFFICULTY_LABEL } from '@/lib/readTime'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import ArticleCard from '@/components/ArticleCard'
@@ -130,9 +129,6 @@ export default async function ArticlePage({ params }: Params) {
     ? urlFor(article.mainImage).width(1600).height(700).fit('crop').url()
     : null
 
-  const readTime = calcReadTime(article.body ?? [])
-  const difficulty = DIFFICULTY_LABEL[article.difficulty ?? 'intermediate'] ?? 'Intermediate'
-
   return (
     <>
       <Header />
@@ -146,9 +142,6 @@ export default async function ArticlePage({ params }: Params) {
             <h1 className="article-headline">
               {article.title}
             </h1>
-            <p className="font-body text-[0.62rem] tracking-[0.18em] uppercase text-mist mt-4">
-              {readTime} min read&ensp;·&ensp;{difficulty}
-            </p>
           </div>
 
           {/* Category + series tags */}
@@ -233,85 +226,6 @@ export default async function ArticlePage({ params }: Params) {
           )}
         </FadeIn>
 
-        {/* ── Primary Sources ─────────────────────────────────────────── */}
-        {article.primarySources?.length > 0 && (
-          <FadeIn className="max-w-2xl mx-auto px-6 mt-2 mb-10" variant="fade-up">
-            <div className="border-t-2 border-ink pt-10">
-              <h2 className="font-body text-[0.62rem] tracking-[0.32em] uppercase text-mist mb-8">
-                — Primary Sources —
-              </h2>
-              <div className="space-y-0">
-                {article.primarySources.map((doc: {
-                  type: 'patent' | 'declassified' | 'newspaper' | 'government'
-                  title: string
-                  identifier?: string
-                  url?: string
-                  date?: string
-                  archive?: string
-                }, i: number) => {
-                  const TYPE_CONFIG = {
-                    patent:       { label: 'Patent',               icon: '⬡' },
-                    declassified: { label: 'Declassified',         icon: '◈' },
-                    newspaper:    { label: 'Newspaper',            icon: '▤' },
-                    government:   { label: 'Gov. Report',          icon: '⬛' },
-                  }
-                  const config = TYPE_CONFIG[doc.type] ?? { label: doc.type, icon: '·' }
-                  return (
-                    <div
-                      key={i}
-                      className="flex gap-5 py-5 border-b border-rule/40 last:border-0 group"
-                    >
-                      {/* Type badge */}
-                      <div className="flex-shrink-0 pt-0.5">
-                        <span className="font-body text-[0.55rem] tracking-[0.18em] uppercase text-mist border border-rule/60 px-2 py-1 whitespace-nowrap">
-                          {config.label}
-                        </span>
-                      </div>
-
-                      {/* Content */}
-                      <div className="flex-1 min-w-0">
-                        {doc.url ? (
-                          <a
-                            href={doc.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="font-body text-[0.95rem] text-ink leading-snug hover:text-accent transition-colors group-hover:underline underline-offset-2 decoration-rule"
-                          >
-                            {doc.title}
-                            <span className="ml-1.5 text-mist text-[0.7rem] no-underline">↗</span>
-                          </a>
-                        ) : (
-                          <span className="font-body text-[0.95rem] text-ink leading-snug">
-                            {doc.title}
-                          </span>
-                        )}
-
-                        <div className="flex items-center gap-3 mt-1.5 flex-wrap">
-                          {doc.identifier && (
-                            <span className="font-body text-[0.65rem] tracking-[0.1em] text-accent uppercase">
-                              {doc.identifier}
-                            </span>
-                          )}
-                          {doc.archive && (
-                            <span className="font-body text-[0.65rem] text-mist">
-                              {doc.archive}
-                            </span>
-                          )}
-                          {doc.date && (
-                            <span className="font-body text-[0.65rem] text-mist">
-                              {doc.date}
-                            </span>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  )
-                })}
-              </div>
-            </div>
-          </FadeIn>
-        )}
-
         {/* ── Sources ─────────────────────────────────────────────────── */}
         {article.sources?.length > 0 && (
           <FadeIn className="max-w-2xl mx-auto px-6 mt-2 mb-16" variant="fade-up">
@@ -374,43 +288,20 @@ export default async function ArticlePage({ params }: Params) {
           </nav>
         </div>
 
-        {/* ── Related by Era carousel ─────────────────────────────────── */}
+        {/* ── Related ─────────────────────────────────────────────────── */}
         {related.length > 0 && (
-          <section className="py-16 border-t-2 border-ink" aria-label="More from this era">
+          <section className="bg-ghost py-16" aria-label="More from the archive">
             <div className="max-w-7xl mx-auto px-6">
-              {/* Header */}
-              <div className="flex items-baseline justify-between mb-8">
-                <div>
-                  <p className="font-body text-[0.58rem] tracking-[0.28em] uppercase text-mist mb-1">
-                    Continue Reading
-                  </p>
-                  <h2 className="font-headline font-bold text-ink text-2xl leading-none">
-                    More from{' '}
-                    <span className="text-accent">
-                      {article.categories?.[0]?.title ?? 'This Era'}
-                    </span>
-                  </h2>
-                </div>
-                {article.categories?.[0] && (
-                  <Link
-                    href={`/browse?era=${article.categories[0].slug.current}`}
-                    className="font-body text-[0.62rem] tracking-[0.18em] uppercase text-mist hover:text-accent transition-colors hidden sm:block"
-                  >
-                    View all →
-                  </Link>
-                )}
+              <div className="flex items-center gap-6 mb-12">
+                <div className="flex-1 border-t border-rule" />
+                <span className="font-headline font-bold text-ink text-[2rem] leading-none">More from the Archive</span>
+                <div className="flex-1 border-t border-rule" />
               </div>
-
-              {/* Horizontal scroll carousel */}
-              <div className="overflow-x-auto pb-4 -mx-6 px-6">
-                <div className="flex gap-6" style={{ width: 'max-content' }}>
-                  {(related as Parameters<typeof ArticleCard>[0]['article'][]).map((a) => (
-                    <div key={a._id} style={{ width: '280px', flexShrink: 0 }}>
-                      <ArticleCard article={a} size="sm" showExcerpt={false} />
-                    </div>
-                  ))}
-                </div>
-              </div>
+              <FadeIn className="grid grid-cols-1 md:grid-cols-3 gap-8 stagger" variant="fade-up">
+                {(related as Parameters<typeof ArticleCard>[0]['article'][]).map((a) => (
+                  <ArticleCard key={a._id} article={a} size="md" showExcerpt />
+                ))}
+              </FadeIn>
             </div>
           </section>
         )}

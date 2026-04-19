@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Library of War — Deploy Status</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Georgia', serif;
+    background: #0d0d0d;
+    color: #e8e0d0;
+    min-height: 100vh;
+    padding: 48px 24px;
+  }
+
+  .container {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  header {
+    border-bottom: 2px solid #2a2a2a;
+    padding-bottom: 24px;
+    margin-bottom: 40px;
+  }
+
+  .eyebrow {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: 12px;
+  }
+
+  h1 {
+    font-size: 28px;
+    font-weight: normal;
+    color: #f5f0e8;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+  }
+
+  .timestamp {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 11px;
+    color: #444;
+    margin-top: 8px;
+    letter-spacing: 0.1em;
+  }
+
+  .section {
+    margin-bottom: 36px;
+  }
+
+  .section-title {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #555;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #1e1e1e;
+  }
+
+  .item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid #1a1a1a;
+  }
+
+  .item:last-child { border-bottom: none; }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 5px;
+  }
+
+  .dot-done  { background: #4a7c59; }
+  .dot-todo  { background: #8b1a1a; }
+
+  .item-body { flex: 1; }
+
+  .item-label {
+    font-size: 15px;
+    color: #e0d8c8;
+    line-height: 1.4;
+    margin-bottom: 4px;
+  }
+
+  .item-label.done { color: #888; text-decoration: line-through; text-decoration-color: #3a3a3a; }
+
+  .item-sub {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 11px;
+    color: #555;
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+  }
+
+  .code-block {
+    background: #111;
+    border: 1px solid #222;
+    border-left: 2px solid #8b1a1a;
+    padding: 12px 16px;
+    margin-top: 10px;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 11px;
+    color: #c8b89a;
+    line-height: 1.7;
+    border-radius: 2px;
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
+
+  .url-block {
+    background: #111;
+    border: 1px solid #222;
+    padding: 10px 16px;
+    margin-top: 10px;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 11px;
+    color: #7a9fbf;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .url-block a {
+    color: #7a9fbf;
+    text-decoration: none;
+  }
+
+  .url-block a:hover { text-decoration: underline; }
+
+  .badge {
+    display: inline-block;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 2px;
+    vertical-align: middle;
+    margin-left: 8px;
+  }
+
+  .badge-live { background: #1a3325; color: #4a9e6a; border: 1px solid #2a4a38; }
+  .badge-pending { background: #2a1a1a; color: #9e4a4a; border: 1px solid #4a2a2a; }
+
+  .divider {
+    border: none;
+    border-top: 1px solid #1e1e1e;
+    margin: 32px 0;
+  }
+
+  .note {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 11px;
+    color: #444;
+    line-height: 1.6;
+    letter-spacing: 0.03em;
+  }
+
+  .progress-bar {
+    height: 2px;
+    background: #1a1a1a;
+    margin-bottom: 40px;
+    position: relative;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #4a7c59, #6aaa7a);
+    width: 75%;
+    transition: width 0.6s ease;
+  }
+
+  .progress-label {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #4a7c59;
+    text-align: right;
+    margin-top: 6px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <p class="eyebrow">Library of War</p>
+    <h1>Deployment Status</h1>
+    <p class="timestamp">April 19, 2026</p>
+  </header>
+
+  <div class="progress-bar">
+    <div class="progress-fill"></div>
+  </div>
+  <p class="progress-label">75% complete — 2 steps remaining</p>
+
+  <div class="section" style="margin-top: 32px;">
+    <p class="section-title">Completed</p>
+
+    <div class="item">
+      <div class="dot dot-done"></div>
+      <div class="item-body">
+        <p class="item-label done">Identified root cause</p>
+        <p class="item-sub">Site was deployed as Cloudflare Worker. Article pages require Cloudflare Pages for dynamic module imports.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="dot dot-done"></div>
+      <div class="item-body">
+        <p class="item-label done">Fixed async_hooks build error</p>
+        <p class="item-sub">Post-build patch script rewrites bare async_hooks → node:async_hooks in all edge function bundles.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="dot dot-done"></div>
+      <div class="item-body">
+        <p class="item-label done">Migrated wrangler.toml to Pages format</p>
+        <p class="item-sub">Replaced Workers config (main, [assets], [[routes]]) with pages_build_output_dir.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="dot dot-done"></div>
+      <div class="item-body">
+        <p class="item-label done">Deployed to Cloudflare Pages</p>
+        <p class="item-sub">Build pipeline working. 3 edge function bundles uploaded and attached as ESM modules.</p>
+        <div class="url-block">
+          <span>↗</span>
+          <a href="https://5f26f412.library-of-war.pages.dev" target="_blank">https://5f26f412.library-of-war.pages.dev</a>
+          <span class="badge badge-live">Live</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="dot dot-done"></div>
+      <div class="item-body">
+        <p class="item-label done">Restructured navigation</p>
+        <p class="item-sub">Home · Browse by Era (mega menu, 6 eras) · Series (dropdown, 3 series) · Resources · Mission. Mobile accordion included.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <hr class="divider">
+
+  <div class="section">
+    <p class="section-title">Remaining — Run in Terminal</p>
+
+    <div class="item">
+      <div class="dot dot-todo"></div>
+      <div class="item-body">
+        <p class="item-label">1 — Set Sanity API token secret <span class="badge badge-pending">Required</span></p>
+        <p class="item-sub">Without this, article pages will load the route but return empty content or an error.</p>
+        <div class="code-block">cd "/Users/charlieclark/Documents/Claude/Projects/Library of War"
+npx wrangler pages secret put SANITY_API_TOKEN --project-name=library-of-war
+
+# When prompted, paste:
+sk9WlOh6b4SMr2Ak8BW0TgPFDkPchwxqTT21mYtrzUGGCAt5afYqEXU5gaPl8SMwaQV8AdMAHoVBRHzeDULUMff8SNidkfaC8c6VkZpsWqDWBbozISoXuroN96ayPZDx996RN1FhZD62P7UzrihzcGqtqg3UMCLAeJb3KppAueZIRm74xwvA</div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="dot dot-todo"></div>
+      <div class="item-body">
+        <p class="item-label">2 — Add custom domains in Cloudflare Dashboard <span class="badge badge-pending">Required</span></p>
+        <p class="item-sub">Go to: Cloudflare Dashboard → Pages → library-of-war → Custom domains → Add domain</p>
+        <div class="code-block">libraryofwar.com
+www.libraryofwar.com</div>
+        <p class="item-sub" style="margin-top: 8px;">Cloudflare will automatically update DNS. The old Worker deployment can then be deleted.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <hr class="divider">
+
+  <p class="note">After both steps: libraryofwar.com/articles/[slug] will load correctly. Git is pushed to github.com/cclark28/library-of-war on main.</p>
+
+</div>
+</body>
+</html>

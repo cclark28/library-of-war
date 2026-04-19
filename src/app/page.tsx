@@ -170,12 +170,14 @@ export default async function HomePage() {
     client.fetch(seriesQuery).catch(() => []) as Promise<Series[]>,
   ])
 
-  // ── Hero diversity: pick 3 articles from different categories, rotating daily ──
+  // ── Featured sections require images — imageless articles appear in archive only ──
+  const featuredArticles = articles.filter(a => !!a.mainImage)
+
   const dayOffset = Math.floor(Date.now() / 86400000) // changes every 24h
-  const shuffled = [...articles].sort((a, b) => {
+  const shuffled = [...featuredArticles].sort((a, b) => {
     // stable daily shuffle using day seed + original index
-    const ai = articles.indexOf(a), bi = articles.indexOf(b)
-    return ((ai + dayOffset) % articles.length) - ((bi + dayOffset) % articles.length)
+    const ai = featuredArticles.indexOf(a), bi = featuredArticles.indexOf(b)
+    return ((ai + dayOffset) % featuredArticles.length) - ((bi + dayOffset) % featuredArticles.length)
   })
   const heroSlots: Article[] = []
   const usedCats = new Set<string>()
@@ -185,17 +187,27 @@ export default async function HomePage() {
     if (heroSlots.length === 3) break
   }
   // Fill remaining slots if not enough category variety
-  for (const article of articles) {
+  for (const article of featuredArticles) {
     if (heroSlots.length >= 3) break
     if (!heroSlots.includes(article)) heroSlots.push(article)
   }
   const heroIds = new Set(heroSlots.map(a => a._id))
 
-  const hero      = heroSlots[0] ?? null
-  const stack     = heroSlots.slice(1, 3)
-  const grid3     = articles.filter(a => !heroIds.has(a._id)).slice(0, 3)
-  const grid4     = articles.filter(a => !heroIds.has(a._id)).slice(3, 7)
-  const remaining = articles.filter(a => !heroIds.has(a._id)).slice(7)
+  const hero  = heroSlots[0] ?? null
+  const stack = heroSlots.slice(1, 3)
+
+  // Featured grids also require images
+  const featuredMinusHero = featuredArticles.filter(a => !heroIds.has(a._id))
+  const grid3 = featuredMinusHero.slice(0, 3)
+  const grid4 = featuredMinusHero.slice(3, 7)
+
+  // Era archive sections: all articles not already featured (includes imageless)
+  const allFeaturedIds = new Set([
+    ...heroIds,
+    ...grid3.map(a => a._id),
+    ...grid4.map(a => a._id),
+  ])
+  const remaining = articles.filter(a => !allFeaturedIds.has(a._id))
   const byEra     = groupByEra(remaining)
 
   return (

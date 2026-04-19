@@ -44,6 +44,8 @@ export const articleBySlugQuery = `
     mainImage { asset, alt, caption, sourceUrl, hotspot },
     body,
     sources,
+    primarySources,
+    difficulty,
     series->{ title, slug },
     categories[]->{ _id, title, slug, era },
     seo
@@ -97,6 +99,25 @@ export const seriesBySlugQuery = `
       excerpt,
       mainImage { asset, alt, caption, hotspot }
     }
+  }
+`
+
+export const articlesByEraQuery = `
+  *[
+    _type == "article" &&
+    status == "published" &&
+    $era in categories[]->slug.current
+  ] | order(publishedAt desc) {
+    _id,
+    title,
+    slug,
+    publishedAt,
+    voice,
+    excerpt,
+    tags,
+    mainImage { asset, alt, caption, hotspot },
+    series->{ title, slug },
+    categories[]->{ title, slug }
   }
 `
 

@@ -35,11 +35,14 @@ export default function Footer() {
           </h2>
           <div className="w-8 h-px bg-accent mt-3 mb-4" />
           <p className="font-body text-paper/50 text-sm leading-relaxed">
-            Editorial military history. AI-written, human-edited. Every claim cited. Every fact verifiable. Public domain imagery only.
+            Editorial Military History Archive. Every claim cited. Every fact verifiable. Public domain imagery only.
           </p>
-          <p className="font-body text-paper/30 text-xs mt-5">
-            hello@libraryofwar.com
-          </p>
+          <a
+            href="mailto:libraryofwar@gmail.com"
+            className="font-body text-paper/30 hover:text-paper/60 transition-colors text-xs mt-5 block"
+          >
+            libraryofwar@gmail.com
+          </a>
           <div className="flex gap-5 mt-4">
             <a href="https://facebook.com/libraryxwar" target="_blank" rel="noopener noreferrer"
                className="font-body text-paper/40 hover:text-paper transition-colors text-xs tracking-widest uppercase">

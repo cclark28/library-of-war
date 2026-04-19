@@ -98,6 +98,21 @@ export default defineType({
       type: 'datetime',
     }),
     defineField({
+      name: 'difficulty',
+      title: 'Difficulty',
+      type: 'string',
+      description: 'Helps readers gauge required background knowledge.',
+      options: {
+        list: [
+          { title: 'Beginner — No prior knowledge needed', value: 'beginner' },
+          { title: 'Intermediate — Some context helpful', value: 'intermediate' },
+          { title: 'Advanced — Dense, specialist detail', value: 'advanced' },
+        ],
+        layout: 'radio',
+      },
+      initialValue: 'intermediate',
+    }),
+    defineField({
       name: 'series',
       title: 'Series',
       type: 'reference',
@@ -207,6 +222,80 @@ export default defineType({
         },
       ],
       validation: (Rule) => Rule.min(3).error('Minimum 3 sources required.'),
+    }),
+    defineField({
+      name: 'primarySources',
+      title: 'Primary Sources',
+      type: 'array',
+      description: 'Original documents only: patents, declassified files, newspaper articles, government reports.',
+      of: [
+        {
+          type: 'object',
+          name: 'primarySource',
+          fields: [
+            defineField({
+              name: 'type',
+              title: 'Document Type',
+              type: 'string',
+              options: {
+                list: [
+                  { title: 'Patent', value: 'patent' },
+                  { title: 'Declassified Document', value: 'declassified' },
+                  { title: 'Newspaper Article', value: 'newspaper' },
+                  { title: 'Government Report', value: 'government' },
+                ],
+                layout: 'radio',
+              },
+              validation: (Rule) => Rule.required(),
+            }),
+            defineField({
+              name: 'title',
+              title: 'Title',
+              type: 'string',
+              validation: (Rule) => Rule.required(),
+            }),
+            defineField({
+              name: 'identifier',
+              title: 'Identifier',
+              type: 'string',
+              description: 'Patent number (e.g. US3975312A), document number, report number, FOIA case number, etc.',
+            }),
+            defineField({
+              name: 'url',
+              title: 'URL',
+              type: 'url',
+              description: 'Direct link — patents.google.com, archives.gov, FOIA vault, newspaper archive, etc.',
+            }),
+            defineField({
+              name: 'date',
+              title: 'Date',
+              type: 'string',
+              description: 'e.g. "1968", "March 12, 1944", "Declassified 1997"',
+            }),
+            defineField({
+              name: 'archive',
+              title: 'Archive / Publisher',
+              type: 'string',
+              description: 'e.g. "National Archives", "New York Times", "USPTO", "CIA FOIA Reading Room"',
+            }),
+          ],
+          preview: {
+            select: { title: 'title', type: 'type', identifier: 'identifier' },
+            prepare({ title, type, identifier }: { title: string; type: string; identifier?: string }) {
+              const label: Record<string, string> = {
+                patent: 'Patent',
+                declassified: 'Declassified',
+                newspaper: 'Newspaper',
+                government: 'Gov. Report',
+              }
+              return {
+                title,
+                subtitle: `${label[type] ?? type}${identifier ? ` · ${identifier}` : ''}`,
+              }
+            },
+          },
+        },
+      ],
     }),
     defineField({
       name: 'tags',

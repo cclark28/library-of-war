@@ -46,6 +46,17 @@ export default defineConfig({
             S.listItem()
               .title('Categories')
               .child(S.documentTypeList('category').title('Categories')),
+
+            S.divider(),
+
+            // Contributor submissions — always stay in draft, never auto-publish
+            S.listItem()
+              .title('Contributor Submissions')
+              .child(
+                S.documentTypeList('contributorSubmission')
+                  .title('Contributor Submissions')
+                  .defaultOrdering([{ field: 'submittedAt', direction: 'desc' }])
+              ),
           ]),
     }),
     visionTool(),

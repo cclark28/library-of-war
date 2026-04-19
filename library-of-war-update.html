@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Library of War — Update Log</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #1a1612;
+    --paper: #f9f6f0;
+    --accent: #8b1a1a;
+    --mist: #8a8278;
+    --rule: #d4c9b4;
+    --ghost: #ede8df;
+    --ff-head: 'Georgia', 'Times New Roman', serif;
+    --ff-body: 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--ff-body);
+    font-size: 15px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  header {
+    border-bottom: 1px solid var(--rule);
+    padding: 40px 48px 32px;
+  }
+
+  .flag {
+    font-family: var(--ff-body);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--mist);
+    margin-bottom: 12px;
+  }
+
+  h1 {
+    font-family: var(--ff-head);
+    font-size: 36px;
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--ink);
+  }
+
+  .sub {
+    margin-top: 8px;
+    font-size: 13px;
+    color: var(--mist);
+    letter-spacing: .04em;
+  }
+
+  main {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 48px 48px 80px;
+  }
+
+  .section-label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  .card {
+    border: 1px solid var(--rule);
+    padding: 24px 28px;
+    margin-bottom: 16px;
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: 16px;
+    align-items: start;
+  }
+
+  .check {
+    width: 28px;
+    height: 28px;
+    background: var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .check svg {
+    width: 14px;
+    height: 14px;
+    stroke: var(--paper);
+    fill: none;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .card-title {
+    font-family: var(--ff-head);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+
+  .card-body {
+    font-size: 13px;
+    color: var(--mist);
+    line-height: 1.65;
+  }
+
+  .card-body strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin: 40px 0;
+  }
+
+  .stat {
+    background: var(--paper);
+    padding: 24px 20px;
+    text-align: center;
+  }
+
+  .stat-n {
+    font-family: var(--ff-head);
+    font-size: 42px;
+    font-weight: 900;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .stat-label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--mist);
+  }
+
+  .sources {
+    margin-top: 40px;
+  }
+
+  .source-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin-top: 16px;
+  }
+
+  .source-item {
+    background: var(--paper);
+    padding: 14px 18px;
+    font-size: 12px;
+    color: var(--mist);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .source-dot {
+    width: 5px;
+    height: 5px;
+    background: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .footer-rule {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 48px 0 24px;
+  }
+
+  .footer-note {
+    font-size: 11px;
+    color: var(--mist);
+    letter-spacing: .06em;
+  }
+
+  .tag {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    border: 1px solid var(--rule);
+    padding: 2px 7px;
+    color: var(--mist);
+    margin-right: 4px;
+    margin-top: 6px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <p class="flag">Library of War — Development Log</p>
+  <h1>Site Update Complete</h1>
+  <p class="sub">April 2026 &nbsp;·&nbsp; 51 articles &nbsp;·&nbsp; All changes live on push</p>
+</header>
+
+<main>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-n">51</div>
+      <div class="stat-label">Articles with images</div>
+    </div>
+    <div class="stat">
+      <div class="stat-n">5</div>
+      <div class="stat-label">Corrections shipped</div>
+    </div>
+    <div class="stat">
+      <div class="stat-n">&lt;1MB</div>
+      <div class="stat-label">Max image size</div>
+    </div>
+  </div>
+
+  <p class="section-label">Changes</p>
+
+  <div class="card">
+    <div class="check">
+      <svg viewBox="0 0 16 16"><polyline points="2.5 8.5 6.5 12.5 13.5 4.5"/></svg>
+    </div>
+    <div>
+      <div class="card-title">Public domain images — all 51 articles</div>
+      <div class="card-body">
+        1200px Wikimedia Commons thumbnails uploaded to Sanity CDN. Each image stores <strong>alt text</strong>, <strong>caption</strong>, and <strong>source URL</strong>. Hard 1 MB limit enforced on every upload. Sources span National Archives, Imperial War Museum, Bundesarchiv, US Navy/Army/USMC, Australian War Memorial, and Museo del Prado.
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="check">
+      <svg viewBox="0 0 16 16"><polyline points="2.5 8.5 6.5 12.5 13.5 4.5"/></svg>
+    </div>
+    <div>
+      <div class="card-title">VoiceBadge attribution removed</div>
+      <div class="card-body">
+        "The Analyst" / "The Correspondent" labels stripped from <strong>ArticleCard</strong>, <strong>article detail page</strong>, and <strong>homepage</strong> hero blocks. No visual trace remaining.
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="check">
+      <svg viewBox="0 0 16 16"><polyline points="2.5 8.5 6.5 12.5 13.5 4.5"/></svg>
+    </div>
+    <div>
+      <div class="card-title">Searchable tags on every article</div>
+      <div class="card-body">
+        Tags field added to Sanity schema with tag-input UI. All 51 articles batch-patched with tags covering people, places, weapons, tactics, and units. Displayed as small pill labels on cards and article pages.
+        <br/>
+        <span class="tag">Napoleon</span>
+        <span class="tag">M1 Abrams</span>
+        <span class="tag">Blitzkrieg</span>
+        <span class="tag">Stalingrad</span>
+        <span class="tag">D-Day</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="check">
+      <svg viewBox="0 0 16 16"><polyline points="2.5 8.5 6.5 12.5 13.5 4.5"/></svg>
+    </div>
+    <div>
+      <div class="card-title">Related articles — era-matched GROQ query</div>
+      <div class="card-body">
+        Each article page pulls <strong>3 related articles</strong> from the same era/category via a live GROQ query on shared category <code>_ref</code> IDs. Replaced the previous random slice approach. Falls back gracefully if no matching category.
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="check">
+      <svg viewBox="0 0 16 16"><polyline points="2.5 8.5 6.5 12.5 13.5 4.5"/></svg>
+    </div>
+    <div>
+      <div class="card-title">Image gating on homepage</div>
+      <div class="card-body">
+        Hero block and stacked cards now only pull from articles that have a <strong>mainImage</strong> in Sanity. Articles without images are excluded from visual feature sections but still appear in text grid rows below.
+      </div>
+    </div>
+  </div>
+
+  <div class="sources">
+    <p class="section-label">Image sources</p>
+    <div class="source-grid">
+      <div class="source-item"><div class="source-dot"></div>Wikimedia Commons (public domain)</div>
+      <div class="source-item"><div class="source-dot"></div>US National Archives</div>
+      <div class="source-item"><div class="source-dot"></div>Imperial War Museum</div>
+      <div class="source-item"><div class="source-dot"></div>Bundesarchiv (Germany)</div>
+      <div class="source-item"><div class="source-dot"></div>US Navy / Army / USMC</div>
+      <div class="source-item"><div class="source-dot"></div>Australian War Memorial</div>
+      <div class="source-item"><div class="source-dot"></div>Museo del Prado</div>
+      <div class="source-item"><div class="source-dot"></div>Château de Versailles</div>
+    </div>
+  </div>
+
+  <hr class="footer-rule" />
+  <p class="footer-note">All images delivered via Sanity CDN · Next.js &lt;Image&gt; auto WebP + lazy load · ISR 60s · Max source size 1 MB · Cloudflare Pages deployment</p>
+
+</main>
+
+</body>
+</html>
