@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     default: 'Library of War',
     template: '%s | Library of War',
   },
-  description: 'Editorial military history archive. Every claim cited. Every fact verifiable.',
+  description: 'Military history archive. Every claim cited. Every fact verifiable.',
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://libraryofwar.com'),
   openGraph: {
     siteName: 'Library of War',
