@@ -1,32 +1,25 @@
 'use client'
 
-import Script from 'next/script'
-
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      'dbox-widget': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
-        campaign?: string
-        type?: string
-        'enable-auto-scroll'?: string
-      }
-    }
-  }
-}
-
 export default function DonorBoxWidget() {
   return (
-    <>
-      <Script
-        src="https://donorbox.org/widgets.js"
-        strategy="lazyOnload"
-        type="module"
+    <div className="w-full">
+      <iframe
+        src="https://donorbox.org/embed/library-of-war-operations?default_interval=o"
+        name="donorbox"
+        seamless
+        scrolling="no"
+        frameBorder={0}
+        allow="payment"
+        style={{
+          maxWidth: '500px',
+          minWidth: '250px',
+          maxHeight: 'none',
+          width: '100%',
+          height: '900px',
+          border: 'none',
+        }}
+        title="Support Library of War"
       />
-      <dbox-widget
-        campaign="library-of-war-operations"
-        type="donation_form"
-        enable-auto-scroll="true"
-      />
-    </>
+    </div>
   )
 }

@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import NewsletterForm from './NewsletterForm'
 
 const BROWSE_ERAS = [
   { label: 'Ancient & Medieval',       slug: 'ancient-medieval' },
@@ -16,9 +15,15 @@ const BROWSE_ERAS = [
 ]
 
 const SERIES = [
-  { label: 'Weapons That Shouldn\'t Have Worked', href: '/series/weapons-that-shouldnt-have-worked' },
-  { label: 'The Day After',                        href: '/series/the-day-after' },
-  { label: 'Ghost Gear',                           href: '/series/ghost-gear' },
+  { label: "Weapons That Shouldn't Have Worked", href: '/series/weapons-that-shouldnt-have-worked' },
+  { label: 'The Day After',                       href: '/series/the-day-after' },
+  { label: 'Black Projects',                      href: '/series/black-projects' },
+]
+
+const SOCIAL = [
+  { label: 'X',         href: 'https://x.com/libraryofwar' },
+  { label: 'Facebook',  href: 'https://facebook.com/libraryxwar' },
+  { label: 'Instagram', href: 'https://instagram.com/libraryofwar' },
 ]
 
 export default function Footer() {
@@ -35,7 +40,7 @@ export default function Footer() {
           </h2>
           <div className="w-8 h-px bg-accent mt-3 mb-4" />
           <p className="font-body text-paper/50 text-sm leading-relaxed">
-            Editorial Military History Archive. Every claim cited. Every fact verifiable. Public domain imagery only.
+            Military History Archive. Every claim cited. Every fact verifiable. Public domain imagery only.
           </p>
           <a
             href="mailto:libraryofwar@gmail.com"
@@ -44,14 +49,17 @@ export default function Footer() {
             libraryofwar@gmail.com
           </a>
           <div className="flex gap-5 mt-4">
-            <a href="https://facebook.com/libraryxwar" target="_blank" rel="noopener noreferrer"
-               className="font-body text-paper/40 hover:text-paper transition-colors text-xs tracking-widest uppercase">
-              Facebook
-            </a>
-            <a href="https://instagram.com/libraryofwar" target="_blank" rel="noopener noreferrer"
-               className="font-body text-paper/40 hover:text-paper transition-colors text-xs tracking-widest uppercase">
-              Instagram
-            </a>
+            {SOCIAL.map(s => (
+              <a
+                key={s.label}
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-body text-paper/40 hover:text-paper transition-colors text-xs tracking-widest uppercase"
+              >
+                {s.label}
+              </a>
+            ))}
           </div>
         </div>
 
@@ -89,12 +97,12 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Series + Newsletter */}
+        {/* Series */}
         <div>
           <h3 className="font-body text-[0.6rem] tracking-[0.28em] uppercase text-paper/30 mb-5">
             Flagship Series
           </h3>
-          <ul className="space-y-3 mb-10">
+          <ul className="space-y-3">
             {SERIES.map((s) => (
               <li key={s.href}>
                 <Link href={s.href}
@@ -104,11 +112,6 @@ export default function Footer() {
               </li>
             ))}
           </ul>
-
-          <h3 className="font-body text-[0.6rem] tracking-[0.28em] uppercase text-paper/30 mb-3">
-            Newsletter
-          </h3>
-          <NewsletterForm dark />
         </div>
       </div>
 

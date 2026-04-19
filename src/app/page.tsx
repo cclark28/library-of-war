@@ -4,7 +4,6 @@ import { client, articlesQuery, seriesQuery, urlFor } from '@/lib/sanity'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import ArticleCard from '@/components/ArticleCard'
-import NewsletterForm from '@/components/NewsletterForm'
 import FadeIn from '@/components/FadeIn'
 
 export const revalidate = 60
@@ -135,18 +134,6 @@ function HeroGrid({ hero, stack }: { hero: Article; stack: Article[] }) {
   )
 }
 
-function NewsletterStrip() {
-  return (
-    <div className="border-y border-rule py-12 text-center">
-      <p className="era-label mb-2">Newsletter</p>
-      <p className="font-headline font-bold text-ink text-2xl md:text-3xl mb-6">
-        Be up to date with the newest dispatches
-      </p>
-      <NewsletterForm />
-    </div>
-  )
-}
-
 function FilterBar() {
   return (
     <div className="flex items-center justify-between py-3 border-b border-rule text-[0.62rem] font-body tracking-[0.18em] uppercase">
@@ -249,10 +236,6 @@ export default async function HomePage() {
             ))}
           </div>
         )}
-
-        <FadeIn className="mt-16" variant="fade-in">
-          <NewsletterStrip />
-        </FadeIn>
 
         {grid4.length > 0 && (
           <>

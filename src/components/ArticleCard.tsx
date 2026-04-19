@@ -54,7 +54,7 @@ export default function ArticleCard({ article, size = 'md', showExcerpt = true, 
   const seriesLabel = article.series?.title
 
   const inner = (
-    <article className={`card-hover group ${layout === 'horizontal' ? 'flex gap-4' : ''}`}>
+    <article className={`card-lift group ${layout === 'horizontal' ? 'flex gap-4' : ''}`}>
       {/* Image — lazy loaded by default (no priority prop) */}
       {imageUrl && (
         <div className={`relative overflow-hidden bg-ghost flex-shrink-0 ${

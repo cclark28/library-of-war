@@ -6,7 +6,7 @@ interface FadeInProps {
   children: React.ReactNode
   className?: string
   delay?: number
-  variant?: 'fade-up' | 'fade-in' | 'slide-left'
+  variant?: 'fade-up' | 'fade-in' | 'slide-left' | 'slide-right' | 'scale-up'
 }
 
 export default function FadeIn({

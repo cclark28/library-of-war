@@ -104,6 +104,16 @@ h1, h2, h3, h4, h5, h6 {
 .card-hover { transition: opacity 160ms ease; }
 .card-hover:hover { opacity: 0.82; }
 
+/* ─── Card lift (Framer-style physical hover) ────────────────────────────────── */
+.card-lift {
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px -12px rgba(10, 8, 6, 0.16);
+}
+
 /* ─── Tag pill ───────────────────────────────────────────────────────────────── */
 .tag-pill {
   display: inline-block;
@@ -192,21 +202,6 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--color-accent);
 }
 
-/* ─── Newsletter input ───────────────────────────────────────────────────────── */
-.newsletter-input {
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid var(--color-rule);
-  font-family: var(--font-body);
-  font-size: 0.85rem;
-  letter-spacing: 0.04em;
-  color: var(--color-ink);
-  padding: 0.4em 0;
-  outline: none;
-  width: 16rem;
-}
-.newsletter-input::placeholder { color: var(--color-mist); opacity: 0.6; }
-
 /* ─── Focus / Accessibility ─────────────────────────────────────────────────── */
 :focus-visible {
   outline: 2px solid var(--color-accent);
@@ -259,3 +254,63 @@ h1, h2, h3, h4, h5, h6 {
 .stagger > *:nth-child(2) { transition-delay: 80ms; }
 .stagger > *:nth-child(3) { transition-delay: 160ms; }
 .stagger > *:nth-child(4) { transition-delay: 240ms; }
+.stagger > *:nth-child(5) { transition-delay: 320ms; }
+.stagger > *:nth-child(6) { transition-delay: 400ms; }
+.stagger > *:nth-child(7) { transition-delay: 480ms; }
+.stagger > *:nth-child(8) { transition-delay: 560ms; }
+
+/* ─── scale-up variant ───────────────────────────────────────────────────────── */
+.scale-up {
+  opacity: 0;
+  transform: scale(0.96);
+  transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.scale-up.in-view {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ─── slide-right variant ────────────────────────────────────────────────────── */
+.slide-right {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.slide-right.in-view {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ─── Keyframes ──────────────────────────────────────────────────────────────── */
+@keyframes menu-drop {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes search-drop {
+  from { opacity: 0; transform: translateY(-12px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0)    scale(1); }
+}
+
+@keyframes page-enter {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Nav link animated underline ────────────────────────────────────────────── */
+.nav-underline {
+  position: relative;
+}
+.nav-underline::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-accent);
+  transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.nav-underline:hover::after { width: 100%; }
