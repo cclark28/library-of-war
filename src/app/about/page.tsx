@@ -1,5 +1,6 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import DonorBoxWidget from '@/components/DonorBoxWidget'
 
 export default function AboutPage() {
   return (
@@ -35,21 +36,7 @@ export default function AboutPage() {
           <p className="text-ink/60 text-base mb-10">
             This archive is free and will always remain free. Your support keeps it that way.
           </p>
-          <div className="w-full">
-            <script src="https://donorbox.org/widget.js" paypalExpress="false" async></script>
-            <iframe
-              src="https://donorbox.org/embed/wydf-pguv-svib-keeg-vtrr"
-              name="donorbox"
-              allowpaymentrequest={true}
-              seamless={true}
-              frameBorder={0}
-              scrolling="no"
-              height="900px"
-              width="100%"
-              style={{ maxWidth: '500px', minWidth: '250px', maxHeight: 'none !important' }}
-              allow="payment"
-            />
-          </div>
+          <DonorBoxWidget />
         </div>
 
       </main>
