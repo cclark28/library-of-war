@@ -36,6 +36,13 @@ export const metadata: Metadata = {
     shortcut: '/favicon-16x16.png',
     apple: '/apple-touch-icon.png',
   },
+  alternates: {
+    types: {
+      'application/rss+xml': [
+        { url: 'https://libraryofwar.com/feed/', title: 'Library of War' },
+      ],
+    },
+  },
 }
 
 export default function RootLayout({

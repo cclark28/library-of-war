@@ -281,7 +281,7 @@ export default defineType({
           ],
           preview: {
             select: { title: 'title', type: 'type', identifier: 'identifier' },
-            prepare({ title, type, identifier }: { title: string; type: string; identifier?: string }) {
+            prepare({ title, type, identifier }: { title?: string; type?: string; identifier?: string }) {
               const label: Record<string, string> = {
                 patent: 'Patent',
                 declassified: 'Declassified',
