@@ -97,8 +97,6 @@ export default function ArticleCard({ article, size = 'md', showExcerpt = true, 
         )}
       </div>
 
-      {/* Bottom rule */}
-      {layout === 'vertical' && <div className="mt-5 rule-bottom" />}
     </article>
   )
 

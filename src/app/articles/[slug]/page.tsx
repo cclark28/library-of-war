@@ -1,7 +1,6 @@
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
-import { PortableText, type PortableTextComponents } from '@portabletext/react'
 import { client, articleBySlugQuery, relatedArticlesQuery, urlFor } from '@/lib/sanity'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -11,51 +10,95 @@ import FadeIn from '@/components/FadeIn'
 export const runtime = 'edge'
 export const revalidate = 60
 
-/* ── Portable Text components ─────────────────────────────────────────────────── */
-const ptComponents: PortableTextComponents = {
-  block: {
-    normal:     ({ children }) => <p>{children}</p>,
-    h2:         ({ children }) => <h2>{children}</h2>,
-    h3:         ({ children }) => <h3>{children}</h3>,
-    blockquote: ({ children }) => <blockquote>{children}</blockquote>,
-  },
-  types: {
-    image: ({ value }: { value: { asset: { _ref: string }; alt?: string; caption?: string; sourceUrl?: string } }) => {
-      const url = urlFor(value).width(1200).fit('max').url()
-      return (
-        <figure className="my-12 -mx-4 md:mx-0">
-          <Image
-            src={url}
-            alt={value.alt || ''}
-            width={1200}
-            height={600}
-            loading="lazy"
-            className="w-full object-cover"
-          />
-          {value.caption && (
-            <figcaption className="font-body text-mist text-sm mt-3 text-center tracking-wide">
-              {value.caption}
-              {value.sourceUrl && (
-                <a href={value.sourceUrl} target="_blank" rel="noopener noreferrer"
-                   className="ml-2 text-accent hover:underline">↗ Source</a>
-              )}
-            </figcaption>
-          )}
-        </figure>
+/* ── Portable Text types ──────────────────────────────────────────────────────── */
+type MarkDef = { _key: string; _type: string; href?: string; blank?: boolean }
+type PTSpan = { _type: 'span'; _key?: string; text?: string; marks?: string[] }
+type PTBlock = {
+  _type: string
+  _key?: string
+  style?: string
+  children?: PTSpan[]
+  markDefs?: MarkDef[]
+  asset?: { _ref: string }
+  alt?: string
+  caption?: string
+  sourceUrl?: string
+}
+
+/* ── Edge-safe Portable Text renderer ────────────────────────────────────────── */
+function renderSpan(span: PTSpan, markDefs: MarkDef[] = [], idx: number) {
+  let node: React.ReactNode = span.text ?? ''
+  const marks = span.marks ?? []
+  for (const mark of [...marks].reverse()) {
+    const def = markDefs.find(d => d._key === mark)
+    if (def) {
+      node = (
+        <a key={`link-${idx}`} href={def.href} target={def.blank ? '_blank' : undefined}
+           rel={def.blank ? 'noopener noreferrer' : undefined}>
+          {node}
+        </a>
       )
-    },
-  },
-  marks: {
-    link: ({ value, children }: { value?: { href?: string; blank?: boolean }; children?: React.ReactNode }) => (
-      <a
-        href={value?.href}
-        target={value?.blank ? '_blank' : undefined}
-        rel={value?.blank ? 'noopener noreferrer' : undefined}
-      >
-        {children}
-      </a>
-    ),
-  },
+    } else if (mark === 'strong') {
+      node = <strong key={`s-${idx}`}>{node}</strong>
+    } else if (mark === 'em') {
+      node = <em key={`e-${idx}`}>{node}</em>
+    } else if (mark === 'underline') {
+      node = <u key={`u-${idx}`}>{node}</u>
+    } else if (mark === 'code') {
+      node = <code key={`c-${idx}`}>{node}</code>
+    }
+  }
+  return <span key={span._key ?? idx}>{node}</span>
+}
+
+function renderChildren(block: PTBlock) {
+  if (!block.children) return null
+  return block.children.map((child, i) => renderSpan(child, block.markDefs, i))
+}
+
+function PortableTextBody({ blocks }: { blocks: PTBlock[] }) {
+  return (
+    <>
+      {blocks.map((block, i) => {
+        const key = block._key ?? i
+
+        if (block._type === 'image') {
+          const imgUrl = urlFor(block as Parameters<typeof urlFor>[0]).width(1200).fit('max').url()
+          return (
+            <figure key={key} className="my-12 -mx-4 md:mx-0">
+              <Image
+                src={imgUrl}
+                alt={block.alt ?? ''}
+                width={1200}
+                height={600}
+                loading="lazy"
+                className="w-full object-cover"
+              />
+              {block.caption && (
+                <figcaption className="font-body text-mist text-sm mt-3 text-center tracking-wide">
+                  {block.caption}
+                  {block.sourceUrl && (
+                    <a href={block.sourceUrl} target="_blank" rel="noopener noreferrer"
+                       className="ml-2 text-accent hover:underline">↗ Source</a>
+                  )}
+                </figcaption>
+              )}
+            </figure>
+          )
+        }
+
+        if (block._type !== 'block') return null
+        const children = renderChildren(block)
+
+        switch (block.style) {
+          case 'h2':         return <h2 key={key}>{children}</h2>
+          case 'h3':         return <h3 key={key}>{children}</h3>
+          case 'blockquote': return <blockquote key={key}>{children}</blockquote>
+          default:           return <p key={key}>{children}</p>
+        }
+      })}
+    </>
+  )
 }
 
 /* ── Crest ────────────────────────────────────────────────────────────────────── */
@@ -95,14 +138,13 @@ export default async function ArticlePage({ params }: Params) {
         <FadeIn className="max-w-2xl mx-auto px-6 pt-14 pb-0 text-center" variant="fade-in">
           <Crest />
 
-          {/* Headline */}
           <div className="relative border-t border-rule pt-8 pb-8 border-b border-rule mb-8">
             <h1 className="article-headline">
               {article.title}
             </h1>
           </div>
 
-          {/* Meta: category + series tags */}
+          {/* Category + series tags */}
           <div className="flex items-center justify-center gap-3 flex-wrap mb-6">
             {article.categories?.[0] && (
               <Link
@@ -175,7 +217,7 @@ export default async function ArticlePage({ params }: Params) {
         <FadeIn className="max-w-2xl mx-auto px-6 py-12" variant="fade-up" delay={80}>
           {article.body ? (
             <div className="article-prose drop-cap">
-              <PortableText value={article.body} components={ptComponents} />
+              <PortableTextBody blocks={article.body as PTBlock[]} />
             </div>
           ) : (
             <p className="font-body text-mist text-center py-16 tracking-wider">
@@ -250,9 +292,9 @@ export default async function ArticlePage({ params }: Params) {
         {related.length > 0 && (
           <section className="bg-ghost py-16" aria-label="More from the archive">
             <div className="max-w-7xl mx-auto px-6">
-              <div className="flex items-center gap-5 mb-12">
+              <div className="flex items-center gap-6 mb-12">
                 <div className="flex-1 border-t border-rule" />
-                <span className="era-label">More from the Archive</span>
+                <span className="font-headline font-bold text-ink text-[2rem] leading-none">More from the Archive</span>
                 <div className="flex-1 border-t border-rule" />
               </div>
               <FadeIn className="grid grid-cols-1 md:grid-cols-3 gap-8 stagger" variant="fade-up">

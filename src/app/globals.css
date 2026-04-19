@@ -49,7 +49,6 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-headline);
   line-height: 1.15;
-  color: var(--color-ink);
 }
 
 /* ─── Rules ──────────────────────────────────────────────────────────────────── */

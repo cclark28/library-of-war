@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "pages:build": "npx @cloudflare/next-on-pages && printf '_worker.js\\n' > .vercel/output/static/.assetsignore",
+    "pages:build": "npx @cloudflare/next-on-pages && printf '_worker.js\\n' > .vercel/output/static/.assetsignore && node scripts/patch-edge-functions.mjs",
     "pages:preview": "wrangler pages dev",
     "pages:deploy": "wrangler pages deploy"
   },

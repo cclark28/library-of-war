@@ -40,9 +40,9 @@ function groupByEra(articles: Article[]): Record<string, Article[]> {
 
 function SectionDivider({ label }: { label: string }) {
   return (
-    <div className="flex items-center gap-5 my-12">
+    <div className="flex items-center gap-6 my-12">
       <div className="flex-1 border-t border-rule" />
-      <span className="era-label">{label}</span>
+      <span className="font-headline font-bold text-ink text-[2rem] leading-none">{label}</span>
       <div className="flex-1 border-t border-rule" />
     </div>
   )
@@ -54,7 +54,7 @@ function HeroGrid({ hero, stack }: { hero: Article; stack: Article[] }) {
     : null
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-5 gap-0 border-b border-rule">
+    <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
       <Link
         href={`/articles/${hero.slug.current}`}
         className="lg:col-span-3 block group relative overflow-hidden bg-ink"
@@ -86,14 +86,9 @@ function HeroGrid({ hero, stack }: { hero: Article; stack: Article[] }) {
               </span>
             )}
           </div>
-          <h2 className="font-headline font-black text-paper text-3xl md:text-4xl lg:text-5xl leading-tight max-w-xl mb-4 group-hover:text-paper/90 transition-colors">
+          <h2 className="font-headline font-black text-paper text-3xl md:text-4xl lg:text-5xl leading-tight max-w-xl group-hover:text-paper/90 transition-colors">
             {hero.title}
           </h2>
-          {hero.excerpt && (
-            <p className="font-body text-paper/60 text-base leading-relaxed max-w-md hidden md:block line-clamp-2">
-              {hero.excerpt}
-            </p>
-          )}
         </div>
       </Link>
 
@@ -175,11 +170,32 @@ export default async function HomePage() {
     client.fetch(seriesQuery).catch(() => []) as Promise<Series[]>,
   ])
 
-  const hero      = articles[0] ?? null
-  const stack     = articles.slice(1, 3)
-  const grid3     = articles.slice(3, 6)
-  const grid4     = articles.slice(6, 10)
-  const remaining = articles.slice(10)
+  // ── Hero diversity: pick 3 articles from different categories, rotating daily ──
+  const dayOffset = Math.floor(Date.now() / 86400000) // changes every 24h
+  const shuffled = [...articles].sort((a, b) => {
+    // stable daily shuffle using day seed + original index
+    const ai = articles.indexOf(a), bi = articles.indexOf(b)
+    return ((ai + dayOffset) % articles.length) - ((bi + dayOffset) % articles.length)
+  })
+  const heroSlots: Article[] = []
+  const usedCats = new Set<string>()
+  for (const article of shuffled) {
+    const cat = article.categories?.[0]?.title ?? '__none__'
+    if (!usedCats.has(cat)) { heroSlots.push(article); usedCats.add(cat) }
+    if (heroSlots.length === 3) break
+  }
+  // Fill remaining slots if not enough category variety
+  for (const article of articles) {
+    if (heroSlots.length >= 3) break
+    if (!heroSlots.includes(article)) heroSlots.push(article)
+  }
+  const heroIds = new Set(heroSlots.map(a => a._id))
+
+  const hero      = heroSlots[0] ?? null
+  const stack     = heroSlots.slice(1, 3)
+  const grid3     = articles.filter(a => !heroIds.has(a._id)).slice(0, 3)
+  const grid4     = articles.filter(a => !heroIds.has(a._id)).slice(3, 7)
+  const remaining = articles.filter(a => !heroIds.has(a._id)).slice(7)
   const byEra     = groupByEra(remaining)
 
   return (
@@ -278,7 +294,7 @@ export default async function HomePage() {
                       alt={s.coverImage?.alt || s.title}
                       fill
                       loading="lazy"
-                      className="object-cover opacity-70 transition-transform duration-500 group-hover:scale-[1.03]"
+                      className="object-cover opacity-90 transition-transform duration-500 group-hover:scale-[1.03]"
                       sizes="(max-width: 768px) 100vw, 33vw"
                     />
                   ) : (
@@ -286,12 +302,12 @@ export default async function HomePage() {
                   )}
                   <div className="absolute inset-0 hero-gradient" />
                   <div className="absolute bottom-0 left-0 right-0 px-5 pb-6">
-                    <p className="era-label text-paper/40 mb-1">Series</p>
-                    <h3 className="font-headline font-black text-paper text-2xl leading-snug group-hover:text-paper/85 transition-colors">
+                    <p className="font-body text-[0.6rem] tracking-[0.22em] uppercase text-white/70 mb-1">Series</p>
+                    <h3 className="font-headline font-black text-white text-2xl leading-snug group-hover:text-white/85 transition-colors">
                       {s.title}
                     </h3>
                     {s.description && (
-                      <p className="font-body text-paper/50 text-sm mt-2 leading-relaxed line-clamp-2">
+                      <p className="font-body text-white/70 text-sm mt-2 leading-relaxed line-clamp-2">
                         {s.description}
                       </p>
                     )}

@@ -10,11 +10,6 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  // Required for Cloudflare Pages via @cloudflare/next-on-pages
-  // Uncomment when deploying to Cloudflare:
-  // experimental: {
-  //   runtime: 'edge',
-  // },
 }
 
 export default nextConfig

@@ -1,20 +1,12 @@
 name = "library-of-war"
+pages_build_output_dir = ".vercel/output/static"
 compatibility_date = "2024-09-23"
 compatibility_flags = ["nodejs_compat"]
-main = ".vercel/output/static/_worker.js/index.js"
-
-[assets]
-directory = ".vercel/output/static"
-binding = "ASSETS"
 
 [vars]
+NEXT_PUBLIC_SANITY_PROJECT_ID = "tifzt4zw"
 NEXT_PUBLIC_SANITY_DATASET = "production"
 NEXT_PUBLIC_SITE_URL = "https://libraryofwar.com"
 
-[[routes]]
-pattern = "libraryofwar.com"
-custom_domain = true
-
-# Secrets set via Cloudflare dashboard (Workers > Settings > Variables and Secrets):
-# NEXT_PUBLIC_SANITY_PROJECT_ID
+# Secrets set via wrangler pages secret put or Cloudflare dashboard:
 # SANITY_API_TOKEN

@@ -9,14 +9,59 @@ export default defineType({
       name: 'title',
       title: 'Title',
       type: 'string',
-      validation: (Rule) => Rule.required().max(120),
+      validation: (Rule) => [
+        Rule.required().max(120),
+        // Duplicate title guard — blocks publish if another article shares this title
+        Rule.custom(async (value, context) => {
+          if (!value) return true
+          const { document, getClient } = context as any
+          const client = getClient({ apiVersion: '2024-01-01' })
+          const existing = await client.fetch(
+            `*[_type == "article" && title == $title && _id != $id && !(_id in path("drafts.**"))][0]{ _id, title }`,
+            { title: value, id: document._id?.replace(/^drafts\./, '') }
+          )
+          if (existing) {
+            return `Duplicate title — another article already has this exact title. Resolve before publishing.`
+          }
+          // Fuzzy similarity check: flag if >80% of words match
+          const words = (v: string) => v.toLowerCase().replace(/[^a-z0-9\s]/g, '').split(/\s+/).filter(Boolean)
+          const thisWords = new Set(words(value))
+          const similar = await client.fetch(
+            `*[_type == "article" && _id != $id && !(_id in path("drafts.**"))]{ _id, title }`,
+            { id: document._id?.replace(/^drafts\./, '') }
+          )
+          for (const other of similar) {
+            const otherWords = new Set(words(other.title))
+            const intersection = [...thisWords].filter(w => otherWords.has(w)).length
+            const union = new Set([...thisWords, ...otherWords]).size
+            const similarity = intersection / union
+            if (similarity > 0.8) {
+              return `Very similar title to "${other.title}" — check for duplication before publishing.`
+            }
+          }
+          return true
+        }),
+      ],
     }),
     defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
       options: { source: 'title', maxLength: 96 },
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) => [
+        Rule.required(),
+        // Duplicate slug guard
+        Rule.custom(async (value, context) => {
+          if (!value?.current) return true
+          const { document, getClient } = context as any
+          const client = getClient({ apiVersion: '2024-01-01' })
+          const existing = await client.fetch(
+            `*[_type == "article" && slug.current == $slug && _id != $id && !(_id in path("drafts.**"))][0]._id`,
+            { slug: value.current, id: document._id?.replace(/^drafts\./, '') }
+          )
+          return existing ? `Duplicate slug — another article uses this URL. Change the title or slug before publishing.` : true
+        }),
+      ],
     }),
     defineField({
       name: 'status',
