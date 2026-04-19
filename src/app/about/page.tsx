@@ -26,6 +26,32 @@ export default function AboutPage() {
             We have chosen not to include comment sections on articles. This is an archive, not a debate platform. Our focus is on preserving history, not turning it into political discussion.
           </p>
         </div>
+
+        {/* Donation Section */}
+        <div className="mt-20 pt-12 border-t border-ink/10">
+          <h2 className="font-headline font-black text-ink text-3xl mb-2">
+            Support the Library of War
+          </h2>
+          <p className="text-ink/60 text-base mb-10">
+            This archive is free and will always remain free. Your support keeps it that way.
+          </p>
+          <div className="w-full">
+            <script src="https://donorbox.org/widget.js" paypalExpress="false" async></script>
+            <iframe
+              src="https://donorbox.org/embed/wydf-pguv-svib-keeg-vtrr"
+              name="donorbox"
+              allowpaymentrequest={true}
+              seamless={true}
+              frameBorder={0}
+              scrolling="no"
+              height="900px"
+              width="100%"
+              style={{ maxWidth: '500px', minWidth: '250px', maxHeight: 'none !important' }}
+              allow="payment"
+            />
+          </div>
+        </div>
+
       </main>
       <Footer />
     </>
