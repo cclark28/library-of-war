@@ -14,18 +14,10 @@ export default function AboutPage() {
 
         <div className="article-prose">
           <p>
-            Library of War is an editorial military history archive. Every article is AI-written and human-edited. Every claim is cited with verifiable open sources. Every image is public domain — sourced from the National Archives, the Library of Congress, DVIDS, and Wikimedia Commons.
-          </p>
-
-          <h2>Two House Voices</h2>
-          <p>
-            Articles are written in one of two house voices, selected by the editorial team based on subject matter and tone.
+            Library of War is a military history library. One place for documentation, first-hand accounts, and the stories that define armed conflict across every era. The goal is simple: bring the primary sources, the photographs, and the narratives together so they&apos;re accessible, accurate, and free to explore.
           </p>
           <p>
-            <strong>The Analyst</strong> writes with cold precision. Think classified briefing, not magazine feature. Dense with source references, stripped of sentiment, structured like an intelligence report.
-          </p>
-          <p>
-            <strong>The Correspondent</strong> writes from the ground. Short sentences, human detail, the weight of a dispatch filed under fire. Minimum three verified sources. Maximum emotional honesty.
+            Every claim is cited with verifiable open sources. Every image is public domain, sourced from the National Archives, the Library of Congress, DVIDS, and Wikimedia Commons.
           </p>
 
           <h2>Editorial Standards</h2>
@@ -33,9 +25,11 @@ export default function AboutPage() {
             Every article requires a minimum of three verifiable open sources. No claim is published without citation. Images are attributed to their archive of origin with direct links to the source record.
           </p>
 
-          <h2>Contact</h2>
+          <h2>Comments &amp; Discussion</h2>
           <p>
-            <a href="mailto:hello@libraryofwar.com">hello@libraryofwar.com</a>
+            Comments are disabled on all articles and leader profiles to keep the library focused and respectful. For questions, corrections, or to discuss any topic, reach out at{' '}
+            <a href="mailto:libraryofwar@gmail.com">libraryofwar@gmail.com</a>{' '}
+            or send a message on Facebook.
           </p>
         </div>
       </main>
