@@ -6,11 +6,11 @@ import { useState } from 'react'
 
 const NAV_ITEMS = [
   { label: 'Home',          href: '/' },
+  { label: 'Browse by Era', href: '/browse' },
   { label: 'Series',        href: '/series' },
   { label: 'Weapons',       href: '/series/weapons-that-shouldnt-have-worked' },
   { label: 'The Day After', href: '/series/the-day-after' },
   { label: 'Ghost Gear',    href: '/series/ghost-gear' },
-  { label: 'Browse by Era', href: '/browse' },
   { label: 'About',         href: '/about' },
 ]
 

@@ -52,24 +52,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Series */}
-        <div>
-          <h3 className="font-body text-[0.6rem] tracking-[0.28em] uppercase text-paper/30 mb-5">
-            Flagship Series
-          </h3>
-          <ul className="space-y-3">
-            {SERIES.map((s) => (
-              <li key={s.href}>
-                <Link href={s.href}
-                      className="font-headline text-paper/70 hover:text-paper transition-colors text-base leading-snug block">
-                  {s.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Browse by Era */}
+        {/* Browse by Era — col 1 */}
         <div>
           <h3 className="font-body text-[0.6rem] tracking-[0.28em] uppercase text-paper/30 mb-5">
             Browse by Era
@@ -86,7 +69,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Browse by Era cont. */}
+        {/* Browse by Era — col 2 */}
         <div>
           <h3 className="font-body text-[0.6rem] tracking-[0.28em] uppercase text-paper/30 mb-5">
             &nbsp;
@@ -101,14 +84,28 @@ export default function Footer() {
               </li>
             ))}
           </ul>
+        </div>
 
-          {/* Newsletter micro */}
-          <div className="mt-8">
-            <h3 className="font-body text-[0.6rem] tracking-[0.28em] uppercase text-paper/30 mb-3">
-              Newsletter
-            </h3>
-            <NewsletterForm dark />
-          </div>
+        {/* Series + Newsletter */}
+        <div>
+          <h3 className="font-body text-[0.6rem] tracking-[0.28em] uppercase text-paper/30 mb-5">
+            Flagship Series
+          </h3>
+          <ul className="space-y-3 mb-10">
+            {SERIES.map((s) => (
+              <li key={s.href}>
+                <Link href={s.href}
+                      className="font-headline text-paper/70 hover:text-paper transition-colors text-base leading-snug block">
+                  {s.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          <h3 className="font-body text-[0.6rem] tracking-[0.28em] uppercase text-paper/30 mb-3">
+            Newsletter
+          </h3>
+          <NewsletterForm dark />
         </div>
       </div>
 

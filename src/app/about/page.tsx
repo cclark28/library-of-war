@@ -9,27 +9,21 @@ export default function AboutPage() {
         <div className="rule-heavy mb-10 pt-2" />
 
         <h1 className="font-headline font-black text-ink text-display-sm mb-8">
-          About
+          Our Mission
         </h1>
 
         <div className="article-prose">
           <p>
-            Library of War is a military history library. One place for documentation, first-hand accounts, and the stories that define armed conflict across every era. The goal is simple: bring the primary sources, the photographs, and the narratives together so they&apos;re accessible, accurate, and free to explore.
+            Library of War is a military history library. One place for documentation, first-hand accounts, and the stories that define armed conflict across every era.
           </p>
           <p>
-            Every claim is cited with verifiable open sources. Every image is public domain, sourced from the National Archives, the Library of Congress, DVIDS, and Wikimedia Commons.
+            Our goal is simple: bring the primary sources, the photographs, and the narratives together so they are accessible, accurate, and completely free to explore &mdash; with no paywalls, now or ever.
           </p>
-
-          <h2>Editorial Standards</h2>
           <p>
-            Every article requires a minimum of three verifiable open sources. No claim is published without citation. Images are attributed to their archive of origin with direct links to the source record.
+            All material is sourced directly from public archives, declassified documents, official records, and public domain collections. Every claim is thoroughly researched and cross-checked against multiple verifiable primary sources. Every image comes from public domain archives such as the National Archives, Library of Congress, and similar repositories.
           </p>
-
-          <h2>Comments &amp; Discussion</h2>
           <p>
-            Comments are disabled on all articles and leader profiles to keep the library focused and respectful. For questions, corrections, or to discuss any topic, reach out at{' '}
-            <a href="mailto:libraryofwar@gmail.com">libraryofwar@gmail.com</a>{' '}
-            or send a message on Facebook.
+            We have chosen not to include comment sections on articles. This is an archive, not a debate platform. Our focus is on preserving history, not turning it into political discussion.
           </p>
         </div>
       </main>

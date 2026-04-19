@@ -25,6 +25,7 @@ export const articlesQuery = `
     publishedAt,
     voice,
     excerpt,
+    tags,
     mainImage { asset, alt, caption, hotspot },
     series->{ title, slug },
     categories[]->{ title, slug }
@@ -39,12 +40,34 @@ export const articleBySlugQuery = `
     publishedAt,
     voice,
     excerpt,
+    tags,
     mainImage { asset, alt, caption, sourceUrl, hotspot },
     body,
     sources,
     series->{ title, slug },
-    categories[]->{ title, slug },
+    categories[]->{ _id, title, slug, era },
     seo
+  }
+`
+
+// Fetches up to 3 articles in the same era/category, excluding the current article
+export const relatedArticlesQuery = `
+  *[
+    _type == "article" &&
+    status == "published" &&
+    _id != $id &&
+    count(categories[@._ref in $categoryIds]) > 0
+  ] | order(publishedAt desc) [0...3] {
+    _id,
+    title,
+    slug,
+    publishedAt,
+    voice,
+    excerpt,
+    tags,
+    mainImage { asset, alt, caption, hotspot },
+    series->{ title, slug },
+    categories[]->{ title, slug }
   }
 `
 

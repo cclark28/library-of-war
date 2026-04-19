@@ -164,6 +164,14 @@ export default defineType({
       validation: (Rule) => Rule.min(3).error('Minimum 3 sources required.'),
     }),
     defineField({
+      name: 'tags',
+      title: 'Tags',
+      type: 'array',
+      of: [{ type: 'string' }],
+      options: { layout: 'tags' },
+      description: 'Search tags: people, places, weapons, tactics, units (e.g. "Napoleon", "M1 Abrams", "blitzkrieg").',
+    }),
+    defineField({
       name: 'socialCaption',
       title: 'Social Caption',
       type: 'text',

@@ -1,16 +1,15 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import VoiceBadge from './VoiceBadge'
 import { urlFor } from '@/lib/sanity'
-import { formatDate } from '@/lib/utils'
 
 interface Article {
   _id: string
   title: string
   slug: { current: string }
   publishedAt?: string
-  voice: 'analyst' | 'correspondent'
+  voice?: 'analyst' | 'correspondent'
   excerpt?: string
+  tags?: string[]
   mainImage?: {
     asset: { _ref: string }
     alt?: string
@@ -36,11 +35,11 @@ const ASPECT = {
 }
 
 const HEADLINE = {
-  sm:          'text-base leading-snug',
-  md:          'text-xl leading-tight',
-  lg:          'text-2xl md:text-3xl leading-tight',
-  'hero-left': 'text-2xl md:text-3xl lg:text-4xl leading-tight',
-  'hero-stack':'text-lg leading-snug',
+  sm:          'text-lg leading-snug',
+  md:          'text-2xl leading-tight',
+  lg:          'text-3xl md:text-4xl leading-tight',
+  'hero-left': 'text-3xl md:text-4xl leading-tight',
+  'hero-stack':'text-xl leading-snug',
 }
 
 export default function ArticleCard({ article, size = 'md', showExcerpt = true, layout = 'vertical' }: ArticleCardProps) {
@@ -56,59 +55,50 @@ export default function ArticleCard({ article, size = 'md', showExcerpt = true, 
 
   const inner = (
     <article className={`card-hover group ${layout === 'horizontal' ? 'flex gap-4' : ''}`}>
-      {/* Image */}
+      {/* Image — lazy loaded by default (no priority prop) */}
       {imageUrl && (
         <div className={`relative overflow-hidden bg-ghost flex-shrink-0 ${
-          layout === 'horizontal' ? 'w-28 h-20' : `${ASPECT[size]} w-full mb-3`
+          layout === 'horizontal' ? 'w-28 h-20' : `${ASPECT[size]} w-full mb-4`
         }`}>
           <Image
             src={imageUrl}
             alt={article.mainImage?.alt || article.title}
             fill
-            className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+            loading="lazy"
+            className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
             sizes={`${w}px`}
           />
         </div>
       )}
 
       <div className={layout === 'horizontal' ? 'flex flex-col justify-center min-w-0' : ''}>
-        {/* Meta row: date + tags */}
-        <div className="flex items-center gap-2 flex-wrap mb-2">
-          {article.publishedAt && (
-            <time className="font-body text-mist text-[0.6rem] tracking-[0.18em] uppercase">
-              {formatDate(article.publishedAt)}
-            </time>
-          )}
-          {era && (
-            <span className="tag-pill">{era.title}</span>
-          )}
-          {seriesLabel && (
-            <span className="tag-pill tag-pill-accent">{seriesLabel}</span>
-          )}
-        </div>
+        {/* Era + Series tags */}
+        {(era || seriesLabel) && (
+          <div className="flex items-center gap-2 flex-wrap mb-3">
+            {era && (
+              <span className="tag-pill">{era.title}</span>
+            )}
+            {seriesLabel && (
+              <span className="tag-pill tag-pill-accent">{seriesLabel}</span>
+            )}
+          </div>
+        )}
 
         {/* Headline */}
-        <h2 className={`font-headline font-bold text-ink ${HEADLINE[size]} group-hover:text-accent transition-colors mb-2`}>
+        <h2 className={`font-headline font-bold text-ink ${HEADLINE[size]} group-hover:text-accent transition-colors mb-3`}>
           {article.title}
         </h2>
 
         {/* Excerpt */}
         {showExcerpt && article.excerpt && size !== 'sm' && size !== 'hero-stack' && layout !== 'horizontal' && (
-          <p className="font-body text-mist text-sm leading-relaxed line-clamp-2 mb-2">
+          <p className="font-body text-mist text-base leading-relaxed line-clamp-3 mb-2">
             {article.excerpt}
           </p>
-        )}
-
-        {/* Voice badge */}
-        {size !== 'sm' && (
-          <div className="mt-1">
-            <VoiceBadge voice={article.voice} />
-          </div>
         )}
       </div>
 
       {/* Bottom rule */}
-      {layout === 'vertical' && <div className="mt-4 rule-bottom" />}
+      {layout === 'vertical' && <div className="mt-5 rule-bottom" />}
     </article>
   )
 
