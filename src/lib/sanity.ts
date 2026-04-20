@@ -2,11 +2,21 @@ import { createClient } from 'next-sanity'
 import imageUrlBuilder from '@sanity/image-url'
 import type { SanityImageSource } from '@sanity/image-url/lib/types/types'
 
+// CDN client — used for articles (near-instant cache invalidation on publish)
 export const client = createClient({
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
   apiVersion: '2024-01-01',
   useCdn: process.env.NODE_ENV === 'production',
+})
+
+// Live client — bypasses CDN, used for siteSettings so section toggles
+// and maintenance mode take effect within seconds of saving in Sanity Studio
+export const liveClient = createClient({
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
+  apiVersion: '2024-01-01',
+  useCdn: false,
 })
 
 const builder = imageUrlBuilder(client)
@@ -129,6 +139,14 @@ export const siteSettingsQuery = `
     logo,
     ogImage,
     social,
-    contact
+    contact,
+    maintenanceMode,
+    sections {
+      showHero,
+      showLatestDispatches,
+      showFromArchive,
+      showEraGrid,
+      showFlagshipSeries
+    }
   }
 `

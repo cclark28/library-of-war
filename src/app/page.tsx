@@ -1,12 +1,16 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { client, articlesQuery, seriesQuery, urlFor } from '@/lib/sanity'
+import { client, liveClient, articlesQuery, seriesQuery, siteSettingsQuery, urlFor } from '@/lib/sanity'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import ArticleCard from '@/components/ArticleCard'
 import FadeIn from '@/components/FadeIn'
 
-export const revalidate = 60
+// Force dynamic so every request fetches fresh content from Sanity.
+// Articles use the CDN client (near-instant invalidation on publish).
+// siteSettings uses liveClient (bypasses CDN) so section toggles take
+// effect within seconds of saving in Sanity Studio — no rebuild needed.
+export const dynamic = 'force-dynamic'
 
 type Article = {
   _id: string
@@ -151,11 +155,50 @@ function FilterBar() {
   )
 }
 
+type SiteSettings = {
+  maintenanceMode?: boolean
+  sections?: {
+    showHero?: boolean
+    showLatestDispatches?: boolean
+    showFromArchive?: boolean
+    showEraGrid?: boolean
+    showFlagshipSeries?: boolean
+  }
+}
+
 export default async function HomePage() {
-  const [articles, series] = await Promise.all([
+  const [articles, series, settings] = await Promise.all([
     client.fetch(articlesQuery).catch(() => []) as Promise<Article[]>,
     client.fetch(seriesQuery).catch(() => []) as Promise<Series[]>,
+    liveClient.fetch(siteSettingsQuery).catch(() => null) as Promise<SiteSettings | null>,
   ])
+
+  // Section flags — default everything ON if siteSettings not yet configured
+  const flags = {
+    showHero:              settings?.sections?.showHero              ?? true,
+    showLatestDispatches:  settings?.sections?.showLatestDispatches  ?? true,
+    showFromArchive:       settings?.sections?.showFromArchive        ?? true,
+    showEraGrid:           settings?.sections?.showEraGrid            ?? true,
+    showFlagshipSeries:    settings?.sections?.showFlagshipSeries     ?? true,
+  }
+
+  if (settings?.maintenanceMode) {
+    return (
+      <>
+        <Header />
+        <main className="max-w-2xl mx-auto px-6 py-32 text-center">
+          <p className="era-label mb-6">System Status</p>
+          <h1 className="font-headline font-black text-ink text-4xl mb-4">
+            Back Shortly
+          </h1>
+          <p className="font-body text-mist text-lg">
+            The archive is undergoing maintenance. Check back in a few minutes.
+          </p>
+        </main>
+        <Footer />
+      </>
+    )
+  }
 
   // ── Featured sections require images — imageless articles appear in archive only ──
   const featuredArticles = articles.filter(a => !!a.mainImage)
@@ -205,7 +248,7 @@ export default async function HomePage() {
 
         <FilterBar />
 
-        {hero ? (
+        {flags.showHero && (hero ? (
           <HeroGrid hero={hero} stack={stack} />
         ) : (
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-0 border-b border-rule">
@@ -215,29 +258,32 @@ export default async function HomePage() {
               <div className="flex-1 animate-pulse bg-ghost/40" style={{ minHeight: '230px' }} />
             </div>
           </div>
-        )}
+        ))}
 
-        <SectionDivider label="Latest Dispatches" />
-
-        {grid3.length > 0 ? (
-          <FadeIn className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 stagger" variant="fade-up">
-            {grid3.map((article) => (
-              <ArticleCard key={article._id} article={article} size="md" showExcerpt />
-            ))}
-          </FadeIn>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
-            {[0,1,2].map((i) => (
-              <div key={i} className="animate-pulse">
-                <div className="aspect-[3/2] bg-ghost w-full mb-4" />
-                <div className="h-5 bg-ghost w-5/6 mb-2" />
-                <div className="h-5 bg-ghost w-2/3" />
+        {flags.showLatestDispatches && (
+          <>
+            <SectionDivider label="Latest Dispatches" />
+            {grid3.length > 0 ? (
+              <FadeIn className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 stagger" variant="fade-up">
+                {grid3.map((article) => (
+                  <ArticleCard key={article._id} article={article} size="md" showExcerpt />
+                ))}
+              </FadeIn>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+                {[0,1,2].map((i) => (
+                  <div key={i} className="animate-pulse">
+                    <div className="aspect-[3/2] bg-ghost w-full mb-4" />
+                    <div className="h-5 bg-ghost w-5/6 mb-2" />
+                    <div className="h-5 bg-ghost w-2/3" />
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            )}
+          </>
         )}
 
-        {grid4.length > 0 && (
+        {flags.showFromArchive && grid4.length > 0 && (
           <>
             <SectionDivider label="From the Archive" />
             <FadeIn className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 stagger" variant="fade-up">
@@ -248,7 +294,7 @@ export default async function HomePage() {
           </>
         )}
 
-        {Object.entries(byEra).map(([era, eraArticles]) => (
+        {flags.showEraGrid && Object.entries(byEra).map(([era, eraArticles]) => (
           <section key={era} aria-label={era}>
             <SectionDivider label={era} />
             <FadeIn className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 stagger" variant="fade-up">
@@ -269,57 +315,60 @@ export default async function HomePage() {
           </section>
         ))}
 
-        <SectionDivider label="Flagship Series" />
-
-        {series.length > 0 ? (
-          <FadeIn className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-2 stagger" variant="fade-up">
-            {series.slice(0, 3).map((s) => {
-              const img = s.coverImage
-                ? urlFor(s.coverImage).width(700).height(420).fit('crop').url()
-                : null
-              return (
-                <Link
-                  key={s._id}
-                  href={`/series/${s.slug.current}`}
-                  className="group block relative overflow-hidden bg-ink aspect-[4/3]"
-                >
-                  {img ? (
-                    <Image
-                      src={img}
-                      alt={s.coverImage?.alt || s.title}
-                      fill
-                      loading="lazy"
-                      className="object-cover opacity-90 transition-transform duration-500 group-hover:scale-[1.03]"
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                    />
-                  ) : (
-                    <div className="absolute inset-0 bg-ink" />
-                  )}
-                  <div className="absolute inset-0 hero-gradient" />
-                  <div className="absolute bottom-0 left-0 right-0 px-5 pb-6">
-                    <p className="font-body text-[0.6rem] tracking-[0.22em] uppercase text-white/70 mb-1">Series</p>
-                    <h3 className="font-headline font-black text-white text-2xl leading-snug group-hover:text-white/85 transition-colors">
-                      {s.title}
-                    </h3>
-                    {s.description && (
-                      <p className="font-body text-white/70 text-sm mt-2 leading-relaxed line-clamp-2">
-                        {s.description}
-                      </p>
-                    )}
+        {flags.showFlagshipSeries && (
+          <>
+            <SectionDivider label="Flagship Series" />
+            {series.length > 0 ? (
+              <FadeIn className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-2 stagger" variant="fade-up">
+                {series.slice(0, 3).map((s) => {
+                  const img = s.coverImage
+                    ? urlFor(s.coverImage).width(700).height(420).fit('crop').url()
+                    : null
+                  return (
+                    <Link
+                      key={s._id}
+                      href={`/series/${s.slug.current}`}
+                      className="group block relative overflow-hidden bg-ink aspect-[4/3]"
+                    >
+                      {img ? (
+                        <Image
+                          src={img}
+                          alt={s.coverImage?.alt || s.title}
+                          fill
+                          loading="lazy"
+                          className="object-cover opacity-90 transition-transform duration-500 group-hover:scale-[1.03]"
+                          sizes="(max-width: 768px) 100vw, 33vw"
+                        />
+                      ) : (
+                        <div className="absolute inset-0 bg-ink" />
+                      )}
+                      <div className="absolute inset-0 hero-gradient" />
+                      <div className="absolute bottom-0 left-0 right-0 px-5 pb-6">
+                        <p className="font-body text-[0.6rem] tracking-[0.22em] uppercase text-white/70 mb-1">Series</p>
+                        <h3 className="font-headline font-black text-white text-2xl leading-snug group-hover:text-white/85 transition-colors">
+                          {s.title}
+                        </h3>
+                        {s.description && (
+                          <p className="font-body text-white/70 text-sm mt-2 leading-relaxed line-clamp-2">
+                            {s.description}
+                          </p>
+                        )}
+                      </div>
+                    </Link>
+                  )
+                })}
+              </FadeIn>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-2">
+                {["Weapons That Shouldn't Have Worked", 'The Day After', 'Ghost Gear'].map((title, i) => (
+                  <div key={i} className="border border-rule p-8 aspect-[4/3] flex flex-col justify-end">
+                    <p className="era-label mb-2">Coming Soon</p>
+                    <h3 className="font-headline font-bold text-ink text-xl">{title}</h3>
                   </div>
-                </Link>
-              )
-            })}
-          </FadeIn>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-2">
-            {['Weapons That Shouldn\'t Have Worked', 'The Day After', 'Ghost Gear'].map((title, i) => (
-              <div key={i} className="border border-rule p-8 aspect-[4/3] flex flex-col justify-end">
-                <p className="era-label mb-2">Coming Soon</p>
-                <h3 className="font-headline font-bold text-ink text-xl">{title}</h3>
+                ))}
               </div>
-            ))}
-          </div>
+            )}
+          </>
         )}
 
         <div className="border-y border-rule py-10 text-center mt-14 mb-2">

@@ -70,6 +70,56 @@ export default defineType({
       initialValue: 'libraryofwar.com',
       readOnly: true,
     }),
+
+    // ─── Section Visibility ───────────────────────────────────────────────────
+    defineField({
+      name: 'sections',
+      title: 'Section Visibility',
+      description: 'Toggle homepage sections on or off without a code deploy. Changes take effect immediately.',
+      type: 'object',
+      fields: [
+        defineField({
+          name: 'showHero',
+          title: 'Hero / Top Story',
+          type: 'boolean',
+          description: 'The large featured article at the top of the homepage.',
+          initialValue: true,
+        }),
+        defineField({
+          name: 'showLatestDispatches',
+          title: 'Latest Dispatches (3-column grid)',
+          type: 'boolean',
+          initialValue: true,
+        }),
+        defineField({
+          name: 'showFromArchive',
+          title: 'From the Archive (4-column grid)',
+          type: 'boolean',
+          initialValue: true,
+        }),
+        defineField({
+          name: 'showEraGrid',
+          title: 'Era Sections (World War I, WWII, etc.)',
+          type: 'boolean',
+          initialValue: true,
+        }),
+        defineField({
+          name: 'showFlagshipSeries',
+          title: 'Flagship Series',
+          type: 'boolean',
+          initialValue: true,
+        }),
+      ],
+    }),
+
+    // ─── Maintenance Mode ─────────────────────────────────────────────────────
+    defineField({
+      name: 'maintenanceMode',
+      title: 'Maintenance Mode',
+      type: 'boolean',
+      description: 'When on, the entire site shows a maintenance message instead of content.',
+      initialValue: false,
+    }),
   ],
   preview: {
     select: { title: 'title', media: 'logo' },
