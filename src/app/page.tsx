@@ -6,10 +6,12 @@ import Footer from '@/components/Footer'
 import ArticleCard from '@/components/ArticleCard'
 import FadeIn from '@/components/FadeIn'
 
-// Force dynamic so every request fetches fresh content from Sanity.
-// Articles use the CDN client (near-instant invalidation on publish).
-// siteSettings uses liveClient (bypasses CDN) so section toggles take
-// effect within seconds of saving in Sanity Studio — no rebuild needed.
+// Edge runtime required for Cloudflare Pages.
+// force-dynamic ensures every request fetches fresh content from Sanity:
+// - Articles use the CDN client (near-instant invalidation on publish)
+// - siteSettings uses liveClient (bypasses CDN) so section toggles take
+//   effect within seconds of saving in Sanity Studio — no rebuild needed.
+export const runtime = 'edge'
 export const dynamic = 'force-dynamic'
 
 type Article = {
