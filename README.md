@@ -3,7 +3,7 @@
 Editorial military history archive. Newspaper-style. Every claim cited. Every fact verifiable.
 
 **Domain:** libraryofwar.com  
-**Contact:** hello@libraryofwar.com  
+**Contact:** libraryofwar@gmail.com
 **Social:** facebook.com/libraryxwar · instagram.com/libraryofwar
 
 ---
@@ -18,16 +18,13 @@ Editorial military history archive. Newspaper-style. Every claim cited. Every fa
 | Social | Meta Graph API via Sanity webhook |
 | Images | Public domain only — National Archives, Library of Congress, DVIDS, Wikimedia Commons PD |
 
-## House Voices
-
-- **The Analyst** — cold, clinical, source-dense, classified-briefing tone
-- **The Correspondent** — short, punchy, human detail, three-source minimum
 
 ## Flagship Series
 
 1. Weapons That Shouldn't Have Worked
-2. The Day After
-3. Ghost Gear
+2. MACV-SOG
+3. The Day After
+4. Ghost Gear
 
 ---
 
@@ -99,5 +96,4 @@ Or connect the GitHub repo to Cloudflare Pages with:
 
 - Minimum 3 verifiable sources per article
 - Public domain imagery only — always credit the archive
-- AI-written, human-edited
 - WCAG AA accessibility — 20px minimum body, semantic HTML
