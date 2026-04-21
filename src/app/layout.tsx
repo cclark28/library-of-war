@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Playfair_Display, Source_Serif_4 } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
 
 // Playfair Display — headlines, bylines, pull quotes
@@ -50,11 +51,29 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID
+
   return (
     <html
       lang="en"
       className={`${playfair.variable} ${sourceSerif.variable}`}
     >
+      {gaId && (
+        <>
+          <Script
+            src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+            strategy="afterInteractive"
+          />
+          <Script id="ga-init" strategy="afterInteractive">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${gaId}', { page_path: window.location.pathname });
+            `}
+          </Script>
+        </>
+      )}
       <body>{children}</body>
     </html>
   )
