@@ -354,7 +354,7 @@ export default defineType({
       author: 'author.name',
       media: 'mainImage',
     },
-    prepare({ title, status, author, media }: { title: string; status?: string; author?: string; media?: unknown }) {
+    prepare({ title, status, author, media }: { title: string; status?: string; author?: string; media?: any }) {
       const statusLabel = status === 'published' ? '' : ` · ${status?.toUpperCase()}`
       const byline = author ? `${author}${statusLabel}` : statusLabel.trimStart() || 'No status'
       return {
