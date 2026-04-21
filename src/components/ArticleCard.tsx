@@ -78,7 +78,16 @@ export default function ArticleCard({ article, size = 'md', showExcerpt = true, 
             {era && (
               <span className="tag-pill">{era.title}</span>
             )}
-            {seriesLabel && (
+            {seriesLabel && article.series?.slug?.current && (
+              <Link
+                href={`/series/${article.series.slug.current}`}
+                onClick={e => e.stopPropagation()}
+                className="tag-pill tag-pill-accent hover:opacity-80 transition-opacity"
+              >
+                {seriesLabel}
+              </Link>
+            )}
+            {seriesLabel && !article.series?.slug?.current && (
               <span className="tag-pill tag-pill-accent">{seriesLabel}</span>
             )}
           </div>

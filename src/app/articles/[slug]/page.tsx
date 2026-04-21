@@ -259,7 +259,7 @@ export default async function ArticlePage({ params }: Params) {
                   return (
                     <div
                       key={i}
-                      className="flex gap-5 py-5 border-b border-rule/40 last:border-0 group"
+                      className="flex gap-5 py-5 border-b border-rule/40 last:border-0"
                     >
                       {/* Type badge */}
                       <div className="flex-shrink-0 pt-0.5">
@@ -275,7 +275,7 @@ export default async function ArticlePage({ params }: Params) {
                             href={doc.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="font-body text-[0.95rem] text-ink leading-snug hover:text-accent transition-colors group-hover:underline underline-offset-2 decoration-rule"
+                            className="font-body text-[0.95rem] text-ink leading-snug hover:text-accent transition-colors"
                           >
                             {doc.title}
                             <span className="ml-1.5 text-mist text-[0.7rem] no-underline">↗</span>
