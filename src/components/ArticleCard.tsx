@@ -1,5 +1,8 @@
+'use client'
+
 import Link from 'next/link'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 import { urlFor } from '@/lib/sanity'
 
 interface Article {
@@ -43,6 +46,7 @@ const HEADLINE = {
 }
 
 export default function ArticleCard({ article, size = 'md', showExcerpt = true, layout = 'vertical' }: ArticleCardProps) {
+  const router = useRouter()
   const w = size === 'lg' || size === 'hero-left' ? 900 : size === 'hero-stack' ? 700 : 500
   const h = size === 'lg' || size === 'hero-left' ? 600 : 340
 
@@ -78,17 +82,22 @@ export default function ArticleCard({ article, size = 'md', showExcerpt = true, 
             {era && (
               <span className="tag-pill">{era.title}</span>
             )}
-            {seriesLabel && article.series?.slug?.current && (
-              <Link
-                href={`/series/${article.series.slug.current}`}
-                onClick={e => e.stopPropagation()}
-                className="tag-pill tag-pill-accent hover:opacity-80 transition-opacity"
+            {seriesLabel && (
+              <span
+                role={article.series?.slug?.current ? 'link' : undefined}
+                tabIndex={article.series?.slug?.current ? 0 : undefined}
+                onClick={article.series?.slug?.current ? (e) => {
+                  e.preventDefault()
+                  e.stopPropagation()
+                  router.push(`/series/${article.series!.slug.current}`)
+                } : undefined}
+                onKeyDown={article.series?.slug?.current ? (e) => {
+                  if (e.key === 'Enter') router.push(`/series/${article.series!.slug.current}`)
+                } : undefined}
+                className={`tag-pill tag-pill-accent${article.series?.slug?.current ? ' cursor-pointer hover:opacity-75 transition-opacity' : ''}`}
               >
                 {seriesLabel}
-              </Link>
-            )}
-            {seriesLabel && !article.series?.slug?.current && (
-              <span className="tag-pill tag-pill-accent">{seriesLabel}</span>
+              </span>
             )}
           </div>
         )}
