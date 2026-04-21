@@ -28,6 +28,7 @@ interface AnswerRecord {
   history?:     string
   wikiUrl:      string
   credit:       string
+  sourceUrl?:   string
 }
 
 interface GameQuestion extends IDDrillQuestion {
@@ -270,6 +271,7 @@ export default function IDDrillClient({
       history:     currentQ.history,
       wikiUrl:     currentQ.wikiUrl,
       credit:      currentQ.image.credit,
+      sourceUrl:   currentQ.image.sourceUrl,
     }
 
     setHistory(prev => [...prev, record])
@@ -608,6 +610,7 @@ export default function IDDrillClient({
                   alt="ID Drill preview"
                   className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-500 scale-100 hover:scale-105 transition-transform"
                   loading="lazy"
+                  referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/40 to-transparent" />
               </div>
@@ -685,6 +688,7 @@ export default function IDDrillClient({
               onLoad={() => setImgLoaded(true)}
               onError={() => { setImgError(true); setImgLoaded(true) }}
               loading="eager"
+              referrerPolicy="no-referrer"
             />
             {/* Category pill */}
             <div className="absolute bottom-3 left-3">
@@ -814,6 +818,7 @@ export default function IDDrillClient({
               alt={currentQ.image.alt}
               className="w-full h-full object-contain"
               style={{ filter: isCorrect ? 'none' : 'saturate(0.6)' }}
+              referrerPolicy="no-referrer"
             />
             {/* Overlay tint */}
             <div className="absolute inset-0 pointer-events-none" style={{ background: `${statusColor}10` }} />
@@ -923,25 +928,51 @@ export default function IDDrillClient({
                 </>
               )}
 
-              <div className="flex items-center gap-4 pt-3 border-t border-rule/50">
-                <a
-                  href={currentQ.wikiUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-body text-[0.6rem] tracking-[0.16em] uppercase border border-ink px-4 py-2 hover:bg-ink hover:text-paper transition-colors inline-block"
-                >
-                  Read More →
-                </a>
-                {currentQ.image.sourceUrl && (
+              {/* Further Reading */}
+              <div className="pt-3 border-t border-rule/50">
+                <div className="font-body text-[0.52rem] tracking-[0.22em] uppercase text-mist mb-3">Further Reading</div>
+                <div className="flex flex-col gap-2">
                   <a
-                    href={currentQ.image.sourceUrl}
+                    href={currentQ.wikiUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-body text-[0.55rem] tracking-[0.12em] uppercase text-mist/60 hover:text-mist transition-colors"
+                    className="flex items-center justify-between group border border-rule px-4 py-2.5 hover:border-ink transition-colors bg-paper"
                   >
-                    Photo Source
+                    <div>
+                      <div className="font-body text-[0.7rem] font-semibold text-ink group-hover:text-accent transition-colors">
+                        {currentQ.name}
+                      </div>
+                      <div className="font-body text-[0.55rem] tracking-[0.1em] uppercase text-mist/60 mt-0.5">
+                        {currentQ.wikiUrl.includes('wikipedia') ? 'Wikipedia' :
+                         currentQ.wikiUrl.includes('history.army') ? 'U.S. Army Center of Military History' :
+                         currentQ.wikiUrl.includes('navsource') ? 'NavSource Naval History' :
+                         currentQ.wikiUrl.includes('history.navy') ? 'Naval History & Heritage Command' :
+                         currentQ.wikiUrl.includes('nationalmuseum') ? 'National Museum of the USAF' :
+                         new URL(currentQ.wikiUrl).hostname.replace('www.', '')}
+                      </div>
+                    </div>
+                    <span className="text-mist group-hover:text-ink transition-colors text-[0.7rem] flex-shrink-0 ml-3">→</span>
                   </a>
-                )}
+
+                  {currentQ.image.sourceUrl && (
+                    <a
+                      href={currentQ.image.sourceUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-between group border border-rule px-4 py-2.5 hover:border-ink transition-colors bg-paper"
+                    >
+                      <div>
+                        <div className="font-body text-[0.7rem] font-semibold text-ink group-hover:text-accent transition-colors">
+                          Original Photograph
+                        </div>
+                        <div className="font-body text-[0.55rem] tracking-[0.1em] uppercase text-mist/60 mt-0.5">
+                          {currentQ.image.credit}
+                        </div>
+                      </div>
+                      <span className="text-mist group-hover:text-ink transition-colors text-[0.7rem] flex-shrink-0 ml-3">→</span>
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
 
@@ -1081,6 +1112,7 @@ export default function IDDrillClient({
                         alt={rec.name}
                         className="w-full h-full object-cover opacity-80"
                         loading="lazy"
+                        referrerPolicy="no-referrer"
                       />
                     </div>
                     <div className="flex-1 min-w-0">
@@ -1089,14 +1121,26 @@ export default function IDDrillClient({
                         {rec.timeout ? 'Time out' : `You picked: ${rec.playerPick}`}
                       </div>
                     </div>
-                    <a
-                      href={rec.wikiUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-shrink-0 font-body text-[0.55rem] tracking-[0.14em] uppercase border border-rule px-3 py-1.5 hover:border-ink hover:text-ink text-mist transition-colors"
-                    >
-                      Read More →
-                    </a>
+                    <div className="flex-shrink-0 flex flex-col items-end gap-1.5">
+                      <a
+                        href={rec.wikiUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-body text-[0.55rem] tracking-[0.14em] uppercase border border-rule px-3 py-1.5 hover:border-ink hover:text-ink text-mist transition-colors whitespace-nowrap"
+                      >
+                        Read More →
+                      </a>
+                      {rec.sourceUrl && (
+                        <a
+                          href={rec.sourceUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-body text-[0.5rem] tracking-[0.1em] uppercase text-mist/50 hover:text-mist transition-colors whitespace-nowrap"
+                        >
+                          Photo Source →
+                        </a>
+                      )}
+                    </div>
                   </div>
                 ))}
               </div>
