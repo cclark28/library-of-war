@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Test your military recognition skills. 25 questions. 25 seconds each. Identify aircraft, armor, small arms, warships, ranks, and medals from public domain photographs.',
 }
 
-export const revalidate = 300 // 5-minute ISR
+export const revalidate = 60 // 60-second ISR
 
 const client = createClient({
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,

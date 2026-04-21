@@ -601,10 +601,10 @@ export default function IDDrillClient({
           {/* Right: photo preview grid — desktop only */}
           <div className="hidden lg:grid flex-1 grid-cols-2 gap-px bg-rule max-h-screen overflow-hidden">
             {[
-              'https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/F-14_Tomcat_launching_from_USS_Enterprise_%28CVN-65%29_1986.jpg/800px-F-14_Tomcat_launching_from_USS_Enterprise_%28CVN-65%29_1986.jpg',
-              'https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/M1A1_Abrams_Tank.jpg/800px-M1A1_Abrams_Tank.jpg',
-              'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Medal_of_Honor_Army_current.jpg/400px-Medal_of_Honor_Army_current.jpg',
-              'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/AK-47_type_II_part_dm.jpg/800px-AK-47_type_II_part_dm.jpg',
+              'https://cdn.sanity.io/images/tifzt4zw/production/4594a3d9a1ace25d5c62757593744096eb27eee0-1796x1297.jpg',
+              'https://cdn.sanity.io/images/tifzt4zw/production/22867bf947d9d721aa86df5bfa5cd1fbcfee943e-6612x3719.jpg',
+              'https://cdn.sanity.io/images/tifzt4zw/production/3a4d376aebb11a0aa32e7472761c3b5bf93f719a-1000x473.jpg',
+              'https://cdn.sanity.io/images/tifzt4zw/production/6311e80f558d4736c1a8ef0d6a5332ba3d766146-2450x950.png',
             ].map((src, i) => (
               <div key={i} className="relative overflow-hidden bg-ghost aspect-square">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
