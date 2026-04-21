@@ -215,9 +215,7 @@ export default defineType({
       return {
         title: `${catLabel[category] ?? '?'} ${title}${active ? '' : ' ⛔'}`,
         subtitle: `${category} · ${diffLabel[difficulty] ?? difficulty}`,
-        media: imageUrl
-          ? { _type: 'reference', asset: { _type: 'reference', url: imageUrl } }
-          : undefined,
+        media: imageUrl as string | undefined,
       }
     },
   },
