@@ -11,6 +11,7 @@ import missionPage from './missionPage'
 import resourcesPage from './resourcesPage'
 import contributorPage from './contributorPage'
 import contributorSubmission from './contributorSubmission'
+import idDrillQuestion from './idDrillQuestion'
 
 export const schemaTypes = [
   // ── Content documents ────────────────────────────────────────────
@@ -19,6 +20,7 @@ export const schemaTypes = [
   series,
   category,
   contributorSubmission,
+  idDrillQuestion,
   // ── Site configuration singletons ────────────────────────────────
   siteSettings,
   navigation,

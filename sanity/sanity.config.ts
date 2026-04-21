@@ -49,6 +49,20 @@ export default defineConfig({
 
             S.divider(),
 
+            // ID Drill
+            S.listItem()
+              .title('ID Drill Questions')
+              .child(
+                S.documentTypeList('idDrillQuestion')
+                  .title('ID Drill Questions')
+                  .defaultOrdering([
+                    { field: 'category', direction: 'asc' },
+                    { field: 'difficulty', direction: 'asc' },
+                  ])
+              ),
+
+            S.divider(),
+
             // Contributor submissions — always stay in draft, never auto-publish
             S.listItem()
               .title('Contributor Submissions')
