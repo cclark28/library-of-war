@@ -242,6 +242,7 @@ export default function IDDrillClient({
   const advanceRef    = useRef<NodeJS.Timeout | null>(null)
   const timeUsedRef   = useRef(0)
   const callsignRef   = useRef<HTMLInputElement>(null)
+  const gameImgRef    = useRef<HTMLImageElement>(null)
 
   const currentQ = queue[qIndex]
 
@@ -331,6 +332,15 @@ export default function IDDrillClient({
     if (screen === 'game' && !locked) startTimer()
     return () => clearTimers()
   }, [screen, qIndex]) // eslint-disable-line
+
+  /* ── Handle cached images: onLoad won't fire if browser already has it ───── */
+  useEffect(() => {
+    if (screen !== 'game') return
+    const img = gameImgRef.current
+    if (img && img.complete && img.naturalWidth > 0) {
+      setImgLoaded(true)
+    }
+  }, [screen, qIndex])
 
   /* ── Keyboard navigation ───────────────────────────────────────────────────── */
   useEffect(() => {
@@ -683,6 +693,7 @@ export default function IDDrillClient({
             )}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
+              ref={gameImgRef}
               key={currentQ._id}
               src={proxied(currentQ.image.url) || PLACEHOLDER}
               alt={currentQ.image.alt}
