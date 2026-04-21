@@ -199,10 +199,14 @@ function ShareButtons({
 }
 
 /* ─── Image proxy — routes Wikimedia URLs through our edge function ──────────── */
-function proxied(url: string): string {
+/* ─── Sanity CDN URLs get resized + auto-formatted for fast loading ──────────── */
+function proxied(url: string, w = 900): string {
   if (!url) return url
   if (url.startsWith('https://upload.wikimedia.org/') || url.startsWith('https://commons.wikimedia.org/')) {
     return `/api/proxy-image?url=${encodeURIComponent(url)}`
+  }
+  if (url.startsWith('https://cdn.sanity.io/images/')) {
+    return `${url}?w=${w}&auto=format&q=80&fit=max`
   }
   return url
 }
@@ -1112,7 +1116,7 @@ export default function IDDrillClient({
                     <div className="flex-shrink-0 w-12 h-9 bg-rule/30 overflow-hidden">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
-                        src={proxied(rec.imageUrl)}
+                        src={proxied(rec.imageUrl, 120)}
                         alt={rec.name}
                         className="w-full h-full object-cover opacity-80"
                         loading="lazy"
