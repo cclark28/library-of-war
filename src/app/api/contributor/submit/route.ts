@@ -38,6 +38,7 @@ export async function POST(request: NextRequest) {
 
   // ── Extract fields ────────────────────────────────────────────────────────────
   const name    = String(formData.get('name')    ?? '').trim()
+  const email   = String(formData.get('email')   ?? '').trim()
   const title   = String(formData.get('title')   ?? '').trim()
   const series  = String(formData.get('series')  ?? '').trim()
   const content = String(formData.get('content') ?? '').trim()
@@ -121,6 +122,7 @@ export async function POST(request: NextRequest) {
     _id: draftId,
     _type: 'contributorSubmission',
     contributorName: name,
+    contactEmail: email || undefined,
     articleTitle: title,
     content,
     submittedAt: new Date().toISOString(),
@@ -187,6 +189,10 @@ export async function POST(request: NextRequest) {
             <td style="padding:10px 0;color:#888078;font-size:11px;text-transform:uppercase;letter-spacing:0.15em;width:130px;">Contributor</td>
             <td style="padding:10px 0;font-size:16px;font-weight:bold;">${name}</td>
           </tr>
+          ${email ? `<tr style="border-bottom:1px solid #C8B89A;">
+            <td style="padding:10px 0;color:#888078;font-size:11px;text-transform:uppercase;letter-spacing:0.15em;">Email</td>
+            <td style="padding:10px 0;font-size:15px;"><a href="mailto:${email}" style="color:#8B1A1A;">${email}</a></td>
+          </tr>` : ''}
           <tr style="border-bottom:1px solid #C8B89A;">
             <td style="padding:10px 0;color:#888078;font-size:11px;text-transform:uppercase;letter-spacing:0.15em;">Title</td>
             <td style="padding:10px 0;font-size:16px;font-weight:bold;">${title}</td>

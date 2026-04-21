@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import { client, seriesBySlugQuery, seriesQuery } from '@/lib/sanity'
 import { urlFor } from '@/lib/sanity'
-import Header from '@/components/Header'
+import HeaderWrapper from '@/components/HeaderWrapper'
 import Footer from '@/components/Footer'
 import ArticleCard from '@/components/ArticleCard'
 
@@ -23,7 +23,7 @@ export default async function SeriesPage({ params }: Params) {
 
   return (
     <>
-      <Header />
+      <HeaderWrapper />
 
       <main>
         {/* ── Series Hero ─────────────────────────────────────────────── */}

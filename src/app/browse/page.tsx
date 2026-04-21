@@ -1,5 +1,5 @@
 import { client, articlesByEraQuery, articlesQuery } from '@/lib/sanity'
-import Header from '@/components/Header'
+import HeaderWrapper from '@/components/HeaderWrapper'
 import Footer from '@/components/Footer'
 import ArticleCard from '@/components/ArticleCard'
 
@@ -31,7 +31,6 @@ type Article = {
   title: string
   slug: { current: string }
   publishedAt?: string
-  voice: 'analyst' | 'correspondent'
   excerpt?: string
   mainImage?: { asset: { _ref: string }; alt?: string; hotspot?: { x: number; y: number } }
   series?: { title: string; slug: { current: string } }
@@ -57,7 +56,7 @@ export default async function BrowsePage({ searchParams }: Props) {
 
   return (
     <>
-      <Header />
+      <HeaderWrapper />
 
       <main>
 

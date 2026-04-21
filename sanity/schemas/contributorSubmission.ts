@@ -62,6 +62,19 @@ export default defineType({
       ],
     }),
     defineField({
+      name: 'contactEmail',
+      title: 'Contact Email',
+      type: 'string',
+      description: 'Used to contact the contributor for approval, denial, or follow-up.',
+      validation: (Rule) => Rule.required().email(),
+    }),
+    defineField({
+      name: 'contactPhone',
+      title: 'Contact Phone',
+      type: 'string',
+      description: 'Optional.',
+    }),
+    defineField({
       name: 'submittedAt',
       title: 'Submitted At',
       type: 'datetime',

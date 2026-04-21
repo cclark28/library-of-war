@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { client, articleBySlugQuery, relatedArticlesQuery, urlFor } from '@/lib/sanity'
 import { calcReadTime, DIFFICULTY_LABEL } from '@/lib/readTime'
-import Header from '@/components/Header'
+import HeaderWrapper from '@/components/HeaderWrapper'
 import Footer from '@/components/Footer'
 import ArticleCard from '@/components/ArticleCard'
 import FadeIn from '@/components/FadeIn'
@@ -135,7 +135,7 @@ export default async function ArticlePage({ params }: Params) {
 
   return (
     <>
-      <Header />
+      <HeaderWrapper />
 
       <main>
         {/* ── Crest + Title ───────────────────────────────────────────── */}

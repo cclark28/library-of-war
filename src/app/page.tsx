@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { client, liveClient, articlesQuery, seriesQuery, siteSettingsQuery, urlFor } from '@/lib/sanity'
-import Header from '@/components/Header'
+import { client, liveClient, articlesQuery, seriesQuery, siteSettingsQuery, homepageContentQuery, urlFor } from '@/lib/sanity'
+import HeaderWrapper from '@/components/HeaderWrapper'
 import Footer from '@/components/Footer'
 import ArticleCard from '@/components/ArticleCard'
 import FadeIn from '@/components/FadeIn'
@@ -140,18 +140,18 @@ function HeroGrid({ hero, stack }: { hero: Article; stack: Article[] }) {
   )
 }
 
-function FilterBar() {
+function FilterBar({ filter, showAll, sort }: { filter: string; showAll: string; sort: string }) {
   return (
     <div className="flex items-center justify-between py-3 border-b border-rule text-[0.62rem] font-body tracking-[0.18em] uppercase">
       <div className="flex items-center gap-4">
         <button className="text-ink hover:text-accent transition-colors flex items-center gap-1">
-          Filter <span className="text-mist">+</span>
+          {filter} <span className="text-mist">+</span>
         </button>
         <span className="text-rule">|</span>
-        <span className="text-mist">Show All</span>
+        <span className="text-mist">{showAll}</span>
       </div>
       <button className="text-mist hover:text-ink transition-colors flex items-center gap-1">
-        Sort By <span>+</span>
+        {sort} <span>+</span>
       </button>
     </div>
   )
@@ -172,12 +172,36 @@ type SiteSettings = {
   }
 }
 
+type HomepageContent = {
+  latestDispatchesLabel?: string
+  fromArchiveLabel?: string
+  flagshipSeriesLabel?: string
+  seeAllLabel?: string
+  comingSoonLabel?: string
+  filterLabel?: string
+  showAllLabel?: string
+  sortLabel?: string
+  mastTagline?: string
+}
+
 export default async function HomePage() {
-  const [articles, series, settings] = await Promise.all([
+  const [articles, series, settings, hpContent] = await Promise.all([
     client.fetch(articlesQuery).catch(() => []) as Promise<Article[]>,
     client.fetch(seriesQuery).catch(() => []) as Promise<Series[]>,
     liveClient.fetch(siteSettingsQuery).catch(() => null) as Promise<SiteSettings | null>,
+    liveClient.fetch(homepageContentQuery).catch(() => null) as Promise<HomepageContent | null>,
   ])
+
+  const labels = {
+    latestDispatches: hpContent?.latestDispatchesLabel ?? 'Latest Dispatches',
+    fromArchive:      hpContent?.fromArchiveLabel      ?? 'From the Archive',
+    flagshipSeries:   hpContent?.flagshipSeriesLabel   ?? 'Flagship Series',
+    seeAll:           hpContent?.seeAllLabel           ?? '— See All Archive Articles —',
+    comingSoon:       hpContent?.comingSoonLabel        ?? 'Coming Soon',
+    filter:           hpContent?.filterLabel           ?? 'Filter',
+    showAll:          hpContent?.showAllLabel           ?? 'Show All',
+    sort:             hpContent?.sortLabel              ?? 'Sort By',
+  }
 
   // Section flags — default everything ON if siteSettings not yet configured
   const flags = {
@@ -196,7 +220,7 @@ export default async function HomePage() {
 
     return (
       <>
-        <Header />
+        <HeaderWrapper />
         <main className="max-w-2xl mx-auto px-6 py-32 text-center">
           {logoUrl && (
             <div className="flex justify-center mb-10">
@@ -269,11 +293,11 @@ export default async function HomePage() {
 
   return (
     <>
-      <Header />
+      <HeaderWrapper />
 
       <main className="max-w-7xl mx-auto px-5 md:px-6">
 
-        <FilterBar />
+        <FilterBar filter={labels.filter} showAll={labels.showAll} sort={labels.sort} />
 
         {flags.showHero && (hero ? (
           <HeroGrid hero={hero} stack={stack} />
@@ -289,7 +313,7 @@ export default async function HomePage() {
 
         {flags.showLatestDispatches && (
           <>
-            <SectionDivider label="Latest Dispatches" />
+            <SectionDivider label={labels.latestDispatches} />
             {grid3.length > 0 ? (
               <FadeIn className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 stagger" variant="fade-up">
                 {grid3.map((article) => (
@@ -312,7 +336,7 @@ export default async function HomePage() {
 
         {flags.showFromArchive && grid4.length > 0 && (
           <>
-            <SectionDivider label="From the Archive" />
+            <SectionDivider label={labels.fromArchive} />
             <FadeIn className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 stagger" variant="fade-up">
               {grid4.map((article) => (
                 <ArticleCard key={article._id} article={article} size="sm" showExcerpt={false} />
@@ -344,7 +368,7 @@ export default async function HomePage() {
 
         {flags.showFlagshipSeries && (
           <>
-            <SectionDivider label="Flagship Series" />
+            <SectionDivider label={labels.flagshipSeries} />
             {series.length > 0 ? (
               <FadeIn className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-2 stagger" variant="fade-up">
                 {series.slice(0, 3).map((s) => {
@@ -389,7 +413,7 @@ export default async function HomePage() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-2">
                 {["Weapons That Shouldn't Have Worked", 'The Day After', 'Ghost Gear'].map((title, i) => (
                   <div key={i} className="border border-rule p-8 aspect-[4/3] flex flex-col justify-end">
-                    <p className="era-label mb-2">Coming Soon</p>
+                    <p className="era-label mb-2">{labels.comingSoon}</p>
                     <h3 className="font-headline font-bold text-ink text-xl">{title}</h3>
                   </div>
                 ))}
@@ -403,7 +427,7 @@ export default async function HomePage() {
             href="/browse"
             className="font-body text-[0.65rem] tracking-[0.3em] uppercase text-mist hover:text-ink transition-colors"
           >
-            — See All Archive Articles —
+            {labels.seeAll}
           </Link>
         </div>
 

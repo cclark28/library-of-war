@@ -131,6 +131,88 @@ export const articlesByEraQuery = `
   }
 `
 
+export const navigationQuery = `
+  *[_type == "navigation"][0] {
+    homeLabel,
+    browseLabel,
+    seriesLabel,
+    resourcesLabel,
+    missionLabel,
+    searchLabel,
+    searchPlaceholder,
+    eraItems[] { label, years, href, visible },
+    seriesItems[] { label, href, visible },
+    socialLinks[] { label, href }
+  }
+`
+
+export const footerQuery = `
+  *[_type == "footer"][0] {
+    tagline,
+    contactEmail,
+    copyrightText,
+    domainLabel,
+    socialLinks[] { label, href },
+    columns[] {
+      heading,
+      links[] { label, href }
+    }
+  }
+`
+
+export const homepageContentQuery = `
+  *[_type == "homepageContent"][0] {
+    latestDispatchesLabel,
+    fromArchiveLabel,
+    flagshipSeriesLabel,
+    seeAllLabel,
+    comingSoonLabel,
+    filterLabel,
+    showAllLabel,
+    sortLabel,
+    mastTagline
+  }
+`
+
+export const notFoundPageQuery = `
+  *[_type == "notFoundPage"][0] {
+    headline,
+    message,
+    ctaLabel,
+    ctaHref,
+    facts[] { text, attribution }
+  }
+`
+
+export const missionPageQuery = `
+  *[_type == "missionPage"][0] {
+    heroHeadline,
+    body,
+    donationHeading,
+    donationSubtext
+  }
+`
+
+export const resourcesPageQuery = `
+  *[_type == "resourcesPage"][0] {
+    pageTitle,
+    subtitle,
+    footerNote,
+    sections[] {
+      title,
+      items[] { name, url, description }
+    }
+  }
+`
+
+export const contributorPageQuery = `
+  *[_type == "contributorPage"][0] {
+    gateLabel, gateHeadline, gateSubtext, gateCtaLabel,
+    formLabel, formHeadline, formSubtext, guidelines, submitCtaLabel,
+    successLabel, successHeadline, successMessage
+  }
+`
+
 export const siteSettingsQuery = `
   *[_type == "siteSettings"][0] {
     title,

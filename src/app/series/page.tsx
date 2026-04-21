@@ -1,5 +1,5 @@
 import { client, seriesQuery } from '@/lib/sanity'
-import Header from '@/components/Header'
+import HeaderWrapper from '@/components/HeaderWrapper'
 import Footer from '@/components/Footer'
 import SeriesCard from '@/components/SeriesCard'
 
@@ -10,7 +10,7 @@ export default async function SeriesIndexPage() {
 
   return (
     <>
-      <Header />
+      <HeaderWrapper />
       <main className="max-w-7xl mx-auto px-6 py-16">
         <div className="flex items-center gap-4 mb-12">
           <div className="flex-1 rule-top" />

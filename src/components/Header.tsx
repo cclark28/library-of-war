@@ -5,9 +5,25 @@ import Image from 'next/image'
 import { useState, useRef, useCallback, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 
-/* ── Data ──────────────────────────────────────────────────────────────────── */
+/* ── Nav data type ─────────────────────────────────────────────────────────── */
 
-const ERAS = [
+export type NavData = {
+  homeLabel?: string
+  browseLabel?: string
+  seriesLabel?: string
+  resourcesLabel?: string
+  missionLabel?: string
+  searchLabel?: string
+  searchPlaceholder?: string
+  mastTagline?: string
+  eraItems?: Array<{ label: string; years?: string; href: string; visible?: boolean }>
+  seriesItems?: Array<{ label: string; href: string; visible?: boolean }>
+  socialLinks?: Array<{ label: string; href: string }>
+}
+
+/* ── Fallback data (used if Sanity document not yet created) ───────────────── */
+
+const FALLBACK_ERAS = [
   { label: 'World War I',       years: '1914–1918',    href: '/browse?era=world-war-i' },
   { label: 'World War II',      years: '1939–1945',    href: '/browse?era=world-war-ii' },
   { label: 'Korean War',        years: '1950–1953',    href: '/browse?era=korean-war' },
@@ -16,13 +32,13 @@ const ERAS = [
   { label: 'Modern Conflicts',  years: '1990–Present', href: '/browse?era=modern-conflicts' },
 ]
 
-const SERIES_ITEMS = [
+const FALLBACK_SERIES = [
   { label: "Weapons That Shouldn't Have Worked", href: '/series/weapons-that-shouldnt-have-worked' },
   { label: 'The Day After',                       href: '/series/the-day-after' },
   { label: 'Black Projects',                      href: '/series/black-projects' },
 ]
 
-const SOCIAL = [
+const FALLBACK_SOCIAL = [
   { label: 'X',         href: 'https://x.com/libraryofwar' },
   { label: 'Instagram', href: 'https://instagram.com/libraryofwar' },
   { label: 'Facebook',  href: 'https://facebook.com/libraryxwar' },
@@ -45,8 +61,23 @@ function ChevronDown({ open }: { open?: boolean }) {
 
 /* ── Component ─────────────────────────────────────────────────────────────── */
 
-export default function Header() {
+export default function Header({ navData }: { navData?: NavData | null }) {
   const router = useRouter()
+
+  // Merge Sanity data with fallbacks, filter hidden items
+  const ERAS         = (navData?.eraItems    ?? FALLBACK_ERAS).filter(e => e.visible !== false)
+  const SERIES_ITEMS = (navData?.seriesItems ?? FALLBACK_SERIES).filter(s => s.visible !== false)
+  const SOCIAL       = navData?.socialLinks ?? FALLBACK_SOCIAL
+  const labels = {
+    home:      navData?.homeLabel      ?? 'Home',
+    browse:    navData?.browseLabel    ?? 'Browse by Era',
+    series:    navData?.seriesLabel    ?? 'Series',
+    resources: navData?.resourcesLabel ?? 'Resources',
+    mission:   navData?.missionLabel   ?? 'Mission',
+    search:    navData?.searchLabel    ?? 'Search',
+    searchPH:  navData?.searchPlaceholder ?? 'Search the archive…',
+    tagline:   navData?.mastTagline    ?? 'Military History Archive',
+  }
   const [mobileOpen, setMobileOpen]     = useState(false)
   const [mobileEra, setMobileEra]       = useState(false)
   const [mobileSeries, setMobileSeries] = useState(false)
@@ -137,7 +168,7 @@ export default function Header() {
                   type="search"
                   value={searchQuery}
                   onChange={e => setSearchQuery(e.target.value)}
-                  placeholder="Search the archive…"
+                  placeholder={labels.searchPH}
                   className="w-full bg-transparent font-headline text-[1.75rem] text-ink placeholder:text-mist/40 outline-none"
                 />
                 <button
@@ -191,7 +222,7 @@ export default function Header() {
                 <circle cx="5.5" cy="5.5" r="4.5"/>
                 <line x1="9" y1="9" x2="12" y2="12"/>
               </svg>
-              Search
+              {labels.search}
             </button>
 
             <button
@@ -230,7 +261,7 @@ export default function Header() {
               style={{ height: 'clamp(44px, 7vw, 88px)', width: 'auto' }}
             />
             <p className="font-body text-mist text-[0.58rem] tracking-[0.35em] uppercase mt-3 group-hover:text-accent transition-colors">
-              Military History Archive
+              {labels.tagline}
             </p>
           </Link>
         </div>
@@ -243,7 +274,7 @@ export default function Header() {
           <ul className="max-w-7xl mx-auto px-6 flex items-stretch justify-center list-none m-0 p-0">
 
             <li className="border-r border-rule flex items-center">
-              <Link href="/" className={NAV_LINK}>Home</Link>
+              <Link href="/" className={NAV_LINK}>{labels.home}</Link>
             </li>
 
             <li
@@ -257,7 +288,7 @@ export default function Header() {
                 aria-haspopup="true"
                 onClick={() => { setOpenMenu(null); router.push('/browse') }}
               >
-                Browse by Era
+                {labels.browse}
                 <ChevronDown open={openMenu === 'era'} />
               </button>
             </li>
@@ -273,7 +304,7 @@ export default function Header() {
                 aria-haspopup="true"
                 onClick={() => { setOpenMenu(null); router.push('/series') }}
               >
-                Series
+                {labels.series}
                 <ChevronDown open={openMenu === 'series'} />
               </button>
 
@@ -300,11 +331,11 @@ export default function Header() {
             </li>
 
             <li className="border-r border-rule flex items-center">
-              <Link href="/resources" className={NAV_LINK}>Resources</Link>
+              <Link href="/resources" className={NAV_LINK}>{labels.resources}</Link>
             </li>
 
             <li className="flex items-center">
-              <Link href="/about" className={NAV_LINK}>Mission</Link>
+              <Link href="/about" className={NAV_LINK}>{labels.mission}</Link>
             </li>
 
           </ul>
@@ -371,7 +402,7 @@ export default function Header() {
 
             <Link href="/" onClick={() => setMobileOpen(false)}
               className="block px-6 py-3.5 font-body text-[0.72rem] tracking-[0.14em] uppercase text-ink hover:text-accent transition-colors border-b border-rule">
-              Home
+              {labels.home}
             </Link>
 
             <div>
@@ -379,7 +410,7 @@ export default function Header() {
                 onClick={() => setMobileEra(v => !v)}
                 className="w-full flex justify-between items-center px-6 py-3.5 font-body text-[0.72rem] tracking-[0.14em] uppercase text-ink border-b border-rule"
               >
-                Browse by Era
+                {labels.browse}
                 <ChevronDown open={mobileEra} />
               </button>
               {mobileEra && (
@@ -404,7 +435,7 @@ export default function Header() {
                 onClick={() => setMobileSeries(v => !v)}
                 className="w-full flex justify-between items-center px-6 py-3.5 font-body text-[0.72rem] tracking-[0.14em] uppercase text-ink border-b border-rule"
               >
-                Series
+                {labels.series}
                 <ChevronDown open={mobileSeries} />
               </button>
               {mobileSeries && (
@@ -425,12 +456,12 @@ export default function Header() {
 
             <Link href="/resources" onClick={() => setMobileOpen(false)}
               className="block px-6 py-3.5 font-body text-[0.72rem] tracking-[0.14em] uppercase text-ink hover:text-accent transition-colors border-b border-rule">
-              Resources
+              {labels.resources}
             </Link>
 
             <Link href="/about" onClick={() => setMobileOpen(false)}
               className="block px-6 py-3.5 font-body text-[0.72rem] tracking-[0.14em] uppercase text-ink hover:text-accent transition-colors">
-              Mission
+              {labels.mission}
             </Link>
 
           </nav>
