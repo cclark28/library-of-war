@@ -31,8 +31,9 @@ export default defineType({
         ],
         preview: {
           select: { title: 'label', subtitle: 'years', visible: 'visible' },
-          prepare({ title, subtitle, visible }: { title: string; subtitle?: string; visible?: boolean }) {
-            return { title: `${visible === false ? '🙈 ' : ''}${title}`, subtitle }
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          prepare(value: any) {
+            return { title: `${value.visible === false ? '🙈 ' : ''}${value.title}`, subtitle: value.subtitle }
           },
         },
       }],
@@ -54,8 +55,9 @@ export default defineType({
         ],
         preview: {
           select: { title: 'label', visible: 'visible' },
-          prepare({ title, visible }: { title: string; visible?: boolean }) {
-            return { title: `${visible === false ? '🙈 ' : ''}${title}` }
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          prepare(value: any) {
+            return { title: `${value.visible === false ? '🙈 ' : ''}${value.title}` }
           },
         },
       }],

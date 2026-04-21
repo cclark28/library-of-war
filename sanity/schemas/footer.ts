@@ -76,8 +76,9 @@ export default defineType({
         ],
         preview: {
           select: { title: 'heading', links: 'links' },
-          prepare({ title, links }: { title: string; links?: unknown[] }) {
-            return { title, subtitle: `${links?.length ?? 0} link${links?.length === 1 ? '' : 's'}` }
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          prepare(value: any) {
+            return { title: value.title, subtitle: `${value.links?.length ?? 0} link${value.links?.length === 1 ? '' : 's'}` }
           },
         },
       }],

@@ -59,10 +59,11 @@ export default defineType({
         ],
         preview: {
           select: { title: 'text', subtitle: 'attribution' },
-          prepare({ title, subtitle }: { title: string; subtitle?: string }) {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          prepare(value: any) {
             return {
-              title: title?.slice(0, 80) + (title?.length > 80 ? '…' : ''),
-              subtitle: subtitle || 'No attribution',
+              title: value.title?.slice(0, 80) + (value.title?.length > 80 ? '…' : ''),
+              subtitle: value.subtitle || 'No attribution',
             }
           },
         },

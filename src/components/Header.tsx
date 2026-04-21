@@ -23,7 +23,7 @@ export type NavData = {
 
 /* ── Fallback data (used if Sanity document not yet created) ───────────────── */
 
-const FALLBACK_ERAS = [
+const FALLBACK_ERAS: Array<{ label: string; years?: string; href: string; visible?: boolean }> = [
   { label: 'World War I',       years: '1914–1918',    href: '/browse?era=world-war-i' },
   { label: 'World War II',      years: '1939–1945',    href: '/browse?era=world-war-ii' },
   { label: 'Korean War',        years: '1950–1953',    href: '/browse?era=korean-war' },
@@ -32,7 +32,7 @@ const FALLBACK_ERAS = [
   { label: 'Modern Conflicts',  years: '1990–Present', href: '/browse?era=modern-conflicts' },
 ]
 
-const FALLBACK_SERIES = [
+const FALLBACK_SERIES: Array<{ label: string; href: string; visible?: boolean }> = [
   { label: "Weapons That Shouldn't Have Worked", href: '/series/weapons-that-shouldnt-have-worked' },
   { label: 'The Day After',                       href: '/series/the-day-after' },
   { label: 'Black Projects',                      href: '/series/black-projects' },

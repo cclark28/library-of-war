@@ -61,8 +61,9 @@ export default defineType({
         ],
         preview: {
           select: { title: 'title', items: 'items' },
-          prepare({ title, items }: { title: string; items?: unknown[] }) {
-            return { title, subtitle: `${items?.length ?? 0} resource${items?.length === 1 ? '' : 's'}` }
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          prepare(value: any) {
+            return { title: value.title, subtitle: `${value.items?.length ?? 0} resource${value.items?.length === 1 ? '' : 's'}` }
           },
         },
       }],
