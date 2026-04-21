@@ -283,6 +283,66 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateX(0);
 }
 
+/* ─── Hallowed Ground — map markers ─────────────────────────────────────────── */
+
+/* Individual soldier pin — sized for light tile visibility */
+.hallowed-marker {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255,255,255,0.7);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  position: relative;
+  z-index: 1;
+}
+.hallowed-marker:hover {
+  transform: scale(1.7);
+  z-index: 10;
+}
+
+.hallowed-marker--kia { background: #ef4444; box-shadow: 0 1px 3px rgba(0,0,0,0.25); }
+.hallowed-marker--mia { background: #ca8a04; box-shadow: 0 1px 3px rgba(0,0,0,0.25); }
+.hallowed-marker--wia { background: #3b82f6; box-shadow: 0 1px 3px rgba(0,0,0,0.25); }
+.hallowed-marker--pow { background: #f97316; box-shadow: 0 1px 3px rgba(0,0,0,0.25); }
+
+/* Selected state — editorial accent red ring */
+.hallowed-marker--selected {
+  transform: scale(1.5);
+  z-index: 20;
+  box-shadow: 0 0 0 3px rgba(139,26,26,0.25), 0 0 0 1.5px #8B1A1A;
+}
+.hallowed-marker--selected:hover {
+  transform: scale(1.8);
+}
+
+/* Cluster bubble — editorial palette */
+.hallowed-cluster {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(250,248,245,0.92);
+  border: 1.5px solid #C8B89A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+}
+.hallowed-cluster:hover {
+  transform: scale(1.1);
+  border-color: #8B1A1A;
+}
+.hallowed-cluster span {
+  color: #0F0E0C;
+  font-size: 9.5px;
+  font-family: ui-monospace, 'Courier New', monospace;
+  letter-spacing: 0.02em;
+  font-weight: 600;
+}
+
 /* ─── Keyframes ──────────────────────────────────────────────────────────────── */
 @keyframes menu-drop {
   from { opacity: 0; transform: translateY(-6px); }

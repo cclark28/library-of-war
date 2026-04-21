@@ -120,6 +120,28 @@ export default defineType({
       description: 'When on, the entire site shows a maintenance message instead of content.',
       initialValue: false,
     }),
+    defineField({
+      name: 'maintenanceTitle',
+      title: 'Maintenance — Headline',
+      type: 'string',
+      description: 'Shown as the main heading when maintenance mode is active.',
+      initialValue: 'Back Shortly',
+    }),
+    defineField({
+      name: 'maintenanceMessage',
+      title: 'Maintenance — Message',
+      type: 'text',
+      rows: 3,
+      description: 'Body text shown below the headline during maintenance.',
+      initialValue: 'The archive is undergoing maintenance. Check back in a few minutes.',
+    }),
+    defineField({
+      name: 'maintenanceFact',
+      title: 'Maintenance — History Fact (optional)',
+      type: 'text',
+      rows: 3,
+      description: 'Optional. A short historical fact or quote to display while the site is down. Leave blank to show the message only.',
+    }),
   ],
   preview: {
     select: { title: 'title', media: 'logo' },

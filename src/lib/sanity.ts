@@ -33,10 +33,10 @@ export const articlesQuery = `
     title,
     slug,
     publishedAt,
-    voice,
     excerpt,
     tags,
     mainImage { asset, alt, caption, hotspot },
+    author->{ name, slug, role, photo },
     series->{ title, slug },
     categories[]->{ title, slug }
   }
@@ -48,7 +48,6 @@ export const articleBySlugQuery = `
     title,
     slug,
     publishedAt,
-    voice,
     excerpt,
     tags,
     mainImage { asset, alt, caption, sourceUrl, hotspot },
@@ -56,6 +55,7 @@ export const articleBySlugQuery = `
     sources,
     primarySources,
     difficulty,
+    author->{ name, slug, role, photo },
     series->{ title, slug },
     categories[]->{ _id, title, slug, era },
     seo
@@ -74,10 +74,10 @@ export const relatedArticlesQuery = `
     title,
     slug,
     publishedAt,
-    voice,
     excerpt,
     tags,
     mainImage { asset, alt, caption, hotspot },
+    author->{ name, slug, role, photo },
     series->{ title, slug },
     categories[]->{ title, slug }
   }
@@ -105,9 +105,9 @@ export const seriesBySlugQuery = `
       title,
       slug,
       publishedAt,
-      voice,
       excerpt,
-      mainImage { asset, alt, caption, hotspot }
+      mainImage { asset, alt, caption, hotspot },
+      author->{ name, slug, role, photo }
     }
   }
 `
@@ -122,10 +122,10 @@ export const articlesByEraQuery = `
     title,
     slug,
     publishedAt,
-    voice,
     excerpt,
     tags,
     mainImage { asset, alt, caption, hotspot },
+    author->{ name, slug, role, photo },
     series->{ title, slug },
     categories[]->{ title, slug }
   }
@@ -141,6 +141,9 @@ export const siteSettingsQuery = `
     social,
     contact,
     maintenanceMode,
+    maintenanceTitle,
+    maintenanceMessage,
+    maintenanceFact,
     sections {
       showHero,
       showLatestDispatches,

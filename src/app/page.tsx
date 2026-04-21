@@ -19,9 +19,9 @@ type Article = {
   title: string
   slug: { current: string }
   publishedAt?: string
-  voice: 'analyst' | 'correspondent'
   excerpt?: string
   mainImage?: { asset: { _ref: string }; alt?: string; caption?: string; hotspot?: { x: number; y: number } }
+  author?: { name: string; slug?: { current: string }; role?: string; photo?: { asset: { _ref: string } } }
   series?: { title: string; slug: { current: string } }
   categories?: Array<{ title: string; slug: { current: string }; era?: string }>
 }
@@ -159,6 +159,10 @@ function FilterBar() {
 
 type SiteSettings = {
   maintenanceMode?: boolean
+  maintenanceTitle?: string
+  maintenanceMessage?: string
+  maintenanceFact?: string
+  logo?: { asset: { _ref: string } }
   sections?: {
     showHero?: boolean
     showLatestDispatches?: boolean
@@ -185,17 +189,38 @@ export default async function HomePage() {
   }
 
   if (settings?.maintenanceMode) {
+    const logoUrl = settings.logo ? urlFor(settings.logo).width(240).url() : null
+    const title   = settings.maintenanceTitle   || 'Back Shortly'
+    const message = settings.maintenanceMessage || 'The archive is undergoing maintenance. Check back in a few minutes.'
+    const fact    = settings.maintenanceFact
+
     return (
       <>
         <Header />
         <main className="max-w-2xl mx-auto px-6 py-32 text-center">
+          {logoUrl && (
+            <div className="flex justify-center mb-10">
+              <Image
+                src={logoUrl}
+                alt="Library of War"
+                width={160}
+                height={80}
+                className="object-contain opacity-80"
+              />
+            </div>
+          )}
           <p className="era-label mb-6">System Status</p>
           <h1 className="font-headline font-black text-ink text-4xl mb-4">
-            Back Shortly
+            {title}
           </h1>
-          <p className="font-body text-mist text-lg">
-            The archive is undergoing maintenance. Check back in a few minutes.
+          <p className="font-body text-mist text-lg leading-relaxed">
+            {message}
           </p>
+          {fact && (
+            <blockquote className="mt-12 border-l-2 border-rule pl-5 text-left font-body text-mist text-base leading-relaxed italic max-w-lg mx-auto">
+              {fact}
+            </blockquote>
+          )}
         </main>
         <Footer />
       </>

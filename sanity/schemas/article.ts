@@ -79,18 +79,10 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'voice',
-      title: 'House Voice',
-      type: 'string',
-      description: 'The Analyst: cold, clinical, source-dense. The Correspondent: short, punchy, human detail.',
-      options: {
-        list: [
-          { title: 'The Analyst', value: 'analyst' },
-          { title: 'The Correspondent', value: 'correspondent' },
-        ],
-        layout: 'radio',
-      },
-      validation: (Rule) => Rule.required(),
+      name: 'author',
+      title: 'Author',
+      type: 'reference',
+      to: [{ type: 'author' }],
     }),
     defineField({
       name: 'publishedAt',
@@ -157,7 +149,7 @@ export default defineType({
       type: 'text',
       rows: 3,
       description: 'Shown in article cards and meta description. Max 300 chars.',
-      validation: (Rule) => Rule.required().max(300),
+      validation: (Rule) => Rule.max(300),
     }),
     defineField({
       name: 'body',
@@ -358,16 +350,16 @@ export default defineType({
   preview: {
     select: {
       title: 'title',
-      voice: 'voice',
       status: 'status',
+      author: 'author.name',
       media: 'mainImage',
     },
-    prepare({ title, voice, status, media }) {
-      const voiceLabel = voice === 'analyst' ? 'Analyst' : 'Correspondent'
+    prepare({ title, status, author, media }: { title: string; status?: string; author?: string; media?: unknown }) {
       const statusLabel = status === 'published' ? '' : ` · ${status?.toUpperCase()}`
+      const byline = author ? `${author}${statusLabel}` : statusLabel.trimStart() || 'No status'
       return {
         title,
-        subtitle: `${voiceLabel}${statusLabel}`,
+        subtitle: byline,
         media,
       }
     },
