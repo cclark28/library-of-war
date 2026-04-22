@@ -6,7 +6,36 @@ const ALERT_EMAIL = 'charlieclark@gmail.com'
 const ALLOWED_IMAGE_TYPES = ['image/jpeg', 'image/png', 'image/webp']
 const MAX_IMAGE_BYTES = 10 * 1024 * 1024 // 10 MB
 
+// ── In-memory rate limiter (resets on cold start, good enough for edge) ───────
+// 5 submissions per IP per hour window
+const RATE_LIMIT    = 5
+const WINDOW_MS     = 60 * 60 * 1000 // 1 hour
+const ipWindows = new Map<string, { count: number; windowStart: number }>()
+
+function checkRateLimit(ip: string): boolean {
+  const now  = Date.now()
+  const entry = ipWindows.get(ip)
+  if (!entry || now - entry.windowStart > WINDOW_MS) {
+    ipWindows.set(ip, { count: 1, windowStart: now })
+    return true
+  }
+  if (entry.count >= RATE_LIMIT) return false
+  entry.count++
+  return true
+}
+
 export async function POST(request: NextRequest) {
+  // ── Rate limit by IP ─────────────────────────────────────────────────────────
+  const ip = request.headers.get('CF-Connecting-IP')
+          || request.headers.get('X-Forwarded-For')?.split(',')[0]?.trim()
+          || 'unknown'
+  if (!checkRateLimit(ip)) {
+    return NextResponse.json(
+      { message: 'Too many submissions. Please try again later.' },
+      { status: 429 }
+    )
+  }
+
   // ── Auth ──────────────────────────────────────────────────────────────────────
   const submittedPassword = request.headers.get('X-Contributor-Password')
   const correctPassword = process.env.CONTRIBUTOR_PASSWORD

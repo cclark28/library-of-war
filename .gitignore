@@ -43,3 +43,11 @@ next-env.d.ts
 
 # Build output
 dist/
+
+# Import data — large raw files, never commit to git
+data/
+*.xls
+*.xlsx
+import-report-*.json
+import-duplicates-*.csv
+run-import.sh
