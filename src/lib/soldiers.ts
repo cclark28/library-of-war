@@ -17,9 +17,12 @@ export async function getSoldiersInViewport(
   filters: MapFilters,
   limit = 500
 ): Promise<Soldier[]> {
+  // Explicit columns — avoids fetching the PostGIS binary `location` geometry column
+  const COLS = 'id,first_name,last_name,rank,branch,status,era,date_of_casualty,date_of_birth,age_at_casualty,hometown_city,hometown_state,battle_location,battle_lat,battle_lng,unit,service_number,photo_url,photo_credit,source_url,source_label,notes,created_at,updated_at';
+
   let query = supabase
     .from('soldiers')
-    .select('*')
+    .select(COLS)
     .gte('battle_lng', bbox.minLng)
     .lte('battle_lng', bbox.maxLng)
     .gte('battle_lat', bbox.minLat)
@@ -46,7 +49,7 @@ export async function getSoldiersInViewport(
 export async function getSoldierById(id: string): Promise<Soldier | null> {
   const { data, error } = await supabase
     .from('soldiers')
-    .select('*')
+    .select('id,first_name,last_name,rank,branch,status,era,date_of_casualty,date_of_birth,age_at_casualty,hometown_city,hometown_state,battle_location,battle_lat,battle_lng,unit,service_number,photo_url,photo_credit,source_url,source_label,notes,created_at,updated_at')
     .eq('id', id)
     .single();
 
@@ -64,7 +67,7 @@ export async function getOnThisDay(): Promise<Soldier[]> {
 
   const { data, error } = await supabase
     .from('soldiers')
-    .select('*')
+    .select('id,first_name,last_name,rank,branch,status,era,date_of_casualty,age_at_casualty,battle_location,battle_lat,battle_lng,unit')
     .like('date_of_casualty', `%-${mm}-${dd}`)
     .limit(20);
 

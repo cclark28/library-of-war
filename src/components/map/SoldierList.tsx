@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect, useMemo } from 'react';
 import type { MapFilters, Soldier, ServiceBranch, CasualtyStatus } from '@/types/soldier';
 
 const STATUS_DOT: Record<CasualtyStatus, string> = {
@@ -33,9 +34,8 @@ const BRANCHES: { value: ServiceBranch | 'all'; label: string }[] = [
   { value: 'special_forces', label: 'Special Forces' },
 ];
 
-// WIA and POW are only shown when records of that type exist in the current view
+// WIA and POW pills only appear when records of that type exist in the current view
 const ALWAYS_SHOWN: CasualtyStatus[] = ['kia', 'mia'];
-const CONDITIONAL: CasualtyStatus[] = ['wia', 'pow'];
 
 interface SoldierListProps {
   soldiers:       Soldier[];
@@ -69,8 +69,25 @@ export default function SoldierList({
     ...(hasPow ? (['pow'] as CasualtyStatus[]) : []),
   ];
 
+  // Auto-reset status filter when the selected status disappears from the current view
+  useEffect(() => {
+    if (
+      filters.status !== 'all' &&
+      !visibleStatuses.includes(filters.status as CasualtyStatus)
+    ) {
+      onFilterChange({ ...filters, status: 'all' });
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [soldiers]);
+
+  // Memoized sort — avoids re-sorting on every render
+  const sortedSoldiers = useMemo(
+    () => [...soldiers].sort((a, b) => a.last_name.localeCompare(b.last_name)),
+    [soldiers]
+  );
+
   return (
-    <aside className="flex flex-col w-64 shrink-0 border-r border-rule bg-paper">
+    <aside className="flex flex-col w-64 shrink-0 border-r border-rule bg-paper min-h-0">
 
       {/* ── Filters ──────────────────────────────────────────────────── */}
       <div className="shrink-0 p-3 border-b border-rule space-y-2.5">
@@ -160,10 +177,7 @@ export default function SoldierList({
             </p>
           </div>
         ) : (
-          soldiers
-            .slice()
-            .sort((a, b) => a.last_name.localeCompare(b.last_name))
-            .map((s) => {
+          sortedSoldiers.map((s) => {
               const isSelected = selectedSoldier?.id === s.id;
               return (
                 <button

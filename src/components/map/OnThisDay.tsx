@@ -43,7 +43,7 @@ export default function OnThisDay() {
 
       {/* Panel */}
       {open && soldiers.length > 0 && (
-        <div className="mt-1 bg-neutral-950/95 border border-neutral-800 rounded overflow-hidden max-h-72 overflow-y-auto">
+        <div className="mt-1 bg-neutral-950/95 border border-neutral-800 rounded overflow-y-auto max-h-72">
           {soldiers.slice(0, 12).map((s) => (
             <div
               key={s.id}

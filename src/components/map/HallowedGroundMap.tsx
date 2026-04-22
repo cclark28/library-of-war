@@ -61,6 +61,8 @@ export default function HallowedGroundMap() {
   const markerElements  = useRef<Map<string, HTMLElement>>(new Map());
   // Ref so map event listeners always call the latest loadMarkers (avoids stale closure)
   const loadMarkersRef  = useRef<() => void>(() => {});
+  // Track previous era to distinguish era-change (needs flyTo) from filter-change (direct reload)
+  const prevEraRef      = useRef<MapFilters['era']>(DEFAULT_FILTERS.era);
 
   const [filters,         setFilters]        = useState<MapFilters>(DEFAULT_FILTERS);
   const [soldiers,        setSoldiers]        = useState<Soldier[]>([]);
@@ -97,15 +99,27 @@ export default function HallowedGroundMap() {
     };
   }, []);
 
-  // ── Fly to region + reload on era/filter change ───────────────────────────
+  // ── Fly to region on era change; direct reload on filter change ──────────
+  // Splitting these prevents the double-load: flyTo triggers moveend which
+  // calls loadMarkersRef.current(). Non-era filter changes skip flyTo and
+  // call loadMarkersRef.current() directly — one load, no duplicate.
   useEffect(() => {
     if (!map.current?.loaded()) return;
-    map.current.flyTo({
-      center:   ERA_CENTERS[filters.era],
-      zoom:     ERA_ZOOM[filters.era],
-      duration: 1200,
-    });
-    loadMarkers();
+
+    const eraChanged = filters.era !== prevEraRef.current;
+    prevEraRef.current = filters.era;
+
+    if (eraChanged) {
+      // flyTo will trigger moveend → loadMarkersRef.current() with latest filters
+      map.current.flyTo({
+        center:   ERA_CENTERS[filters.era],
+        zoom:     ERA_ZOOM[filters.era],
+        duration: 1200,
+      });
+    } else {
+      // Branch / status / search changed — reload in place, no fly
+      loadMarkersRef.current();
+    }
   }, [filters]);
 
   // ── Co-primary sync: when selectedSoldier changes from ANY source ─────────

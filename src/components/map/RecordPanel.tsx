@@ -40,7 +40,6 @@ export default function RecordPanel({
   onNavigate,
   onClose,
 }: RecordPanelProps) {
-  const contributorBase = `/contributor?soldier=${soldier?.id ?? ''}`;
 
   return (
     <aside className="flex flex-col w-72 shrink-0 border-l border-rule bg-paper min-h-0">
@@ -193,7 +192,7 @@ export default function RecordPanel({
             </p>
 
             <a
-              href={`${contributorBase}&type=photo`}
+              href={`/contributor?soldier=${soldier.id}&type=photo`}
               className="flex items-center gap-2 w-full border border-rule px-3 py-2 text-[9px] font-mono text-mist hover:text-ink hover:border-ink transition-colors"
             >
               <span className="text-[10px]">↑</span>
@@ -201,7 +200,7 @@ export default function RecordPanel({
             </a>
 
             <a
-              href={`${contributorBase}&type=tribute`}
+              href={`/contributor?soldier=${soldier.id}&type=tribute`}
               className="flex items-center gap-2 w-full border border-rule px-3 py-2 text-[9px] font-mono text-mist hover:text-ink hover:border-ink transition-colors"
             >
               <span className="text-[10px]">✎</span>
@@ -209,7 +208,7 @@ export default function RecordPanel({
             </a>
 
             <a
-              href={`${contributorBase}&type=removal`}
+              href={`/contributor?soldier=${soldier.id}&type=removal`}
               className="flex items-center gap-2 w-full border border-rule px-3 py-2 text-[9px] font-mono text-mist hover:text-red-400 hover:border-red-300 transition-colors"
             >
               <span className="text-[10px]">⊘</span>
