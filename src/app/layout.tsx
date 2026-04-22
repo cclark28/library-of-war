@@ -20,29 +20,106 @@ const sourceSerif = Source_Serif_4({
   weight: ['300', '400', '600'],
 })
 
+const SITE_URL = 'https://libraryofwar.com'
+const SITE_NAME = 'Library of War'
+const SITE_DESC = 'Military history archive. Every claim cited. Every fact verifiable. Primary sources, official photography, and first-hand accounts covering every major conflict.'
+
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Library of War',
-    template: '%s | Library of War',
+    default: SITE_NAME,
+    template: `%s | ${SITE_NAME}`,
   },
-  description: 'Military history archive. Every claim cited. Every fact verifiable.',
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://libraryofwar.com'),
+  description: SITE_DESC,
+  keywords: [
+    'military history', 'war archive', 'World War II', 'World War I', 'Vietnam War',
+    'Korean War', 'Cold War', 'military photography', 'declassified documents',
+    'battle history', 'warfare', 'military strategy', 'primary sources',
+  ],
+  authors: [{ name: 'Library of War', url: SITE_URL }],
+  creator: 'Library of War',
+  publisher: 'Library of War',
+  category: 'History',
   openGraph: {
-    siteName: 'Library of War',
+    siteName: SITE_NAME,
     type: 'website',
     locale: 'en_US',
+    url: SITE_URL,
+    title: SITE_NAME,
+    description: SITE_DESC,
+    images: [
+      {
+        url: `${SITE_URL}/og-default.jpg`,
+        width: 1200,
+        height: 630,
+        alt: 'Library of War — Military History Archive',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@libraryofwar',
+    creator: '@libraryofwar',
+    title: SITE_NAME,
+    description: SITE_DESC,
+    images: [`${SITE_URL}/og-default.jpg`],
   },
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon-16x16.png',
     apple: '/apple-touch-icon.png',
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   alternates: {
+    canonical: SITE_URL,
     types: {
       'application/rss+xml': [
-        { url: 'https://libraryofwar.com/feed/', title: 'Library of War' },
+        { url: `${SITE_URL}/feed/`, title: SITE_NAME },
       ],
     },
+  },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || '',
+  },
+}
+
+// JSON-LD structured data for the site
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: SITE_NAME,
+  url: SITE_URL,
+  logo: `${SITE_URL}/logo-horizontal.svg`,
+  sameAs: [
+    'https://x.com/libraryofwar',
+    'https://instagram.com/libraryofwar',
+    'https://facebook.com/libraryxwar',
+  ],
+}
+
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: SITE_NAME,
+  url: SITE_URL,
+  description: SITE_DESC,
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: {
+      '@type': 'EntryPoint',
+      urlTemplate: `${SITE_URL}/browse?q={search_term_string}`,
+    },
+    'query-input': 'required name=search_term_string',
   },
 }
 
@@ -58,6 +135,16 @@ export default function RootLayout({
       lang="en"
       className={`${playfair.variable} ${sourceSerif.variable}`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
+      </head>
       {gaId && (
         <>
           <Script

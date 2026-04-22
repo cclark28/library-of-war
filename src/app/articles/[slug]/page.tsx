@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation'
+import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { client, articleBySlugQuery, relatedArticlesQuery, urlFor } from '@/lib/sanity'
@@ -113,7 +114,52 @@ function Crest() {
   )
 }
 
+const SITE_URL = 'https://libraryofwar.com'
+
 interface Params { params: Promise<{ slug: string }> }
+
+export async function generateMetadata({ params }: Params): Promise<Metadata> {
+  const { slug } = await params
+  const article = await client.fetch(articleBySlugQuery, { slug }).catch(() => null)
+  if (!article) return {}
+
+  const title = article.seo?.title || article.title
+  const description = article.seo?.description || article.excerpt || ''
+  const canonicalUrl = `${SITE_URL}/articles/${slug}/`
+
+  // Use Sanity CDN image transforms — zero cost, no workers, no extra infra
+  const ogImageUrl = article.mainImage
+    ? urlFor(article.mainImage).width(1200).height(630).fit('crop').url()
+    : `${SITE_URL}/og-default.jpg`
+
+  return {
+    title,
+    description,
+    alternates: { canonical: canonicalUrl },
+    openGraph: {
+      type: 'article',
+      url: canonicalUrl,
+      title,
+      description,
+      publishedTime: article.publishedAt,
+      authors: article.author?.name ? [article.author.name] : undefined,
+      images: [
+        {
+          url: ogImageUrl,
+          width: 1200,
+          height: 630,
+          alt: article.mainImage?.alt || title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [ogImageUrl],
+    },
+  }
+}
 
 export default async function ArticlePage({ params }: Params) {
   const { slug } = await params

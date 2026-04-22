@@ -24,22 +24,24 @@ export type NavData = {
 
 /* ── Fallback data (used if Sanity document not yet created) ───────────────── */
 
+// Sorted alphabetically by label
 const FALLBACK_ERAS: Array<{ label: string; years?: string; href: string; visible?: boolean }> = [
+  { label: 'American Civil War', years: '1861–1865',      href: '/browse?era=civil-war' },
+  { label: 'Ancient & Medieval', years: 'Antiquity–1500', href: '/browse?era=ancient-medieval' },
+  { label: 'Cold War',           years: '1947–1991',      href: '/browse?era=cold-war' },
+  { label: 'Korean War',         years: '1950–1953',      href: '/browse?era=korean-war' },
+  { label: 'Modern Conflicts',   years: '1990–Present',   href: '/browse?era=modern-conflicts' },
+  { label: 'Napoleonic Wars',    years: '1803–1815',      href: '/browse?era=napoleonic' },
+  { label: 'Vietnam War',        years: '1955–1975',      href: '/browse?era=vietnam-war' },
   { label: 'World War I',        years: '1914–1918',      href: '/browse?era=world-war-i' },
   { label: 'World War II',       years: '1939–1945',      href: '/browse?era=world-war-ii' },
-  { label: 'Korean War',         years: '1950–1953',      href: '/browse?era=korean-war' },
-  { label: 'Vietnam War',        years: '1955–1975',      href: '/browse?era=vietnam-war' },
-  { label: 'Cold War',           years: '1947–1991',      href: '/browse?era=cold-war' },
-  { label: 'Modern Conflicts',   years: '1990–Present',   href: '/browse?era=modern-conflicts' },
-  { label: 'Ancient & Medieval', years: 'Antiquity–1500', href: '/browse?era=ancient-medieval' },
-  { label: 'Napoleonic Wars',    years: '1803–1815',      href: '/browse?era=napoleonic' },
-  { label: 'American Civil War', years: '1861–1865',      href: '/browse?era=civil-war' },
 ]
 
 const FALLBACK_SERIES: Array<{ label: string; href: string; visible?: boolean }> = [
-  { label: "Weapons That Shouldn't Have Worked", href: '/series/weapons-that-shouldnt-have-worked' },
-  { label: 'The Day After',                       href: '/series/the-day-after' },
-  { label: 'Black Projects',                      href: '/series/black-projects' },
+  { label: 'Black Projects',                        href: '/series/black-projects' },
+  { label: 'MACV-SOG',                              href: '/series/macv-sog' },
+  { label: 'The Day After',                         href: '/series/the-day-after' },
+  { label: "Weapons That Shouldn't Have Worked",    href: '/series/weapons-that-shouldnt-have-worked' },
 ]
 
 const FALLBACK_SOCIAL = [

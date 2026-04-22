@@ -112,6 +112,32 @@ export const seriesBySlugQuery = `
   }
 `
 
+// Full-text search across title, excerpt, tags, and categories
+// Used by browse page when ?q= param is present
+export const searchArticlesQuery = `
+  *[
+    _type == "article" &&
+    status == "published" &&
+    (
+      title match $q + "*" ||
+      excerpt match $q + "*" ||
+      $q in tags[] ||
+      count(categories[]->[title match $q + "*"]) > 0
+    )
+  ] | order(publishedAt desc) {
+    _id,
+    title,
+    slug,
+    publishedAt,
+    excerpt,
+    tags,
+    mainImage { asset, alt, caption, hotspot },
+    author->{ name, slug, role, photo },
+    series->{ title, slug },
+    categories[]->{ title, slug }
+  }
+`
+
 export const articlesByEraQuery = `
   *[
     _type == "article" &&

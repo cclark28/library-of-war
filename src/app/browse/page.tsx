@@ -1,4 +1,4 @@
-import { client, articlesByEraQuery, articlesQuery } from '@/lib/sanity'
+import { client, articlesByEraQuery, articlesQuery, searchArticlesQuery } from '@/lib/sanity'
 import HeaderWrapper from '@/components/HeaderWrapper'
 import Footer from '@/components/Footer'
 import ArticleCard from '@/components/ArticleCard'
@@ -38,21 +38,28 @@ type Article = {
 }
 
 interface Props {
-  searchParams: Promise<{ era?: string }>
+  searchParams: Promise<{ era?: string; q?: string }>
 }
 
 export default async function BrowsePage({ searchParams }: Props) {
-  const { era } = await searchParams
+  const { era, q } = await searchParams
+  const searchQuery = q?.trim() ?? ''
 
   const meta = era ? ERA_META[era] : null
 
-  const articles: Article[] = era
-    ? await client.fetch(articlesByEraQuery, { era }).catch(() => [])
-    : await client.fetch(articlesQuery).catch(() => [])
+  const articles: Article[] = searchQuery
+    ? await client.fetch(searchArticlesQuery, { q: searchQuery }).catch(() => [])
+    : era
+      ? await client.fetch(articlesByEraQuery, { era }).catch(() => [])
+      : await client.fetch(articlesQuery).catch(() => [])
 
-  const pageTitle = meta?.label ?? 'All Articles'
-  const pageYears = meta?.years ?? ''
-  const pageDesc  = meta?.description ?? 'The full archive. Every era. Every entry.'
+  const pageTitle = searchQuery
+    ? `Search: "${searchQuery}"`
+    : meta?.label ?? 'All Articles'
+  const pageYears = searchQuery ? '' : meta?.years ?? ''
+  const pageDesc  = searchQuery
+    ? `${articles.length} result${articles.length === 1 ? '' : 's'} for "${searchQuery}"`
+    : meta?.description ?? 'The full archive. Every era. Every entry.'
 
   return (
     <>
