@@ -91,16 +91,20 @@ async function loadCSV() {
 // ── Supabase ──────────────────────────────────────────────────────────────────
 const SUPABASE_URL      = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-const SUPABASE_SERVICE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY; // needed for write
+const IMPORT_SECRET     = process.env.SUPABASE_IMPORT_SECRET;
 
 if (!SUPABASE_URL || !SUPABASE_URL.includes('supabase')) {
-  console.error('❌  NEXT_PUBLIC_SUPABASE_URL not set or still placeholder. Add real value to .env.local');
+  console.error('❌  NEXT_PUBLIC_SUPABASE_URL not set. Add real value to .env.local');
   process.exit(1);
 }
 
-// Use service role key for writes (bypasses RLS), fall back to anon for dry-run
-const KEY = SUPABASE_SERVICE_KEY || SUPABASE_ANON_KEY;
-const supabase = createClient(SUPABASE_URL, KEY);
+if (!DRY_RUN && !IMPORT_SECRET) {
+  console.error('❌  SUPABASE_IMPORT_SECRET not set. Add it to .env.local (see .env.local.example)');
+  process.exit(1);
+}
+
+// Anon key is sufficient — writes go through bulk_import_soldiers() RPC (SECURITY DEFINER)
+const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 // ── CSV parser (no dependencies) ──────────────────────────────────────────────
 function parseCSV(raw) {
@@ -190,16 +194,16 @@ function dedupKey(r) {
   ].join('|');
 }
 
-// ── Batch upsert (INSERT ... ON CONFLICT DO NOTHING) ─────────────────────────
+// ── Batch insert via RPC (SECURITY DEFINER bypasses RLS) ─────────────────────
 async function insertBatch(records) {
-  const { data, error } = await supabase
-    .from('soldiers')
-    .insert(records, { onConflict: 'lower(last_name),lower(first_name),date_of_casualty,lower(COALESCE(rank,\'\')),branch,lower(battle_location)' })
-    .select('id');
+  const { data, error } = await supabase.rpc('bulk_import_soldiers', {
+    p_records:       records,
+    p_import_secret: IMPORT_SECRET,
+  });
 
-  // ON CONFLICT DO NOTHING — Supabase returns inserted rows only
   if (error) throw new Error(error.message);
-  return data?.length ?? 0;
+  // data = { inserted: N, skipped: N, errors: N }
+  return data?.inserted ?? 0;
 }
 
 // ── Main ──────────────────────────────────────────────────────────────────────
