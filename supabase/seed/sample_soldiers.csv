@@ -1,0 +1,16 @@
+last_name,first_name,rank,branch,status,era,date_of_casualty,date_of_birth,age_at_casualty,battle_location,battle_lat,battle_lng,unit,service_number,source_url,source_label,notes
+Adams,James T.,CPL,army,kia,vietnam,1968-04-14,1946-11-03,21,"Quảng Trị Province, Vietnam",16.7500,107.1850,1st Cavalry Division,RA-19-348-261,https://www.vvmf.org/Wall-of-Faces/,VVMF Wall of Faces,
+Alvarez,Miguel R.,SGT,marines,kia,vietnam,1969-06-22,1947-03-11,22,"Quảng Nam Province, Vietnam",15.8800,108.3380,1st Marine Division,1234567,https://www.archives.gov/,NARA,
+Baker,Thomas W.,PFC,army,mia,vietnam,1967-11-03,1947-05-14,20,"Tây Ninh Province, Vietnam",11.3100,106.1100,25th Infantry Division,,,https://www.archives.gov/,NARA,
+Chen,David L.,LT,navy,kia,vietnam,1966-08-17,1943-02-28,23,"Gulf of Tonkin",20.1200,108.5000,Attack Squadron 196,,https://www.archives.gov/,NARA,
+Davidson,Robert J.,SGT,army,wia,vietnam,1968-02-01,1945-09-19,22,"Huế, Vietnam",16.4637,107.5909,101st Airborne Division,,https://www.archives.gov/,NARA,Wounded during Tet Offensive
+Espinoza,Carlos A.,CPL,marines,kia,vietnam,1970-03-15,1949-07-04,20,"Quảng Ngãi Province, Vietnam",15.1200,108.7920,3rd Marine Division,,https://www.archives.gov/,NARA,
+Foster,William E.,PFC,army,pow,vietnam,1967-09-28,1947-12-01,19,"Hanoi, North Vietnam",21.0285,105.8542,1st Cavalry Division,,https://www.archives.gov/,NARA,
+Garcia,Jose M.,1LT,air_force,mia,vietnam,1968-07-04,1944-04-15,24,"Laos",18.2333,103.8500,8th Tactical Fighter Wing,,https://www.archives.gov/,NARA,
+Harrison,William K.,PFC,army,kia,korea,1950-11-28,1930-03-22,20,"Chosin Reservoir, North Korea",40.6000,127.2700,7th Infantry Division,,https://www.archives.gov/,NARA,Chosin Reservoir
+Johnson,Frank D.,CPL,marines,kia,korea,1950-12-02,1929-08-15,21,"Hagaru-ri, North Korea",40.5500,127.2400,1st Marine Division,,https://www.archives.gov/,NARA,
+Martinez,Pedro G.,SGT,army,kia,wwii,1944-06-06,1920-01-10,24,"Normandy, France",49.3569,0.9094,1st Infantry Division,,https://www.archives.gov/,NARA,D-Day
+Thompson,Edward R.,PFC,army,kia,wwii,1944-12-16,1924-05-03,20,"Ardennes, Belgium",50.1500,5.9000,106th Infantry Division,,https://www.archives.gov/,NARA,Battle of the Bulge
+Williams,George H.,SGT,army,kia,wwi,1918-07-18,1895-02-14,23,"Aisne-Marne, France",49.2200,3.2400,42nd Infantry Division,,https://www.archives.gov/,NARA,
+Robinson,Charles F.,CPL,army,kia,gulf,1991-02-27,1967-09-30,23,"Kuwait",29.3759,47.9774,24th Infantry Division,,https://www.archives.gov/,NARA,Operation Desert Storm
+Anderson,Brian T.,SGT,army,kia,iraq,2004-04-04,1982-11-08,21,"Fallujah, Iraq",33.3534,43.7859,1st Marine Expeditionary Force,,https://www.archives.gov/,NARA,

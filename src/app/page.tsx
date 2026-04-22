@@ -140,22 +140,6 @@ function HeroGrid({ hero, stack }: { hero: Article; stack: Article[] }) {
   )
 }
 
-function FilterBar({ filter, showAll, sort }: { filter: string; showAll: string; sort: string }) {
-  return (
-    <div className="flex items-center justify-between py-3 border-b border-rule text-[0.62rem] font-body tracking-[0.18em] uppercase">
-      <div className="flex items-center gap-4">
-        <button className="text-ink hover:text-accent transition-colors flex items-center gap-1">
-          {filter} <span className="text-mist">+</span>
-        </button>
-        <span className="text-rule">|</span>
-        <span className="text-mist">{showAll}</span>
-      </div>
-      <button className="text-mist hover:text-ink transition-colors flex items-center gap-1">
-        {sort} <span>+</span>
-      </button>
-    </div>
-  )
-}
 
 type SiteSettings = {
   maintenanceMode?: boolean
@@ -296,8 +280,6 @@ export default async function HomePage() {
       <HeaderWrapper />
 
       <main className="max-w-7xl mx-auto px-5 md:px-6">
-
-        <FilterBar filter={labels.filter} showAll={labels.showAll} sort={labels.sort} />
 
         {flags.showHero && (hero ? (
           <HeroGrid hero={hero} stack={stack} />
