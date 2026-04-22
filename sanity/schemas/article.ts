@@ -111,6 +111,20 @@ export default defineType({
       to: [{ type: 'series' }],
     }),
     defineField({
+      name: 'verdict',
+      title: 'Verdict',
+      type: 'string',
+      description: 'For Smoke and Mirrors series: the historical verdict on whether this event/program was real.',
+      options: {
+        list: [
+          { title: '✅ CONFIRMED — Declassified and verified', value: 'CONFIRMED' },
+          { title: '⚠️ PLAUSIBLE — Evidence exists, not fully confirmed', value: 'PLAUSIBLE' },
+          { title: '❌ DEBUNKED — Examined and disproved', value: 'DEBUNKED' },
+        ],
+        layout: 'radio',
+      },
+    }),
+    defineField({
       name: 'categories',
       title: 'Categories',
       type: 'array',
