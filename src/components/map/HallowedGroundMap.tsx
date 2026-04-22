@@ -14,8 +14,9 @@ import OnThisDay from './OnThisDay';
 import { getSoldiersInViewport } from '@/lib/soldiers';
 import type { MapFilters, Soldier, SoldierGeoFeature, WarEra } from '@/types/soldier';
 
-const LIGHT_STYLE = 'https://tiles.stadiamaps.com/styles/alidade_smooth.json';
-const DARK_STYLE  = 'https://tiles.stadiamaps.com/styles/alidade_smooth_dark.json';
+// CARTO basemaps — free, no API key, no usage limits, CC BY 3.0
+const LIGHT_STYLE = 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json';
+const DARK_STYLE  = 'https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json';
 
 const ERA_CENTERS: Record<WarEra | 'all', [number, number]> = {
   vietnam:     [106.6, 16.5],
