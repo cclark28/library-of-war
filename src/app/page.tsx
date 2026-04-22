@@ -282,9 +282,9 @@ export default async function HomePage() {
       <main className="max-w-7xl mx-auto px-5 md:px-6">
 
         {flags.showHero && (hero ? (
-          <HeroGrid hero={hero} stack={stack} />
+          <div className="mt-12"><HeroGrid hero={hero} stack={stack} /></div>
         ) : (
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-0 border-b border-rule">
+          <div className="mt-12 grid grid-cols-1 lg:grid-cols-5 gap-0 border-b border-rule">
             <div className="lg:col-span-3 animate-pulse bg-ghost" style={{ minHeight: '460px' }} />
             <div className="lg:col-span-2 flex flex-col divide-y divide-rule">
               <div className="flex-1 animate-pulse bg-ghost/60" style={{ minHeight: '230px' }} />
