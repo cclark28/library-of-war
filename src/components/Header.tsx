@@ -39,7 +39,7 @@ const FALLBACK_ERAS: Array<{ label: string; years?: string; href: string; visibl
 
 const FALLBACK_SERIES: Array<{ label: string; href: string; visible?: boolean }> = [
   { label: 'Black Projects',                        href: '/series/black-projects' },
-  { label: 'MACV-SOG',                              href: '/series/macv-sog' },
+  { label: 'MACV-SOG',                              href: '/series/macvsog' },
   { label: 'The Day After',                         href: '/series/the-day-after' },
   { label: "Weapons That Shouldn't Have Worked",    href: '/series/weapons-that-shouldnt-have-worked' },
 ]

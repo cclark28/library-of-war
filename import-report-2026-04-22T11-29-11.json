@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-04-22T11:29:12.226Z",
+  "file": "./supabase/seed/sample_soldiers.csv",
+  "dry_run": false,
+  "totals": {
+    "unique_in_file": 15,
+    "duplicates_removed": 0,
+    "db_duplicates": 0,
+    "invalid_rows": 0,
+    "inserted": 0
+  },
+  "invalid_rows": []
+}
