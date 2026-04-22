@@ -2,24 +2,33 @@
 /**
  * Hallowed Ground — Soldier Import Script
  * ----------------------------------------
- * Imports soldiers from a CSV file into Supabase with full duplicate detection.
+ * Imports soldiers from a CSV file OR Google Sheet into Supabase
+ * with full duplicate detection.
  *
  * Duplicate check (in order):
  *   1. last_name + first_name + date_of_casualty + rank + branch + battle_location
  *   2. If date_of_birth present: last_name + first_name + date_of_birth + branch
  *
  * Usage:
+ *   # From local CSV
  *   node scripts/import-soldiers.mjs --file=./supabase/seed/vietnam.csv [--dry-run] [--batch=100]
  *
- * CSV columns (header row required):
+ *   # From Google Sheet (sheet must be "Anyone with link can view")
+ *   node scripts/import-soldiers.mjs --sheet=SHEET_ID [--tab=0] [--dry-run]
+ *   node scripts/import-soldiers.mjs --sheet=https://docs.google.com/spreadsheets/d/SHEET_ID/...
+ *
+ *   # From named tab (gid number from the sheet URL after #gid=)
+ *   node scripts/import-soldiers.mjs --sheet=SHEET_ID --tab=1234567890
+ *
+ * Google Sheet column headers (row 1) must match exactly:
  *   last_name, first_name, rank, branch, status, era,
  *   date_of_casualty, date_of_birth, age_at_casualty,
  *   battle_location, battle_lat, battle_lng,
  *   unit, service_number, source_url, source_label, notes
  *
  * Outputs:
- *   import-report-{timestamp}.json  — full results
- *   import-duplicates-{timestamp}.csv — rows that were skipped as dupes
+ *   import-report-{timestamp}.json     — full results
+ *   import-duplicates-{timestamp}.csv  — rows skipped as dupes
  */
 
 import fs   from 'fs';
@@ -29,18 +38,54 @@ import { createClient } from '@supabase/supabase-js';
 // ── Args ──────────────────────────────────────────────────────────────────────
 const args = Object.fromEntries(
   process.argv.slice(2).map(a => {
-    const [k, v] = a.replace(/^--/, '').split('=');
-    return [k, v ?? true];
+    const [k, ...rest] = a.replace(/^--/, '').split('=');
+    return [k, rest.join('=') || true];
   })
 );
 
-const FILE      = args.file;
-const DRY_RUN   = args['dry-run'] === true || args['dry-run'] === 'true';
-const BATCH_SZ  = parseInt(args.batch ?? '100', 10);
+const FILE     = args.file;
+const SHEET    = args.sheet;
+const TAB      = args.tab ?? '0';
+const DRY_RUN  = args['dry-run'] === true || args['dry-run'] === 'true';
+const BATCH_SZ = parseInt(args.batch ?? '100', 10);
 
-if (!FILE) {
-  console.error('Usage: node scripts/import-soldiers.mjs --file=./path/to/file.csv [--dry-run] [--batch=100]');
+if (!FILE && !SHEET) {
+  console.error([
+    'Usage:',
+    '  Local CSV:    node scripts/import-soldiers.mjs --file=./path/to/file.csv',
+    '  Google Sheet: node scripts/import-soldiers.mjs --sheet=SHEET_ID_OR_URL',
+    '  Options:      [--tab=GID] [--dry-run] [--batch=100]',
+  ].join('\n'));
   process.exit(1);
+}
+
+// ── Resolve Google Sheet CSV export URL ───────────────────────────────────────
+function sheetToCsvUrl(input, gid = '0') {
+  // Accept full URL or bare sheet ID
+  let id = input;
+  const match = input.match(/\/spreadsheets\/d\/([a-zA-Z0-9_-]+)/);
+  if (match) id = match[1];
+  return `https://docs.google.com/spreadsheets/d/${id}/export?format=csv&gid=${gid}`;
+}
+
+// ── Load raw CSV from file or Google Sheet ────────────────────────────────────
+async function loadCSV() {
+  if (FILE) {
+    return fs.readFileSync(path.resolve(FILE), 'utf8');
+  }
+
+  const url = sheetToCsvUrl(SHEET, TAB);
+  console.log(`  Fetching sheet: ${url}`);
+  const res = await fetch(url);
+  if (!res.ok) {
+    if (res.status === 401 || res.status === 403) {
+      throw new Error(
+        'Google Sheet is not public. Set sharing to "Anyone with the link can view" and try again.'
+      );
+    }
+    throw new Error(`Google Sheets fetch failed: ${res.status} ${res.statusText}`);
+  }
+  return await res.text();
 }
 
 // ── Supabase ──────────────────────────────────────────────────────────────────
@@ -161,12 +206,12 @@ async function insertBatch(records) {
 async function main() {
   const ts = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
   console.log(`\n✦ Hallowed Ground — Soldier Import`);
-  console.log(`  File:    ${FILE}`);
+  console.log(`  Source:  ${FILE ? FILE : `Google Sheet (tab ${TAB})`}`);
   console.log(`  Mode:    ${DRY_RUN ? 'DRY RUN (no writes)' : 'LIVE'}`);
   console.log(`  Batch:   ${BATCH_SZ}\n`);
 
-  // Read CSV
-  const raw = fs.readFileSync(path.resolve(FILE), 'utf8');
+  // Load CSV from file or Google Sheet
+  const raw = await loadCSV();
   const rows = parseCSV(raw);
   console.log(`  Rows in file: ${rows.length}`);
 
