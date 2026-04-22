@@ -1,7 +1,7 @@
 /**
  * Hallowed Ground — Supabase Keep-Alive + Limit Monitor
  * ───────────────────────────────────────────────────────
- * Runs every 3 days (cron: "0 12 */3 * *").
+ * Runs every 3 days (cron: 0 12 every3days).
  *
  * What it does:
  *  1. Pings Supabase to prevent the free tier from pausing (7-day inactivity limit).
