@@ -87,6 +87,9 @@ export default async function BrowsePage({ searchParams }: Props) {
               { label: 'Vietnam',          href: '/browse?era=vietnam-war' },
               { label: 'Cold War',         href: '/browse?era=cold-war' },
               { label: 'Modern',           href: '/browse?era=modern-conflicts' },
+              { label: 'Ancient & Medieval', href: '/browse?era=ancient-medieval' },
+              { label: 'Napoleonic',       href: '/browse?era=napoleonic' },
+              { label: 'Civil War',        href: '/browse?era=civil-war' },
             ].map((item) => {
               const isActive = item.href === `/browse?era=${era}` || (!era && item.href === '/browse')
               return (

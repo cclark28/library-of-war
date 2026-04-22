@@ -12,6 +12,7 @@ export type NavData = {
   browseLabel?: string
   seriesLabel?: string
   resourcesLabel?: string
+  idDrillLabel?: string
   missionLabel?: string
   searchLabel?: string
   searchPlaceholder?: string
@@ -24,12 +25,15 @@ export type NavData = {
 /* ── Fallback data (used if Sanity document not yet created) ───────────────── */
 
 const FALLBACK_ERAS: Array<{ label: string; years?: string; href: string; visible?: boolean }> = [
-  { label: 'World War I',       years: '1914–1918',    href: '/browse?era=world-war-i' },
-  { label: 'World War II',      years: '1939–1945',    href: '/browse?era=world-war-ii' },
-  { label: 'Korean War',        years: '1950–1953',    href: '/browse?era=korean-war' },
-  { label: 'Vietnam War',       years: '1955–1975',    href: '/browse?era=vietnam-war' },
-  { label: 'Cold War',          years: '1947–1991',    href: '/browse?era=cold-war' },
-  { label: 'Modern Conflicts',  years: '1990–Present', href: '/browse?era=modern-conflicts' },
+  { label: 'World War I',        years: '1914–1918',      href: '/browse?era=world-war-i' },
+  { label: 'World War II',       years: '1939–1945',      href: '/browse?era=world-war-ii' },
+  { label: 'Korean War',         years: '1950–1953',      href: '/browse?era=korean-war' },
+  { label: 'Vietnam War',        years: '1955–1975',      href: '/browse?era=vietnam-war' },
+  { label: 'Cold War',           years: '1947–1991',      href: '/browse?era=cold-war' },
+  { label: 'Modern Conflicts',   years: '1990–Present',   href: '/browse?era=modern-conflicts' },
+  { label: 'Ancient & Medieval', years: 'Antiquity–1500', href: '/browse?era=ancient-medieval' },
+  { label: 'Napoleonic Wars',    years: '1803–1815',      href: '/browse?era=napoleonic' },
+  { label: 'American Civil War', years: '1861–1865',      href: '/browse?era=civil-war' },
 ]
 
 const FALLBACK_SERIES: Array<{ label: string; href: string; visible?: boolean }> = [
@@ -73,6 +77,7 @@ export default function Header({ navData }: { navData?: NavData | null }) {
     browse:    navData?.browseLabel    ?? 'Browse by Era',
     series:    navData?.seriesLabel    ?? 'Series',
     resources: navData?.resourcesLabel ?? 'Resources',
+    idDrill:   navData?.idDrillLabel   ?? 'ID Drill',
     mission:   navData?.missionLabel   ?? 'Mission',
     search:    navData?.searchLabel    ?? 'Search',
     searchPH:  navData?.searchPlaceholder ?? 'Search the archive…',
@@ -334,6 +339,10 @@ export default function Header({ navData }: { navData?: NavData | null }) {
               <Link href="/resources" className={NAV_LINK}>{labels.resources}</Link>
             </li>
 
+            <li className="border-r border-rule flex items-center">
+              <Link href="/id-drill" className={NAV_LINK}>{labels.idDrill}</Link>
+            </li>
+
             <li className="flex items-center">
               <Link href="/about" className={NAV_LINK}>{labels.mission}</Link>
             </li>
@@ -457,6 +466,11 @@ export default function Header({ navData }: { navData?: NavData | null }) {
             <Link href="/resources" onClick={() => setMobileOpen(false)}
               className="block px-6 py-3.5 font-body text-[0.72rem] tracking-[0.14em] uppercase text-ink hover:text-accent transition-colors border-b border-rule">
               {labels.resources}
+            </Link>
+
+            <Link href="/id-drill" onClick={() => setMobileOpen(false)}
+              className="block px-6 py-3.5 font-body text-[0.72rem] tracking-[0.14em] uppercase text-ink hover:text-accent transition-colors border-b border-rule">
+              {labels.idDrill}
             </Link>
 
             <Link href="/about" onClick={() => setMobileOpen(false)}

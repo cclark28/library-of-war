@@ -9,7 +9,8 @@
     "lint": "next lint",
     "pages:build": "npx @cloudflare/next-on-pages && printf '_worker.js\\n' > .vercel/output/static/.assetsignore && node scripts/patch-edge-functions.mjs",
     "pages:preview": "wrangler pages dev",
-    "pages:deploy": "wrangler pages deploy"
+    "pages:deploy": "wrangler pages deploy",
+    "qc": "node scripts/qc-check.mjs"
   },
   "dependencies": {
     "@portabletext/react": "^3.1.0",

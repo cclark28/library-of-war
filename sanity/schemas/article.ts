@@ -122,6 +122,19 @@ export default defineType({
       type: 'image',
       description: 'Public domain only. National Archives, Library of Congress, DVIDS, Wikimedia Commons PD.',
       options: { hotspot: true },
+      validation: (Rule) => Rule.custom(async (value, context) => {
+        if (!value?.asset?._ref) return true
+        const { document, getClient } = context as any
+        const client = getClient({ apiVersion: '2024-01-01' })
+        const existing = await client.fetch(
+          `*[_type == "article" && mainImage.asset._ref == $ref && _id != $id && !(_id in path("drafts.**"))][0]{ _id, title }`,
+          { ref: value.asset._ref, id: document._id?.replace(/^drafts\./, '') }
+        )
+        if (existing) {
+          return `Duplicate image — "${existing.title}" already uses this exact image. Use a different photo to avoid visual repetition.`
+        }
+        return true
+      }),
       fields: [
         defineField({
           name: 'alt',

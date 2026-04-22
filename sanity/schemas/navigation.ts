@@ -10,6 +10,7 @@ export default defineType({
     defineField({ name: 'browseLabel',    title: 'Browse by Era Label',  type: 'string', initialValue: 'Browse by Era' }),
     defineField({ name: 'seriesLabel',    title: 'Series Label',         type: 'string', initialValue: 'Series' }),
     defineField({ name: 'resourcesLabel', title: 'Resources Label',      type: 'string', initialValue: 'Resources' }),
+    defineField({ name: 'idDrillLabel',   title: 'ID Drill Label',       type: 'string', initialValue: 'ID Drill' }),
     defineField({ name: 'missionLabel',   title: 'Mission Label',        type: 'string', initialValue: 'Mission' }),
     defineField({ name: 'searchPlaceholder', title: 'Search Placeholder', type: 'string', initialValue: 'Search the archive…' }),
     defineField({ name: 'searchLabel',    title: 'Search Button Label',  type: 'string', initialValue: 'Search' }),
