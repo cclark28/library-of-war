@@ -269,7 +269,8 @@ async function main() {
   const toInsert = [];
 
   // Pull distinct keys from DB for the names in our set (chunked to avoid huge queries)
-  const names = [...new Set(unique.map(r => r.last_name.toLowerCase()))];
+  // Use original-case names for the DB query (DB stores mixed case, .in() is case-sensitive)
+  const names = [...new Set(unique.map(r => r.last_name))];
   const CHUNK = 200;
   const existingKeys = new Set();
 

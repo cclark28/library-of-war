@@ -25,7 +25,7 @@ CREATE OR REPLACE FUNCTION bulk_import_soldiers(
 RETURNS jsonb
 LANGUAGE plpgsql
 SECURITY DEFINER
-SET search_path = public
+SET search_path = public, extensions
 AS $$
 DECLARE
   _stored_hash  TEXT;
@@ -39,7 +39,7 @@ BEGIN
   FROM   _import_config
   WHERE  key = 'import_secret_hash';
 
-  IF _stored_hash IS NULL OR _stored_hash != crypt(p_import_secret, _stored_hash) THEN
+  IF _stored_hash IS NULL OR _stored_hash != extensions.crypt(p_import_secret, _stored_hash) THEN
     RAISE EXCEPTION 'Invalid import secret';
   END IF;
 
