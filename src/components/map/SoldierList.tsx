@@ -33,7 +33,9 @@ const BRANCHES: { value: ServiceBranch | 'all'; label: string }[] = [
   { value: 'special_forces', label: 'Special Forces' },
 ];
 
-const STATUSES: CasualtyStatus[] = ['kia', 'mia', 'wia', 'pow'];
+// WIA and POW are only shown when records of that type exist in the current view
+const ALWAYS_SHOWN: CasualtyStatus[] = ['kia', 'mia'];
+const CONDITIONAL: CasualtyStatus[] = ['wia', 'pow'];
 
 interface SoldierListProps {
   soldiers:       Soldier[];
@@ -58,6 +60,14 @@ export default function SoldierList({
 
   const hasActiveFilters =
     filters.branch !== 'all' || filters.status !== 'all' || filters.search.trim() !== '';
+
+  const hasWia = soldiers.some((s) => s.status === 'wia');
+  const hasPow = soldiers.some((s) => s.status === 'pow');
+  const visibleStatuses: CasualtyStatus[] = [
+    ...ALWAYS_SHOWN,
+    ...(hasWia ? (['wia'] as CasualtyStatus[]) : []),
+    ...(hasPow ? (['pow'] as CasualtyStatus[]) : []),
+  ];
 
   return (
     <aside className="flex flex-col w-64 shrink-0 border-r border-rule bg-paper">
@@ -115,7 +125,7 @@ export default function SoldierList({
             >
               All
             </button>
-            {STATUSES.map((s) => (
+            {visibleStatuses.map((s) => (
               <button
                 key={s}
                 onClick={() => set('status', s)}

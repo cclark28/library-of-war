@@ -40,8 +40,10 @@ export default function RecordPanel({
   onNavigate,
   onClose,
 }: RecordPanelProps) {
+  const contributorBase = `/contributor?soldier=${soldier?.id ?? ''}`;
+
   return (
-    <aside className="flex flex-col w-72 shrink-0 border-l border-rule bg-paper">
+    <aside className="flex flex-col w-72 shrink-0 border-l border-rule bg-paper min-h-0">
 
       {/* ── Panel header ─────────────────────────────────────────────── */}
       <div className="shrink-0 flex items-center justify-between px-4 py-2.5 border-b border-rule">
@@ -95,18 +97,26 @@ export default function RecordPanel({
           </p>
         </div>
       ) : (
-        <div className="flex-1 overflow-y-auto">
+        <div className="flex-1 overflow-y-auto min-h-0">
           <div className="p-4 space-y-4">
 
-            {/* Photo placeholder — no photos per brief */}
-            <div className="w-full h-28 bg-ghost border border-rule flex items-center justify-center">
-              <div className="text-center">
-                <span className="text-rule text-2xl">✦</span>
-                <p className="text-[8px] font-mono text-mist mt-1 tracking-wide">
-                  No Photo Available
-                </p>
+            {/* Photo */}
+            {soldier.photo_url ? (
+              <img
+                src={soldier.photo_url}
+                alt={`${soldier.first_name} ${soldier.last_name}`}
+                className="w-full h-36 object-cover border border-rule"
+              />
+            ) : (
+              <div className="w-full h-28 bg-ghost border border-rule flex items-center justify-center">
+                <div className="text-center">
+                  <span className="text-rule text-2xl">✦</span>
+                  <p className="text-[8px] font-mono text-mist mt-1 tracking-wide">
+                    No Photo on File
+                  </p>
+                </div>
               </div>
-            </div>
+            )}
 
             {/* Name + rank */}
             <div className="border-b border-rule pb-3">
@@ -141,8 +151,6 @@ export default function RecordPanel({
               )}
               <Field label="Branch" value={BRANCH_LABEL[soldier.branch]} />
               <Field label="Location" value={soldier.battle_location} />
-              {/* DOB if available */}
-              {/* Stored as age_at_casualty — derive DOB year if possible */}
               {soldier.age_at_casualty && (
                 <Field
                   label="Birth Year (est.)"
@@ -155,13 +163,16 @@ export default function RecordPanel({
               {soldier.service_number && (
                 <Field label="Service No." value={soldier.service_number} />
               )}
+              {soldier.notes && (
+                <Field label="Notes" value={soldier.notes} />
+              )}
             </dl>
 
           </div>
 
           {/* Source link */}
           {soldier.source_url && (
-            <div className="px-4 pb-4">
+            <div className="px-4">
               <div className="border-t border-rule pt-3">
                 <a
                   href={soldier.source_url}
@@ -174,6 +185,38 @@ export default function RecordPanel({
               </div>
             </div>
           )}
+
+          {/* ── Action buttons ──────────────────────────────────────── */}
+          <div className="px-4 py-4 space-y-2 border-t border-rule mt-4">
+            <p className="text-[8px] font-mono tracking-[0.2em] uppercase text-mist mb-2">
+              Contribute
+            </p>
+
+            <a
+              href={`${contributorBase}&type=photo`}
+              className="flex items-center gap-2 w-full border border-rule px-3 py-2 text-[9px] font-mono text-mist hover:text-ink hover:border-ink transition-colors"
+            >
+              <span className="text-[10px]">↑</span>
+              Submit a photo
+            </a>
+
+            <a
+              href={`${contributorBase}&type=tribute`}
+              className="flex items-center gap-2 w-full border border-rule px-3 py-2 text-[9px] font-mono text-mist hover:text-ink hover:border-ink transition-colors"
+            >
+              <span className="text-[10px]">✎</span>
+              Write something
+            </a>
+
+            <a
+              href={`${contributorBase}&type=removal`}
+              className="flex items-center gap-2 w-full border border-rule px-3 py-2 text-[9px] font-mono text-mist hover:text-red-400 hover:border-red-300 transition-colors"
+            >
+              <span className="text-[10px]">⊘</span>
+              Request removal
+            </a>
+          </div>
+
         </div>
       )}
 

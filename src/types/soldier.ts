@@ -15,7 +15,8 @@ export type WarEra =
   | 'vietnam'
   | 'gulf'
   | 'iraq'
-  | 'afghanistan';
+  | 'afghanistan'
+  | 'iran';
 
 export interface Soldier {
   id: string;

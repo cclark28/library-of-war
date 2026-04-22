@@ -26,23 +26,25 @@ const ERA_CENTERS: Record<WarEra | 'all', [number, number]> = {
   gulf:        [47.5,  29.3],
   iraq:        [43.7,  33.3],
   afghanistan: [67.7,  33.9],
+  iran:        [53.7,  32.4],
   all:         [20.0,  30.0],
 };
 
 const ERA_ZOOM: Record<WarEra | 'all', number> = {
   vietnam: 5, wwii: 4, wwi: 5, korea: 6,
-  gulf: 5, iraq: 6, afghanistan: 6, all: 3,
+  gulf: 5, iraq: 6, afghanistan: 6, iran: 6, all: 3,
 };
 
-const ERAS: { value: WarEra | 'all'; label: string }[] = [
-  { value: 'all',         label: 'All Eras' },
-  { value: 'wwi',         label: 'WWI' },
-  { value: 'wwii',        label: 'WWII' },
-  { value: 'korea',       label: 'Korea' },
-  { value: 'vietnam',     label: 'Vietnam' },
-  { value: 'gulf',        label: 'Gulf War' },
-  { value: 'iraq',        label: 'Iraq' },
-  { value: 'afghanistan', label: 'Afghanistan' },
+const ERAS: { value: WarEra | 'all'; label: string; active: boolean }[] = [
+  { value: 'all',         label: 'All Eras',     active: true  },
+  { value: 'wwi',         label: 'WWI',          active: false },
+  { value: 'wwii',        label: 'WWII',         active: false },
+  { value: 'korea',       label: 'Korea',        active: false },
+  { value: 'vietnam',     label: 'Vietnam',      active: true  },
+  { value: 'gulf',        label: 'Gulf War',     active: false },
+  { value: 'iraq',        label: 'Iraq',         active: false },
+  { value: 'afghanistan', label: 'Afghanistan',  active: false },
+  { value: 'iran',        label: 'Iran',         active: false },
 ];
 
 const DEFAULT_FILTERS: MapFilters = {
@@ -53,10 +55,12 @@ const DEFAULT_FILTERS: MapFilters = {
 };
 
 export default function HallowedGroundMap() {
-  const mapContainer   = useRef<HTMLDivElement>(null);
-  const map            = useRef<maplibregl.Map | null>(null);
-  const markerObjs     = useRef<maplibregl.Marker[]>([]);
-  const markerElements = useRef<Map<string, HTMLElement>>(new Map());
+  const mapContainer    = useRef<HTMLDivElement>(null);
+  const map             = useRef<maplibregl.Map | null>(null);
+  const markerObjs      = useRef<maplibregl.Marker[]>([]);
+  const markerElements  = useRef<Map<string, HTMLElement>>(new Map());
+  // Ref so map event listeners always call the latest loadMarkers (avoids stale closure)
+  const loadMarkersRef  = useRef<() => void>(() => {});
 
   const [filters,         setFilters]        = useState<MapFilters>(DEFAULT_FILTERS);
   const [soldiers,        setSoldiers]        = useState<Soldier[]>([]);
@@ -84,8 +88,8 @@ export default function HallowedGroundMap() {
       'bottom-right'
     );
 
-    map.current.on('load',    () => loadMarkers());
-    map.current.on('moveend', () => loadMarkers());
+    map.current.on('load',    () => loadMarkersRef.current());
+    map.current.on('moveend', () => loadMarkersRef.current());
 
     return () => {
       map.current?.remove();
@@ -215,6 +219,9 @@ export default function HallowedGroundMap() {
     }
   }, [filters, selectedSoldier]);
 
+  // Keep ref in sync so map event listeners always call the latest version
+  useEffect(() => { loadMarkersRef.current = loadMarkers; }, [loadMarkers]);
+
   // ── Record panel navigation ───────────────────────────────────────────────
   const handleNavigate = (dir: 1 | -1) => {
     if (!soldiers.length) return;
@@ -247,7 +254,7 @@ export default function HallowedGroundMap() {
                 Section
               </span>
               <span className="font-headline font-bold text-sm text-accent tracking-wide">
-                Hallowed Ground
+                The Fallen
               </span>
             </div>
           </div>
@@ -279,9 +286,12 @@ export default function HallowedGroundMap() {
           {ERAS.map((e) => (
             <button
               key={e.value}
-              onClick={() => setFilters((f) => ({ ...f, era: e.value }))}
+              onClick={() => e.active && setFilters((f) => ({ ...f, era: e.value }))}
+              title={e.active ? undefined : 'Coming soon — no data yet'}
               className={`text-[9px] tracking-[0.12em] uppercase font-mono px-2.5 py-0.5 border transition-colors ${
-                filters.era === e.value
+                !e.active
+                  ? 'border-rule/40 text-mist/30 cursor-not-allowed'
+                  : filters.era === e.value
                   ? 'border-accent text-accent bg-ghost'
                   : 'border-rule text-mist hover:text-ink hover:border-ink'
               }`}

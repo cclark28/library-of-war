@@ -11,6 +11,7 @@ const ERA_LABELS: Record<WarEra | 'all', string> = {
   gulf:        'Gulf War',
   iraq:        'Iraq War',
   afghanistan: 'Afghanistan',
+  iran:        'Iran',
 };
 
 interface StatsBarProps {
@@ -36,14 +37,20 @@ export default function StatsBar({ soldiers, era }: StatsBarProps) {
         : `${minYear}–${maxYear}`
       : '—';
 
+  // Dynamic columns — always show In View, KIA, MIA, Period; WIA and POW only if present
+  const cols = 4 + (wia > 0 ? 1 : 0) + (pow > 0 ? 1 : 0);
+
   return (
-    <div className="shrink-0 border-t border-rule bg-ghost grid grid-cols-6 divide-x divide-rule">
-      <StatCell label="In View" value={soldiers.length.toLocaleString()} />
-      <StatCell label="KIA" value={kia.toLocaleString()} valueClass="text-red-500" />
-      <StatCell label="MIA" value={mia.toLocaleString()} valueClass="text-yellow-600" />
-      <StatCell label="WIA" value={wia.toLocaleString()} valueClass="text-blue-500" />
-      <StatCell label="POW" value={pow.toLocaleString()} valueClass="text-orange-500" />
-      <StatCell label="Period" value={dateRange} />
+    <div
+      className="shrink-0 border-t border-rule bg-ghost divide-x divide-rule"
+      style={{ display: 'grid', gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))` }}
+    >
+      <StatCell label="In View"  value={soldiers.length.toLocaleString()} />
+      <StatCell label="KIA"      value={kia.toLocaleString()} valueClass="text-red-500" />
+      <StatCell label="MIA"      value={mia.toLocaleString()} valueClass="text-yellow-600" />
+      {wia > 0 && <StatCell label="WIA" value={wia.toLocaleString()} valueClass="text-blue-500" />}
+      {pow > 0 && <StatCell label="POW" value={pow.toLocaleString()} valueClass="text-orange-500" />}
+      <StatCell label="Period"   value={dateRange} />
     </div>
   );
 }
