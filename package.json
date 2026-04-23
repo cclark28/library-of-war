@@ -12,7 +12,9 @@
     "pages:deploy": "wrangler pages deploy",
     "qc": "node scripts/qc-check.mjs",
     "purge-dupes": "node scripts/delete-sanity-duplicates.mjs",
-    "purge-dupes:dry": "node scripts/delete-sanity-duplicates.mjs --dry-run"
+    "purge-dupes:dry": "node scripts/delete-sanity-duplicates.mjs --dry-run",
+    "gen-images": "node scripts/generate-missing-images.mjs",
+    "gen-images:dry": "node scripts/generate-missing-images.mjs --dry-run"
   },
   "dependencies": {
     "@portabletext/react": "^3.1.0",

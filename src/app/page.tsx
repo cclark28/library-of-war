@@ -252,7 +252,9 @@ export default async function HomePage() {
   })
 
   // ── Featured sections require images — imageless articles appear in archive only ──
-  const featuredArticles = deduped.filter(a => !!a.mainImage)
+  // Must check asset._ref specifically: Sanity may return mainImage: { asset: null }
+  // which is truthy but has no renderable image. Only a valid _ref means a real image.
+  const featuredArticles = deduped.filter(a => !!a.mainImage?.asset?._ref)
 
   const dayOffset = Math.floor(Date.now() / 86400000) // changes every 24h
   const shuffled = [...featuredArticles].sort((a, b) => {
@@ -297,7 +299,7 @@ export default async function HomePage() {
 
   // Era archive sections: images required, never repeat a globally seen article
   const remaining = deduped
-    .filter(a => !!a.mainImage)           // LAW 1 & 3: images required in all feature blocks
+    .filter(a => !!a.mainImage?.asset?._ref) // LAW 1 & 3: must have a real asset ref
     .filter(a => !globalSeen.has(a._id)) // LAW 2: never repeat across sections
   const byEra = groupByEra(remaining)
 

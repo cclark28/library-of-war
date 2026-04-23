@@ -1,0 +1,8 @@
+{
+  "voiceIndex": 2,
+  "lastRun": null,
+  "articlesWritten": 46,
+  "usedSlugs": [],
+  "_voices": ["dry-observer", "storyteller", "quiet-archivist", "careful-scholar", "old-sergeant"],
+  "_note": "voiceIndex is the index of the next voice to use. Increment by 1 mod 5 after each nightly run."
+}
