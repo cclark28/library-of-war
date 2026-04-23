@@ -9,21 +9,19 @@ export const revalidate = 60
 /* ── Era metadata map ────────────────────────────────────────────────────────── */
 
 const ERA_META: Record<string, { label: string; years: string; description: string }> = {
-  'world-war-i':      { label: 'World War I',       years: '1914–1918',    description: 'The war that was supposed to end all wars. Trenches, gas, and the collapse of empires.' },
-  'world-war-ii':     { label: 'World War II',      years: '1939–1945',    description: 'The largest armed conflict in human history. Total war across six continents.' },
-  'korean-war':       { label: 'Korean War',        years: '1950–1953',    description: 'The forgotten war. A proxy conflict that never officially ended.' },
-  'vietnam-war':      { label: 'Vietnam War',       years: '1955–1975',    description: 'Guerrilla warfare, political fracture, and the limits of American power.' },
-  'cold-war':         { label: 'Cold War',          years: '1947–1991',    description: 'Four decades of shadow warfare, nuclear brinkmanship, and ideological confrontation.' },
-  'modern-conflicts': { label: 'Modern Conflicts',  years: '1990–Present', description: 'From the Gulf War to asymmetric warfare in the 21st century.' },
-  'ancient-medieval': { label: 'Ancient & Medieval', years: 'Antiquity–1500', description: 'Bronze and iron, siege engines and cavalry. War at the dawn of civilization.' },
-  'napoleonic':       { label: 'Napoleonic Wars',   years: '1803–1815',    description: 'Napoleon\'s conquest of Europe and the birth of modern total war.' },
-  'civil-war':        { label: 'American Civil War', years: '1861–1865',   description: 'Brother against brother. The war that defined the American nation.' },
-  'wwi':              { label: 'World War I',        years: '1914–1918',   description: 'The war that was supposed to end all wars. Trenches, gas, and the collapse of empires.' },
-  'wwii':             { label: 'World War II',       years: '1939–1945',   description: 'The largest armed conflict in human history. Total war across six continents.' },
-  'vietnam':          { label: 'Vietnam War',        years: '1955–1975',   description: 'Guerrilla warfare, political fracture, and the limits of American power.' },
-  'modern':           { label: 'Modern Conflicts',   years: '1990–Present', description: 'From the Gulf War to asymmetric warfare in the 21st century.' },
-  'technology':       { label: 'Technology & Weapons', years: 'All Eras',  description: 'The instruments of war. From the longbow to the nuclear arsenal.' },
-  'intel-specops':    { label: 'Intelligence & Spec Ops', years: 'All Eras', description: 'The secret wars. Spies, saboteurs, and the operations history almost forgot.' },
+  'world-war-i':            { label: 'World War I',             years: '1914–1918',       description: 'The war that was supposed to end all wars. Trenches, gas, and the collapse of empires.' },
+  'world-war-ii':           { label: 'World War II',            years: '1939–1945',       description: 'The largest armed conflict in human history. Total war across six continents.' },
+  'korean-war':             { label: 'Korean War',              years: '1950–1953',       description: 'The forgotten war. A proxy conflict that never officially ended.' },
+  'vietnam-war':            { label: 'Vietnam War',             years: '1955–1975',       description: 'Guerrilla warfare, political fracture, and the limits of American power.' },
+  'cold-war':               { label: 'Cold War',                years: '1947–1991',       description: 'Four decades of shadow warfare, nuclear brinkmanship, and ideological confrontation.' },
+  'modern-conflicts':       { label: 'Modern Conflicts',        years: '1990–Present',    description: 'From the Gulf War to asymmetric warfare in the 21st century.' },
+  'ancient-medieval':       { label: 'Ancient & Medieval',      years: 'Antiquity–1500',  description: 'Bronze and iron, siege engines and cavalry. War at the dawn of civilization.' },
+  'napoleonic-wars':        { label: 'Napoleonic Wars',         years: '1803–1815',       description: 'Napoleon\'s conquest of Europe and the birth of modern total war.' },
+  'american-civil-war':     { label: 'American Civil War',      years: '1861–1865',       description: 'Brother against brother. The war that defined the American nation.' },
+  'technology-weapons':     { label: 'Technology & Weapons',    years: 'All Eras',        description: 'The instruments of war. From the longbow to the nuclear arsenal.' },
+  'intelligence-special-ops': { label: 'Intelligence & Spec Ops', years: 'All Eras',     description: 'The secret wars. Spies, saboteurs, and the operations history almost forgot.' },
+  'black-projects':         { label: 'Black Projects',          years: 'All Eras',        description: 'Classified, denied, and compartmentalised. The programs that never officially existed.' },
+  'early-modern':           { label: 'Early Modern',            years: '1500–1800',       description: 'Gunpowder, empire, and the age of European global dominance.' },
 }
 
 type Article = {
@@ -95,8 +93,8 @@ export default async function BrowsePage({ searchParams }: Props) {
               { label: 'Cold War',         href: '/browse?era=cold-war' },
               { label: 'Modern',           href: '/browse?era=modern-conflicts' },
               { label: 'Ancient & Medieval', href: '/browse?era=ancient-medieval' },
-              { label: 'Napoleonic',       href: '/browse?era=napoleonic' },
-              { label: 'Civil War',        href: '/browse?era=civil-war' },
+              { label: 'Napoleonic',       href: '/browse?era=napoleonic-wars' },
+              { label: 'Civil War',        href: '/browse?era=american-civil-war' },
             ].map((item) => {
               const isActive = item.href === `/browse?era=${era}` || (!era && item.href === '/browse')
               return (

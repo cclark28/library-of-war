@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { liveClient, footerQuery } from '@/lib/sanity'
 
-// ─── Fallback data (used until the Footer document is created in Studio) ──────
+// ─── Fallback data ────────────────────────────────────────────────────────────
 
 const FALLBACK_SOCIAL = [
   { label: 'X',         href: 'https://x.com/libraryofwar' },
@@ -24,11 +24,12 @@ const FALLBACK_COLUMNS = [
   {
     heading: '',
     links: [
-      { label: 'Ancient & Medieval',   href: '/browse?era=ancient-medieval' },
-      { label: 'Napoleonic Wars',      href: '/browse?era=napoleonic' },
-      { label: 'American Civil War',   href: '/browse?era=civil-war' },
-      { label: 'Technology & Weapons', href: '/browse?era=technology' },
-      { label: 'Intelligence & Spec Ops', href: '/browse?era=intel-specops' },
+      { label: 'Ancient & Medieval',      href: '/browse?era=ancient-medieval' },
+      { label: 'Napoleonic Wars',         href: '/browse?era=napoleonic-wars' },
+      { label: 'American Civil War',      href: '/browse?era=american-civil-war' },
+      { label: 'Technology & Weapons',    href: '/browse?era=technology-weapons' },
+      { label: 'Intelligence & Spec Ops', href: '/browse?era=intelligence-special-ops' },
+      { label: 'Black Projects',          href: '/browse?era=black-projects' },
     ],
   },
   {
@@ -36,7 +37,16 @@ const FALLBACK_COLUMNS = [
     links: [
       { label: "Weapons That Shouldn't Have Worked", href: '/series/weapons-that-shouldnt-have-worked' },
       { label: 'The Day After',                       href: '/series/the-day-after' },
-      { label: 'Black Projects',                      href: '/series/black-projects' },
+      { label: 'MACV-SOG',                            href: '/series/macvsog' },
+    ],
+  },
+  {
+    heading: 'Archive',
+    links: [
+      { label: 'All Articles',  href: '/browse' },
+      { label: 'Sitemap',       href: '/sitemap.xml' },
+      { label: 'Mission',       href: '/about' },
+      { label: 'Contributor',   href: '/contributor' },
     ],
   },
 ]
@@ -58,7 +68,6 @@ export default async function Footer() {
     .fetch(footerQuery)
     .catch(() => null)
 
-  const tagline     = data?.tagline      ?? 'Military History Archive. Every claim cited. Every fact verifiable. Public domain imagery only.'
   const email       = data?.contactEmail ?? 'libraryofwar@gmail.com'
   const social      = data?.socialLinks  ?? FALLBACK_SOCIAL
   const columns     = data?.columns      ?? FALLBACK_COLUMNS
@@ -70,7 +79,7 @@ export default async function Footer() {
     <footer className="bg-ink text-paper/80 mt-24">
       <div className="masthead-rule opacity-20" aria-hidden="true" />
 
-      <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8">
+      <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-8">
 
         {/* ── Brand column ────────────────────────────────────────────── */}
         <div className="md:col-span-1">
@@ -79,7 +88,7 @@ export default async function Footer() {
           </h2>
           <div className="w-8 h-px bg-accent mt-3 mb-4" />
           <p className="font-body text-paper/50 text-sm leading-relaxed">
-            {tagline}
+            Military History Archive.
           </p>
           <a
             href={`mailto:${email}`}

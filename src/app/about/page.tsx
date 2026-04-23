@@ -46,10 +46,58 @@ function MissionBody({ blocks }: { blocks: PTBlock[] }) {
 
 // ─── Fallback content ───────────────────────────────────────────────────────
 const FALLBACK_BODY: PTBlock[] = [
-  { _type: 'block', style: 'normal', children: [{ _type: 'span', text: 'Library of War is a military history library. One place for documentation, first-hand accounts, and the stories that define armed conflict across every era.' }] },
-  { _type: 'block', style: 'normal', children: [{ _type: 'span', text: 'Our goal is simple: bring the primary sources, the photographs, and the narratives together so they are accessible, accurate, and completely free to explore — with no paywalls, now or ever.' }] },
-  { _type: 'block', style: 'normal', children: [{ _type: 'span', text: 'All material is sourced directly from public archives, declassified documents, official records, and public domain collections. Every claim is thoroughly researched and cross-checked against multiple verifiable primary sources.' }] },
-  { _type: 'block', style: 'normal', children: [{ _type: 'span', text: 'We have chosen not to include comment sections on articles. This is an archive, not a debate platform. Our focus is on preserving history, not turning it into political discussion.' }] },
+  {
+    _type: 'block', style: 'normal',
+    children: [{ _type: 'span', text: 'Library of War is a free military history archive. Every era, every conflict, every operation — documented, sourced, and accessible to anyone. No subscription. No paywall. No exceptions.' }]
+  },
+  {
+    _type: 'block', style: 'h2',
+    children: [{ _type: 'span', text: 'How We Work' }]
+  },
+  {
+    _type: 'block', style: 'normal',
+    children: [{ _type: 'span', text: 'Every article on this site is researched using primary sources, declassified government documents, official military records, and public domain archives. All citations are linked and verifiable. If a claim cannot be sourced, it does not appear here.' }]
+  },
+  {
+    _type: 'block', style: 'h2',
+    children: [{ _type: 'span', text: 'AI Assistance' }]
+  },
+  {
+    _type: 'block', style: 'normal',
+    children: [{ _type: 'span', text: 'We use AI tools to assist with research, drafting, and image generation. We are transparent about this because we think you deserve to know. All AI-assisted content is reviewed, fact-checked against primary sources, and corrected before publication. The AI does not determine what is true — the sources do.' }]
+  },
+  {
+    _type: 'block', style: 'normal',
+    children: [{ _type: 'span', text: 'Images without documented historical photographs are generated using AI, styled to match the era and tone of the story. We do not present AI images as historical photographs.' }]
+  },
+  {
+    _type: 'block', style: 'h2',
+    children: [{ _type: 'span', text: 'No Comments' }]
+  },
+  {
+    _type: 'block', style: 'normal',
+    children: [{ _type: 'span', text: 'There are no comment sections on this site. This is an archive, not a debate platform. History is not a poll. The articles speak for themselves and the sources are linked — readers who want to go deeper have everything they need to do so.' }]
+  },
+  {
+    _type: 'block', style: 'h2',
+    children: [{ _type: 'span', text: 'How We Are Funded' }]
+  },
+  {
+    _type: 'block', style: 'normal',
+    children: [{ _type: 'span', text: 'This site runs on advertising and voluntary donations. Ads help cover hosting, infrastructure, and the time it takes to research and maintain this archive. If you find value here and want to support the work directly, donations are welcomed and appreciated — but never required.' }]
+  },
+  {
+    _type: 'block', style: 'normal',
+    children: [{ _type: 'span', text: 'Advertisers do not influence editorial decisions. What gets published is determined by historical significance, source quality, and what we think is worth telling — not by what generates clicks or what sponsors prefer.' }]
+  },
+  {
+    _type: 'block', style: 'h2',
+    children: [{ _type: 'span', text: 'Contribute' }]
+  },
+  {
+    _type: 'block', style: 'normal',
+    children: [{ _type: 'span', text: 'If you are a historian, researcher, veteran, or specialist with knowledge you think belongs here, we want to hear from you. This archive grows through collaboration. Reach out at libraryofwar@gmail.com.' }]
+  },
 ]
 
 type MissionData = {
@@ -66,8 +114,8 @@ export default async function AboutPage() {
 
   const headline       = data?.heroHeadline    ?? 'Our Mission'
   const body           = data?.body?.length    ? data.body : FALLBACK_BODY
-  const donationHead   = data?.donationHeading ?? 'Support the Library of War'
-  const donationSub    = data?.donationSubtext ?? 'This archive is free and will always remain free. Your support keeps it that way.'
+  const donationHead   = data?.donationHeading ?? 'Support the Archive'
+  const donationSub    = data?.donationSubtext ?? 'Free now, free always. Your support keeps it that way.'
 
   return (
     <>
