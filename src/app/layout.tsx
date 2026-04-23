@@ -90,6 +90,9 @@ export const metadata: Metadata = {
   },
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || '',
+    other: {
+      'msvalidate.01': '51020FF71574D992BC207A18BA671433',
+    },
   },
   other: {
     'google-adsense-account': 'ca-pub-4785900830813173',
