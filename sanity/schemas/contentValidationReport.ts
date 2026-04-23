@@ -10,8 +10,8 @@ export default defineType({
   name: 'contentValidationReport',
   title: 'Content Validation Report',
   type: 'document',
-  // Prevent manual creation from Studio
-  __experimental_actions: ['update', 'publish', 'delete'],
+  // Prevent manual creation from Studio (cast needed — __experimental_actions removed from types)
+  ...({ __experimental_actions: ['update', 'publish', 'delete'] } as object),
 
   fields: [
     // ── Article reference ──────────────────────────────────────────────────
