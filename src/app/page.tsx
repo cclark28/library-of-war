@@ -36,7 +36,9 @@ type Series = {
 
 function groupByEra(articles: Article[]): Record<string, Article[]> {
   return articles.reduce<Record<string, Article[]>>((acc, article) => {
-    const key = article.categories?.[0]?.title || 'From the Archive'
+    // Use 'Uncategorised' as the fallback to avoid colliding with the
+    // "From the Archive" section label used by the showFromArchive grid above.
+    const key = article.categories?.[0]?.title || 'Uncategorised'
     if (!acc[key]) acc[key] = []
     acc[key].push(article)
     return acc

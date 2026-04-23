@@ -71,6 +71,38 @@ export default defineConfig({
                   .title('Contributor Submissions')
                   .defaultOrdering([{ field: 'submittedAt', direction: 'desc' }])
               ),
+
+            S.divider(),
+
+            // Content Validation Reports — auto-created by /api/content-guard webhook
+            S.listItem()
+              .title('🛡 Validation Reports')
+              .child(
+                S.documentTypeList('contentValidationReport')
+                  .title('Validation Reports')
+                  .defaultOrdering([{ field: 'checkedAt', direction: 'desc' }])
+                  .filter('_type == "contentValidationReport"')
+              ),
+
+            // Blocked articles — quick filter for hard failures
+            S.listItem()
+              .title('🚫 Blocked Articles')
+              .child(
+                S.documentTypeList('contentValidationReport')
+                  .title('Blocked Articles')
+                  .defaultOrdering([{ field: 'checkedAt', direction: 'desc' }])
+                  .filter('_type == "contentValidationReport" && overallStatus == "BLOCK"')
+              ),
+
+            // Articles missing feature image gate
+            S.listItem()
+              .title('📷 Not Feature-Eligible')
+              .child(
+                S.documentTypeList('contentValidationReport')
+                  .title('Not Feature-Eligible')
+                  .defaultOrdering([{ field: 'checkedAt', direction: 'desc' }])
+                  .filter('_type == "contentValidationReport" && featureEligible == false')
+              ),
           ]),
     }),
     visionTool(),

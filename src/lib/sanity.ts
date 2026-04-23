@@ -28,7 +28,7 @@ export function urlFor(source: SanityImageSource) {
 // ─── GROQ Queries ─────────────────────────────────────────────────────────────
 
 export const articlesQuery = `
-  *[_type == "article" && status == "published"] | order(publishedAt desc) {
+  *[_type == "article" && status == "published" && !(_id in path("drafts.**"))] | order(publishedAt desc) {
     _id,
     title,
     slug,
@@ -43,7 +43,7 @@ export const articlesQuery = `
 `
 
 export const articleBySlugQuery = `
-  *[_type == "article" && slug.current == $slug][0] {
+  *[_type == "article" && slug.current == $slug && !(_id in path("drafts.**"))][0] {
     _id,
     title,
     slug,
@@ -67,6 +67,7 @@ export const relatedArticlesQuery = `
   *[
     _type == "article" &&
     status == "published" &&
+    !(_id in path("drafts.**")) &&
     _id != $id &&
     count(categories[@._ref in $categoryIds]) > 0
   ] | order(publishedAt desc) [0...3] {
@@ -84,7 +85,7 @@ export const relatedArticlesQuery = `
 `
 
 export const seriesQuery = `
-  *[_type == "series"] | order(order asc) {
+  *[_type == "series" && !(_id in path("drafts.**"))] | order(order asc) {
     _id,
     title,
     slug,
@@ -94,13 +95,13 @@ export const seriesQuery = `
 `
 
 export const seriesBySlugQuery = `
-  *[_type == "series" && slug.current == $slug][0] {
+  *[_type == "series" && slug.current == $slug && !(_id in path("drafts.**"))][0] {
     _id,
     title,
     slug,
     description,
     coverImage { asset, alt, caption, hotspot },
-    "articles": *[_type == "article" && references(^._id) && status == "published"] | order(publishedAt desc) {
+    "articles": *[_type == "article" && references(^._id) && status == "published" && !(_id in path("drafts.**"))] | order(publishedAt desc) {
       _id,
       title,
       slug,
@@ -118,6 +119,7 @@ export const searchArticlesQuery = `
   *[
     _type == "article" &&
     status == "published" &&
+    !(_id in path("drafts.**")) &&
     (
       title match $q + "*" ||
       excerpt match $q + "*" ||
@@ -142,6 +144,7 @@ export const articlesByEraQuery = `
   *[
     _type == "article" &&
     status == "published" &&
+    !(_id in path("drafts.**")) &&
     $era in categories[]->slug.current
   ] | order(publishedAt desc) {
     _id,
