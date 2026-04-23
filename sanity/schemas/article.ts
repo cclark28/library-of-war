@@ -232,7 +232,8 @@ export default defineType({
           fields: [
             defineField({ name: 'title', title: 'Title', type: 'string', validation: (Rule) => Rule.required() }),
             defineField({ name: 'publisher', title: 'Publisher / Archive', type: 'string' }),
-            defineField({ name: 'url', title: 'URL', type: 'url' }),
+            // GLOBAL LAW: every source must have a linkable URL — no URL, no publish.
+            defineField({ name: 'url', title: 'URL', type: 'url', validation: (Rule) => Rule.required().uri({ scheme: ['http', 'https'] }).error('Every source must have a linkable URL (https://...).') }),
             defineField({ name: 'date', title: 'Publication Date', type: 'string', description: 'e.g. "1944" or "March 12, 1968"' }),
           ],
           preview: {

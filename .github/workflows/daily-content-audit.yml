@@ -1,0 +1,57 @@
+name: Daily Content Audit
+
+on:
+  schedule:
+    # Runs at 06:00 UTC every day
+    - cron: '0 6 * * *'
+  # Allow manual trigger from GitHub Actions UI
+  workflow_dispatch:
+
+jobs:
+  audit:
+    name: Run content guard on full archive
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Trigger daily content audit
+        run: |
+          RESPONSE=$(curl -s -w "\n%{http_code}" -X POST \
+            https://libraryofwar.com/api/content-guard/daily \
+            -H "x-cron-secret: ${{ secrets.CRON_SECRET }}" \
+            -H "Content-Type: application/json" \
+            --max-time 60)
+
+          HTTP_CODE=$(echo "$RESPONSE" | tail -n1)
+          BODY=$(echo "$RESPONSE" | head -n-1)
+
+          echo "HTTP status: $HTTP_CODE"
+          echo "Response: $BODY"
+
+          # Fail the job if the endpoint returns a non-2xx status
+          if [ "$HTTP_CODE" -lt 200 ] || [ "$HTTP_CODE" -ge 300 ]; then
+            echo "❌ Audit endpoint returned HTTP $HTTP_CODE"
+            exit 1
+          fi
+
+          # Surface the summary in the GitHub Actions UI
+          TOTAL=$(echo "$BODY" | python3 -c "import json,sys; d=json.load(sys.stdin); print(d.get('total',0))" 2>/dev/null || echo "?")
+          PASS=$(echo  "$BODY" | python3 -c "import json,sys; d=json.load(sys.stdin); print(d.get('pass',0))"  2>/dev/null || echo "?")
+          WARN=$(echo  "$BODY" | python3 -c "import json,sys; d=json.load(sys.stdin); print(d.get('warn',0))"  2>/dev/null || echo "?")
+          BLOCK=$(echo "$BODY" | python3 -c "import json,sys; d=json.load(sys.stdin); print(d.get('block',0))" 2>/dev/null || echo "?")
+          MS=$(echo    "$BODY" | python3 -c "import json,sys; d=json.load(sys.stdin); print(d.get('durationMs',0))" 2>/dev/null || echo "?")
+
+          echo ""
+          echo "✅ Audit complete"
+          echo "   Total articles : $TOTAL"
+          echo "   PASS           : $PASS"
+          echo "   WARN           : $WARN"
+          echo "   BLOCK          : $BLOCK"
+          echo "   Duration       : ${MS}ms"
+
+          # Fail the job if any articles are BLOCK so GitHub sends a notification
+          if [ "$BLOCK" != "0" ] && [ "$BLOCK" != "?" ]; then
+            echo ""
+            echo "⚠️  $BLOCK article(s) have hard failures. Check 🚫 Blocked Articles in Sanity Studio."
+            exit 1
+          fi

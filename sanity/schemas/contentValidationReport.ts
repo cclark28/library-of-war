@@ -3,7 +3,8 @@ import { defineField, defineType } from 'sanity'
 // ─────────────────────────────────────────────────────────────────────────────
 // Content Validation Report
 // Created automatically by the /api/content-guard webhook on every article
-// publish. Never created manually — treat as read-only in Studio.
+// publish. Five structural checks — no external API calls, zero cost.
+// Never created manually — treat as read-only in Studio.
 // ─────────────────────────────────────────────────────────────────────────────
 
 export default defineType({
@@ -116,34 +117,6 @@ export default defineType({
       ],
     }),
 
-    defineField({
-      name: 'checkTopicRelevance',
-      title: 'Topic Relevance (AI)',
-      type: 'object',
-      fields: [
-        defineField({ name: 'pass', title: 'Pass', type: 'boolean', readOnly: true }),
-        defineField({ name: 'score', title: 'Score (0–100)', type: 'number', readOnly: true }),
-        defineField({ name: 'message', title: 'Message', type: 'text', rows: 2, readOnly: true }),
-      ],
-    }),
-
-    defineField({
-      name: 'checkHallucinationRisk',
-      title: 'Hallucination Risk (AI)',
-      type: 'object',
-      fields: [
-        defineField({ name: 'pass', title: 'Pass', type: 'boolean', readOnly: true }),
-        defineField({
-          name: 'flags',
-          title: 'Flagged Claims',
-          type: 'array',
-          of: [{ type: 'string' }],
-          readOnly: true,
-          description: 'Claims in the article body that appear unverifiable against the cited sources.',
-        }),
-        defineField({ name: 'message', title: 'Summary', type: 'text', rows: 3, readOnly: true }),
-      ],
-    }),
   ],
 
   preview: {

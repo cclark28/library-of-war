@@ -237,8 +237,22 @@ export default async function HomePage() {
     )
   }
 
+  // ─────────────────────────────────────────────────────────────────────────────
+  // GLOBAL LAW — Slug deduplication: if Sanity ever returns two documents with
+  // the same slug (e.g. old duplicate from a prior import), only the first one
+  // (newest by publishedAt, guaranteed by the GROQ ORDER BY in articlesQuery)
+  // survives. This is the last line of defence before render.
+  // ─────────────────────────────────────────────────────────────────────────────
+  const seenSlugs = new Set<string>()
+  const deduped = articles.filter(a => {
+    const slug = a.slug?.current
+    if (!slug || seenSlugs.has(slug)) return false
+    seenSlugs.add(slug)
+    return true
+  })
+
   // ── Featured sections require images — imageless articles appear in archive only ──
-  const featuredArticles = articles.filter(a => !!a.mainImage)
+  const featuredArticles = deduped.filter(a => !!a.mainImage)
 
   const dayOffset = Math.floor(Date.now() / 86400000) // changes every 24h
   const shuffled = [...featuredArticles].sort((a, b) => {
@@ -263,19 +277,29 @@ export default async function HomePage() {
   const hero  = heroSlots[0] ?? null
   const stack = heroSlots.slice(1, 3)
 
-  // Featured grids also require images
+  // ─────────────────────────────────────────────────────────────────────────
+  // GLOBAL LAWS (enforced in code — never bypass):
+  //   1. No article without a mainImage ever appears in ANY feature block.
+  //   2. No article appears more than once across ALL feature sections on this page.
+  //   3. Era grid sections only show articles with images.
+  //   4. All source citations render as clickable links when a URL is present.
+  // ─────────────────────────────────────────────────────────────────────────
+
+  // Global seen-ID tracker — every article rendered in any section is registered here
+  const globalSeen = new Set<string>(heroIds)
+
+  // Featured grids also require images, exclude hero
   const featuredMinusHero = featuredArticles.filter(a => !heroIds.has(a._id))
   const grid3 = featuredMinusHero.slice(0, 3)
-  const grid4 = featuredMinusHero.slice(3, 7)
+  grid3.forEach(a => globalSeen.add(a._id))
+  const grid4 = featuredMinusHero.filter(a => !globalSeen.has(a._id)).slice(0, 4)
+  grid4.forEach(a => globalSeen.add(a._id))
 
-  // Era archive sections: all articles not already featured (includes imageless)
-  const allFeaturedIds = new Set([
-    ...heroIds,
-    ...grid3.map(a => a._id),
-    ...grid4.map(a => a._id),
-  ])
-  const remaining = articles.filter(a => !allFeaturedIds.has(a._id))
-  const byEra     = groupByEra(remaining)
+  // Era archive sections: images required, never repeat a globally seen article
+  const remaining = deduped
+    .filter(a => !!a.mainImage)           // LAW 1 & 3: images required in all feature blocks
+    .filter(a => !globalSeen.has(a._id)) // LAW 2: never repeat across sections
+  const byEra = groupByEra(remaining)
 
   return (
     <>

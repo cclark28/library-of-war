@@ -10,7 +10,9 @@
     "pages:build": "npx @cloudflare/next-on-pages && printf '_worker.js\\n' > .vercel/output/static/.assetsignore && node scripts/patch-edge-functions.mjs",
     "pages:preview": "wrangler pages dev",
     "pages:deploy": "wrangler pages deploy",
-    "qc": "node scripts/qc-check.mjs"
+    "qc": "node scripts/qc-check.mjs",
+    "purge-dupes": "node scripts/delete-sanity-duplicates.mjs",
+    "purge-dupes:dry": "node scripts/delete-sanity-duplicates.mjs --dry-run"
   },
   "dependencies": {
     "@portabletext/react": "^3.1.0",
