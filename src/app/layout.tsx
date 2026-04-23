@@ -91,6 +91,9 @@ export const metadata: Metadata = {
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || '',
   },
+  other: {
+    'google-adsense-account': 'ca-pub-4785900830813173',
+  },
 }
 
 // JSON-LD structured data for the site
@@ -129,6 +132,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID
+  const adsenseId = process.env.NEXT_PUBLIC_ADSENSE_PUB_ID
 
   return (
     <html
@@ -160,6 +164,13 @@ export default function RootLayout({
             `}
           </Script>
         </>
+      )}
+      {adsenseId && (
+        <Script
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseId}`}
+          strategy="afterInteractive"
+          crossOrigin="anonymous"
+        />
       )}
       <body>{children}</body>
     </html>
