@@ -26,22 +26,23 @@ export type NavData = {
 
 // Sorted alphabetically by label
 const FALLBACK_ERAS: Array<{ label: string; years?: string; href: string; visible?: boolean }> = [
-  { label: 'American Civil War', years: '1861–1865',      href: '/browse?era=civil-war' },
+  { label: 'American Civil War', years: '1861–1865',      href: '/browse?era=american-civil-war' },
   { label: 'Ancient & Medieval', years: 'Antiquity–1500', href: '/browse?era=ancient-medieval' },
   { label: 'Cold War',           years: '1947–1991',      href: '/browse?era=cold-war' },
+  { label: 'Early Modern',       years: '1500–1800',      href: '/browse?era=early-modern' },
   { label: 'Korean War',         years: '1950–1953',      href: '/browse?era=korean-war' },
   { label: 'Modern Conflicts',   years: '1990–Present',   href: '/browse?era=modern-conflicts' },
-  { label: 'Napoleonic Wars',    years: '1803–1815',      href: '/browse?era=napoleonic' },
+  { label: 'Napoleonic Wars',    years: '1803–1815',      href: '/browse?era=napoleonic-wars' },
   { label: 'Vietnam War',        years: '1955–1975',      href: '/browse?era=vietnam-war' },
   { label: 'World War I',        years: '1914–1918',      href: '/browse?era=world-war-i' },
   { label: 'World War II',       years: '1939–1945',      href: '/browse?era=world-war-ii' },
 ]
 
 const FALLBACK_SERIES: Array<{ label: string; href: string; visible?: boolean }> = [
-  { label: 'Black Projects',                        href: '/series/black-projects' },
-  { label: 'MACV-SOG',                              href: '/series/macvsog' },
+  { label: 'Black Projects',                        href: '/series/ghost-gear' },
   { label: 'The Day After',                         href: '/series/the-day-after' },
   { label: "Weapons That Shouldn't Have Worked",    href: '/series/weapons-that-shouldnt-have-worked' },
+  { label: 'Smoke and Mirrors',                     href: '/series/smoke-and-mirrors' },
 ]
 
 const FALLBACK_SOCIAL = [

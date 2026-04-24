@@ -72,6 +72,7 @@ export default defineType({
           { title: 'Draft', value: 'draft' },
           { title: 'In Review', value: 'review' },
           { title: 'Published', value: 'published' },
+          { title: '🚫 Archived — Hidden from site', value: 'archived' },
         ],
         layout: 'radio',
       },
@@ -79,10 +80,51 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'voice',
+      title: 'Editorial Voice',
+      type: 'string',
+      description: 'Leave blank for AI-generated articles — no byline will be shown.',
+      options: {
+        list: [
+          { title: 'The Correspondent', value: 'correspondent' },
+          { title: 'The Analyst',       value: 'analyst' },
+          { title: 'The Historian',     value: 'historian' },
+          { title: 'The Tactician',     value: 'tactician' },
+          { title: 'The Archivist',     value: 'archivist' },
+        ],
+        layout: 'radio',
+      },
+    }),
+    defineField({
       name: 'author',
       title: 'Author',
+      description: 'Optional — for human contributors. Leave blank for AI-generated content.',
       type: 'reference',
       to: [{ type: 'author' }],
+    }),
+    defineField({
+      name: 'era',
+      title: 'Era',
+      type: 'string',
+      description: 'Primary historical era — used for Browse by Era filtering.',
+      options: {
+        list: [
+          { title: 'Ancient & Medieval (Antiquity–1500)',   value: 'ancient-medieval' },
+          { title: 'Early Modern (1500–1800)',              value: 'early-modern' },
+          { title: 'Napoleonic Wars (1803–1815)',           value: 'napoleonic-wars' },
+          { title: 'American Civil War (1861–1865)',        value: 'american-civil-war' },
+          { title: 'World War I (1914–1918)',               value: 'world-war-i' },
+          { title: 'World War II (1939–1945)',              value: 'world-war-ii' },
+          { title: 'Korean War (1950–1953)',                value: 'korean-war' },
+          { title: 'Vietnam War (1955–1975)',               value: 'vietnam-war' },
+          { title: 'Cold War (1947–1991)',                  value: 'cold-war' },
+          { title: 'Modern Conflicts (1990–Present)',       value: 'modern-conflicts' },
+          { title: 'Technology & Weapons (All Eras)',       value: 'technology-weapons' },
+          { title: 'Intelligence & Spec Ops (All Eras)',    value: 'intelligence-special-ops' },
+          { title: 'Black Projects (All Eras)',             value: 'black-projects' },
+        ],
+        layout: 'radio',
+      },
     }),
     defineField({
       name: 'publishedAt',
@@ -140,12 +182,14 @@ export default defineType({
         if (!value?.asset?._ref) return true
         const { document, getClient } = context as any
         const client = getClient({ apiVersion: '2024-01-01' })
+        const selfId = document._id?.replace(/^drafts\./, '')
+        // Check against ALL articles (including drafts) — catches conflicts before publish
         const existing = await client.fetch(
-          `*[_type == "article" && mainImage.asset._ref == $ref && _id != $id && !(_id in path("drafts.**"))][0]{ _id, title }`,
-          { ref: value.asset._ref, id: document._id?.replace(/^drafts\./, '') }
+          `*[_type == "article" && mainImage.asset._ref == $ref && _id != $id && _id != $draftId][0]{ _id, title }`,
+          { ref: value.asset._ref, id: selfId, draftId: `drafts.${selfId}` }
         )
         if (existing) {
-          return `Duplicate image — "${existing.title}" already uses this exact image. Use a different photo to avoid visual repetition.`
+          return `Duplicate image — "${existing.title}" already uses this exact image. Use a different photo to avoid visual repetition on site.`
         }
         return true
       }),
@@ -383,8 +427,9 @@ export default defineType({
       media: 'mainImage',
     },
     prepare({ title, status, author, media }: { title: string; status?: string; author?: string; media?: any }) {
-      const statusLabel = status === 'published' ? '' : ` · ${status?.toUpperCase()}`
-      const byline = author ? `${author}${statusLabel}` : statusLabel.trimStart() || 'No status'
+      const s = status ?? 'no status'
+      const statusLabel = s === 'published' ? '' : ` · ${s.toUpperCase()}`
+      const byline = author ? `${author}${statusLabel}` : statusLabel.trimStart() || '· NO STATUS'
       return {
         title,
         subtitle: byline,

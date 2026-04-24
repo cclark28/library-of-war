@@ -35,6 +35,8 @@ export const articlesQuery = `
     publishedAt,
     excerpt,
     tags,
+    era,
+    voice,
     mainImage { asset, alt, caption, hotspot },
     author->{ name, slug, role, photo },
     series->{ title, slug },
@@ -43,7 +45,7 @@ export const articlesQuery = `
 `
 
 export const articleBySlugQuery = `
-  *[_type == "article" && slug.current == $slug && !(_id in path("drafts.**"))][0] {
+  *[_type == "article" && slug.current == $slug && status != "archived" && !(_id in path("drafts.**"))][0] {
     _id,
     title,
     slug,
@@ -145,7 +147,7 @@ export const articlesByEraQuery = `
     _type == "article" &&
     status == "published" &&
     !(_id in path("drafts.**")) &&
-    $era in categories[]->slug.current
+    (era == $era || $era in categories[]->slug.current)
   ] | order(publishedAt desc) {
     _id,
     title,

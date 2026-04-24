@@ -10,7 +10,7 @@ interface Article {
   title: string
   slug: { current: string }
   publishedAt?: string
-  voice?: 'analyst' | 'correspondent'
+  voice?: 'analyst' | 'correspondent' | 'historian' | 'tactician' | 'archivist'
   excerpt?: string
   tags?: string[]
   mainImage?: {
