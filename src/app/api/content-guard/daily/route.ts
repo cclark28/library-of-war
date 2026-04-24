@@ -1,15 +1,19 @@
 /**
  * /api/content-guard/daily
  * ──────────────────────────────────────────────────────────────────────────
- * Bulk archive audit. Checks every published article in one pass:
+ * Bulk archive audit. Checks every published article in one fast pass:
  *
  *  1. IMAGE PRESENCE    — articles without a mainImage flagged as BLOCK
  *  2. IMAGE DUPLICATES  — articles sharing the same image asset flagged as WARN
  *  3. TITLE DUPLICATES  — articles sharing the same title flagged as BLOCK
  *  4. SOURCES COUNT     — articles with < 3 sources flagged as BLOCK
- *  5. SOURCE URLS       — dead links across all unique source URLs flagged as WARN
  *
- * Designed for efficiency: 1 Sanity read, 1 batch of URL HEAD checks,
+ * NOTE: Source URL reachability is intentionally NOT checked here.
+ * It is checked on every individual publish by the /api/content-guard webhook.
+ * Running HEAD checks against ~1200 external URLs would exceed Cloudflare
+ * Workers' 30-second wall-clock limit and cause a 504 timeout.
+ *
+ * Designed for efficiency: 1 Sanity read (no external HTTP),
  * then N Sanity writes (one contentValidationReport per article).
  *
  * Called by GitHub Actions on a daily schedule. Protected by CRON_SECRET.
@@ -22,7 +26,6 @@ import { type NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@sanity/client'
 
 export const runtime = 'edge'
-export const maxDuration = 60
 
 const CRON_SECRET = process.env.CRON_SECRET ?? ''
 
@@ -37,11 +40,10 @@ const sanityWrite = createClient({
 // ─── Types ────────────────────────────────────────────────────────────────────
 
 interface ArticleRow {
-  _id:          string
-  title?:       string
-  imageRef?:    string
-  sourceUrls:   string[]
-  sourceCount:  number
+  _id:         string
+  title?:      string
+  imageRef?:   string
+  sourceCount: number
 }
 
 interface ReportRow {
@@ -53,6 +55,7 @@ interface ReportRow {
     imageDuplicate: { pass: boolean; message: string }
     titleDuplicate: { pass: boolean; message: string }
     sourcesCount:   { pass: boolean; count: number; message: string }
+    // sourceUrls is not checked in the daily run — handled by the publish webhook
     sourceUrls:     { pass: boolean; checked: number; deadLinks: string[]; message: string }
   }
 }
@@ -64,58 +67,25 @@ async function fetchAllArticles(): Promise<ArticleRow[]> {
     _id: string
     title?: string
     mainImage?: { asset?: { _ref?: string } }
-    sources?: { url?: string }[]
-    primarySources?: { url?: string }[]
+    sourceCount: number
   }
 
+  // Count sources server-side — no need to fetch individual URLs for the daily job
   const rows: Raw[] = await sanityWrite.fetch(
     `*[_type == "article" && status == "published" && !(_id in path("drafts.**"))] {
       _id,
       title,
       mainImage { asset { _ref } },
-      sources[]        { url },
-      primarySources[] { url }
+      "sourceCount": count(sources) + count(primarySources)
     }`
   )
 
-  return rows.map((r) => {
-    const allSources = [...(r.sources ?? []), ...(r.primarySources ?? [])]
-    return {
-      _id:         r._id,
-      title:       r.title,
-      imageRef:    r.mainImage?.asset?._ref,
-      sourceUrls:  allSources.map((s) => s.url).filter((u): u is string => !!u && u.startsWith('http')),
-      sourceCount: allSources.length,
-    }
-  })
-}
-
-// ─── URL batch check ──────────────────────────────────────────────────────────
-
-async function checkUrls(urls: string[]): Promise<Map<string, boolean>> {
-  const CONCURRENCY = 25
-  const results = new Map<string, boolean>()
-  const unique   = [...new Set(urls)]
-
-  for (let i = 0; i < unique.length; i += CONCURRENCY) {
-    const batch = unique.slice(i, i + CONCURRENCY)
-    await Promise.all(
-      batch.map(async (url) => {
-        try {
-          const res = await fetch(url, {
-            method:  'HEAD',
-            redirect: 'follow',
-            signal:  AbortSignal.timeout(5_000),
-          })
-          results.set(url, res.ok || res.status === 405)
-        } catch {
-          results.set(url, false)
-        }
-      })
-    )
-  }
-
-  return results
+  return rows.map((r) => ({
+    _id:         r._id,
+    title:       r.title,
+    imageRef:    r.mainImage?.asset?._ref,
+    sourceCount: r.sourceCount ?? 0,
+  }))
 }
 
 // ─── Write one report ─────────────────────────────────────────────────────────
@@ -174,11 +144,8 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
     }
   }
 
-  // ── 3. Batch URL checks ───────────────────────────────────────────────
-  const allUrls    = articles.flatMap((a) => a.sourceUrls)
-  const urlResults = await checkUrls(allUrls)
-
-  // ── 4. Build reports ──────────────────────────────────────────────────
+  // ── 3. Build reports ──────────────────────────────────────────────────
+  // (URL reachability is not checked here — handled by the publish webhook)
   const reports: ReportRow[] = articles.map((a) => {
     // Image presence
     const hasImage = !!a.imageRef
@@ -217,20 +184,17 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
         : `BLOCK — Only ${a.sourceCount} source(s). Minimum 3 required.`,
     }
 
-    // Source URLs
-    const deadLinks = a.sourceUrls.filter((u) => urlResults.get(u) === false)
+    // Source URLs — not checked in daily run; stub so report schema stays consistent
     const sourceUrls = {
-      pass:      deadLinks.length === 0,
-      checked:   a.sourceUrls.length,
-      deadLinks,
-      message:   deadLinks.length === 0
-        ? `All ${a.sourceUrls.length} source URL(s) resolved.`
-        : `WARN — ${deadLinks.length} unreachable URL(s): ${deadLinks.join(' | ')}`,
+      pass:      true,
+      checked:   0,
+      deadLinks: [] as string[],
+      message:   'URL reachability checked at publish time by webhook — not re-checked in daily run.',
     }
 
-    // Overall
+    // Overall (URL check excluded from daily pass/fail evaluation)
     const hardFail = !imagePresent.pass || !titleDuplicate.pass || !sourcesCount.pass
-    const softFail = !imageDuplicate.pass || !sourceUrls.pass
+    const softFail = !imageDuplicate.pass
     const overallStatus: 'PASS' | 'WARN' | 'BLOCK' = hardFail ? 'BLOCK' : softFail ? 'WARN' : 'PASS'
 
     return {
@@ -241,7 +205,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
     }
   })
 
-  // ── 5. Write all reports to Sanity (batches of 10) ────────────────────
+  // ── 4. Write all reports to Sanity (batches of 10) ────────────────────
   const WRITE_BATCH = 10
   for (let i = 0; i < reports.length; i += WRITE_BATCH) {
     await Promise.all(
@@ -249,7 +213,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
     )
   }
 
-  // ── 6. Summary ────────────────────────────────────────────────────────
+  // ── 5. Summary ────────────────────────────────────────────────────────
   const summary = {
     total: reports.length,
     pass:  reports.filter((r) => r.overallStatus === 'PASS').length,
