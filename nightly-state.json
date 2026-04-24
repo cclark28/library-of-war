@@ -1,8 +1,8 @@
 {
-  "voiceIndex": 2,
-  "lastRun": null,
-  "articlesWritten": 46,
-  "usedSlugs": [],
+  "voiceIndex": 3,
+  "lastRun": "2026-04-23T00:00:00.000Z",
+  "articlesWritten": 48,
+  "usedSlugs": ["battle-of-cannae", "battle-of-austerlitz"],
   "_voices": ["dry-observer", "storyteller", "quiet-archivist", "careful-scholar", "old-sergeant"],
   "_note": "voiceIndex is the index of the next voice to use. Increment by 1 mod 5 after each nightly run."
 }

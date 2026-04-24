@@ -14,7 +14,9 @@
  * Workers' 30-second wall-clock limit and cause a 504 timeout.
  *
  * Designed for efficiency: 1 Sanity read (no external HTTP),
- * then N Sanity writes (one contentValidationReport per article).
+ * then 1 Sanity write (a single transaction containing all N contentValidationReport
+ * mutations). Using a transaction avoids Cloudflare Workers' 50-subrequest cap,
+ * which was previously cutting off writes after ~49 articles.
  *
  * Called by GitHub Actions on a daily schedule. Protected by CRON_SECRET.
  *
@@ -89,28 +91,35 @@ async function fetchAllArticles(): Promise<ArticleRow[]> {
   }))
 }
 
-// ─── Write one report (non-fatal) ─────────────────────────────────────────────
+// ─── Write all reports in a single Sanity transaction ────────────────────────
+// One API call = one subrequest. Cloudflare Workers free tier caps at 50
+// subrequests per invocation. Writing each report individually would exhaust
+// that cap after ~49 articles (1 read + 49 writes). A transaction bundles all
+// createOrReplace mutations into a single HTTP request, leaving the cap unused.
 
-async function writeReport(r: ReportRow, checkedAt: string): Promise<void> {
-  const docId = `contentValidationReport-${r.articleId}`
-  const c = r.checks
+async function writeAllReports(reports: ReportRow[], checkedAt: string): Promise<void> {
   try {
-    await sanityWrite.createOrReplace({
-      _id:             docId,
-      _type:           'contentValidationReport',
-      article:         { _type: 'reference', _ref: r.articleId },
-      checkedAt,
-      overallStatus:   r.overallStatus,
-      featureEligible: r.featureEligible,
-      checkImagePresent:   c.imagePresent,
-      checkImageDuplicate: c.imageDuplicate,
-      checkTitleDuplicate: c.titleDuplicate,
-      checkSourcesCount:   c.sourcesCount,
-      checkSourceUrls:     c.sourceUrls,
-    })
+    const tx = sanityWrite.transaction()
+    for (const r of reports) {
+      const c = r.checks
+      tx.createOrReplace({
+        _id:             `contentValidationReport-${r.articleId}`,
+        _type:           'contentValidationReport',
+        article:         { _type: 'reference', _ref: r.articleId },
+        checkedAt,
+        overallStatus:   r.overallStatus,
+        featureEligible: r.featureEligible,
+        checkImagePresent:   c.imagePresent,
+        checkImageDuplicate: c.imageDuplicate,
+        checkTitleDuplicate: c.titleDuplicate,
+        checkSourcesCount:   c.sourcesCount,
+        checkSourceUrls:     c.sourceUrls,
+      })
+    }
+    await tx.commit()
   } catch (err) {
     // Log write failures but don't crash the route — audit summary is more important
-    console.error(`[content-guard/daily] write failed for ${r.articleId}:`, err)
+    console.error('[content-guard/daily] transaction write failed:', err)
   }
 }
 
@@ -221,13 +230,10 @@ async function runAudit(): Promise<NextResponse> {
     }
   })
 
-  // ── 4. Write all reports to Sanity (batches of 10) ────────────────────
-  const WRITE_BATCH = 10
-  for (let i = 0; i < reports.length; i += WRITE_BATCH) {
-    await Promise.all(
-      reports.slice(i, i + WRITE_BATCH).map((r) => writeReport(r, checkedAt))
-    )
-  }
+  // ── 4. Write all reports to Sanity (single transaction = 1 subrequest) ──
+  // This replaces the previous batched approach, which was exhausting Cloudflare
+  // Workers' 50-subrequest cap after ~49 articles (1 read + 49 individual writes).
+  await writeAllReports(reports, checkedAt)
 
   // ── 5. Summary ────────────────────────────────────────────────────────
   const summary = {
