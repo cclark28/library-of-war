@@ -16,7 +16,7 @@ jobs:
     steps:
       - name: Trigger daily content audit
         run: |
-          RESPONSE=$(curl -s -w "\n%{http_code}" -X POST \
+          RESPONSE=$(curl -s -L -w "\n%{http_code}" -X POST \
             https://libraryofwar.com/api/content-guard/daily \
             -H "x-cron-secret: ${{ secrets.CRON_SECRET }}" \
             -H "Content-Type: application/json" \
