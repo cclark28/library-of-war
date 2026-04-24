@@ -71,12 +71,13 @@ async function fetchAllArticles(): Promise<ArticleRow[]> {
   }
 
   // Count sources server-side — no need to fetch individual URLs for the daily job
+  // Use coalesce to guard against null (articles with no sources field at all)
   const rows: Raw[] = await sanityWrite.fetch(
     `*[_type == "article" && status == "published" && !(_id in path("drafts.**"))] {
       _id,
       title,
       mainImage { asset { _ref } },
-      "sourceCount": count(sources) + count(primarySources)
+      "sourceCount": length(coalesce(sources, [])) + length(coalesce(primarySources, []))
     }`
   )
 
@@ -88,24 +89,29 @@ async function fetchAllArticles(): Promise<ArticleRow[]> {
   }))
 }
 
-// ─── Write one report ─────────────────────────────────────────────────────────
+// ─── Write one report (non-fatal) ─────────────────────────────────────────────
 
 async function writeReport(r: ReportRow, checkedAt: string): Promise<void> {
   const docId = `contentValidationReport-${r.articleId}`
   const c = r.checks
-  await sanityWrite.createOrReplace({
-    _id:             docId,
-    _type:           'contentValidationReport',
-    article:         { _type: 'reference', _ref: r.articleId },
-    checkedAt,
-    overallStatus:   r.overallStatus,
-    featureEligible: r.featureEligible,
-    checkImagePresent:   c.imagePresent,
-    checkImageDuplicate: c.imageDuplicate,
-    checkTitleDuplicate: c.titleDuplicate,
-    checkSourcesCount:   c.sourcesCount,
-    checkSourceUrls:     c.sourceUrls,
-  })
+  try {
+    await sanityWrite.createOrReplace({
+      _id:             docId,
+      _type:           'contentValidationReport',
+      article:         { _type: 'reference', _ref: r.articleId },
+      checkedAt,
+      overallStatus:   r.overallStatus,
+      featureEligible: r.featureEligible,
+      checkImagePresent:   c.imagePresent,
+      checkImageDuplicate: c.imageDuplicate,
+      checkTitleDuplicate: c.titleDuplicate,
+      checkSourcesCount:   c.sourcesCount,
+      checkSourceUrls:     c.sourceUrls,
+    })
+  } catch (err) {
+    // Log write failures but don't crash the route — audit summary is more important
+    console.error(`[content-guard/daily] write failed for ${r.articleId}:`, err)
+  }
 }
 
 // ─── Main handler ──────────────────────────────────────────────────────────────
@@ -117,6 +123,16 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 
+  try {
+    return await runAudit()
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err)
+    console.error('[content-guard/daily] unhandled error:', msg)
+    return NextResponse.json({ ok: false, error: msg }, { status: 500 })
+  }
+}
+
+async function runAudit(): Promise<NextResponse> {
   const startMs   = Date.now()
   const checkedAt = new Date().toISOString()
 
