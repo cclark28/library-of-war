@@ -175,8 +175,8 @@ export default async function ArticlePage({ params }: Params) {
 
       <main>
         {/* ── Title ───────────────────────────────────────────── */}
-        <FadeIn className="max-w-2xl mx-auto px-6 pt-14 pb-0 text-center" variant="fade-in">
-          <div className="relative border-t border-rule pt-8 pb-8 border-b border-rule mb-8">
+        <FadeIn className="max-w-2xl mx-auto px-6 pt-8 pb-0 text-center" variant="fade-in">
+          <div className="relative pb-8 border-b border-rule mb-8">
             <h1 className="article-headline">
               {article.title}
             </h1>

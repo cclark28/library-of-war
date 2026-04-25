@@ -373,7 +373,7 @@ export default function Header({ navData }: { navData?: NavData | null }) {
                       group flex flex-col gap-1 px-6 py-5
                       hover:bg-ghost transition-colors
                       ${i % 3 !== 2 ? 'border-r border-rule' : ''}
-                      ${i < 3 ? 'border-b border-rule' : ''}
+                      ${i + 3 < ERAS.length ? 'border-b border-rule' : ''}
                     `}
                   >
                     <span className="font-headline font-bold text-ink text-[0.95rem] leading-tight group-hover:text-accent transition-colors">
