@@ -1,8 +1,8 @@
 {
-  "voiceIndex": 3,
-  "lastRun": "2026-04-23T00:00:00.000Z",
-  "articlesWritten": 48,
-  "usedSlugs": ["battle-of-cannae", "battle-of-austerlitz"],
-  "_voices": ["dry-observer", "storyteller", "quiet-archivist", "careful-scholar", "old-sergeant"],
-  "_note": "voiceIndex is the index of the next voice to use. Increment by 1 mod 5 after each nightly run."
+  "voiceIndex": 4,
+  "lastRun": "2026-04-24T00:00:00.000Z",
+  "articlesWritten": 50,
+  "usedSlugs": ["battle-of-cannae", "battle-of-austerlitz", "battle-of-kursk", "battle-of-carrhae"],
+  "_voices": ["correspondent", "historian", "archivist", "analyst", "tactician"],
+  "_note": "voiceIndex is the index of the next voice to use. Increment by 1 mod 5 after each nightly run. Voice definitions and generation rules in writer-voices.md."
 }
