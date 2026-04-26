@@ -8,6 +8,7 @@ import HeaderWrapper from '@/components/HeaderWrapper'
 import Footer from '@/components/Footer'
 import ArticleCard from '@/components/ArticleCard'
 import FadeIn from '@/components/FadeIn'
+import ScrollProgress from '@/components/ScrollProgress'
 
 export const runtime = 'edge'
 export const revalidate = 60
@@ -171,9 +172,10 @@ export default async function ArticlePage({ params }: Params) {
 
   return (
     <>
+      <ScrollProgress />
       <HeaderWrapper />
 
-      <main>
+      <main className="page-enter">
         {/* ── Title ───────────────────────────────────────────── */}
         <FadeIn className="max-w-2xl mx-auto px-6 pt-8 pb-0 text-center" variant="fade-in">
           <div className="relative pb-8 border-b border-rule mb-8">

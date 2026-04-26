@@ -2,7 +2,7 @@
 
 ## ⚠️ GLOBAL LAWS — Non-Negotiable, Never Bypass
 
-These four laws apply to every page, every component, every data query, every future change. No exceptions.
+These laws apply to every page, every component, every data query, every future change. No exceptions.
 
 **LAW 1 — No image, no feature block.**
 An article without a `mainImage` (with a valid asset reference) must never appear in any feature block: hero, hero stack, Latest Dispatches grid, From the Archive grid, Era Grid sections, or any curated display. Imageless articles may only appear in the full `/browse` archive listing.
@@ -15,6 +15,12 @@ Every entry in an article's `sources` array must include a valid `https://` URL.
 
 **LAW 4 — No duplicate documents in Sanity.**
 The GROQ queries exclude drafts with `!(_id in path("drafts.**"))`. Slug-based deduplication runs at render time. When publishing new articles, always verify no article with the same slug already exists. Run the content-guard daily job to surface any violations.
+
+**LAW 5 — No duplicate articles by subject or slug.**
+Before publishing any article, verify that no article covering the same operation, battle, event, or subject already exists in Sanity — not just by slug match, but by topic. Two articles about the same subject are not permitted regardless of title variation. If a duplicate is found, the one without a series assignment and without a mainImage is removed first. The content-guard daily job must check for near-duplicate titles.
+
+**LAW 6 — No duplicate category documents.**
+Each category must exist as exactly one Sanity document with a stable `cat-*` prefixed `_id` and a valid slug. Before creating a new category, verify it does not already exist. Duplicate category documents break browse filtering and GROQ category queries. Canonical category IDs follow the pattern `cat-[short-name]` (e.g. `cat-wwii`, `cat-cold-war`). Any new category document that does not follow this pattern must be rejected.
 
 ---
 

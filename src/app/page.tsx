@@ -5,6 +5,7 @@ import HeaderWrapper from '@/components/HeaderWrapper'
 import Footer from '@/components/Footer'
 import ArticleCard from '@/components/ArticleCard'
 import FadeIn from '@/components/FadeIn'
+import OnThisDay from '@/components/OnThisDay'
 
 // Edge runtime required for Cloudflare Pages.
 // force-dynamic ensures every request fetches fresh content from Sanity:
@@ -155,6 +156,7 @@ type SiteSettings = {
     showFromArchive?: boolean
     showEraGrid?: boolean
     showFlagshipSeries?: boolean
+    showOnThisDay?: boolean
   }
 }
 
@@ -196,6 +198,7 @@ export default async function HomePage() {
     showFromArchive:       settings?.sections?.showFromArchive        ?? true,
     showEraGrid:           settings?.sections?.showEraGrid            ?? true,
     showFlagshipSeries:    settings?.sections?.showFlagshipSeries     ?? true,
+    showOnThisDay:         settings?.sections?.showOnThisDay          ?? true,
   }
 
   if (settings?.maintenanceMode) {
@@ -307,19 +310,28 @@ export default async function HomePage() {
     <>
       <HeaderWrapper />
 
-      <main className="max-w-7xl mx-auto px-5 md:px-6">
+      <main>
 
-        {flags.showHero && (hero ? (
-          <div className="mt-12"><HeroGrid hero={hero} stack={stack} /></div>
-        ) : (
-          <div className="mt-12 grid grid-cols-1 lg:grid-cols-5 gap-0 border-b border-rule">
-            <div className="lg:col-span-3 animate-pulse bg-ghost" style={{ minHeight: '460px' }} />
-            <div className="lg:col-span-2 flex flex-col divide-y divide-rule">
-              <div className="flex-1 animate-pulse bg-ghost/60" style={{ minHeight: '230px' }} />
-              <div className="flex-1 animate-pulse bg-ghost/40" style={{ minHeight: '230px' }} />
+        {/* ── Section 1: Hero ─────────────────────────────────────────────── */}
+        <div className="max-w-7xl mx-auto px-5 md:px-6">
+          {flags.showHero && (hero ? (
+            <div className="mt-12"><HeroGrid hero={hero} stack={stack} /></div>
+          ) : (
+            <div className="mt-12 grid grid-cols-1 lg:grid-cols-5 gap-0 border-b border-rule">
+              <div className="lg:col-span-3 animate-pulse bg-ghost" style={{ minHeight: '460px' }} />
+              <div className="lg:col-span-2 flex flex-col divide-y divide-rule">
+                <div className="flex-1 animate-pulse bg-ghost/60" style={{ minHeight: '230px' }} />
+                <div className="flex-1 animate-pulse bg-ghost/40" style={{ minHeight: '230px' }} />
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
+
+        {/* ── Section 1.5: On This Day — full-width bg-ink strip ──────────── */}
+        {flags.showOnThisDay && <OnThisDay />}
+
+        {/* ── Sections 2+: constrained content ────────────────────────────── */}
+        <div className="max-w-7xl mx-auto px-5 md:px-6">
 
         {flags.showLatestDispatches && (
           <>
@@ -380,8 +392,8 @@ export default async function HomePage() {
           <>
             <SectionDivider label={labels.flagshipSeries} />
             {series.length > 0 ? (
-              <FadeIn className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-2 stagger" variant="fade-up">
-                {series.slice(0, 3).map((s) => {
+              <FadeIn className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-2 stagger" variant="fade-up">
+                {series.slice(0, 4).map((s) => {
                   const img = s.coverImage
                     ? urlFor(s.coverImage).width(700).height(420).fit('crop').url()
                     : null
@@ -440,6 +452,8 @@ export default async function HomePage() {
             {labels.seeAll}
           </Link>
         </div>
+
+        </div>{/* end constrained content wrapper */}
 
       </main>
 

@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
+import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { urlFor } from '@/lib/sanity'
 
@@ -54,22 +55,25 @@ export default function ArticleCard({ article, size = 'md', showExcerpt = true, 
     ? urlFor(article.mainImage).width(w).height(h).fit('crop').url()
     : null
 
+  const [imgLoaded, setImgLoaded] = useState(false)
   const era = article.categories?.[0]
   const seriesLabel = article.series?.title
 
   const inner = (
     <article className={`card-lift group ${layout === 'horizontal' ? 'flex gap-4' : ''}`}>
-      {/* Image — lazy loaded by default (no priority prop) */}
+      {/* Image — lazy loaded with shimmer placeholder */}
       {imageUrl && (
         <div className={`relative overflow-hidden bg-ghost flex-shrink-0 ${
           layout === 'horizontal' ? 'w-28 h-20' : `${ASPECT[size]} w-full mb-4`
         }`}>
+          {!imgLoaded && <div className="absolute inset-0 img-shimmer" aria-hidden="true" />}
           <Image
             src={imageUrl}
             alt={article.mainImage?.alt || article.title}
             fill
             loading="lazy"
-            className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+            onLoad={() => setImgLoaded(true)}
+            className={`object-cover transition-all duration-700 group-hover:scale-[1.03] ${imgLoaded ? 'opacity-100' : 'opacity-0'}`}
             sizes={`${w}px`}
           />
         </div>

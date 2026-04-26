@@ -36,8 +36,9 @@ const FALLBACK_COLUMNS = [
     heading: 'Flagship Series',
     links: [
       { label: "Weapons That Shouldn't Have Worked", href: '/series/weapons-that-shouldnt-have-worked' },
-      { label: 'The Day After',                       href: '/series/the-day-after' },
-      { label: 'MACV-SOG',                            href: '/series/macvsog' },
+      { label: 'The Day After',                      href: '/series/the-day-after' },
+      { label: 'Ghost Gear',                         href: '/series/ghost-gear' },
+      { label: 'Smoke and Mirrors',                  href: '/series/smoke-and-mirrors' },
     ],
   },
   {
