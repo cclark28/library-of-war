@@ -1,8 +1,21 @@
 {
-  "voiceIndex": 4,
-  "lastRun": "2026-04-24T00:00:00.000Z",
-  "articlesWritten": 50,
-  "usedSlugs": ["battle-of-cannae", "battle-of-austerlitz", "battle-of-kursk", "battle-of-carrhae"],
-  "_voices": ["correspondent", "historian", "archivist", "analyst", "tactician"],
+  "voiceIndex": 0,
+  "lastRun": "2026-04-28T11:29:59.986Z",
+  "articlesWritten": 52,
+  "usedSlugs": [
+    "battle-of-cannae",
+    "battle-of-austerlitz",
+    "battle-of-kursk",
+    "battle-of-carrhae",
+    "battle-of-verdun-1916",
+    "operation-cobra-1944-dispatch"
+  ],
+  "_voices": [
+    "correspondent",
+    "historian",
+    "archivist",
+    "analyst",
+    "tactician"
+  ],
   "_note": "voiceIndex is the index of the next voice to use. Increment by 1 mod 5 after each nightly run. Voice definitions and generation rules in writer-voices.md."
 }

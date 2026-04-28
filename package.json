@@ -14,7 +14,11 @@
     "purge-dupes": "node scripts/delete-sanity-duplicates.mjs",
     "purge-dupes:dry": "node scripts/delete-sanity-duplicates.mjs --dry-run",
     "gen-images": "node scripts/generate-missing-images.mjs",
-    "gen-images:dry": "node scripts/generate-missing-images.mjs --dry-run"
+    "gen-images:dry": "node scripts/generate-missing-images.mjs --dry-run",
+    "nightly:generate": "node generate-nightly-article.mjs",
+    "nightly:generate:dry": "node generate-nightly-article.mjs --dry-run",
+    "nightly:publish": "node publish-nightly-article.mjs",
+    "nightly": "node generate-nightly-article.mjs && node publish-nightly-article.mjs"
   },
   "dependencies": {
     "@portabletext/react": "^3.1.0",
