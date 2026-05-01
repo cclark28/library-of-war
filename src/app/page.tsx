@@ -94,7 +94,7 @@ function HeroGrid({ hero, stack }: { hero: Article; stack: Article[] }) {
               </span>
             )}
           </div>
-          <h2 className="font-headline font-black text-paper text-3xl md:text-4xl lg:text-5xl leading-tight max-w-xl group-hover:text-paper/90 transition-colors">
+          <h2 className="font-headline font-black text-paper text-4xl md:text-5xl lg:text-[3.5rem] xl:text-[4.5rem] leading-[1.05] max-w-2xl group-hover:text-paper/90 transition-colors">
             {hero.title}
           </h2>
         </div>
@@ -259,11 +259,11 @@ export default async function HomePage() {
   // which is truthy but has no renderable image. Only a valid _ref means a real image.
   const featuredArticles = deduped.filter(a => !!a.mainImage?.asset?._ref)
 
-  const dayOffset = Math.floor(Date.now() / 86400000) // changes every 24h
+  const hourOffset = Math.floor(Date.now() / 3600000) // changes every hour
   const shuffled = [...featuredArticles].sort((a, b) => {
-    // stable daily shuffle using day seed + original index
+    // stable hourly shuffle using hour seed + original index
     const ai = featuredArticles.indexOf(a), bi = featuredArticles.indexOf(b)
-    return ((ai + dayOffset) % featuredArticles.length) - ((bi + dayOffset) % featuredArticles.length)
+    return ((ai + hourOffset) % featuredArticles.length) - ((bi + hourOffset) % featuredArticles.length)
   })
   const heroSlots: Article[] = []
   const usedCats = new Set<string>()
@@ -295,16 +295,10 @@ export default async function HomePage() {
 
   // Featured grids also require images, exclude hero
   const featuredMinusHero = featuredArticles.filter(a => !heroIds.has(a._id))
-  const grid3 = featuredMinusHero.slice(0, 3)
-  grid3.forEach(a => globalSeen.add(a._id))
+  const grid6 = featuredMinusHero.slice(0, 6)
+  grid6.forEach(a => globalSeen.add(a._id))
   const grid4 = featuredMinusHero.filter(a => !globalSeen.has(a._id)).slice(0, 4)
   grid4.forEach(a => globalSeen.add(a._id))
-
-  // Era archive sections: images required, never repeat a globally seen article
-  const remaining = deduped
-    .filter(a => !!a.mainImage?.asset?._ref) // LAW 1 & 3: must have a real asset ref
-    .filter(a => !globalSeen.has(a._id)) // LAW 2: never repeat across sections
-  const byEra = groupByEra(remaining)
 
   return (
     <>
@@ -327,72 +321,18 @@ export default async function HomePage() {
           ))}
         </div>
 
-        {/* ── Section 1.5: On This Day — full-width bg-ink strip ──────────── */}
+        {/* ── Section 2: On This Day — full-width bg-ink strip ────────────── */}
         {flags.showOnThisDay && <OnThisDay />}
 
-        {/* ── Sections 2+: constrained content ────────────────────────────── */}
-        <div className="max-w-7xl mx-auto px-5 md:px-6">
-
-        {flags.showLatestDispatches && (
-          <>
-            <SectionDivider label={labels.latestDispatches} />
-            {grid3.length > 0 ? (
-              <FadeIn className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 stagger" variant="fade-up">
-                {grid3.map((article) => (
-                  <ArticleCard key={article._id} article={article} size="md" showExcerpt />
-                ))}
-              </FadeIn>
-            ) : (
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
-                {[0,1,2].map((i) => (
-                  <div key={i} className="animate-pulse">
-                    <div className="aspect-[3/2] bg-ghost w-full mb-4" />
-                    <div className="h-5 bg-ghost w-5/6 mb-2" />
-                    <div className="h-5 bg-ghost w-2/3" />
-                  </div>
-                ))}
-              </div>
-            )}
-          </>
-        )}
-
-        {flags.showFromArchive && grid4.length > 0 && (
-          <>
-            <SectionDivider label={labels.fromArchive} />
-            <FadeIn className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 stagger" variant="fade-up">
-              {grid4.map((article) => (
-                <ArticleCard key={article._id} article={article} size="sm" showExcerpt={false} />
-              ))}
-            </FadeIn>
-          </>
-        )}
-
-        {flags.showEraGrid && Object.entries(byEra).map(([era, eraArticles]) => (
-          <section key={era} aria-label={era}>
-            <SectionDivider label={era} />
-            <FadeIn className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 stagger" variant="fade-up">
-              {eraArticles.slice(0, 3).map((article) => (
-                <ArticleCard key={article._id} article={article} size="md" showExcerpt />
-              ))}
-            </FadeIn>
-            {eraArticles.length > 3 && (
-              <div className="text-center mt-10">
-                <Link
-                  href={`/browse?era=${eraArticles[0]?.categories?.[0]?.slug?.current ?? ''}`}
-                  className="era-label hover:text-ink transition-colors border-b border-rule pb-px"
-                >
-                  More {era} →
-                </Link>
-              </div>
-            )}
-          </section>
-        ))}
-
+        {/* ── Section 3: Flagship Series ───────────────────────────────────── */}
         {flags.showFlagshipSeries && (
-          <>
+          <div className="max-w-7xl mx-auto px-5 md:px-6 pt-6 md:pt-8 pb-16 md:pb-20">
             <SectionDivider label={labels.flagshipSeries} />
             {series.length > 0 ? (
-              <FadeIn className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-2 stagger" variant="fade-up">
+              <FadeIn
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 stagger"
+                variant="fade-up"
+              >
                 {series.slice(0, 4).map((s) => {
                   const img = s.coverImage
                     ? urlFor(s.coverImage).width(700).height(420).fit('crop').url()
@@ -410,7 +350,7 @@ export default async function HomePage() {
                           fill
                           loading="lazy"
                           className="object-cover opacity-90 transition-transform duration-500 group-hover:scale-[1.03]"
-                          sizes="(max-width: 768px) 100vw, 33vw"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                         />
                       ) : (
                         <div className="absolute inset-0 bg-ink" />
@@ -418,7 +358,7 @@ export default async function HomePage() {
                       <div className="absolute inset-0 hero-gradient" />
                       <div className="absolute bottom-0 left-0 right-0 px-5 pb-6">
                         <p className="font-body text-[0.6rem] tracking-[0.22em] uppercase text-white/70 mb-1">Series</p>
-                        <h3 className="font-headline font-black text-white text-2xl leading-snug group-hover:text-white/85 transition-colors">
+                        <h3 className="font-headline font-black text-white text-xl md:text-2xl leading-snug group-hover:text-white/85 transition-colors">
                           {s.title}
                         </h3>
                         {s.description && (
@@ -432,7 +372,7 @@ export default async function HomePage() {
                 })}
               </FadeIn>
             ) : (
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-2">
                 {["Weapons That Shouldn't Have Worked", 'The Day After', 'Ghost Gear'].map((title, i) => (
                   <div key={i} className="border border-rule p-8 aspect-[4/3] flex flex-col justify-end">
                     <p className="era-label mb-2">{labels.comingSoon}</p>
@@ -441,6 +381,45 @@ export default async function HomePage() {
                 ))}
               </div>
             )}
+          </div>
+        )}
+
+        {/* ── Sections 4+: constrained content ─────────────────────────────── */}
+        <div className="max-w-7xl mx-auto px-5 md:px-6">
+
+        {/* ── Section 4: Latest Dispatches — 6 articles, 2-col stack ───────── */}
+        {flags.showLatestDispatches && (
+          <>
+            <SectionDivider label={labels.latestDispatches} />
+            {grid6.length > 0 ? (
+              <FadeIn className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 stagger" variant="fade-up">
+                {grid6.map((article) => (
+                  <ArticleCard key={article._id} article={article} size="md" showExcerpt />
+                ))}
+              </FadeIn>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
+                {[0,1,2,3,4,5].map((i) => (
+                  <div key={i} className="animate-pulse">
+                    <div className="aspect-[3/2] bg-ghost w-full mb-4" />
+                    <div className="h-5 bg-ghost w-5/6 mb-2" />
+                    <div className="h-5 bg-ghost w-2/3" />
+                  </div>
+                ))}
+              </div>
+            )}
+          </>
+        )}
+
+        {/* ── Section 5: From the Archive ──────────────────────────────────── */}
+        {flags.showFromArchive && grid4.length > 0 && (
+          <>
+            <SectionDivider label={labels.fromArchive} />
+            <FadeIn className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 stagger" variant="fade-up">
+              {grid4.map((article) => (
+                <ArticleCard key={article._id} article={article} size="sm" showExcerpt={false} />
+              ))}
+            </FadeIn>
           </>
         )}
 

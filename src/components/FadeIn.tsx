@@ -5,6 +5,7 @@ import { useRef, useEffect } from 'react'
 interface FadeInProps {
   children: React.ReactNode
   className?: string
+  style?: React.CSSProperties
   delay?: number
   variant?: 'fade-up' | 'fade-in' | 'slide-left' | 'slide-right' | 'scale-up'
 }
@@ -12,6 +13,7 @@ interface FadeInProps {
 export default function FadeIn({
   children,
   className = '',
+  style,
   delay = 0,
   variant = 'fade-up',
 }: FadeInProps) {
@@ -39,7 +41,7 @@ export default function FadeIn({
     <div
       ref={ref}
       className={`${variant} ${className}`}
-      style={{ transitionDelay: `${delay}ms` }}
+      style={{ transitionDelay: `${delay}ms`, ...style }}
     >
       {children}
     </div>

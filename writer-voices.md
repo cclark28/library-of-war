@@ -139,3 +139,102 @@ These apply regardless of which voice is assigned.
 9. **Sources must be real, linkable, and cited in the article.** Wikipedia and Britannica are acceptable for general entries. Named academic works are better.
 
 10. **Voice is non-negotiable.** Each article is assigned a voice. That voice's rhythm, relationship to sources, and point of view must be consistent throughout. Do not blend.
+
+---
+
+## Nightly Pipeline Rules
+
+### Output per night
+Each nightly run produces exactly three pieces:
+
+1. **Long form** — the primary article. 8–10 paragraphs, each 100–250 words. A major battle, operation, campaign, or military event. Full historical depth with named commanders, unit designations, specific dates, and source-critical analysis. Minimum 4 sources.
+2. **Short form (Dispatch)** — a tighter secondary article on a different topic. 3–4 paragraphs. Can be a smaller engagement, a piece of technology, a single decision, a commander, or an intelligence operation. Minimum 2 sources. Slug always ends in `-dispatch`.
+3. **On This Day** — a single factual entry tied to today's calendar date (any year in history). 2–3 sentences. Something that actually happened on this date. No speculation.
+
+### Voices
+Five voices rotating in fixed order: `correspondent` → `historian` → `archivist` → `analyst` → `tactician` → repeat. Both the long form and short form use the same assigned voice for that night. Voice index is tracked in `nightly-state.json` and advances automatically after each run.
+
+### Topic rules
+- Never repeat a subject already in the archive. Check existing slugs in `nightly-state.json` and query Sanity before choosing topics.
+- Cover the full range of eras over time. Do not cluster in WWII. Actively seek underrepresented eras: Ancient & Medieval, Early Modern, Napoleonic, Korean War, Modern Conflicts.
+- Long form and short form must be on different topics.
+- The On This Day entry should relate to the long form era when possible, but any date match takes priority.
+
+### Quality standard
+Every article must pass a human editorial review standard. Specific markers of quality:
+- Named individuals, not "a German general" but "Field Marshal von Manstein"
+- Specific dates, unit designations, and casualty figures with appropriate uncertainty
+- At least one instance of engaging with historical revision or disputing received wisdom
+- No paragraph that reads like a list pretending to be prose
+- No opening that starts with context-setting ("Throughout history..." or "In the annals of...")
+- Closing paragraph must make an argument or assessment, not summarize what was just said
+
+### Quality control (automated)
+The `generate-nightly-article.mjs` validator checks:
+- Valid era value (must match Sanity schema exactly)
+- Slug format (lowercase, hyphens, no special characters)
+- Long form has at least 6 paragraphs
+- All source URLs begin with `https://`
+- Required fields present: title, slug, excerpt, era, voice, paragraphs, sources
+- Fails loudly and does not advance state if validation fails
+
+### Quality control (editorial — hallucination prevention)
+Every article must meet the following factual integrity standard before being written to `nightly-article-data.json`.
+
+**Every factual claim must be independently verifiable.** This means:
+- Every named individual (commander, officer, politician, spy) must appear in at least one of the cited sources.
+- Every battle, operation, or event must have a Wikipedia article, Britannica entry, or documented archival record. If it does not exist in any of those, do not write about it.
+- Every unit designation (e.g. "3rd SS Panzer Division Totenkopf", "442nd Regimental Combat Team") must be verifiable. Do not invent unit names, designations, or strengths.
+- Every casualty figure must either come from a cited source or be explicitly qualified ("estimates vary," "Soviet figures put losses at," "the precise figure remains disputed").
+- Every quote attributed to a named person must be sourced. If it is apocryphal or disputed, say so in the text.
+- Do not invent dates, locations, or outcomes. If a detail is uncertain, omit it or mark it uncertain.
+
+**Self-check before writing.** Before finalizing any article, mentally test the following: Can every named person, battle, and key claim in this article be found in the Wikipedia article for this subject, or in one of the four sources listed? If the answer is no for any claim, either remove the claim, add a source that supports it, or mark it explicitly as disputed.
+
+**If uncertain, hedge or cut.** An article with four well-sourced accurate paragraphs is better than eight paragraphs where two contain unverifiable claims. Hedging language ("the evidence suggests," "accounts vary," "later research revised") is a feature, not a weakness.
+
+**No fictional operations, units, or individuals.** Do not construct composite characters, plausible-sounding operations that did not exist, or invented tactical details to fill gaps in the historical record.
+
+### Photographs
+All images must be public domain or explicitly cleared for unrestricted use. The publisher supports two image formats:
+
+**Option 1 — Wikimedia Commons filename** (preferred where available): provide the exact filename only (e.g. `Battle_of_Kursk_1943.jpg`). The publisher resolves it via the Wikimedia API and uploads a sized thumbnail.
+
+**Option 2 — Direct URL** from an approved source: provide the full `https://` URL to the image file. The publisher downloads and uploads it directly.
+
+#### Approved public domain image sources
+
+| Source | URL | Notes |
+|--------|-----|-------|
+| Wikimedia Commons | commons.wikimedia.org | Primary source. Largest collection. |
+| Library of Congress | loc.gov/pictures | Prints & Photographs Division. Use direct image URLs from the catalog. |
+| NARA (National Archives) | catalog.archives.gov | US government records. Direct image URLs available per record. |
+| US Army Signal Corps | Via NARA catalog | Tagged under Signal Corps in NARA. WWI–Vietnam era. |
+| US Army Center of Military History | history.army.mil | Some downloadable images; verify license per image. |
+| US Navy History & Heritage Command | history.navy.mil | Naval photographs, all eras. |
+| US Air Force Historical Research Agency | afhra.af.mil | Air power history. |
+| US Marine Corps History Division | usmcu.edu/historydivision | USMC operations. |
+| Bundesarchiv (German Federal Archives) | bild.bundesarchiv.de | WWI and WWII German military photography. Many donated to Wikimedia Commons under CC-BY-SA. Use the Commons version where available. |
+| Imperial War Museum | iwm.org.uk/collections | Verify license per image — some are IWM Non-Commercial only. Use only images marked public domain or Crown Copyright expired. |
+| Australian War Memorial | awm.gov.au | Australian military history. Most pre-1955 images public domain. |
+| National Archives UK | nationalarchives.gov.uk | British government records. Crown Copyright expires 70 years after creation. |
+| National Security Archive (GWU) | nsarchive.gwu.edu | Declassified documents and some photographs. |
+| NHHC Naval Photo Archive | history.navy.mil/our-collections/photography | US Navy photography archive. |
+| Europeana | europeana.eu | Aggregates European national archives. Filter by "Public Domain" license. |
+| Digital Public Library of America | dp.la | Aggregates US cultural heritage. Filter by rights status. |
+| Smithsonian Open Access | si.edu/openaccess | Smithsonian collections. CC0 licensed. |
+| New York Public Library Digital | digitalcollections.nypl.org | Historical photographs. Filter by "No known restrictions." |
+| Internet Archive | archive.org | Historical photography collections. Verify license per image. |
+| French Military Archives | servicehistorique.sga.defense.gouv.fr | WWI and WWII French military photography. |
+| Wilson Center Digital Archive | digitalarchive.wilsoncenter.org | Cold War documents and some imagery. |
+
+**Rules for all image sources:**
+- Image must be genuinely public domain or have an expired copyright (generally pre-1928 for US works, or government-produced work with no restriction).
+- Do not use images marked "All Rights Reserved," "IWM Non-Commercial," or any Creative Commons license that restricts commercial use.
+- When providing a direct URL, verify the URL resolves to the actual image file (ends in .jpg, .png, .tif, etc.), not an HTML catalog page.
+- If the image upload fails for any reason, the publisher continues and the article publishes without an image.
+- One image per nightly run, shared between long form and short form.
+- Alt text must describe the scene factually. Caption adds 1–2 sentences of historical context.
+
+### Session continuity
+If this session runs out of context or credits before the nightly run is complete, resume in the next session without re-explaining the setup. The state is fully persisted in `nightly-state.json` and `nightly-article-data.json`. Pick up exactly where the previous session left off: check which voice is next, check what was last published, and continue. Do not restart the pipeline or re-generate content that was already written and validated.

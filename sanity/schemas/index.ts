@@ -13,6 +13,7 @@ import contributorPage from './contributorPage'
 import contributorSubmission from './contributorSubmission'
 import idDrillQuestion from './idDrillQuestion'
 import contentValidationReport from './contentValidationReport'
+import onThisDayEntry from './onThisDayEntry'
 
 export const schemaTypes = [
   // ── Content documents ────────────────────────────────────────────
@@ -22,6 +23,7 @@ export const schemaTypes = [
   category,
   contributorSubmission,
   idDrillQuestion,
+  onThisDayEntry,
   // ── Quality assurance (auto-created by /api/content-guard) ───────
   contentValidationReport,
   // ── Site configuration singletons ────────────────────────────────

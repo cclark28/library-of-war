@@ -47,6 +47,18 @@ export default defineConfig({
               .title('Categories')
               .child(S.documentTypeList('category').title('Categories')),
 
+            // On This Day
+            S.listItem()
+              .title('On This Day')
+              .child(
+                S.documentTypeList('onThisDayEntry')
+                  .title('On This Day')
+                  .defaultOrdering([
+                    { field: 'month', direction: 'asc' },
+                    { field: 'day', direction: 'asc' },
+                  ])
+              ),
+
             S.divider(),
 
             // ID Drill

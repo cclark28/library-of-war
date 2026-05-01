@@ -44,6 +44,9 @@ body {
   line-height: 1.8;
   background-color: #FFFFFF;
   color: var(--color-ink);
+  /* Subtle paper grain — visible on white/ghost surfaces, hidden under dark bg-ink sections */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -184,6 +187,26 @@ h1, h2, h3, h4, h5, h6 {
 .article-prose a { color: var(--color-accent); }
 .article-prose a:hover { text-decoration: underline; }
 
+/* ─── Pull quote ─────────────────────────────────────────────────────────────── */
+.pull-quote {
+  font-family: var(--font-headline);
+  font-size: clamp(1.4rem, 3vw, 2.1rem);
+  font-style: italic;
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: center;
+  color: var(--color-ink);
+  margin: 3.5em auto;
+  max-width: 30ch;
+  padding: 1.75em 0;
+  border-top: 1px solid var(--color-rule);
+  border-bottom: 1px solid var(--color-rule);
+  display: block;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .pull-quote { transition: color 0.2s ease; }
+}
+
 /* ─── Section number (01, 02…) ───────────────────────────────────────────────── */
 .section-number {
   font-family: var(--font-body);
@@ -217,6 +240,48 @@ h1, h2, h3, h4, h5, h6 {
 ::-webkit-scrollbar       { width: 5px; }
 ::-webkit-scrollbar-track { background: var(--color-ghost); }
 ::-webkit-scrollbar-thumb { background: var(--color-rule); border-radius: 2px; }
+
+/* ─── Article prose reveal (AnimatedProse) ──────────────────────────────────── */
+/* Default: content is fully visible — no JS dependency for readability.         */
+/* When JS runs, .prose-ready is added to the wrapper, enabling the animation.   */
+.prose-ready p,
+.prose-ready h2,
+.prose-ready h3,
+.prose-ready blockquote,
+.prose-ready figure {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Stagger by element index — capped at 5 steps so it never feels like waiting */
+.prose-ready [data-prose-index="1"] { transition-delay: 25ms; }
+.prose-ready [data-prose-index="2"] { transition-delay: 50ms; }
+.prose-ready [data-prose-index="3"] { transition-delay: 75ms; }
+.prose-ready [data-prose-index="4"] { transition-delay: 100ms; }
+
+.prose-ready p.prose-visible,
+.prose-ready h2.prose-visible,
+.prose-ready h3.prose-visible,
+.prose-ready blockquote.prose-visible,
+.prose-ready figure.prose-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Respect user motion preference — skip all animation, show content immediately */
+@media (prefers-reduced-motion: reduce) {
+  .prose-ready p,
+  .prose-ready h2,
+  .prose-ready h3,
+  .prose-ready blockquote,
+  .prose-ready figure {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
 
 /* ─── Scroll-triggered animations ───────────────────────────────────────────── */
 .fade-up {

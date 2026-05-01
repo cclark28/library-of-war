@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  com.libraryofwar.nightly.plist
+  ──────────────────────────────
+  Runs the Library of War nightly article writer at 23:00 every day.
+
+  To install:  bash scripts/install-launchd.sh
+  To unload:   launchctl unload ~/Library/LaunchAgents/com.libraryofwar.nightly.plist
+  To reload:   launchctl unload ~/Library/LaunchAgents/com.libraryofwar.nightly.plist && launchctl load ~/Library/LaunchAgents/com.libraryofwar.nightly.plist
+  To run now:  launchctl start com.libraryofwar.nightly
+  Status:      launchctl list | grep libraryofwar
+-->
+<plist version="1.0">
+<dict>
+
+  <key>Label</key>
+  <string>com.libraryofwar.nightly</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>NODE_PATH_PLACEHOLDER</string>
+    <string>PROJECT_PATH_PLACEHOLDER/scripts/nightly-writer.mjs</string>
+  </array>
+
+  <key>WorkingDirectory</key>
+  <string>PROJECT_PATH_PLACEHOLDER</string>
+
+  <!-- Run at 11:00pm every night -->
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key>
+    <integer>23</integer>
+    <key>Minute</key>
+    <integer>0</integer>
+  </dict>
+
+  <!-- If the Mac was asleep at 11pm, run as soon as it wakes -->
+  <key>RunAtLoad</key>
+  <false/>
+
+  <key>StandardOutPath</key>
+  <string>PROJECT_PATH_PLACEHOLDER/logs/nightly-writer.log</string>
+
+  <key>StandardErrorPath</key>
+  <string>PROJECT_PATH_PLACEHOLDER/logs/nightly-writer-error.log</string>
+
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>NODE_DIR_PLACEHOLDER:/usr/local/bin:/usr/bin:/bin</string>
+    <key>HOME</key>
+    <string>HOME_PLACEHOLDER</string>
+  </dict>
+
+  <!-- Restart if it crashes (up to 3 times) -->
+  <key>ThrottleInterval</key>
+  <integer>300</integer>
+
+</dict>
+</plist>

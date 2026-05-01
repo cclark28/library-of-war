@@ -244,6 +244,41 @@ export const contributorPageQuery = `
   }
 `
 
+// On This Day — matches month + day to today, returns up to 3 ordered by year desc.
+// Month and day are passed as integers (1-based). Year is intentionally ignored —
+// multiple events from different years can share the same calendar date.
+export const onThisDayQuery = `
+  *[
+    _type == "onThisDayEntry" &&
+    month == $month &&
+    day == $day
+  ] | order(year desc) [0...3] {
+    _id,
+    month,
+    day,
+    year,
+    headline,
+    summary,
+    era,
+    linkedArticle->{ title, slug }
+  }
+`
+
+// Navigation window — 7 most recent entries for arrow navigation.
+// Today's exact match is merged in server-side at index 0 if not already present.
+export const onThisDayWindowQuery = `
+  *[_type == "onThisDayEntry"] | order(_createdAt desc) [0...7] {
+    _id,
+    month,
+    day,
+    year,
+    headline,
+    summary,
+    era,
+    linkedArticle->{ title, slug }
+  }
+`
+
 export const siteSettingsQuery = `
   *[_type == "siteSettings"][0] {
     title,
@@ -262,7 +297,8 @@ export const siteSettingsQuery = `
       showLatestDispatches,
       showFromArchive,
       showEraGrid,
-      showFlagshipSeries
+      showFlagshipSeries,
+      showOnThisDay
     }
   }
 `

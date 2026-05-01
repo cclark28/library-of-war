@@ -18,7 +18,12 @@
     "nightly:generate": "node generate-nightly-article.mjs",
     "nightly:generate:dry": "node generate-nightly-article.mjs --dry-run",
     "nightly:publish": "node publish-nightly-article.mjs",
-    "nightly": "node generate-nightly-article.mjs && node publish-nightly-article.mjs"
+    "nightly": "node generate-nightly-article.mjs && node publish-nightly-article.mjs",
+    "nightly:auto": "node scripts/nightly-writer.mjs",
+    "nightly:status": "node scripts/nightly-writer.mjs --status",
+    "nightly:retry": "node scripts/nightly-writer.mjs --retry",
+    "nightly:install": "bash scripts/install-launchd.sh",
+    "nightly:uninstall": "bash scripts/uninstall-launchd.sh"
   },
   "dependencies": {
     "@portabletext/react": "^3.1.0",

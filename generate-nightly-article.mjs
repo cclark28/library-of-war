@@ -17,7 +17,11 @@
  */
 
 import { readFileSync, writeFileSync, existsSync } from 'fs'
-import { resolve } from 'path'
+import { resolve, dirname } from 'path'
+import { fileURLToPath } from 'url'
+import { execFileSync } from 'child_process'
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
 
 const CHECK_ONLY = process.argv.includes('--check')
 const STATUS_ONLY = process.argv.includes('--status')
@@ -119,4 +123,22 @@ const newState = {
 
 writeFileSync(statePath, JSON.stringify(newState, null, 2) + '\n')
 console.log(`  ✓ State advanced → next voice: ${nextVoice}`)
-console.log(`  ↳ Run: npm run nightly:publish\n`)
+
+// ── Auto-push via GitHub API ──────────────────────────────────────────────────
+
+const pushScript = resolve(__dirname, 'scripts/github-push.mjs')
+const longSlug   = data.longForm.slug
+const shortSlug  = data.shortForm.slug
+const commitMsg  = `feat: nightly articles — ${data.longForm.title.slice(0, 60)}`
+
+try {
+  execFileSync('node', [
+    pushScript,
+    '--message', commitMsg,
+    'nightly-article-data.json',
+    'nightly-state.json',
+  ], { stdio: 'inherit', cwd: resolve('.') })
+} catch (e) {
+  console.warn(`  ↷ Auto-push failed: ${e.message}`)
+  console.log(`  ↳ Push manually: npm run nightly:publish\n`)
+}

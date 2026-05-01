@@ -9,6 +9,7 @@ import Footer from '@/components/Footer'
 import ArticleCard from '@/components/ArticleCard'
 import FadeIn from '@/components/FadeIn'
 import ScrollProgress from '@/components/ScrollProgress'
+import AnimatedProse from '@/components/AnimatedProse'
 
 export const runtime = 'edge'
 export const revalidate = 60
@@ -97,6 +98,7 @@ function PortableTextBody({ blocks }: { blocks: PTBlock[] }) {
           case 'h2':         return <h2 key={key}>{children}</h2>
           case 'h3':         return <h3 key={key}>{children}</h3>
           case 'blockquote': return <blockquote key={key}>{children}</blockquote>
+          case 'pullQuote':  return <aside key={key} className="pull-quote" role="note" aria-label="pull quote">{children}</aside>
           default:           return <p key={key}>{children}</p>
         }
       })}
@@ -257,17 +259,17 @@ export default async function ArticlePage({ params }: Params) {
         )}
 
         {/* ── Body ────────────────────────────────────────────────────── */}
-        <FadeIn className="max-w-2xl mx-auto px-6 py-12" variant="fade-up" delay={80}>
+        <div className="max-w-2xl mx-auto px-6 py-12">
           {article.body ? (
-            <div className="article-prose drop-cap">
+            <AnimatedProse className="article-prose drop-cap">
               <PortableTextBody blocks={article.body as PTBlock[]} />
-            </div>
+            </AnimatedProse>
           ) : (
             <p className="font-body text-mist text-center py-16 tracking-wider">
               Article body coming soon.
             </p>
           )}
-        </FadeIn>
+        </div>
 
         {/* ── Primary Sources ─────────────────────────────────────────── */}
         {article.primarySources?.length > 0 && (
@@ -440,10 +442,15 @@ export default async function ArticlePage({ params }: Params) {
               {/* Horizontal scroll carousel */}
               <div className="overflow-x-auto pb-4 -mx-6 px-6">
                 <div className="flex gap-6" style={{ width: 'max-content' }}>
-                  {(related as Parameters<typeof ArticleCard>[0]['article'][]).map((a) => (
-                    <div key={a._id} style={{ width: '280px', flexShrink: 0 }}>
+                  {(related as Parameters<typeof ArticleCard>[0]['article'][]).map((a, i) => (
+                    <FadeIn
+                      key={a._id}
+                      variant="fade-up"
+                      delay={i * 80}
+                      style={{ width: '280px', flexShrink: 0 }}
+                    >
                       <ArticleCard article={a} size="sm" showExcerpt={false} />
-                    </div>
+                    </FadeIn>
                   ))}
                 </div>
               </div>

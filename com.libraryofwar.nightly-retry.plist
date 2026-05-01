@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  com.libraryofwar.nightly-retry.plist
+  ─────────────────────────────────────
+  Checks for pending nightly work every 30 minutes.
+  If nightly-pending.json exists (credit failure from the 11pm run),
+  this job retries the writer until the work completes.
+  When there is no pending work the script exits immediately (< 1 second).
+-->
+<plist version="1.0">
+<dict>
+
+  <key>Label</key>
+  <string>com.libraryofwar.nightly-retry</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>NODE_PATH_PLACEHOLDER</string>
+    <string>PROJECT_PATH_PLACEHOLDER/scripts/nightly-writer.mjs</string>
+    <string>--retry</string>
+  </array>
+
+  <key>WorkingDirectory</key>
+  <string>PROJECT_PATH_PLACEHOLDER</string>
+
+  <!-- Check every 30 minutes (1800 seconds) -->
+  <key>StartInterval</key>
+  <integer>1800</integer>
+
+  <!-- Don't run on first load — wait for the first 30-min tick -->
+  <key>RunAtLoad</key>
+  <false/>
+
+  <key>StandardOutPath</key>
+  <string>PROJECT_PATH_PLACEHOLDER/logs/nightly-retry.log</string>
+
+  <key>StandardErrorPath</key>
+  <string>PROJECT_PATH_PLACEHOLDER/logs/nightly-retry-error.log</string>
+
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>NODE_DIR_PLACEHOLDER:/usr/local/bin:/usr/bin:/bin</string>
+    <key>HOME</key>
+    <string>HOME_PLACEHOLDER</string>
+  </dict>
+
+  <key>ThrottleInterval</key>
+  <integer>60</integer>
+
+</dict>
+</plist>
