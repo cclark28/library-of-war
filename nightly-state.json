@@ -1,7 +1,7 @@
 {
-  "voiceIndex": 3,
-  "lastRun": "2026-05-02T03:26:18.961Z",
-  "articlesWritten": 73,
+  "voiceIndex": 4,
+  "lastRun": "2026-05-02T03:27:57.369Z",
+  "articlesWritten": 75,
   "usedSlugs": [
     "battle-of-cannae",
     "battle-of-austerlitz",
@@ -29,7 +29,9 @@
     "battle-of-gaugamela-331bc",
     "fall-of-constantinople-1453-dispatch",
     "able-archer-83-nuclear-war-scare-1983",
-    "kim-philby-cambridge-five-dispatch"
+    "kim-philby-cambridge-five-dispatch",
+    "battle-of-waterloo-1815",
+    "tet-offensive-1968-dispatch"
   ],
   "_voices": [
     "correspondent",
