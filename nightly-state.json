@@ -1,7 +1,7 @@
 {
-  "voiceIndex": 2,
-  "lastRun": "2026-05-02T03:24:35.003Z",
-  "articlesWritten": 71,
+  "voiceIndex": 3,
+  "lastRun": "2026-05-02T03:26:18.961Z",
+  "articlesWritten": 73,
   "usedSlugs": [
     "battle-of-cannae",
     "battle-of-austerlitz",
@@ -27,7 +27,9 @@
     "battle-of-trenton-1776",
     "battle-of-adwa-1896",
     "battle-of-gaugamela-331bc",
-    "fall-of-constantinople-1453-dispatch"
+    "fall-of-constantinople-1453-dispatch",
+    "able-archer-83-nuclear-war-scare-1983",
+    "kim-philby-cambridge-five-dispatch"
   ],
   "_voices": [
     "correspondent",
