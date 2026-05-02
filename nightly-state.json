@@ -1,7 +1,7 @@
 {
-  "voiceIndex": 3,
-  "lastRun": "2026-05-02T13:56:35.243Z",
-  "articlesWritten": 83,
+  "voiceIndex": 4,
+  "lastRun": "2026-05-02T13:58:42.314Z",
+  "articlesWritten": 85,
   "usedSlugs": [
     "battle-of-cannae",
     "battle-of-austerlitz",
@@ -39,7 +39,9 @@
     "battle-of-hue-city-1968",
     "battle-of-long-tan-1966-dispatch",
     "zimmermann-telegram-1917",
-    "operation-gold-berlin-tunnel-dispatch"
+    "operation-gold-berlin-tunnel-dispatch",
+    "operation-desert-storm-ground-campaign-1991",
+    "precision-guided-munitions-gulf-war-dispatch"
   ],
   "_voices": [
     "correspondent",
