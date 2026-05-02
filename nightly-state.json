@@ -1,7 +1,7 @@
 {
-  "voiceIndex": 1,
-  "lastRun": "2026-05-01T14:02:16.227Z",
-  "articlesWritten": 69,
+  "voiceIndex": 2,
+  "lastRun": "2026-05-02T03:24:35.003Z",
+  "articlesWritten": 71,
   "usedSlugs": [
     "battle-of-cannae",
     "battle-of-austerlitz",
@@ -25,7 +25,9 @@
     "battle-of-fredericksburg-1862",
     "battle-of-chickamauga-1863",
     "battle-of-trenton-1776",
-    "battle-of-adwa-1896"
+    "battle-of-adwa-1896",
+    "battle-of-gaugamela-331bc",
+    "fall-of-constantinople-1453-dispatch"
   ],
   "_voices": [
     "correspondent",
