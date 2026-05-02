@@ -1,58 +1,143 @@
 {
-  "imageFile": "Cheshire_Regiment_trench_Somme_1916.jpg",
-  "imageAlt": "British soldiers of the Cheshire Regiment in a front-line trench on the Somme front, 1916, with a Lewis gun positioned at the parapet",
-  "imageCaption": "Cheshire Regiment in a front-line trench, Battle of the Somme, 1916. Imperial War Museum / public domain.",
-  "imageSrc": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Cheshire_Regiment_trench_Somme_1916.jpg",
+  "imageFile": "https://upload.wikimedia.org/wikipedia/commons/1/18/Falklands_war_montage2.jpg",
+  "imageAlt": "Montage of the 1982 Falklands War showing British troops, warships, and Harrier aircraft during the South Atlantic campaign",
+  "imageCaption": "Falklands War montage, 1982. Clockwise from top: British troops advance on Stanley; HMS Hermes task force; a Sea Harrier; Argentine prisoners at Goose Green. Wikimedia Commons / Public Domain.",
+  "imageSrc": "https://upload.wikimedia.org/wikipedia/commons/1/18/Falklands_war_montage2.jpg",
   "longForm": {
-    "id": "article-battle-of-the-somme-1916",
-    "title": "Fifty-Seven Thousand Casualties Before Noon: The First Day of the Somme, July 1, 1916",
-    "slug": "battle-of-the-somme-1916",
-    "excerpt": "The British artillery fired 1.5 million shells over seven days. The German dugouts were 40 feet deep. General Rawlinson knew this before the bombardment began. On July 1, 1916, the British Army suffered 57,470 casualties in a single day — the worst in its history.",
-    "era": "world-war-i",
-    "voice": "tactician",
+    "id": "article-falklands-war-1982",
+    "title": "Seventy-Four Days: The Falklands War, April–June 1982",
+    "slug": "falklands-war-1982",
+    "excerpt": "On 2 April 1982, Argentine forces seized the Falkland Islands. Britain dispatched a naval task force 8,000 miles. Seventy-four days later, 904 men were dead.",
+    "difficulty": "intermediate",
+    "category": "modern-conflicts",
+    "era": "modern-conflicts",
+    "voice": "correspondent",
     "paragraphs": [
-      "The Somme front ran 25 miles from Maricourt in the south to Serre in the north across chalk downland that favored the defender. The German 2nd Army under General Fritz von Below had occupied this ground since late 1914 and spent eighteen months improving it. By July 1916, the German defensive system consisted of three parallel lines of trenches connected by communication tunnels, reinforced with concrete dugouts 30 to 40 feet deep, and protected by wire belts 30 to 40 yards wide. Those dugouts were deep enough to shelter troops from artillery bombardment. That fact was known before the bombardment began. Its operational implications were not adequately incorporated into the plan.",
-      "General Sir Henry Rawlinson's 4th Army plan rested on a sequential logic: seven days of artillery at unprecedented scale would destroy the wire, collapse the dugouts, and stun or kill the garrison; infantry would then advance at walking pace, occupy the German front line, and hold it while reserves exploited the gap. The bombardment allocated 1,537 guns to the 14-mile attack frontage, expending approximately 1.5 million shells over seven days. These figures were large enough to obscure the core problem: roughly 30 percent of British shells were duds, the wire-cutting work was assigned to shrapnel rounds poorly suited to the task, and the German dugouts were built specifically to survive sustained artillery fire. The bombardment was insufficient for its stated purpose before it began.",
-      "At 7:28 AM on July 1, mines detonated beneath German positions at Hawthorn Redoubt and La Boisselle, giving away the attack time to defenders who had been standing by since the bombardment lifted. Two minutes later, whistles blew along the British front and approximately 100,000 men climbed out of their trenches. The German infantry were trained to move from dugout to firing position in under two minutes. They were on the parapets with machine guns as the British waves crossed no man's land. Distances were not large — in places, 200 to 300 yards — but Vickers and Lewis gun fire was sufficient to cut down men advancing at walking pace in extended line before they reached the German wire.",
-      "Tactical execution on July 1 varied significantly by sector, and the variation is instructive. In the south, the 18th and 30th Divisions attacking toward Montauban achieved their objectives; at Mametz, the 7th Division captured the village by 9:00 AM. These successes shared common features: shorter distances across no man's land, more effective wire-cutting, and in some cases troops who moved faster than walking pace. The failure sectors — Serre, Beaumont Hamel, Thiepval, Ovillers — shared the opposite: wider frontages, longer distances across open ground, and the full weight of intact machine gun positions behind uncut wire.",
-      "The 1st Newfoundland Regiment at Beaumont Hamel provides the starkest single-unit case study. The regiment attacked from its reserve trench because the British front line was too crowded with casualties to pass through, crossing an additional 250 yards before reaching its own wire. Of approximately 801 men who attacked, 233 were killed and 386 wounded within the first hour. Fewer than 70 reached the German wire. The battalion ceased to exist as a fighting formation by 9:15 AM. The operation order for July 1 had allocated four days of fighting before the planned breakthrough was expected to materialize.",
-      "By nightfall on July 1, the British Army had suffered 57,470 casualties — 19,240 killed, the remainder wounded or missing. It remains the single worst day in the history of the British Army. Total British and French casualties for the full battle, which ran from July 1 to November 18, are estimated at approximately 620,000; German casualties are estimated between 400,000 and 500,000. The ground gained by November 18 amounted to a maximum advance of approximately seven miles at the deepest point. The rate of exchange, measured in either territory or attrition, does not reflect the design of the operation as planned.",
-      "The battle produced one operational innovation with long-term consequences. On September 15, at the Battle of Flers-Courcelette, 49 Mark I tanks were committed to combat for the first time in military history. Mechanically unreliable — only 32 reached their start lines — but where they operated they demonstrated that the tactical problem of crossing ground swept by machine gun fire could, in principle, be solved by an armored vehicle capable of crossing trenches and absorbing small arms fire. The Germans studied this development carefully. British doctrine for tank employment developed more slowly than German doctrine for defeating tanks, a gap with consequences in the next war.",
-      "The standard criticism of Haig's management of the Somme focuses on his persistence after July 1. The more productive operational question is whether the July 1 plan had any reasonable prospect of success given the information available beforehand. The preliminary bombardment was the only mechanism for suppressing the German position before infantry advanced; if the bombardment was inadequate, the plan had no reserve mechanism. Rawlinson knew the dugout depths. His pre-battle estimate of German dugout construction appears in the 4th Army planning documents. The operational choice to proceed was not made in ignorance of the problem. It was made in the absence of a credible alternative given the French Army's situation at Verdun.",
-      "The German Army's response to the Somme produced the elastic defense doctrine — a deliberate decision to thin the front line, hold reserves deeper, and counterattack to recover lost ground rather than defend a fixed forward line at maximum cost. Formalized under General Ludendorff as Abwehrschlacht, this doctrine was more expensive to attack against and significantly more survivable under bombardment. The British Army developed an equivalent response more slowly, though by 1918 the understanding of combined arms — artillery, tanks, infantry, and air coordination — had improved substantially from the tactical framework that failed on July 1, 1916.",
-      "The Battle of the Somme is most often assessed as a failure, and in terms of its stated objectives it was. The breakthrough did not occur. The territorial gains were marginal relative to casualties sustained. The operational question worth asking — whether the Somme achieved its secondary purpose of relieving pressure on the French Army at Verdun, which was the actual strategic context for the July 1 launch date — produces a more ambiguous answer. The French had requested British action. The British provided it. Whether the ground war of 1916 served strategic purposes proportionate to its cost is a question that military historians including John Keegan and Gary Sheffield have answered differently, and the documentary evidence sustains the disagreement."
+      {
+        "heading": null,
+        "body": "At 4:30 in the morning on 2 April 1982, Argentine commandos came ashore at Mullet Creek on East Falkland. They moved on the Royal Marine barracks at Moody Brook first — found it empty, the garrison already redeployed to defend Government House. Governor Rex Hunt had ordered Major Mike Norman's sixty-eight Royal Marines to resist. They did. The Argentines took casualties they hadn't expected. Then the numbers became irrelevant. By mid-morning the island had fallen, Hunt had been expelled, and Argentina's military junta had achieved its central objective: the Malvinas, as Buenos Aires called them, were Argentine."
+      },
+      {
+        "heading": null,
+        "body": "In London, the news reached the War Cabinet on a Friday afternoon. Admiral Sir Henry Leach, the First Sea Lord, was called from the House of Commons. He told Margaret Thatcher that yes, a naval task force could be assembled, and yes, it could recapture the islands. The decision was made over a weekend. Within forty-eight hours, the carrier group centred on HMS Hermes and HMS Invincible was being loaded and provisioned. The task force that eventually sailed numbered over 100 ships and 28,000 personnel — assembled and dispatched with a speed that surprised even its own commanders. It had 8,000 miles to travel and no guarantee of what would be waiting when it arrived."
+      },
+      {
+        "heading": null,
+        "body": "The first military action came on 25 April. Operation PARAQUET retook South Georgia, the smaller island 800 miles southeast of the Falklands. SAS and SBS teams landed in atrocious weather — two helicopters were lost to a white-out on the Fortuna Glacier, the crews rescued under fire. The Argentine submarine Santa Fe was caught on the surface, disabled by helicopter-launched missiles and depth charges, and ran aground. South Georgia was retaken the same day. One British soldier was wounded. The task force sailed on."
+      },
+      {
+        "heading": null,
+        "body": "May 2. HMS Conqueror, a nuclear-powered submarine, had been tracking the Argentine cruiser ARA General Belgrano for two days. Belgrano was sailing outside the 200-mile exclusion zone Britain had declared around the islands, but the Rules of Engagement were extended that afternoon on the authority of the War Cabinet. Conqueror fired two Mk8 torpedoes — a weapon dating from the Second World War. Both struck. Belgrano sank in thirty-six minutes. Of her 1,093 crew, 323 were killed. The sinking became the most contested act of the war. Argentina argued the cruiser posed no immediate threat; Britain maintained she was part of a two-pronged attack formation that had to be neutralised. Argentinian naval sorties ceased after 2 May. The navy did not venture out again."
+      },
+      {
+        "heading": null,
+        "body": "Two days later, on 4 May, an Argentine Super Étendard aircraft fired an AM39 Exocet missile at HMS Sheffield. Sheffield had no warning. The missile struck at sea-skimming speed, failed to detonate, but started a fire that could not be controlled. Twenty of her crew were killed. Sheffield was the first Royal Navy warship lost in combat since 1945. The Exocet threat — fast, radar-guided, fired from well beyond visual range — became the defining tactical problem of the campaign. Britain had no reliable defence against it. The answer was to sink the aircraft carrying them before they could fire, or to get inside the missile's minimum engagement range. Neither was straightforward."
+      },
+      {
+        "heading": null,
+        "body": "The main landings came on 21 May. Operation SUTTON put 3,000 men ashore at San Carlos Water, a protected bay on the west coast of East Falkland. Argentine air power responded immediately. For three days, wave after wave of A-4 Skyhawks and Daggers flew low and fast through the hills, pressing through intense anti-aircraft fire. HMS Ardent, Antelope, and Coventry were sunk. The container ship Atlantic Conveyor was struck by Exocet on 25 May, destroying three of the four heavy-lift Chinook helicopters the ground campaign depended on. The landings succeeded. The British were ashore, in numbers, and the air threat was absorbing Argentine losses faster than Argentine sortie rates could sustain it. Of thirty-two aircraft lost to British defences, most were on the way out, not the way in."
+      },
+      {
+        "heading": null,
+        "body": "The ground campaign opened at Goose Green, 28–29 May. The 2nd Battalion Parachute Regiment (2 PARA) attacked Argentine positions held by elements of the 12th Infantry Regiment and air force personnel — approximately 1,000 defenders against 600 British troops. Lieutenant Colonel Herbert Jones led from the front during the assault on Boca House, was killed charging a trench line singlehandedly, and was awarded a posthumous Victoria Cross. His adjutant Major Keeble took command. The battle lasted seventeen hours. When it ended, Air Vice Commodore Wilson Pedroza surrendered with 1,200 men — double the size of the force that had just defeated him."
+      },
+      {
+        "heading": null,
+        "body": "The final advance on Stanley was a series of night attacks on the ring of mountains defending the town. On the night of 11–12 June: Mount Longdon fell to 3 PARA, Two Sisters to 45 Commando, Mount Harriet to 42 Commando. Two nights later: Mount Tumbledown fell to the 2nd Scots Guards after close-quarter fighting that lasted until dawn, and Mount William to the 1/7th Gurkha Rifles. On Longdon, Sergeant Ian McKay of 3 PARA was killed charging a machine-gun position. Posthumous Victoria Cross — the second of the campaign. By the morning of 14 June, Argentine positions inside Stanley were untenable."
+      },
+      {
+        "heading": null,
+        "body": "General Mario Menéndez signed the instrument of surrender in Stanley at 9:00 p.m. on 14 June 1982. The conflict had lasted seventy-four days. British dead: 255. Argentine dead: 649. Three Falkland Island civilians were killed, two by Argentine fire, one by a British shell. The Royal Navy lost six ships sunk and twelve damaged. Argentina lost an estimated 100 aircraft. The Belgrano accounted for more than one-third of Argentine total fatalities."
+      },
+      {
+        "heading": null,
+        "body": "The campaign was an operational improvisation from beginning to end. The task force sailed without complete intelligence on Argentine positions, without adequate air cover, and with a logistics chain stretched to its limit. The ground forces won by night assault — movement and violence of action compensating for numerical disadvantage. The Argentine air force fought with genuine professionalism and came closer to breaking the task force than the official British narrative acknowledged for years. What stopped them was not British air defence but Argentine bomb fuzes, set too shallow to detonate on a fast, low-level attack run. Of the Exocets that struck British ships, several failed to explode. Had they functioned as designed, the campaign's outcome might have been different."
+      }
     ],
     "sources": [
-      {"label": "Battle of the Somme — Wikipedia", "href": "https://en.wikipedia.org/wiki/Battle_of_the_Somme_(1916)"},
-      {"label": "Battle of the Somme — Imperial War Museum", "href": "https://www.iwm.org.uk/history/the-battle-of-the-somme"},
-      {"label": "Battle of the Somme — Encyclopaedia Britannica", "href": "https://www.britannica.com/event/Battle-of-the-Somme"},
-      {"label": "First World War — National Archives UK", "href": "https://www.nationalarchives.gov.uk/education/greatwar/"}
-    ]
+      {
+        "title": "Falklands War",
+        "publisher": "Wikipedia",
+        "href": "https://en.wikipedia.org/wiki/Falklands_War",
+        "date": "2024"
+      },
+      {
+        "title": "The Falklands War",
+        "publisher": "Imperial War Museum",
+        "href": "https://www.iwm.org.uk/history/the-falklands-war",
+        "date": "2023"
+      },
+      {
+        "title": "Falklands War",
+        "publisher": "Encyclopaedia Britannica",
+        "href": "https://www.britannica.com/event/Falklands-War",
+        "date": "2024"
+      },
+      {
+        "title": "Falkland Islands Review (Franks Report)",
+        "publisher": "UK Government / HMSO",
+        "href": "https://www.gov.uk/government/publications/falkland-islands-review",
+        "date": "1983"
+      }
+    ],
+    "tags": ["Falklands War", "Argentina", "Margaret Thatcher", "HMS Conqueror", "ARA General Belgrano", "Exocet", "2 PARA", "H Jones", "Operation SUTTON", "San Carlos", "Stanley", "East Falkland", "modern-conflicts"]
   },
   "shortForm": {
-    "id": "article-vickers-machine-gun-industrial-warfare-dispatch",
-    "title": "One Million Rounds in Twelve Hours: The Vickers Gun and Industrial Warfare",
-    "slug": "vickers-machine-gun-industrial-warfare-dispatch",
-    "excerpt": "At High Wood on August 24, 1916, ten Vickers guns fired continuously for twelve hours, expending approximately one million rounds. None malfunctioned beyond field repair. The Vickers did not create the stalemate of the Western Front — but it made the old tactics unsurvivable.",
-    "era": "technology-weapons",
-    "voice": "tactician",
+    "id": "article-battle-of-goose-green-1982-dispatch",
+    "title": "Come On, 2 PARA: The Battle of Goose Green, May 28–29, 1982",
+    "slug": "battle-of-goose-green-1982-dispatch",
+    "excerpt": "Six hundred British paratroopers attacked a thousand Argentine defenders at Goose Green. Their commanding officer was killed in the assault. They won anyway.",
+    "difficulty": "intermediate",
+    "category": "modern-conflicts",
+    "era": "modern-conflicts",
+    "voice": "correspondent",
     "paragraphs": [
-      "The Vickers gun was water-cooled, belt-fed, and capable of sustained fire for hours without overheating. It weighed 28 pounds on the gun and 43 pounds on the tripod required for accurate sustained fire. A trained two-man crew could set it up in under 30 seconds and engage targets at ranges up to 2,900 yards with direct fire, or use indirect fire tables to hit reverse slopes at greater ranges. The British Army formally adopted it in 1912, replacing the older Maxim from which it was directly derived. By the summer of 1916, the Vickers was the dominant sustained-fire weapon of the British Expeditionary Force, and the Machine Gun Corps — formed November 1915 specifically to pool and deploy machine guns at scale — was beginning to use it in ways that its pre-war doctrine had not anticipated.",
-      "The performance benchmark most cited for the Vickers is the sustained fire record set by C Company, 100th Machine Gun Company at High Wood on August 24, 1916. Ten guns fired continuously for approximately twelve hours to support an infantry operation, consuming just under one million rounds. The guns required replacement barrels and continuous water replenishment — water brought up in petrol cans and, when those ran out, from soldiers' water bottles. None of the ten guns malfunctioned beyond what a crew could repair in the field. The tactical relevance was that a single company of ten guns could sustain a rate of fire making infantry movement across open ground in that sector impossible for an entire day.",
-      "The machine gun is frequently described in histories of the First World War as the decisive weapon of trench warfare. This is approximately correct but operationally imprecise. The Vickers's actual tactical effect was to make unprotected infantry movement across open ground prohibitively expensive at any range within its engagement envelope. It did not, by itself, create the stalemate of the Western Front; stalemate resulted from the combination of machine gun fire, artillery, wire, and logistical constraints that prevented rapid exploitation of any breakthrough before reserves could close the gap. The Vickers was one component in a system that destroyed the offensive infantry tactics of 1914, and then forced armies to develop combined arms solutions — coordinated artillery, armor, smoke, and organic fire support — to replace the tactical framework it had made unsurvivable."
+      {
+        "heading": null,
+        "body": "The briefing said 150 Argentines at Goose Green. On the night of 28 May 1982, 2nd Battalion, Parachute Regiment — 600 men — moved off Sussex Mountain in darkness toward Argentine positions across three miles of open ground. The real number was closer to 1,000. The intelligence was wrong. Nobody turned back."
+      },
+      {
+        "heading": null,
+        "body": "Lieutenant Colonel Herbert Jones — 'H' to everyone — was killed at approximately 10:00 a.m. on 29 May, during an assault on Argentine positions near Boca House. His own Company had stalled under fire. Jones ran forward alone, charged a trench, and was shot from behind by a flanking position he had not seen. He was forty-two years old. His death did not break the battalion. Major Chris Keeble took command. The attack continued. By late afternoon the Argentine position was collapsing."
+      },
+      {
+        "heading": null,
+        "body": "Air Vice Commodore Wilson Pedroza surrendered at approximately 4:00 p.m. on 29 May with 1,200 men under his command. Seventeen British had been killed, thirty-five wounded. Forty-seven Argentines were dead. The disparity in prisoner numbers — twice the attacking force — reflected the scale of the intelligence failure and the extent of the victory. Jones was awarded the Victoria Cross posthumously. The citation noted he had 'inspired his battalion to overcome a position of great strength.'"
+      },
+      {
+        "heading": null,
+        "body": "Three weeks later, Sergeant Ian McKay of 3 PARA was killed in the same manner at Mount Longdon — charging a machine-gun position that had pinned down his platoon. Posthumous Victoria Cross. Two VCs in a single campaign, both to paratroopers, both awarded for the same act: running at the thing that was killing everyone else. The Falklands was the first conflict since Korea to produce British VCs in ground combat."
+      }
     ],
     "sources": [
-      {"label": "Vickers machine gun — Wikipedia", "href": "https://en.wikipedia.org/wiki/Vickers_machine_gun"},
-      {"label": "Machine Gun Corps — Imperial War Museum", "href": "https://www.iwm.org.uk/history/the-machine-gun-corps"}
-    ]
+      {
+        "title": "Battle of Goose Green",
+        "publisher": "Wikipedia",
+        "href": "https://en.wikipedia.org/wiki/Battle_of_Goose_Green",
+        "date": "2024"
+      },
+      {
+        "title": "The Falklands War",
+        "publisher": "Imperial War Museum",
+        "href": "https://www.iwm.org.uk/history/the-falklands-war",
+        "date": "2023"
+      },
+      {
+        "title": "H. Jones VC",
+        "publisher": "Encyclopaedia Britannica",
+        "href": "https://www.britannica.com/biography/H-Jones",
+        "date": "2024"
+      }
+    ],
+    "tags": ["Goose Green", "2 PARA", "H Jones", "Falklands War", "Victoria Cross", "Argentina", "East Falkland", "modern-conflicts"]
   },
   "onThisDay": {
     "month": 5,
-    "day": 1,
-    "year": 1915,
-    "headline": "German Submarine Torpedoes American Tanker SS Gulflight",
-    "summary": "On May 1, 1915, the American oil tanker SS Gulflight was torpedoed without warning by German submarine U-30 off the Scilly Isles in the Atlantic. The captain died of a heart attack; two crew members drowned. The attack on an American vessel drew sharp protests from Washington and contributed to the mounting crisis over German unrestricted submarine warfare that would culminate in the sinking of RMS Lusitania six days later.",
-    "era": "world-war-i",
-    "linkedArticleSlug": ""
+    "day": 2,
+    "year": 1982,
+    "headline": "HMS Conqueror Sinks ARA General Belgrano, Killing 323 Argentine Sailors",
+    "body": "On 2 May 1982, the British nuclear-powered submarine HMS Conqueror torpedoed the Argentine cruiser ARA General Belgrano south of the Falkland Islands. The ship sank within thirty-six minutes. Of her 1,093 crew, 323 were killed — more than half of all Argentine deaths in the Falklands War. The sinking remains the only confirmed combat sinking of a vessel by a nuclear-powered submarine in history.",
+    "era": "modern-conflicts",
+    "tags": ["HMS Conqueror", "ARA General Belgrano", "Falklands War", "Royal Navy"]
   }
 }

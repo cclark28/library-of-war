@@ -1,7 +1,7 @@
 {
-  "voiceIndex": 0,
-  "lastRun": "2026-05-02T13:48:03.970Z",
-  "articlesWritten": 77,
+  "voiceIndex": 1,
+  "lastRun": "2026-05-02T13:51:12.840Z",
+  "articlesWritten": 79,
   "usedSlugs": [
     "battle-of-cannae",
     "battle-of-austerlitz",
@@ -33,7 +33,9 @@
     "battle-of-waterloo-1815",
     "tet-offensive-1968-dispatch",
     "battle-of-the-somme-1916",
-    "vickers-machine-gun-industrial-warfare-dispatch"
+    "vickers-machine-gun-industrial-warfare-dispatch",
+    "falklands-war-1982",
+    "battle-of-goose-green-1982-dispatch"
   ],
   "_voices": [
     "correspondent",
