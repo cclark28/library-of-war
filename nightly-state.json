@@ -1,7 +1,7 @@
 {
-  "voiceIndex": 2,
-  "lastRun": "2026-05-02T13:54:43.565Z",
-  "articlesWritten": 81,
+  "voiceIndex": 3,
+  "lastRun": "2026-05-02T13:56:35.243Z",
+  "articlesWritten": 83,
   "usedSlugs": [
     "battle-of-cannae",
     "battle-of-austerlitz",
@@ -37,7 +37,9 @@
     "falklands-war-1982",
     "battle-of-goose-green-1982-dispatch",
     "battle-of-hue-city-1968",
-    "battle-of-long-tan-1966-dispatch"
+    "battle-of-long-tan-1966-dispatch",
+    "zimmermann-telegram-1917",
+    "operation-gold-berlin-tunnel-dispatch"
   ],
   "_voices": [
     "correspondent",

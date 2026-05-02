@@ -1,100 +1,100 @@
 {
-  "imageFile": "https://upload.wikimedia.org/wikipedia/commons/4/49/Tank_supporting_1.5_Marines_in_the_citadel_of_Hue.jpg",
-  "imageAlt": "A US Marine M48 Patton tank advances through rubble to support 1st Battalion 5th Marines inside the Citadel of Hue, February 1968",
-  "imageCaption": "A US Marine M48 tank advances through the Citadel of Hue to support 1st Battalion, 5th Marines, February 1968. US Marine Corps / National Archives / Public Domain.",
-  "imageSrc": "https://upload.wikimedia.org/wikipedia/commons/4/49/Tank_supporting_1.5_Marines_in_the_citadel_of_Hue.jpg",
+  "imageFile": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Zimmermann_Telegram_as_Received_by_the_German_Ambassador_to_Mexico_-_NARA_-_302025.jpg",
+  "imageAlt": "The decoded Zimmermann Telegram as received by the German Ambassador to Mexico, January 1917, held at the US National Archives",
+  "imageCaption": "The Zimmermann Telegram as received by the German Ambassador to Mexico, January 1917. National Archives and Records Administration, NARA ID 302025 / Public Domain.",
+  "imageSrc": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Zimmermann_Telegram_as_Received_by_the_German_Ambassador_to_Mexico_-_NARA_-_302025.jpg",
   "longForm": {
-    "id": "article-battle-of-hue-city-1968",
-    "title": "Street by Street: The Battle of Hue City, January–March 1968",
-    "slug": "battle-of-hue-city-1968",
-    "excerpt": "On the morning of January 31, 1968, NVA and Viet Cong forces seized Hue — Vietnam's ancient imperial capital. It took US Marines and ARVN soldiers 26 days to take it back.",
-    "difficulty": "advanced",
-    "category": "vietnam-war",
-    "era": "vietnam-war",
-    "voice": "historian",
+    "id": "article-zimmermann-telegram-1917",
+    "title": "The Telegram That Brought America In: The Zimmermann Affair, January–April 1917",
+    "slug": "zimmermann-telegram-1917",
+    "excerpt": "On January 16, 1917, German Foreign Secretary Arthur Zimmermann sent a coded telegram proposing a military alliance with Mexico against the United States. British codebreakers intercepted it. Thirteen weeks later, America declared war.",
+    "difficulty": "intermediate",
+    "category": "intelligence-spec-ops",
+    "era": "world-war-i",
+    "voice": "archivist",
     "paragraphs": [
-      "In the early hours of January 31, 1968, while a truce was nominally in effect for the Vietnamese Lunar New Year — Tet — approximately 7,500 North Vietnamese Army and Viet Cong troops moved into Hue, South Vietnam's third-largest city and its ancient imperial capital. By dawn, they held most of it. The speed and scale of the attack shattered assumptions that had governed American strategy for two years: that the enemy lacked the strength for a conventional urban offensive, that the population would not tolerate a Communist seizure, and that the war was, in some meaningful sense, being won. All three assumptions were wrong.",
-      "Hue had a particular significance that made it both a symbolically compelling target and a militarily treacherous one. The Citadel — a 19th-century fortified imperial palace complex in the northern part of the city — offered the NVA natural defensive terrain: thick masonry walls, interconnected courtyards, and structures that resisted artillery and air strikes without collapsing in ways that cleared fields of fire. The NVA flag flew from the Citadel's main flagpole for most of the battle, a visible propaganda asset that American and South Vietnamese commanders understood they could not leave in place. Getting it down required fighting through the walls.",
-      "The initial American response was hampered by a failure of situational awareness that historians have since documented in detail. Brigadier General Foster LaHue, commanding Task Force X-Ray at Phu Bai, ordered a company of Marines — Alpha Company, 1st Battalion, 1st Marines under Captain Gordon Batcheller — to drive into Hue on 31 January and relieve the MACV compound, a small US military advisory facility still holding out south of the Perfume River. LaHue believed he was sending a company to deal with a minor incursion. Batcheller's Marines drove into an ambush. Four Marines were killed in the first hour. The company fought its way into the MACV compound and could go no further.",
-      "It took several days before American commanders acknowledged the scale of what they were facing and began committing the forces required. Lieutenant Colonel Ernest Cheatham, commanding 2nd Battalion, 5th Marines, arrived with the first substantial reinforcement. Cheatham's battalion would bear the heaviest fighting in the New City south of the river, clearing block by block with rifles, machine guns, and eventually — after permission to use heavy weapons was finally granted — M48 tanks, recoilless rifles, and 106mm guns firing directly into building facades. Standard American doctrine, built around mobility and firepower, was nearly useless in an urban environment where every intersection was a kill zone and every building a fortified position. The Marines had to relearn tactics their predecessors had practiced in Manila in 1945.",
-      "South of the river fell to Cheatham's Marines over roughly two weeks. The Citadel was harder. The ARVN 1st Division, headquartered inside the Citadel, had held a small perimeter from the first night. Recapturing the rest required coordination between ARVN airborne and infantry battalions and elements of the US 1st Battalion, 5th Marines, which entered the Citadel in the second week of February. Inside the walls, fighting was room by room. The NVA had prepared defences for exactly this kind of battle — spider holes, firing positions cut through walls, pre-registered mortar coordinates. American air support was restricted for much of the battle to avoid destroying the cultural heritage structures; when restrictions were eventually lifted, the bombing further reduced streets already reduced to rubble.",
-      "The Hue massacre — the systematic execution of civilians and captured South Vietnamese government and military personnel by NVA and Viet Cong forces during their 26-day occupation — became one of the most documented atrocities of the Vietnam War. Mass graves discovered after the battle contained at least 2,800 bodies; subsequent discoveries raised the figure to between 2,800 and 5,700, depending on the accounting methodology. Victims included civil servants, teachers, Catholic priests and foreign clergy, and anyone associated with the Saigon government. The killings were not incidental: recovered NVA documents from the period of the occupation indicated systematic targeting of designated class enemies. The massacre received far less contemporary coverage in the United States than the My Lai incident, which occurred two months later.",
-      "The Citadel was declared secure on 25 February 1968. Isolated fighting continued for another week; the battle is conventionally dated as ending 3 March. American casualties: 216 Marines and soldiers killed, 1,584 wounded. ARVN casualties: approximately 452 killed. NVA and Viet Cong killed: estimated at 5,000, though communist sources have never confirmed a reliable figure. The city itself was devastated. An estimated 80 percent of Hue's structures were damaged or destroyed.",
-      "The battle's significance was not primarily tactical. Militarily, Hue was retaken, and the Tet Offensive as a whole was a military defeat for North Vietnam: the expected popular uprising in the South did not materialise, and NVA and VC losses were severe. But the image of a major South Vietnamese city held by the enemy for nearly a month, and the cost of retaking it, destroyed the credibility of official American optimism about the war's progress. The Military Assistance Command Vietnam had spent months briefing journalists and senators on progress indicators. Hue demonstrated what those indicators had concealed.",
-      "The historiography of Hue has been complicated by the same polarisations that define American memory of the Vietnam War. James Willbanks's 2004 operational history and Eric Hammel's earlier battlefield account provide the most detailed tactical reconstructions. Nick Turse's later work, focusing on civilian casualties across the war, situates Hue within a pattern of atrocity that American historians have been slower to document than Vietnamese ones. What the documentary record makes clear, regardless of interpretive frame, is that the battle exposed a gap between the war American commanders believed they were fighting and the war they were actually in — a gap that would not be closed before the war ended."
+      "The document held at the National Archives and Records Administration as Record Group 59, Box 3905, is a single sheet of decoded cable text. At the top, in plain English, it reads: 'We intend to begin unrestricted submarine warfare on the first of February. We shall endeavour in spite of this to keep the United States of America neutral.' What follows is the paragraph that changed the war. It is not long — roughly 200 words in its decoded form. It is, in terms of its intelligence and diplomatic consequences, one of the most consequential telegrams ever transmitted.",
+      "The Zimmermann Telegram — named for German Foreign Secretary Arthur Zimmermann, who drafted and authorised it — was transmitted on 16 January 1917 via three separate routes. The primary route ran through the transatlantic cable to Washington, then to the German Ambassador Johann von Bernstorff, then onward to the German Minister in Mexico City, Heinrich von Eckardt. The telegram proposed that if the United States entered the war on the Allied side, Germany would seek a military alliance with Mexico, provide financial support, and assist Mexico in recovering 'the lost territory in Texas, New Mexico, and Arizona.' Mexico was to approach Japan about joining the alliance as well.",
+      "The telegram was intercepted by British Naval Intelligence's Room 40 — the signals intelligence unit operating out of the Admiralty's Old Building in Whitehall. Room 40 had been reading German diplomatic cable traffic since early in the war, having obtained German codebooks through a combination of chance and deliberate intelligence effort. Nigel de Grey and William Montgomery decoded the Zimmermann Telegram within days of its interception, recognising immediately that it was the most valuable piece of intelligence the unit had yet produced. The problem was using it. Publishing the telegram would reveal to the Germans that their diplomatic codes were broken. It would also require explaining how British intelligence had obtained an American diplomatic cable — since the telegram had been routed, with American permission, through the US State Department's cable line.",
+      "Director of Naval Intelligence Rear Admiral William Reginald Hall — 'Blinker' Hall, for his eye tic — managed the disclosure with considerable care. Room 40 obtained the telegram's text as it had been relayed from Washington to Mexico City through Western Union, allowing the British to claim they had intercepted Mexican commercial cable traffic rather than German diplomatic traffic. The source protection held. When Hall presented the decoded telegram to the American Ambassador Walter Hines Page on 23 February 1917, Page received it as a gift that required no uncomfortable questions.",
+      "The US State Department made the telegram public on 1 March 1917. The reaction was immediate and, in certain newspapers, theatrical. Zimmermann's decision to confirm the telegram's authenticity at a press conference on 3 March — apparently believing the admission would somehow defuse the damage — was one of the more self-defeating diplomatic acts of the war. He had calculated that Americans would be angered by British interference in the cable line and would demand to know how British intelligence had obtained State Department communications. Instead, his confirmation removed any doubt about the document's validity. American public opinion, already shifting after Germany had resumed unrestricted submarine warfare on 1 February, moved decisively against Germany.",
+      "President Woodrow Wilson had been re-elected in November 1916 partly on the slogan 'He kept us out of war.' The telegram was one of three developments — alongside unrestricted submarine warfare and the publication of the Baralong affair's reverberations — that made neutrality politically untenable by April. On 2 April 1917, Wilson asked Congress for a declaration of war against Germany. Congress voted on 6 April. The United States had been neutral for nearly three years.",
+      "The intelligence tradecraft surrounding the telegram's handling has attracted as much scholarly attention as the telegram itself. Barbara Tuchman's 1958 monograph, 'The Zimmermann Telegram,' remains the standard account of the document's origins and disclosure, though subsequent archival access to Room 40 records has allowed researchers to refine her account of the source protection mechanism. The core of her analysis — that Hall's management of the disclosure was a masterwork of intelligence diplomacy — has not been seriously contested. What has been revised is the emphasis: Tuchman was writing without access to the British signals intelligence files, which remained classified until the 1970s. The fuller picture of Room 40's capabilities, revealed in Patrick Beesly's later work, makes Hall's achievement appear larger, not smaller.",
+      "The telegram is now held in multiple archive collections. The encoded German original — the version actually transmitted — is at the British National Archives in Kew, as part of the Foreign Office records. The decoded English version, as shown to Ambassador Page, is held at NARA. A photograph of the decoded text in its telegraphic form, as received at the German legation in Mexico City, was produced by British intelligence from the Western Union files and became the public-facing document after 1 March 1917. The three versions are not identical in their details — a function of the multiple encoding and decoding stages through which the message passed. Researchers comparing them have occasionally cited discrepancies; those discrepancies are artifacts of transmission, not evidence of fabrication.",
+      "What the documentary record does not fully explain is why Zimmermann sent the telegram at all. Germany had ample reason to know that proposing a Mexican attack on American territory would, if disclosed, accelerate rather than deter American belligerence. The reasoning, as reconstructed from the surviving German Foreign Office files, appears to have been that American entry was now inevitable — Germany had already decided to resume unrestricted submarine warfare, which both sides understood would bring America in — and that creating a US-Mexico border crisis might occupy American military attention in North America and delay the deployment of American forces to France. It was a calculation that underestimated both the speed of American mobilisation and the inflammatory effect of the telegram's contents on American public opinion. As a piece of strategic logic, it had a certain coherence. As a piece of executed policy, it was a catastrophe."
     ],
     "sources": [
       {
-        "title": "Battle of Hue",
+        "title": "Zimmermann Telegram",
         "publisher": "Wikipedia",
-        "href": "https://en.wikipedia.org/wiki/Battle_of_Hu%E1%BA%BF",
+        "href": "https://en.wikipedia.org/wiki/Zimmermann_Telegram",
         "date": "2024"
       },
       {
-        "title": "Battle of Hue",
+        "title": "Zimmermann Note",
         "publisher": "Encyclopaedia Britannica",
-        "href": "https://www.britannica.com/event/Battle-of-Hue",
+        "href": "https://www.britannica.com/event/Zimmermann-Note",
         "date": "2024"
       },
       {
-        "title": "Hue 1968: A Turning Point of the American War in Vietnam",
-        "publisher": "JSTOR / Atlantic Monthly Press (Mark Bowden)",
-        "href": "https://www.jstor.org/stable/j.ctt1ht4z7g",
-        "date": "2017"
+        "title": "The Zimmermann Telegram (Primary Document, NARA ID 302025)",
+        "publisher": "National Archives and Records Administration",
+        "href": "https://catalog.archives.gov/id/302025",
+        "date": "1917"
       },
       {
-        "title": "Vietnam War Records",
+        "title": "World War I Records",
         "publisher": "National Archives and Records Administration",
-        "href": "https://www.archives.gov/research/military/vietnam-war",
+        "href": "https://www.archives.gov/research/military/ww1",
         "date": "2023"
       }
     ],
-    "tags": ["Battle of Hue", "Tet Offensive", "Vietnam War", "US Marines", "ARVN", "Ernest Cheatham", "Citadel", "NVA", "Hue massacre", "5th Marines"]
+    "tags": ["Zimmermann Telegram", "Arthur Zimmermann", "Room 40", "Blinker Hall", "World War I", "intelligence", "US entry WWI", "Mexico", "British signals intelligence", "NARA"]
   },
   "shortForm": {
-    "id": "article-battle-of-long-tan-1966-dispatch",
-    "title": "One Hundred and Eight Against Two Thousand: The Battle of Long Tan, August 18, 1966",
-    "slug": "battle-of-long-tan-1966-dispatch",
-    "excerpt": "D Company, 6th RAR — 108 Australians — spent three and a half hours in a rubber plantation in Phuoc Tuy Province fighting an estimated 2,500 NVA and Viet Cong. Eighteen Australians were killed. The enemy lost at least 245.",
-    "difficulty": "intermediate",
-    "category": "vietnam-war",
-    "era": "vietnam-war",
-    "voice": "historian",
+    "id": "article-operation-gold-berlin-tunnel-dispatch",
+    "title": "Betrayed Before It Began: Operation GOLD and the Berlin Tunnel, 1954–1956",
+    "slug": "operation-gold-berlin-tunnel-dispatch",
+    "excerpt": "The CIA and MI6 spent a year tapping Soviet military communications through a tunnel under East Berlin. The Soviets knew about it from day one. A British intelligence officer had told them.",
+    "difficulty": "advanced",
+    "category": "intelligence-spec-ops",
+    "era": "cold-war",
+    "voice": "archivist",
     "paragraphs": [
-      "The Battle of Long Tan grew out of a routine patrol. On the afternoon of 18 August 1966, D Company, 6th Battalion, Royal Australian Regiment was following up a mortar attack on Nui Dat base in Phuoc Tuy Province when it made contact with what appeared to be a small enemy force in the rubber plantation near the village of Long Tan. What Major Harry Smith's 108-man company had walked into was elements of the NVA 275th Regiment and the Viet Cong D445 Provincial Mobile Battalion — an estimated 2,500 men. The Australians were encircled within the hour.",
-      "What followed was three and a half hours of close-range combat in driving monsoon rain that reduced visibility to metres. Smith's company held its perimeter through fire superiority and artillery support from Nui Dat — 1,492 rounds fired by New Zealand and Australian gunners over the course of the engagement. When the ammunition ran low, a South Vietnamese Air Force Caribou flew through heavy fire to drop resupply by parachute. The relief force — Armoured Personnel Carriers of A Squadron, 3rd Cavalry Regiment — reached D Company's position just as darkness fell. The NVA withdrew, leaving their dead behind.",
-      "Eighteen Australians were killed and twenty-four wounded. Estimates of NVA and Viet Cong dead ranged from 245 confirmed bodies found on the field to over 500 by subsequent intelligence assessments. The ratio of casualties and the decision to hold rather than withdraw despite encirclement defined Long Tan as a significant tactical victory for Australian forces. Harry Smith was awarded the Military Cross. Three Victoria Crosses were awarded to men of D Company: Warrant Officer Kevin Wheatley, Private Ray Simpson, and Private Peter Badcoe — though Badcoe's VC was for a separate action.",
-      "Long Tan is remembered in Australia as that country's defining battle of the Vietnam War — its Gallipoli-equivalent in terms of cultural memory, though the parallel obscures more than it reveals. Gallipoli was a defeat. Long Tan was a victory, achieved by a company that refused to break under conditions that would have justified withdrawal. The Australian War Memorial holds the unit's battle ensign, a Vietnamese-made flag of D Company retrieved from the battlefield — one of the more unusual primary artefacts of the campaign."
+      "The CIA's internal history of Operation GOLD, partially declassified and available through the Agency's FOIA Reading Room, describes the Berlin tunnel as one of the most productive intelligence operations of the Cold War. It collected over 443,000 hours of telephone conversations and 368,000 hours of teletype traffic from Soviet military cables running under the Soviet sector of Berlin. What the internal history does not address directly — though it acknowledges the compromise — is that the Soviets knew about the tunnel before the first shovelful of earth was moved.",
+      "Operation GOLD was conceived in 1953 by CIA officer William Harvey and MI6's Peter Lunn. The plan was to dig a 500-metre tunnel from a building in the American sector of West Berlin to a point beneath Schönefelder Chaussee, where Soviet military telecommunications cables could be tapped. Planning meetings were held in London in December 1953. Among those present was George Blake, an MI6 officer who had served in Korea and was regarded as a dependable and technically capable officer. Blake was a Soviet agent. He reported the operation to his KGB handler within weeks of the meeting.",
+      "The tunnel was dug between August 1954 and February 1955. It ran 450 metres at a depth of six metres, with the tap chamber positioned directly beneath the Soviet cables. Active collection began in May 1955. For eleven months the tunnel operated without apparent interference. The KGB, informed of its existence and location before it was built, had decided not to expose it — doing so would require explaining how they knew, which would expose Blake. They let it run. On 22 April 1956, a Soviet engineering team 'discovered' the tunnel during what they described as routine cable maintenance work. The Soviets held a press conference, displayed the tunnel to journalists, and accused the Americans of criminal espionage. The Americans said nothing about the extent of the collection.",
+      "Blake was not identified as the source of the compromise until 1961, when a defector's information pointed investigators toward him. He confessed, was convicted of five counts under the Official Secrets Act, and was sentenced to forty-two years — one of the longest sentences in British legal history. He escaped from Wormwood Scrubs prison in 1966 and surfaced in Moscow, where he remained until his death in 2020. The CIA and NSA spent years assessing the damage from the GOLD operation — not from what the tunnel had collected, but from what Blake had allowed the Soviets to know about Western intelligence methods and targets. The assessment, classified for decades, concluded that the Soviets had been careful to avoid taking any action based on tunnel intelligence that would reveal their prior knowledge. The collection was real. The damage assessment was worse."
     ],
     "sources": [
       {
-        "title": "Battle of Long Tan",
+        "title": "Operation Gold (CIA Berlin Tunnel)",
         "publisher": "Wikipedia",
-        "href": "https://en.wikipedia.org/wiki/Battle_of_Long_Tan",
+        "href": "https://en.wikipedia.org/wiki/Operation_Gold_(1956_operation)",
         "date": "2024"
       },
       {
-        "title": "Long Tan: The Australian Vietnam War Battle",
-        "publisher": "Australian War Memorial",
-        "href": "https://www.awm.gov.au/articles/atwar/vietnam",
-        "date": "2023"
+        "title": "Berlin Tunnel Collection",
+        "publisher": "CIA FOIA Reading Room",
+        "href": "https://www.cia.gov/readingroom/collection/berlin-tunnel",
+        "date": "2007"
       },
       {
-        "title": "Battle of Long Tan",
+        "title": "George Blake",
         "publisher": "Encyclopaedia Britannica",
-        "href": "https://www.britannica.com/event/Battle-of-Long-Tan",
+        "href": "https://www.britannica.com/biography/George-Blake",
         "date": "2024"
       }
     ],
-    "tags": ["Battle of Long Tan", "Vietnam War", "Australia", "6th RAR", "Harry Smith", "D Company", "Phuoc Tuy Province", "NVA", "D445 Battalion"]
+    "tags": ["Operation GOLD", "Berlin Tunnel", "CIA", "MI6", "George Blake", "Cold War", "KGB", "signals intelligence", "William Harvey", "Peter Lunn"]
   },
   "onThisDay": {
     "month": 5,
-    "day": 3,
-    "year": 1945,
-    "headline": "Hamburg Surrenders to British 7th Armoured Division, Ending Combat in Germany's Second City",
-    "body": "On 3 May 1945, Hamburg — Germany's second-largest city and its principal Atlantic port — surrendered to the British 7th Armoured Division, the 'Desert Rats.' The city had been devastated by the RAF bombing campaign of July 1943, Operation GOMORRAH, which killed an estimated 37,000 civilians in a firestorm. By May 1945, resistance in the city was nominal; the Wehrmacht garrison had largely dissolved. The formal surrender ended organised combat in northern Germany five days before the general capitulation of 8 May.",
+    "day": 4,
+    "year": 1942,
+    "headline": "USS Yorktown Aircraft Strike Japanese Forces at Tulagi, Opening the Battle of the Coral Sea",
+    "body": "On 4 May 1942, aircraft from USS Yorktown (CV-5) attacked Japanese invasion forces at Tulagi in the Solomon Islands, marking the opening American strike of the Battle of the Coral Sea. The engagement that followed — 4–8 May 1942 — was the first naval battle in history fought entirely by carrier aircraft, with neither fleet's surface ships coming within sight of the other. USS Lexington was sunk and Yorktown badly damaged; Japan lost the light carrier Shoho and suffered damage to Shokaku. The Japanese invasion of Port Moresby was turned back.",
     "era": "world-war-ii",
-    "tags": ["Hamburg", "7th Armoured Division", "World War II", "Germany", "Western Front"]
+    "tags": ["Battle of Coral Sea", "USS Yorktown", "USS Lexington", "World War II", "Pacific War", "carrier warfare"]
   }
 }
