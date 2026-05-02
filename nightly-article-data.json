@@ -1,143 +1,100 @@
 {
-  "imageFile": "https://upload.wikimedia.org/wikipedia/commons/1/18/Falklands_war_montage2.jpg",
-  "imageAlt": "Montage of the 1982 Falklands War showing British troops, warships, and Harrier aircraft during the South Atlantic campaign",
-  "imageCaption": "Falklands War montage, 1982. Clockwise from top: British troops advance on Stanley; HMS Hermes task force; a Sea Harrier; Argentine prisoners at Goose Green. Wikimedia Commons / Public Domain.",
-  "imageSrc": "https://upload.wikimedia.org/wikipedia/commons/1/18/Falklands_war_montage2.jpg",
+  "imageFile": "https://upload.wikimedia.org/wikipedia/commons/4/49/Tank_supporting_1.5_Marines_in_the_citadel_of_Hue.jpg",
+  "imageAlt": "A US Marine M48 Patton tank advances through rubble to support 1st Battalion 5th Marines inside the Citadel of Hue, February 1968",
+  "imageCaption": "A US Marine M48 tank advances through the Citadel of Hue to support 1st Battalion, 5th Marines, February 1968. US Marine Corps / National Archives / Public Domain.",
+  "imageSrc": "https://upload.wikimedia.org/wikipedia/commons/4/49/Tank_supporting_1.5_Marines_in_the_citadel_of_Hue.jpg",
   "longForm": {
-    "id": "article-falklands-war-1982",
-    "title": "Seventy-Four Days: The Falklands War, April–June 1982",
-    "slug": "falklands-war-1982",
-    "excerpt": "On 2 April 1982, Argentine forces seized the Falkland Islands. Britain dispatched a naval task force 8,000 miles. Seventy-four days later, 904 men were dead.",
-    "difficulty": "intermediate",
-    "category": "modern-conflicts",
-    "era": "modern-conflicts",
-    "voice": "correspondent",
+    "id": "article-battle-of-hue-city-1968",
+    "title": "Street by Street: The Battle of Hue City, January–March 1968",
+    "slug": "battle-of-hue-city-1968",
+    "excerpt": "On the morning of January 31, 1968, NVA and Viet Cong forces seized Hue — Vietnam's ancient imperial capital. It took US Marines and ARVN soldiers 26 days to take it back.",
+    "difficulty": "advanced",
+    "category": "vietnam-war",
+    "era": "vietnam-war",
+    "voice": "historian",
     "paragraphs": [
-      {
-        "heading": null,
-        "body": "At 4:30 in the morning on 2 April 1982, Argentine commandos came ashore at Mullet Creek on East Falkland. They moved on the Royal Marine barracks at Moody Brook first — found it empty, the garrison already redeployed to defend Government House. Governor Rex Hunt had ordered Major Mike Norman's sixty-eight Royal Marines to resist. They did. The Argentines took casualties they hadn't expected. Then the numbers became irrelevant. By mid-morning the island had fallen, Hunt had been expelled, and Argentina's military junta had achieved its central objective: the Malvinas, as Buenos Aires called them, were Argentine."
-      },
-      {
-        "heading": null,
-        "body": "In London, the news reached the War Cabinet on a Friday afternoon. Admiral Sir Henry Leach, the First Sea Lord, was called from the House of Commons. He told Margaret Thatcher that yes, a naval task force could be assembled, and yes, it could recapture the islands. The decision was made over a weekend. Within forty-eight hours, the carrier group centred on HMS Hermes and HMS Invincible was being loaded and provisioned. The task force that eventually sailed numbered over 100 ships and 28,000 personnel — assembled and dispatched with a speed that surprised even its own commanders. It had 8,000 miles to travel and no guarantee of what would be waiting when it arrived."
-      },
-      {
-        "heading": null,
-        "body": "The first military action came on 25 April. Operation PARAQUET retook South Georgia, the smaller island 800 miles southeast of the Falklands. SAS and SBS teams landed in atrocious weather — two helicopters were lost to a white-out on the Fortuna Glacier, the crews rescued under fire. The Argentine submarine Santa Fe was caught on the surface, disabled by helicopter-launched missiles and depth charges, and ran aground. South Georgia was retaken the same day. One British soldier was wounded. The task force sailed on."
-      },
-      {
-        "heading": null,
-        "body": "May 2. HMS Conqueror, a nuclear-powered submarine, had been tracking the Argentine cruiser ARA General Belgrano for two days. Belgrano was sailing outside the 200-mile exclusion zone Britain had declared around the islands, but the Rules of Engagement were extended that afternoon on the authority of the War Cabinet. Conqueror fired two Mk8 torpedoes — a weapon dating from the Second World War. Both struck. Belgrano sank in thirty-six minutes. Of her 1,093 crew, 323 were killed. The sinking became the most contested act of the war. Argentina argued the cruiser posed no immediate threat; Britain maintained she was part of a two-pronged attack formation that had to be neutralised. Argentinian naval sorties ceased after 2 May. The navy did not venture out again."
-      },
-      {
-        "heading": null,
-        "body": "Two days later, on 4 May, an Argentine Super Étendard aircraft fired an AM39 Exocet missile at HMS Sheffield. Sheffield had no warning. The missile struck at sea-skimming speed, failed to detonate, but started a fire that could not be controlled. Twenty of her crew were killed. Sheffield was the first Royal Navy warship lost in combat since 1945. The Exocet threat — fast, radar-guided, fired from well beyond visual range — became the defining tactical problem of the campaign. Britain had no reliable defence against it. The answer was to sink the aircraft carrying them before they could fire, or to get inside the missile's minimum engagement range. Neither was straightforward."
-      },
-      {
-        "heading": null,
-        "body": "The main landings came on 21 May. Operation SUTTON put 3,000 men ashore at San Carlos Water, a protected bay on the west coast of East Falkland. Argentine air power responded immediately. For three days, wave after wave of A-4 Skyhawks and Daggers flew low and fast through the hills, pressing through intense anti-aircraft fire. HMS Ardent, Antelope, and Coventry were sunk. The container ship Atlantic Conveyor was struck by Exocet on 25 May, destroying three of the four heavy-lift Chinook helicopters the ground campaign depended on. The landings succeeded. The British were ashore, in numbers, and the air threat was absorbing Argentine losses faster than Argentine sortie rates could sustain it. Of thirty-two aircraft lost to British defences, most were on the way out, not the way in."
-      },
-      {
-        "heading": null,
-        "body": "The ground campaign opened at Goose Green, 28–29 May. The 2nd Battalion Parachute Regiment (2 PARA) attacked Argentine positions held by elements of the 12th Infantry Regiment and air force personnel — approximately 1,000 defenders against 600 British troops. Lieutenant Colonel Herbert Jones led from the front during the assault on Boca House, was killed charging a trench line singlehandedly, and was awarded a posthumous Victoria Cross. His adjutant Major Keeble took command. The battle lasted seventeen hours. When it ended, Air Vice Commodore Wilson Pedroza surrendered with 1,200 men — double the size of the force that had just defeated him."
-      },
-      {
-        "heading": null,
-        "body": "The final advance on Stanley was a series of night attacks on the ring of mountains defending the town. On the night of 11–12 June: Mount Longdon fell to 3 PARA, Two Sisters to 45 Commando, Mount Harriet to 42 Commando. Two nights later: Mount Tumbledown fell to the 2nd Scots Guards after close-quarter fighting that lasted until dawn, and Mount William to the 1/7th Gurkha Rifles. On Longdon, Sergeant Ian McKay of 3 PARA was killed charging a machine-gun position. Posthumous Victoria Cross — the second of the campaign. By the morning of 14 June, Argentine positions inside Stanley were untenable."
-      },
-      {
-        "heading": null,
-        "body": "General Mario Menéndez signed the instrument of surrender in Stanley at 9:00 p.m. on 14 June 1982. The conflict had lasted seventy-four days. British dead: 255. Argentine dead: 649. Three Falkland Island civilians were killed, two by Argentine fire, one by a British shell. The Royal Navy lost six ships sunk and twelve damaged. Argentina lost an estimated 100 aircraft. The Belgrano accounted for more than one-third of Argentine total fatalities."
-      },
-      {
-        "heading": null,
-        "body": "The campaign was an operational improvisation from beginning to end. The task force sailed without complete intelligence on Argentine positions, without adequate air cover, and with a logistics chain stretched to its limit. The ground forces won by night assault — movement and violence of action compensating for numerical disadvantage. The Argentine air force fought with genuine professionalism and came closer to breaking the task force than the official British narrative acknowledged for years. What stopped them was not British air defence but Argentine bomb fuzes, set too shallow to detonate on a fast, low-level attack run. Of the Exocets that struck British ships, several failed to explode. Had they functioned as designed, the campaign's outcome might have been different."
-      }
+      "In the early hours of January 31, 1968, while a truce was nominally in effect for the Vietnamese Lunar New Year — Tet — approximately 7,500 North Vietnamese Army and Viet Cong troops moved into Hue, South Vietnam's third-largest city and its ancient imperial capital. By dawn, they held most of it. The speed and scale of the attack shattered assumptions that had governed American strategy for two years: that the enemy lacked the strength for a conventional urban offensive, that the population would not tolerate a Communist seizure, and that the war was, in some meaningful sense, being won. All three assumptions were wrong.",
+      "Hue had a particular significance that made it both a symbolically compelling target and a militarily treacherous one. The Citadel — a 19th-century fortified imperial palace complex in the northern part of the city — offered the NVA natural defensive terrain: thick masonry walls, interconnected courtyards, and structures that resisted artillery and air strikes without collapsing in ways that cleared fields of fire. The NVA flag flew from the Citadel's main flagpole for most of the battle, a visible propaganda asset that American and South Vietnamese commanders understood they could not leave in place. Getting it down required fighting through the walls.",
+      "The initial American response was hampered by a failure of situational awareness that historians have since documented in detail. Brigadier General Foster LaHue, commanding Task Force X-Ray at Phu Bai, ordered a company of Marines — Alpha Company, 1st Battalion, 1st Marines under Captain Gordon Batcheller — to drive into Hue on 31 January and relieve the MACV compound, a small US military advisory facility still holding out south of the Perfume River. LaHue believed he was sending a company to deal with a minor incursion. Batcheller's Marines drove into an ambush. Four Marines were killed in the first hour. The company fought its way into the MACV compound and could go no further.",
+      "It took several days before American commanders acknowledged the scale of what they were facing and began committing the forces required. Lieutenant Colonel Ernest Cheatham, commanding 2nd Battalion, 5th Marines, arrived with the first substantial reinforcement. Cheatham's battalion would bear the heaviest fighting in the New City south of the river, clearing block by block with rifles, machine guns, and eventually — after permission to use heavy weapons was finally granted — M48 tanks, recoilless rifles, and 106mm guns firing directly into building facades. Standard American doctrine, built around mobility and firepower, was nearly useless in an urban environment where every intersection was a kill zone and every building a fortified position. The Marines had to relearn tactics their predecessors had practiced in Manila in 1945.",
+      "South of the river fell to Cheatham's Marines over roughly two weeks. The Citadel was harder. The ARVN 1st Division, headquartered inside the Citadel, had held a small perimeter from the first night. Recapturing the rest required coordination between ARVN airborne and infantry battalions and elements of the US 1st Battalion, 5th Marines, which entered the Citadel in the second week of February. Inside the walls, fighting was room by room. The NVA had prepared defences for exactly this kind of battle — spider holes, firing positions cut through walls, pre-registered mortar coordinates. American air support was restricted for much of the battle to avoid destroying the cultural heritage structures; when restrictions were eventually lifted, the bombing further reduced streets already reduced to rubble.",
+      "The Hue massacre — the systematic execution of civilians and captured South Vietnamese government and military personnel by NVA and Viet Cong forces during their 26-day occupation — became one of the most documented atrocities of the Vietnam War. Mass graves discovered after the battle contained at least 2,800 bodies; subsequent discoveries raised the figure to between 2,800 and 5,700, depending on the accounting methodology. Victims included civil servants, teachers, Catholic priests and foreign clergy, and anyone associated with the Saigon government. The killings were not incidental: recovered NVA documents from the period of the occupation indicated systematic targeting of designated class enemies. The massacre received far less contemporary coverage in the United States than the My Lai incident, which occurred two months later.",
+      "The Citadel was declared secure on 25 February 1968. Isolated fighting continued for another week; the battle is conventionally dated as ending 3 March. American casualties: 216 Marines and soldiers killed, 1,584 wounded. ARVN casualties: approximately 452 killed. NVA and Viet Cong killed: estimated at 5,000, though communist sources have never confirmed a reliable figure. The city itself was devastated. An estimated 80 percent of Hue's structures were damaged or destroyed.",
+      "The battle's significance was not primarily tactical. Militarily, Hue was retaken, and the Tet Offensive as a whole was a military defeat for North Vietnam: the expected popular uprising in the South did not materialise, and NVA and VC losses were severe. But the image of a major South Vietnamese city held by the enemy for nearly a month, and the cost of retaking it, destroyed the credibility of official American optimism about the war's progress. The Military Assistance Command Vietnam had spent months briefing journalists and senators on progress indicators. Hue demonstrated what those indicators had concealed.",
+      "The historiography of Hue has been complicated by the same polarisations that define American memory of the Vietnam War. James Willbanks's 2004 operational history and Eric Hammel's earlier battlefield account provide the most detailed tactical reconstructions. Nick Turse's later work, focusing on civilian casualties across the war, situates Hue within a pattern of atrocity that American historians have been slower to document than Vietnamese ones. What the documentary record makes clear, regardless of interpretive frame, is that the battle exposed a gap between the war American commanders believed they were fighting and the war they were actually in — a gap that would not be closed before the war ended."
     ],
     "sources": [
       {
-        "title": "Falklands War",
+        "title": "Battle of Hue",
         "publisher": "Wikipedia",
-        "href": "https://en.wikipedia.org/wiki/Falklands_War",
+        "href": "https://en.wikipedia.org/wiki/Battle_of_Hu%E1%BA%BF",
         "date": "2024"
       },
       {
-        "title": "The Falklands War",
-        "publisher": "Imperial War Museum",
-        "href": "https://www.iwm.org.uk/history/the-falklands-war",
-        "date": "2023"
-      },
-      {
-        "title": "Falklands War",
+        "title": "Battle of Hue",
         "publisher": "Encyclopaedia Britannica",
-        "href": "https://www.britannica.com/event/Falklands-War",
+        "href": "https://www.britannica.com/event/Battle-of-Hue",
         "date": "2024"
       },
       {
-        "title": "Falkland Islands Review (Franks Report)",
-        "publisher": "UK Government / HMSO",
-        "href": "https://www.gov.uk/government/publications/falkland-islands-review",
-        "date": "1983"
+        "title": "Hue 1968: A Turning Point of the American War in Vietnam",
+        "publisher": "JSTOR / Atlantic Monthly Press (Mark Bowden)",
+        "href": "https://www.jstor.org/stable/j.ctt1ht4z7g",
+        "date": "2017"
+      },
+      {
+        "title": "Vietnam War Records",
+        "publisher": "National Archives and Records Administration",
+        "href": "https://www.archives.gov/research/military/vietnam-war",
+        "date": "2023"
       }
     ],
-    "tags": ["Falklands War", "Argentina", "Margaret Thatcher", "HMS Conqueror", "ARA General Belgrano", "Exocet", "2 PARA", "H Jones", "Operation SUTTON", "San Carlos", "Stanley", "East Falkland", "modern-conflicts"]
+    "tags": ["Battle of Hue", "Tet Offensive", "Vietnam War", "US Marines", "ARVN", "Ernest Cheatham", "Citadel", "NVA", "Hue massacre", "5th Marines"]
   },
   "shortForm": {
-    "id": "article-battle-of-goose-green-1982-dispatch",
-    "title": "Come On, 2 PARA: The Battle of Goose Green, May 28–29, 1982",
-    "slug": "battle-of-goose-green-1982-dispatch",
-    "excerpt": "Six hundred British paratroopers attacked a thousand Argentine defenders at Goose Green. Their commanding officer was killed in the assault. They won anyway.",
+    "id": "article-battle-of-long-tan-1966-dispatch",
+    "title": "One Hundred and Eight Against Two Thousand: The Battle of Long Tan, August 18, 1966",
+    "slug": "battle-of-long-tan-1966-dispatch",
+    "excerpt": "D Company, 6th RAR — 108 Australians — spent three and a half hours in a rubber plantation in Phuoc Tuy Province fighting an estimated 2,500 NVA and Viet Cong. Eighteen Australians were killed. The enemy lost at least 245.",
     "difficulty": "intermediate",
-    "category": "modern-conflicts",
-    "era": "modern-conflicts",
-    "voice": "correspondent",
+    "category": "vietnam-war",
+    "era": "vietnam-war",
+    "voice": "historian",
     "paragraphs": [
-      {
-        "heading": null,
-        "body": "The briefing said 150 Argentines at Goose Green. On the night of 28 May 1982, 2nd Battalion, Parachute Regiment — 600 men — moved off Sussex Mountain in darkness toward Argentine positions across three miles of open ground. The real number was closer to 1,000. The intelligence was wrong. Nobody turned back."
-      },
-      {
-        "heading": null,
-        "body": "Lieutenant Colonel Herbert Jones — 'H' to everyone — was killed at approximately 10:00 a.m. on 29 May, during an assault on Argentine positions near Boca House. His own Company had stalled under fire. Jones ran forward alone, charged a trench, and was shot from behind by a flanking position he had not seen. He was forty-two years old. His death did not break the battalion. Major Chris Keeble took command. The attack continued. By late afternoon the Argentine position was collapsing."
-      },
-      {
-        "heading": null,
-        "body": "Air Vice Commodore Wilson Pedroza surrendered at approximately 4:00 p.m. on 29 May with 1,200 men under his command. Seventeen British had been killed, thirty-five wounded. Forty-seven Argentines were dead. The disparity in prisoner numbers — twice the attacking force — reflected the scale of the intelligence failure and the extent of the victory. Jones was awarded the Victoria Cross posthumously. The citation noted he had 'inspired his battalion to overcome a position of great strength.'"
-      },
-      {
-        "heading": null,
-        "body": "Three weeks later, Sergeant Ian McKay of 3 PARA was killed in the same manner at Mount Longdon — charging a machine-gun position that had pinned down his platoon. Posthumous Victoria Cross. Two VCs in a single campaign, both to paratroopers, both awarded for the same act: running at the thing that was killing everyone else. The Falklands was the first conflict since Korea to produce British VCs in ground combat."
-      }
+      "The Battle of Long Tan grew out of a routine patrol. On the afternoon of 18 August 1966, D Company, 6th Battalion, Royal Australian Regiment was following up a mortar attack on Nui Dat base in Phuoc Tuy Province when it made contact with what appeared to be a small enemy force in the rubber plantation near the village of Long Tan. What Major Harry Smith's 108-man company had walked into was elements of the NVA 275th Regiment and the Viet Cong D445 Provincial Mobile Battalion — an estimated 2,500 men. The Australians were encircled within the hour.",
+      "What followed was three and a half hours of close-range combat in driving monsoon rain that reduced visibility to metres. Smith's company held its perimeter through fire superiority and artillery support from Nui Dat — 1,492 rounds fired by New Zealand and Australian gunners over the course of the engagement. When the ammunition ran low, a South Vietnamese Air Force Caribou flew through heavy fire to drop resupply by parachute. The relief force — Armoured Personnel Carriers of A Squadron, 3rd Cavalry Regiment — reached D Company's position just as darkness fell. The NVA withdrew, leaving their dead behind.",
+      "Eighteen Australians were killed and twenty-four wounded. Estimates of NVA and Viet Cong dead ranged from 245 confirmed bodies found on the field to over 500 by subsequent intelligence assessments. The ratio of casualties and the decision to hold rather than withdraw despite encirclement defined Long Tan as a significant tactical victory for Australian forces. Harry Smith was awarded the Military Cross. Three Victoria Crosses were awarded to men of D Company: Warrant Officer Kevin Wheatley, Private Ray Simpson, and Private Peter Badcoe — though Badcoe's VC was for a separate action.",
+      "Long Tan is remembered in Australia as that country's defining battle of the Vietnam War — its Gallipoli-equivalent in terms of cultural memory, though the parallel obscures more than it reveals. Gallipoli was a defeat. Long Tan was a victory, achieved by a company that refused to break under conditions that would have justified withdrawal. The Australian War Memorial holds the unit's battle ensign, a Vietnamese-made flag of D Company retrieved from the battlefield — one of the more unusual primary artefacts of the campaign."
     ],
     "sources": [
       {
-        "title": "Battle of Goose Green",
+        "title": "Battle of Long Tan",
         "publisher": "Wikipedia",
-        "href": "https://en.wikipedia.org/wiki/Battle_of_Goose_Green",
+        "href": "https://en.wikipedia.org/wiki/Battle_of_Long_Tan",
         "date": "2024"
       },
       {
-        "title": "The Falklands War",
-        "publisher": "Imperial War Museum",
-        "href": "https://www.iwm.org.uk/history/the-falklands-war",
+        "title": "Long Tan: The Australian Vietnam War Battle",
+        "publisher": "Australian War Memorial",
+        "href": "https://www.awm.gov.au/articles/atwar/vietnam",
         "date": "2023"
       },
       {
-        "title": "H. Jones VC",
+        "title": "Battle of Long Tan",
         "publisher": "Encyclopaedia Britannica",
-        "href": "https://www.britannica.com/biography/H-Jones",
+        "href": "https://www.britannica.com/event/Battle-of-Long-Tan",
         "date": "2024"
       }
     ],
-    "tags": ["Goose Green", "2 PARA", "H Jones", "Falklands War", "Victoria Cross", "Argentina", "East Falkland", "modern-conflicts"]
+    "tags": ["Battle of Long Tan", "Vietnam War", "Australia", "6th RAR", "Harry Smith", "D Company", "Phuoc Tuy Province", "NVA", "D445 Battalion"]
   },
   "onThisDay": {
     "month": 5,
-    "day": 2,
-    "year": 1982,
-    "headline": "HMS Conqueror Sinks ARA General Belgrano, Killing 323 Argentine Sailors",
-    "body": "On 2 May 1982, the British nuclear-powered submarine HMS Conqueror torpedoed the Argentine cruiser ARA General Belgrano south of the Falkland Islands. The ship sank within thirty-six minutes. Of her 1,093 crew, 323 were killed — more than half of all Argentine deaths in the Falklands War. The sinking remains the only confirmed combat sinking of a vessel by a nuclear-powered submarine in history.",
-    "era": "modern-conflicts",
-    "tags": ["HMS Conqueror", "ARA General Belgrano", "Falklands War", "Royal Navy"]
+    "day": 3,
+    "year": 1945,
+    "headline": "Hamburg Surrenders to British 7th Armoured Division, Ending Combat in Germany's Second City",
+    "body": "On 3 May 1945, Hamburg — Germany's second-largest city and its principal Atlantic port — surrendered to the British 7th Armoured Division, the 'Desert Rats.' The city had been devastated by the RAF bombing campaign of July 1943, Operation GOMORRAH, which killed an estimated 37,000 civilians in a firestorm. By May 1945, resistance in the city was nominal; the Wehrmacht garrison had largely dissolved. The formal surrender ended organised combat in northern Germany five days before the general capitulation of 8 May.",
+    "era": "world-war-ii",
+    "tags": ["Hamburg", "7th Armoured Division", "World War II", "Germany", "Western Front"]
   }
 }

@@ -1,7 +1,7 @@
 {
-  "voiceIndex": 1,
-  "lastRun": "2026-05-02T13:51:12.840Z",
-  "articlesWritten": 79,
+  "voiceIndex": 2,
+  "lastRun": "2026-05-02T13:54:43.565Z",
+  "articlesWritten": 81,
   "usedSlugs": [
     "battle-of-cannae",
     "battle-of-austerlitz",
@@ -35,7 +35,9 @@
     "battle-of-the-somme-1916",
     "vickers-machine-gun-industrial-warfare-dispatch",
     "falklands-war-1982",
-    "battle-of-goose-green-1982-dispatch"
+    "battle-of-goose-green-1982-dispatch",
+    "battle-of-hue-city-1968",
+    "battle-of-long-tan-1966-dispatch"
   ],
   "_voices": [
     "correspondent",
