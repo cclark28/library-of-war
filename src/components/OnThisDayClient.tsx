@@ -1,6 +1,5 @@
 'use client'
 
-import { useState, useRef, useCallback, useEffect } from 'react'
 import Link from 'next/link'
 
 const ERA_LABEL: Record<string, string> = {
@@ -36,162 +35,82 @@ type OTDEntry = {
 
 interface Props {
   entries: OTDEntry[]
-  todayIndex: number
+  month: number
+  day: number
 }
 
-export default function OnThisDayClient({ entries, todayIndex }: Props) {
-  const [activeIndex, setActiveIndex]   = useState(0)
-  const [visible, setVisible]           = useState(true)
-  const touchStartX                     = useRef<number | null>(null)
-  const fadeTimeout                     = useRef<ReturnType<typeof setTimeout> | null>(null)
-
-  const navigate = useCallback((nextIndex: number) => {
-    if (nextIndex < 0 || nextIndex >= entries.length) return
-    if (nextIndex === activeIndex) return
-    setVisible(false)
-    if (fadeTimeout.current) clearTimeout(fadeTimeout.current)
-    fadeTimeout.current = setTimeout(() => {
-      setActiveIndex(nextIndex)
-      setVisible(true)
-    }, 120)
-  }, [entries.length, activeIndex])
-
-  useEffect(() => {
-    return () => { if (fadeTimeout.current) clearTimeout(fadeTimeout.current) }
-  }, [])
-
-  const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.touches[0].clientX
-  }
-
-  const handleTouchEnd = (e: React.TouchEvent) => {
-    if (touchStartX.current === null) return
-    const delta = e.changedTouches[0].clientX - touchStartX.current
-    if (Math.abs(delta) > 48) {
-      if (delta < 0) navigate(activeIndex + 1)
-      else           navigate(activeIndex - 1)
-    }
-    touchStartX.current = null
-  }
-
+export default function OnThisDayClient({ entries, month, day }: Props) {
   if (!entries.length) return null
 
-  const entry     = entries[activeIndex]
-  const dateLabel = `${MONTH_NAMES[entry.month - 1]} ${entry.day}`
-  const isToday   = activeIndex === todayIndex
+  const dateLabel = `${MONTH_NAMES[month - 1]} ${day}`
+
+  const gridClass =
+    entries.length === 1 ? 'grid-cols-1 max-w-xl mx-auto' :
+    entries.length === 2 ? 'grid-cols-1 sm:grid-cols-2' :
+                           'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'
 
   return (
-    <section
-      aria-label="On This Day in Military History"
-      className="w-full bg-ink"
-      onTouchStart={handleTouchStart}
-      onTouchEnd={handleTouchEnd}
-    >
+    <section aria-label="On This Day in Military History" className="w-full bg-ink">
+
       {/* ── Section header ─────────────────────────────────────────────── */}
-      <div className="max-w-7xl mx-auto px-5 md:px-6 pt-10 md:pt-12">
+      <div className="max-w-7xl mx-auto px-5 md:px-8 pt-12 md:pt-14">
         <div className="flex items-center gap-6">
           <div className="flex-1 border-t border-white/15" />
-          <div className="flex items-center gap-3">
-            <span className="font-headline font-bold text-paper text-[2rem] leading-none">On This Day</span>
-            <span className="font-headline font-bold text-white/30 text-[2rem] leading-none">—</span>
-            <span className="font-headline font-bold text-paper text-[2rem] leading-none">{dateLabel}</span>
-          </div>
+          <span className="font-headline font-bold text-paper text-[2rem] leading-none whitespace-nowrap">
+            On This Day
+          </span>
           <div className="flex-1 border-t border-white/15" />
         </div>
       </div>
 
-      {/* ── Entry + navigation ─────────────────────────────────────────── */}
-      <div className="max-w-7xl mx-auto px-5 md:px-6 pt-6 pb-10 md:pb-12">
-
-        {/* Nav row */}
-        <div className="flex items-center justify-end gap-2 mb-5">
-          {isToday && (
-            <span className="font-body text-[0.5rem] tracking-[0.2em] uppercase text-accent border border-accent/40 px-1.5 py-0.5 leading-none mr-auto">
-              Today
-            </span>
-          )}
-
-          {/* Dots */}
-          <div
-            className="hidden sm:flex items-center gap-1.5"
-            role="tablist"
-            aria-label="Navigate entries"
-          >
-            {entries.map((e, i) => (
-              <button
-                key={e._id}
-                role="tab"
-                aria-selected={i === activeIndex}
-                aria-label={`${MONTH_NAMES[e.month - 1]} ${e.day}, ${e.year}${i === todayIndex ? ' (today)' : ''}`}
-                onClick={() => navigate(i)}
-                className={[
-                  'rounded-full transition-all duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white/50',
-                  i === activeIndex
-                    ? 'w-2 h-2 bg-accent'
-                    : i === todayIndex
-                    ? 'w-1.5 h-1.5 bg-white/50 hover:bg-white/70'
-                    : 'w-1.5 h-1.5 bg-white/20 hover:bg-white/40',
-                ].join(' ')}
-              />
-            ))}
-          </div>
-
-          {/* Arrows */}
-          <div className="flex items-center gap-0.5">
-            <button
-              onClick={() => navigate(activeIndex - 1)}
-              disabled={activeIndex === 0}
-              aria-label="Previous entry"
-              className="p-2 text-white/40 hover:text-paper disabled:opacity-20 disabled:cursor-not-allowed transition-colors duration-150 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white/30 rounded"
-            >
-              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
-                <path d="M8.5 1.5L3.5 6.5l5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </button>
-            <button
-              onClick={() => navigate(activeIndex + 1)}
-              disabled={activeIndex === entries.length - 1}
-              aria-label="Next entry"
-              className="p-2 text-white/40 hover:text-paper disabled:opacity-20 disabled:cursor-not-allowed transition-colors duration-150 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white/30 rounded"
-            >
-              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
-                <path d="M4.5 1.5l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </button>
-          </div>
-        </div>
-
-        {/* Entry content — year + tag + headline (3-line max) + optional link */}
-        <div
-          style={{
-            opacity: visible ? 1 : 0,
-            transition: 'opacity 120ms ease-in-out',
-          }}
+      {/* ── Date — prominent, centered ─────────────────────────────────── */}
+      <div className="text-center pt-5 pb-8 md:pb-10">
+        <p
+          className="font-headline font-black text-paper leading-none"
+          style={{ fontSize: 'clamp(2.8rem, 6vw, 4.5rem)' }}
         >
-          <div className="flex items-center gap-3 mb-3 flex-wrap">
-            <span className="font-headline font-black text-paper text-3xl md:text-4xl leading-none">
-              {entry.year}
-            </span>
-            {entry.era && (
-              <span className="font-body text-[0.5rem] sm:text-[0.55rem] tracking-[0.18em] uppercase text-white/50 border border-white/20 px-2 py-1 leading-none">
-                {ERA_LABEL[entry.era] ?? entry.era}
-              </span>
-            )}
-          </div>
+          {dateLabel}
+        </p>
+      </div>
 
-          <h3 className="font-headline font-bold text-paper text-xl sm:text-2xl md:text-3xl leading-snug line-clamp-3 max-w-2xl">
-            {entry.headline}
-          </h3>
+      {/* ── Divider + events ───────────────────────────────────────────── */}
+      <div className="max-w-7xl mx-auto px-5 md:px-8 pb-12 md:pb-14">
+        <div className="border-t border-white/10 mb-10" />
 
-          {entry.linkedArticle?.slug?.current && (
-            <Link
-              href={`/articles/${entry.linkedArticle.slug.current}`}
-              className="inline-flex items-center gap-2 mt-4 font-body text-[0.62rem] tracking-[0.22em] uppercase text-white/50 hover:text-paper transition-colors duration-200 border-b border-white/20 hover:border-white/50 pb-px"
+        <div className={`grid ${gridClass} divide-y sm:divide-y-0 sm:divide-x divide-white/10`}>
+          {entries.map((entry) => (
+            <div
+              key={entry._id}
+              className="py-6 sm:py-0 sm:px-8 first:sm:pl-0 last:sm:pr-0"
             >
-              Read full article
-              <span aria-hidden="true">→</span>
-            </Link>
-          )}
+              {/* Year + era tag */}
+              <div className="flex items-center gap-3 mb-4 flex-wrap">
+                <span className="font-headline font-black text-paper text-3xl md:text-4xl leading-none">
+                  {entry.year}
+                </span>
+                {entry.era && (
+                  <span className="font-body text-[0.48rem] tracking-[0.18em] uppercase text-white/50 border border-white/20 px-2 py-1 leading-none">
+                    {ERA_LABEL[entry.era] ?? entry.era}
+                  </span>
+                )}
+              </div>
+
+              {/* Headline — 3 lines max */}
+              <h3 className="font-headline font-bold text-paper text-lg sm:text-xl leading-snug line-clamp-3">
+                {entry.headline}
+              </h3>
+
+              {/* Read article link */}
+              {entry.linkedArticle?.slug?.current && (
+                <Link
+                  href={`/articles/${entry.linkedArticle.slug.current}`}
+                  className="inline-flex items-center gap-2 mt-4 font-body text-[0.58rem] tracking-[0.22em] uppercase text-white/45 hover:text-paper transition-colors duration-200 border-b border-white/20 hover:border-white/50 pb-px"
+                >
+                  Read full article <span aria-hidden="true">→</span>
+                </Link>
+              )}
+            </div>
+          ))}
         </div>
       </div>
 

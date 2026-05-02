@@ -307,7 +307,7 @@ export default async function HomePage() {
       <main>
 
         {/* ── Section 1: Hero ─────────────────────────────────────────────── */}
-        <div className="max-w-7xl mx-auto px-5 md:px-6">
+        <div className="max-w-7xl mx-auto px-5 md:px-6 pb-12 md:pb-16">
           {flags.showHero && (hero ? (
             <div className="mt-12"><HeroGrid hero={hero} stack={stack} /></div>
           ) : (

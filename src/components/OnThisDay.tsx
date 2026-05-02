@@ -12,41 +12,25 @@ type OTDEntry = {
   linkedArticle?: { title: string; slug: { current: string } }
 }
 
-// Server component — fetches at request time, no client JS for the data layer.
-// Builds a 7-entry navigation window, always anchoring today's entry at index 0
-// when a match exists. Falls back to the window's most-recent entries when today
-// has no specific match — section is always visible as long as any entries exist.
+// Server component — fetches today's events (up to 3) for the grid layout.
+// Falls back to the most recent window entry if today has no matches.
 export default async function OnThisDay() {
   const today = new Date()
   const month = today.getMonth() + 1
   const day   = today.getDate()
 
-  let entries: OTDEntry[]  = []
-  let todayIndex           = -1
+  let entries: OTDEntry[] = []
 
   try {
-    // Fetch the navigation window (7 most-recent entries) and today's entries in parallel
-    const [windowEntries, todayEntries]: [OTDEntry[], OTDEntry[]] = await Promise.all([
-      client.fetch(onThisDayWindowQuery).catch(() => []),
+    const [todayEntries, windowEntries]: [OTDEntry[], OTDEntry[]] = await Promise.all([
       client.fetch(onThisDayQuery, { month, day }).catch(() => []),
+      client.fetch(onThisDayWindowQuery).catch(() => []),
     ])
 
-    const todayEntry = todayEntries?.[0] ?? null
-
-    if (!windowEntries?.length && !todayEntry) return null
-
-    entries = windowEntries ?? []
-
-    if (todayEntry) {
-      const existingIndex = entries.findIndex(e => e._id === todayEntry._id)
-      if (existingIndex !== -1) {
-        // Already in window — note its position
-        todayIndex = existingIndex
-      } else {
-        // Prepend today's entry, keep window at 7
-        entries    = [todayEntry, ...entries].slice(0, 7)
-        todayIndex = 0
-      }
+    if (todayEntries?.length) {
+      entries = todayEntries.slice(0, 3)
+    } else if (windowEntries?.length) {
+      entries = windowEntries.slice(0, 1)
     }
 
     if (!entries.length) return null
@@ -54,5 +38,9 @@ export default async function OnThisDay() {
     return null
   }
 
-  return <OnThisDayClient entries={entries} todayIndex={todayIndex} />
+  const today2 = new Date()
+  const month2 = today2.getMonth() + 1
+  const day2   = today2.getDate()
+
+  return <OnThisDayClient entries={entries} month={month2} day={day2} />
 }
