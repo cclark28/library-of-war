@@ -1,7 +1,7 @@
 {
-  "voiceIndex": 4,
-  "lastRun": "2026-05-02T03:27:57.369Z",
-  "articlesWritten": 75,
+  "voiceIndex": 0,
+  "lastRun": "2026-05-02T13:48:03.970Z",
+  "articlesWritten": 77,
   "usedSlugs": [
     "battle-of-cannae",
     "battle-of-austerlitz",
@@ -31,7 +31,9 @@
     "able-archer-83-nuclear-war-scare-1983",
     "kim-philby-cambridge-five-dispatch",
     "battle-of-waterloo-1815",
-    "tet-offensive-1968-dispatch"
+    "tet-offensive-1968-dispatch",
+    "battle-of-the-somme-1916",
+    "vickers-machine-gun-industrial-warfare-dispatch"
   ],
   "_voices": [
     "correspondent",
