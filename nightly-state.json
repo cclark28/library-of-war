@@ -1,7 +1,7 @@
 {
-  "voiceIndex": 4,
-  "lastRun": "2026-05-02T13:58:42.314Z",
-  "articlesWritten": 85,
+  "voiceIndex": 0,
+  "lastRun": "2026-05-03T03:21:00.175Z",
+  "articlesWritten": 87,
   "usedSlugs": [
     "battle-of-cannae",
     "battle-of-austerlitz",
@@ -41,7 +41,9 @@
     "zimmermann-telegram-1917",
     "operation-gold-berlin-tunnel-dispatch",
     "operation-desert-storm-ground-campaign-1991",
-    "precision-guided-munitions-gulf-war-dispatch"
+    "precision-guided-munitions-gulf-war-dispatch",
+    "battle-of-zama-202bc",
+    "battle-of-metaurus-207bc-dispatch"
   ],
   "_voices": [
     "correspondent",
