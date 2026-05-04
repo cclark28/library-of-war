@@ -1,7 +1,7 @@
 {
-  "voiceIndex": 2,
-  "lastRun": "2026-05-04T11:19:41.620Z",
-  "articlesWritten": 101,
+  "voiceIndex": 3,
+  "lastRun": "2026-05-04T11:21:23.926Z",
+  "articlesWritten": 103,
   "usedSlugs": [
     "battle-of-cannae",
     "battle-of-austerlitz",
@@ -57,7 +57,9 @@
     "battle-of-crecy-1346",
     "battle-of-flodden-1513-dispatch",
     "battle-of-the-berezina-1812",
-    "pusan-perimeter-1950-dispatch"
+    "pusan-perimeter-1950-dispatch",
+    "operation-entebbe-1976",
+    "venona-project-cold-war-dispatch"
   ],
   "_voices": [
     "correspondent",
