@@ -1,7 +1,7 @@
 {
-  "voiceIndex": 4,
-  "lastRun": "2026-05-04T01:27:49.988Z",
-  "articlesWritten": 95,
+  "voiceIndex": 0,
+  "lastRun": "2026-05-04T01:30:51.081Z",
+  "articlesWritten": 97,
   "usedSlugs": [
     "battle-of-cannae",
     "battle-of-austerlitz",
@@ -51,7 +51,9 @@
     "siege-of-malta-1565",
     "battle-of-breitenfeld-1631-dispatch",
     "battle-of-chosin-reservoir-1950",
-    "operation-anthropoid-heydrich-dispatch"
+    "operation-anthropoid-heydrich-dispatch",
+    "battle-of-assaye-1803",
+    "battle-of-heartbreak-ridge-1951-dispatch"
   ],
   "_voices": [
     "correspondent",
