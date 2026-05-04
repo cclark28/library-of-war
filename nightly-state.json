@@ -1,7 +1,7 @@
 {
-  "voiceIndex": 0,
-  "lastRun": "2026-05-04T01:30:51.081Z",
-  "articlesWritten": 97,
+  "voiceIndex": 1,
+  "lastRun": "2026-05-04T11:18:01.746Z",
+  "articlesWritten": 99,
   "usedSlugs": [
     "battle-of-cannae",
     "battle-of-austerlitz",
@@ -53,7 +53,9 @@
     "battle-of-chosin-reservoir-1950",
     "operation-anthropoid-heydrich-dispatch",
     "battle-of-assaye-1803",
-    "battle-of-heartbreak-ridge-1951-dispatch"
+    "battle-of-heartbreak-ridge-1951-dispatch",
+    "battle-of-crecy-1346",
+    "battle-of-flodden-1513-dispatch"
   ],
   "_voices": [
     "correspondent",
