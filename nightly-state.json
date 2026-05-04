@@ -1,7 +1,7 @@
 {
-  "voiceIndex": 2,
-  "lastRun": "2026-05-03T03:24:22.181Z",
-  "articlesWritten": 91,
+  "voiceIndex": 3,
+  "lastRun": "2026-05-04T01:25:35.771Z",
+  "articlesWritten": 93,
   "usedSlugs": [
     "battle-of-cannae",
     "battle-of-austerlitz",
@@ -47,7 +47,9 @@
     "battle-of-dien-bien-phu-1954",
     "battle-of-imjin-river-1951-dispatch",
     "battle-of-pavia-1525",
-    "uss-pueblo-incident-1968-dispatch"
+    "uss-pueblo-incident-1968-dispatch",
+    "siege-of-malta-1565",
+    "battle-of-breitenfeld-1631-dispatch"
   ],
   "_voices": [
     "correspondent",
