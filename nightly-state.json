@@ -1,7 +1,7 @@
 {
-  "voiceIndex": 3,
-  "lastRun": "2026-05-04T01:25:35.771Z",
-  "articlesWritten": 93,
+  "voiceIndex": 4,
+  "lastRun": "2026-05-04T01:27:49.988Z",
+  "articlesWritten": 95,
   "usedSlugs": [
     "battle-of-cannae",
     "battle-of-austerlitz",
@@ -49,7 +49,9 @@
     "battle-of-pavia-1525",
     "uss-pueblo-incident-1968-dispatch",
     "siege-of-malta-1565",
-    "battle-of-breitenfeld-1631-dispatch"
+    "battle-of-breitenfeld-1631-dispatch",
+    "battle-of-chosin-reservoir-1950",
+    "operation-anthropoid-heydrich-dispatch"
   ],
   "_voices": [
     "correspondent",
