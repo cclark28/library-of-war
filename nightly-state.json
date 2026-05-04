@@ -1,7 +1,7 @@
 {
-  "voiceIndex": 1,
-  "lastRun": "2026-05-04T11:18:01.746Z",
-  "articlesWritten": 99,
+  "voiceIndex": 2,
+  "lastRun": "2026-05-04T11:19:41.620Z",
+  "articlesWritten": 101,
   "usedSlugs": [
     "battle-of-cannae",
     "battle-of-austerlitz",
@@ -55,7 +55,9 @@
     "battle-of-assaye-1803",
     "battle-of-heartbreak-ridge-1951-dispatch",
     "battle-of-crecy-1346",
-    "battle-of-flodden-1513-dispatch"
+    "battle-of-flodden-1513-dispatch",
+    "battle-of-the-berezina-1812",
+    "pusan-perimeter-1950-dispatch"
   ],
   "_voices": [
     "correspondent",
