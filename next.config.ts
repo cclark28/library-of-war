@@ -10,10 +10,12 @@ const nextConfig: NextConfig = {
         pathname: '/images/**',
       },
     ],
-    // Serve modern formats — WebP/AVIF for faster load
-    formats: ['image/avif', 'image/webp'],
-    // Limit unnecessary device sizes to reduce CDN variants
-    deviceSizes: [640, 768, 1024, 1280, 1920],
+    // WebP is the default — AVIF is opt-in for hero images only (via <picture> + AVIF source)
+    // AVIF decode is slow on older devices; never make it the blanket default.
+    formats: ['image/webp'],
+    // Match project breakpoints: 360 480 640 768 1024 1280 1536 1920
+    deviceSizes: [360, 480, 640, 768, 1024, 1280, 1536, 1920],
+    // Smaller fill sizes for thumbnail / avatar images
     imageSizes: [16, 32, 64, 128, 256, 384],
   },
   // Security + preconnect headers on every response

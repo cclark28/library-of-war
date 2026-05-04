@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { urlFor } from '@/lib/sanity'
+import { sanityImage } from '@/lib/sanity'
 
 interface SeriesCardProps {
   series: {
@@ -20,7 +20,7 @@ const ordinals = ['I', 'II', 'III', 'IV', 'V']
 
 export default function SeriesCard({ series, index }: SeriesCardProps) {
   const imageUrl = series.coverImage
-    ? urlFor(series.coverImage).width(800).height(500).fit('crop').url()
+    ? sanityImage(series.coverImage, { w: 800, h: 500, fit: 'crop' })
     : null
 
   return (

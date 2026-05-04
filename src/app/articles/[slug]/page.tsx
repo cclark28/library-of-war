@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { client, articleBySlugQuery, relatedArticlesQuery, urlFor } from '@/lib/sanity'
+import { client, articleBySlugQuery, relatedArticlesQuery, urlFor, sanityImage } from '@/lib/sanity'
 import { calcReadTime, DIFFICULTY_LABEL } from '@/lib/readTime'
 import HeaderWrapper from '@/components/HeaderWrapper'
 import Footer from '@/components/Footer'
@@ -12,7 +12,7 @@ import ScrollProgress from '@/components/ScrollProgress'
 import AnimatedProse from '@/components/AnimatedProse'
 
 export const runtime = 'edge'
-export const revalidate = 60
+export const dynamic = 'force-dynamic'
 
 /* ── Portable Text types ──────────────────────────────────────────────────────── */
 type MarkDef = { _key: string; _type: string; href?: string; blank?: boolean }
@@ -67,7 +67,7 @@ function PortableTextBody({ blocks }: { blocks: PTBlock[] }) {
         const key = block._key ?? i
 
         if (block._type === 'image') {
-          const imgUrl = urlFor(block as Parameters<typeof urlFor>[0]).width(1200).fit('max').url()
+          const imgUrl = sanityImage(block as Parameters<typeof urlFor>[0], { w: 1200, fit: 'max' })
           return (
             <figure key={key} className="my-12 -mx-4 md:mx-0">
               <Image
@@ -122,7 +122,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 
   // Use Sanity CDN image transforms — zero cost, no workers, no extra infra
   const ogImageUrl = article.mainImage
-    ? urlFor(article.mainImage).width(1200).height(630).fit('crop').url()
+    ? sanityImage(article.mainImage, { w: 1200, h: 630, fit: 'crop', q: 85 })
     : `${SITE_URL}/og-default.jpg`
 
   return {
@@ -166,7 +166,7 @@ export default async function ArticlePage({ params }: Params) {
     : []
 
   const heroImageUrl = article.mainImage
-    ? urlFor(article.mainImage).width(1600).height(700).fit('crop').url()
+    ? sanityImage(article.mainImage, { w: 1600, h: 700, fit: 'crop', q: 85 })
     : null
 
   const readTime = calcReadTime(article.body ?? [])

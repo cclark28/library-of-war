@@ -4,8 +4,8 @@ import Footer from '@/components/Footer'
 import ArticleCard from '@/components/ArticleCard'
 import BrowseClient from '@/components/BrowseClient'
 
-export const runtime   = 'edge'
-export const revalidate = 60
+export const runtime  = 'edge'
+export const dynamic  = 'force-dynamic'
 
 type Article = {
   _id: string

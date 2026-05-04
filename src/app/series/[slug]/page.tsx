@@ -1,13 +1,12 @@
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
-import { client, seriesBySlugQuery, seriesQuery } from '@/lib/sanity'
-import { urlFor } from '@/lib/sanity'
+import { client, seriesBySlugQuery, sanityImage } from '@/lib/sanity'
 import HeaderWrapper from '@/components/HeaderWrapper'
 import Footer from '@/components/Footer'
 import ArticleCard from '@/components/ArticleCard'
 
 export const runtime = 'edge'
-export const revalidate = 60
+export const dynamic = 'force-dynamic'
 
 interface Params { params: Promise<{ slug: string }> }
 
@@ -18,7 +17,7 @@ export default async function SeriesPage({ params }: Params) {
   if (!series) notFound()
 
   const imageUrl = series.coverImage
-    ? urlFor(series.coverImage).width(1800).height(600).fit('crop').url()
+    ? sanityImage(series.coverImage, { w: 1800, h: 600, fit: 'crop', q: 85 })
     : null
 
   return (

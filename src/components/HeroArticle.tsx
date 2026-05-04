@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import VoiceBadge from './VoiceBadge'
-import { urlFor } from '@/lib/sanity'
+import { sanityImage } from '@/lib/sanity'
 import { formatDate } from '@/lib/utils'
 
 interface HeroArticleProps {
@@ -24,7 +24,7 @@ interface HeroArticleProps {
 
 export default function HeroArticle({ article }: HeroArticleProps) {
   const imageUrl = article.mainImage
-    ? urlFor(article.mainImage).width(1800).height(900).fit('crop').url()
+    ? sanityImage(article.mainImage, { w: 1800, h: 900, fit: 'crop', q: 85 })
     : null
 
   return (

@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { urlFor } from '@/lib/sanity'
+import { sanityImage } from '@/lib/sanity'
 
 interface Article {
   _id: string
@@ -46,13 +46,33 @@ const HEADLINE = {
   'hero-stack':'text-xl leading-snug',
 }
 
+// Responsive sizes attribute per grid context:
+//   sm  → 4-col grid  (max 25vw on desktop)
+//   md  → 2-col grid  (max 50vw on desktop)
+//   lg  → single col  (max 75vw on desktop)
+const SIZES: Record<string, string> = {
+  sm:           '(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw',
+  md:           '(max-width: 768px) 100vw, 50vw',
+  lg:           '(max-width: 1024px) 100vw, 75vw',
+  'hero-left':  '(max-width: 1024px) 100vw, 60vw',
+  'hero-stack': '(max-width: 1024px) 100vw, 40vw',
+}
+
+// Pixel dimensions to request from Sanity per size variant
+const IMG_DIMS: Record<string, { w: number; h: number }> = {
+  sm:           { w: 520,  h: 390 },
+  md:           { w: 820,  h: 547 },
+  lg:           { w: 1080, h: 607 },
+  'hero-left':  { w: 900,  h: 675 },
+  'hero-stack': { w: 700,  h: 394 },
+}
+
 export default function ArticleCard({ article, size = 'md', showExcerpt = true, layout = 'vertical' }: ArticleCardProps) {
   const router = useRouter()
-  const w = size === 'lg' || size === 'hero-left' ? 900 : size === 'hero-stack' ? 700 : 500
-  const h = size === 'lg' || size === 'hero-left' ? 600 : 340
+  const dims = IMG_DIMS[size] ?? IMG_DIMS.md
 
   const imageUrl = article.mainImage
-    ? urlFor(article.mainImage).width(w).height(h).fit('crop').url()
+    ? sanityImage(article.mainImage, { w: dims.w, h: dims.h, fit: 'crop' })
     : null
 
   const [imgLoaded, setImgLoaded] = useState(false)
@@ -74,7 +94,7 @@ export default function ArticleCard({ article, size = 'md', showExcerpt = true, 
             loading="lazy"
             onLoad={() => setImgLoaded(true)}
             className={`object-cover transition-all duration-700 group-hover:scale-[1.03] ${imgLoaded ? 'opacity-100' : 'opacity-0'}`}
-            sizes={`${w}px`}
+            sizes={SIZES[size] ?? SIZES.md}
           />
         </div>
       )}

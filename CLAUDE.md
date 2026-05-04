@@ -113,13 +113,105 @@ Permissions-Policy: geolocation=(), microphone=(), camera=()
 
 ---
 
+### Image Handling
+
+All image delivery rules below are enforced by Senior Developer and Senior QC on every build. These rules extend Law 1 — a valid asset reference is necessary but not sufficient. Images must also meet the quality, format, and dimension standards below.
+
+---
+
+#### Format Policy
+
+- **Default format: WebP.** All images are served as WebP via Sanity's image URL pipeline (`?fm=webp`). WebP is the required baseline — no raw JPEG or PNG may be served to the browser.
+- **AVIF is opt-in per image type only.** AVIF is not the default. It may be used for hero images where maximum compression matters and decode performance has been verified. Use `<picture>` with an AVIF `<source>` and a WebP fallback. Never serve AVIF without a WebP fallback.
+- **No GIFs.** Animated content must use `<video autoplay loop muted playsinline>` served from a CDN, not inline on the page.
+
+---
+
+#### Sizing & srcset Rules
+
+Every image component must request sizes matched to the layout breakpoints. Use Sanity's `width` URL param to generate each size. Required srcset ladder:
+
+| Breakpoint | Image width requested |
+|---|---|
+| 360px | 400w |
+| 480px | 520w |
+| 640px | 680w |
+| 768px | 820w |
+| 1024px | 800w (two-col) / 1080w (full-bleed) |
+| 1280px | 960w (two-col) / 1320w (full-bleed) |
+| 1536px | 1100w (two-col) / 1600w (full-bleed) |
+| 1920px | 1280w (two-col) / 1920w (full-bleed) |
+
+- Always include a `sizes` attribute matching the layout. Do not use `sizes="100vw"` for card or grid images — that causes the browser to fetch oversized images.
+- Hero and full-bleed images use the full-bleed column above. Card, grid, and thumbnail images use the two-col column.
+
+---
+
+#### Max Upload Dimensions
+
+Editors must not upload images larger than these dimensions. The Sanity Studio upload validation rule must enforce a max file size of **4MB**. Images exceeding these limits must be rejected at upload, not resized silently.
+
+| Use case | Max upload dimensions |
+|---|---|
+| Hero / full-bleed | 3000 × 2000px |
+| Article card / grid | 1600 × 1200px |
+| Thumbnail / avatar | 800 × 800px |
+
+- Minimum `mainImage` dimensions: **1200 × 630px**. Any `mainImage` below this threshold fails Law 1 and must not be published into a feature block. The content-guard job must check this.
+- Aspect ratio for `mainImage`: **16:9 preferred, 3:2 accepted.** Portrait or square crops are not permitted for `mainImage`.
+
+---
+
+#### Quality Settings
+
+- Default Sanity quality param: `?q=80` for all images.
+- Hero images: `?q=85`.
+- Thumbnails: `?q=75`.
+- Never use `?q=100` — it defeats compression without visible improvement at screen resolution.
+
+---
+
+#### Lazy Loading
+
+- **Hero image (above fold): `loading="eager"`, `fetchpriority="high"`.** This is the LCP element. Never lazy-load it.
+- **All other images: `loading="lazy"`.** This includes all card grids, archive listings, article body images, and era sections.
+- Never add `fetchpriority="high"` to more than one image per page.
+
+---
+
+#### Blur Placeholder
+
+- All images must use a low-resolution blur placeholder while loading. Generate via Sanity's `?w=20&blur=10` params, encode as base64, and pass as the `blurDataURL` prop to `next/image`. This prevents layout shift and improves perceived performance.
+
+---
+
+#### Alt Text
+
+- `mainImage` must include a non-empty `alt` field in Sanity schema. This is a required field — the Studio must reject publication without it.
+- Alt text must describe the image content specifically. Generic values like "image", "photo", or the article title verbatim are not acceptable.
+- Decorative images (if any) must use `alt=""` explicitly — not omitted.
+
+---
+
+#### Law 1 Extension
+
+Law 1 is now extended: a `mainImage` is only valid for feature block use if ALL of the following are true:
+1. A Sanity asset reference exists (`mainImage.asset._ref` is non-null).
+2. The image is at least 1200 × 630px.
+3. The `alt` field is non-empty.
+4. The asset is not a GIF.
+
+The content-guard daily job must verify all four conditions and flag any violations.
+
+---
+
 ### What We Are Still Missing (Open Items)
 
 The following areas have not yet been formally defined and should be addressed before the first production launch:
 
 1. **CMS integration rules** — Sanity schema conventions, field naming standards, and content type patterns.
 2. **Performance budget** — define max page weight, Core Web Vitals targets (LCP, CLS, FID/INP), and Lighthouse score floor.
-3. **Image handling** — srcset rules, WebP/AVIF policy, lazy loading standards, and max image dimensions.
+3. ~~**Image handling**~~ — ✅ Defined above.
 4. **Font loading strategy** — self-hosted vs. Google Fonts, font-display policy, and fallback stack.
 5. **Form handling** — how contact/newsletter forms are submitted (static forms service, e.g., Formspree, Basin), spam protection (honeypot vs. Turnstile), and confirmation UX.
 6. **Analytics** — which analytics tool, how it is loaded (deferred, consent-gated), and what events are tracked.

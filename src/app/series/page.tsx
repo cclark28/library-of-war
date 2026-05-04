@@ -3,7 +3,8 @@ import HeaderWrapper from '@/components/HeaderWrapper'
 import Footer from '@/components/Footer'
 import SeriesCard from '@/components/SeriesCard'
 
-export const revalidate = 60
+export const runtime = 'edge'
+export const dynamic = 'force-dynamic'
 
 export default async function SeriesIndexPage() {
   const series = await client.fetch(seriesQuery).catch(() => [])

@@ -21,8 +21,31 @@ export const liveClient = createClient({
 
 const builder = imageUrlBuilder(client)
 
+// Raw builder — use when you need to chain manually (rare).
 export function urlFor(source: SanityImageSource) {
   return builder.image(source)
+}
+
+// Convenience helper — returns a WebP URL ready to use in src=.
+// Applies project-standard quality: hero q=85, everything else q=80.
+// Pass fit='crop' (default) for fixed-dimension images, 'max' for prose body images.
+export function sanityImage(
+  source: SanityImageSource,
+  opts: {
+    w: number
+    h?: number
+    q?: number
+    fit?: 'crop' | 'max' | 'min' | 'clip' | 'fill'
+  }
+): string {
+  let b = builder
+    .image(source)
+    .width(opts.w)
+    .format('webp')
+    .quality(opts.q ?? 80)
+  if (opts.h) b = b.height(opts.h)
+  if (opts.fit) b = b.fit(opts.fit)
+  return b.url()
 }
 
 // ─── GROQ Queries ─────────────────────────────────────────────────────────────
@@ -241,6 +264,20 @@ export const contributorPageQuery = `
     gateLabel, gateHeadline, gateSubtext, gateCtaLabel,
     formLabel, formHeadline, formSubtext, guidelines, submitCtaLabel,
     successLabel, successHeadline, successMessage
+  }
+`
+
+// Era Grid — fetches all published articles that have an era field.
+// Returns era slug + mainImage only (lean payload).
+// Ordered by publishedAt desc so the first image encountered per era
+// is the most recently published one — used as the representative tile image.
+// Server-side aggregation (count + representative image) happens in page.tsx.
+export const eraGridQuery = `
+  *[_type == "article" && status == "published"
+    && !(_id in path("drafts.**"))
+    && defined(era)] | order(publishedAt desc) {
+    era,
+    "image": mainImage { asset, alt }
   }
 `
 

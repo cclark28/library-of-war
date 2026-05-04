@@ -33,6 +33,9 @@ const ERA_TABS = [
   { label: 'Early Modern',      era: 'early-modern' },
   { label: 'Napoleonic',        era: 'napoleonic-wars' },
   { label: 'Civil War',         era: 'american-civil-war' },
+  { label: 'Tech & Weapons',    era: 'technology-weapons' },
+  { label: 'Intel & Spec Ops',  era: 'intelligence-special-ops' },
+  { label: 'Black Projects',    era: 'black-projects' },
 ]
 
 /* ── Types ───────────────────────────────────────────────────────────────── */

@@ -1,11 +1,13 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { client, liveClient, articlesQuery, seriesQuery, siteSettingsQuery, homepageContentQuery, urlFor } from '@/lib/sanity'
+import { client, liveClient, articlesQuery, seriesQuery, siteSettingsQuery, homepageContentQuery, eraGridQuery, sanityImage } from '@/lib/sanity'
 import HeaderWrapper from '@/components/HeaderWrapper'
 import Footer from '@/components/Footer'
 import ArticleCard from '@/components/ArticleCard'
 import FadeIn from '@/components/FadeIn'
 import OnThisDay from '@/components/OnThisDay'
+import EraGrid, { type EraGridItem } from '@/components/EraGrid'
+import { ERA_ORDER } from '@/lib/eras'
 
 // Edge runtime required for Cloudflare Pages.
 // force-dynamic ensures every request fetches fresh content from Sanity:
@@ -35,16 +37,6 @@ type Series = {
   coverImage?: { asset: { _ref: string }; alt?: string }
 }
 
-function groupByEra(articles: Article[]): Record<string, Article[]> {
-  return articles.reduce<Record<string, Article[]>>((acc, article) => {
-    // Use 'Uncategorised' as the fallback to avoid colliding with the
-    // "From the Archive" section label used by the showFromArchive grid above.
-    const key = article.categories?.[0]?.title || 'Uncategorised'
-    if (!acc[key]) acc[key] = []
-    acc[key].push(article)
-    return acc
-  }, {})
-}
 
 function SectionDivider({ label }: { label: string }) {
   return (
@@ -58,7 +50,7 @@ function SectionDivider({ label }: { label: string }) {
 
 function HeroGrid({ hero, stack }: { hero: Article; stack: Article[] }) {
   const heroImg = hero.mainImage
-    ? urlFor(hero.mainImage).width(1200).height(800).fit('crop').url()
+    ? sanityImage(hero.mainImage, { w: 1200, h: 800, fit: 'crop', q: 85 })
     : null
 
   return (
@@ -103,7 +95,7 @@ function HeroGrid({ hero, stack }: { hero: Article; stack: Article[] }) {
       <div className="lg:col-span-2 flex flex-col divide-y divide-rule">
         {stack.slice(0, 2).map((article) => {
           const img = article.mainImage
-            ? urlFor(article.mainImage).width(700).height(420).fit('crop').url()
+            ? sanityImage(article.mainImage, { w: 700, h: 420, fit: 'crop' })
             : null
           return (
             <Link
@@ -172,13 +164,49 @@ type HomepageContent = {
   mastTagline?: string
 }
 
+// Raw shape returned by eraGridQuery — lean projection, image may be null/partial
+type RawEraArticle = {
+  era?: string
+  image?: { asset?: { _ref?: string } | null; alt?: string } | null
+}
+
+/**
+ * Aggregates raw eraGridQuery results into per-era counts + representative images.
+ * Raw data is ordered by publishedAt desc, so the first image encountered per era
+ * is always the most recently published one.
+ * Law 1 compliance: only articles with a valid mainImage asset _ref are used as
+ * the background image source. Tiles with no image remain active and clickable.
+ */
+function aggregateEraGrid(raw: RawEraArticle[]): EraGridItem[] {
+  const counts = new Map<string, number>()
+  const images = new Map<string, { asset: { _ref: string }; alt?: string }>()
+
+  for (const { era, image } of raw) {
+    if (!era) continue
+    counts.set(era, (counts.get(era) ?? 0) + 1)
+    // First valid image per era (raw is publishedAt desc — most recent first)
+    if (!images.has(era) && image?.asset?._ref) {
+      images.set(era, { asset: { _ref: image.asset._ref }, alt: image.alt ?? undefined })
+    }
+  }
+
+  return ERA_ORDER.map(slug => ({
+    era: slug,
+    count: counts.get(slug) ?? 0,
+    image: images.get(slug),
+  }))
+}
+
 export default async function HomePage() {
-  const [articles, series, settings, hpContent] = await Promise.all([
+  const [articles, series, settings, hpContent, rawEraArticles] = await Promise.all([
     client.fetch(articlesQuery).catch(() => []) as Promise<Article[]>,
     client.fetch(seriesQuery).catch(() => []) as Promise<Series[]>,
     liveClient.fetch(siteSettingsQuery).catch(() => null) as Promise<SiteSettings | null>,
     liveClient.fetch(homepageContentQuery).catch(() => null) as Promise<HomepageContent | null>,
+    client.fetch(eraGridQuery).catch(() => []) as Promise<RawEraArticle[]>,
   ])
+
+  const eraGridData = aggregateEraGrid(rawEraArticles)
 
   const labels = {
     latestDispatches: hpContent?.latestDispatchesLabel ?? 'Latest Dispatches',
@@ -202,7 +230,7 @@ export default async function HomePage() {
   }
 
   if (settings?.maintenanceMode) {
-    const logoUrl = settings.logo ? urlFor(settings.logo).width(240).url() : null
+    const logoUrl = settings.logo ? sanityImage(settings.logo, { w: 240 }) : null
     const title   = settings.maintenanceTitle   || 'Back Shortly'
     const message = settings.maintenanceMessage || 'The archive is undergoing maintenance. Check back in a few minutes.'
     const fact    = settings.maintenanceFact
@@ -335,7 +363,7 @@ export default async function HomePage() {
               >
                 {series.slice(0, 4).map((s) => {
                   const img = s.coverImage
-                    ? urlFor(s.coverImage).width(700).height(420).fit('crop').url()
+                    ? sanityImage(s.coverImage, { w: 700, h: 420, fit: 'crop' })
                     : null
                   return (
                     <Link
@@ -421,6 +449,12 @@ export default async function HomePage() {
               ))}
             </FadeIn>
           </>
+        )}
+
+        {/* ── Section 6: Era Grid — 13 era tiles, 4-col desktop / 3-col tablet / 2-col mobile ── */}
+        {/* Controlled by siteSettings.sections.showEraGrid. Omitted entirely when false.      */}
+        {flags.showEraGrid && (
+          <EraGrid data={eraGridData} />
         )}
 
         <div className="border-y border-rule py-10 text-center mt-14 mb-2">
