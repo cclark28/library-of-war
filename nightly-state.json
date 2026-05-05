@@ -1,7 +1,7 @@
 {
-  "voiceIndex": 0,
-  "lastRun": "2026-05-05T10:58:02.502Z",
-  "articlesWritten": 127,
+  "voiceIndex": 1,
+  "lastRun": "2026-05-05T10:59:26.786Z",
+  "articlesWritten": 129,
   "usedSlugs": [
     "battle-of-cannae",
     "battle-of-austerlitz",
@@ -83,7 +83,9 @@
     "arc-light-b52-vietnam",
     "linebacker-i-1972-dispatch",
     "battle-of-an-loc-1972",
-    "arvn-easter-offensive-dispatch"
+    "arvn-easter-offensive-dispatch",
+    "ho-chi-minh-trail",
+    "operation-commando-hunt-dispatch"
   ],
   "_voices": [
     "correspondent",
