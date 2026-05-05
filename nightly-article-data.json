@@ -1,128 +1,126 @@
 {
-  "imageFile": "PBR_Mekong_River_Vietnam_1967.jpg",
-  "imageAlt": "US Navy Patrol Boat Riverine (PBR) on the Mekong River, Vietnam, 1967, during Operation Game Warden",
-  "imageCaption": "A US Navy Patrol Boat, River (PBR) on patrol in the Mekong Delta, Vietnam, 1967. Task Force 116's Game Warden PBRs conducted round-the-clock patrols on the delta's waterway network.",
-  "imageSrc": "https://commons.wikimedia.org/wiki/File:PBR_Mekong_River_Vietnam_1967.jpg",
+  "imageFile": "Combined_Action_Platoon_Vietnam_Marines.jpg",
+  "imageAlt": "US Marines and South Vietnamese Popular Forces soldiers of a Combined Action Platoon in I Corps, Vietnam",
+  "imageCaption": "US Marines and South Vietnamese Popular Forces of a Combined Action Platoon on patrol in I Corps, Vietnam. CAP Marines lived in Vietnamese villages for months at a time, combining security operations with community engagement.",
+  "imageSrc": "https://commons.wikimedia.org/wiki/File:Combined_Action_Platoon_Vietnam_Marines.jpg",
   "longForm": {
-    "title": "The Brown Water Navy: Riverine Warfare in the Mekong Delta, 1967-1969",
-    "slug": "brown-water-navy-mekong-delta",
-    "excerpt": "The Mekong Delta had no high ground and no roads that reached its interior. The only way to fight there was from the water. In 1967, the US Navy and Army built a joint riverine force to do exactly that. What they found was a Viet Cong that had been preparing for them for years.",
+    "title": "The Combined Action Platoon: The War the Marine Corps Was Fighting in the Villages",
+    "slug": "marine-cap-program-vietnam",
+    "excerpt": "While Westmoreland ran search-and-destroy operations in the highlands, the Marine Corps embedded small units in Vietnamese villages in I Corps. The Combined Action Platoon program produced results that conventional operations did not. It was never large enough to matter at scale.",
     "era": "vietnam-war",
-    "voice": "tactician",
+    "voice": "correspondent",
     "difficulty": "intermediate",
     "tags": [
-      "Brown Water Navy",
-      "Mobile Riverine Force",
-      "Mekong Delta",
-      "Task Force 116",
-      "Task Force 117",
-      "PBR",
-      "Operation Game Warden",
-      "CORONADO",
-      "9th Infantry Division",
-      "riverine warfare"
+      "Combined Action Platoon",
+      "Marine Corps",
+      "Victor Krulak",
+      "Lewis Walt",
+      "I Corps",
+      "pacification",
+      "Popular Forces",
+      "counterinsurgency",
+      "III Marine Amphibious Force"
     ],
     "paragraphs": [
-      "The Mekong Delta has no high ground. Forty thousand square miles of waterways, rice paddies, mangrove swamp, and canal networks — the most densely populated and most strategically important agricultural region in South Vietnam. The Viet Cong had been operating in the delta since before American forces arrived in country. The terrain was theirs: every canal fork, every sampan crossing, every hamlet and treeline. The Army divisions and Marine regiments that worked in the northern provinces had no access to the delta's interior without boats. The helicopter helped, but helicopters needed landing zones, and the delta's flooded rice paddies offered few. MACV's tactical problem in 1966 was not identifying the Viet Cong in the delta — it was getting to them.",
-      "The solution was a concept that the US Navy and Army worked out jointly through 1966 and implemented beginning in early 1967: the Mobile Riverine Force, designated Task Force 117. The force was a combined Army-Navy structure with no direct precedent in American military history since the Civil War. The Navy provided the waterborne element — a flotilla of armored river assault craft operating from self-propelled barracks ships that became, effectively, floating fire bases anchored in the major waterways. The Army provided the infantry: the 2nd Brigade, 9th Infantry Division, which trained specifically for riverine operations, embarked on the Navy's craft, and assaulted objectives directly from the water. The concept was sound. The execution required solving problems that neither service had encountered in this combination before, and solving them in contact.",
-      "The riverine fleet that Task Force 117 operated was purpose-built for the delta environment. The Monitor was the fire support vessel — a converted Landing Craft, Mechanized, armored and armed with 40mm and 20mm guns, a 81mm mortar, and, in some configurations, a flamethrower. The Armored Troop Carrier was the primary assault craft: a modified LCVP with armored sides and ramps that allowed infantry to assault directly from the water onto a riverbank. The Assault Support Patrol Boat was faster and lighter, used for scouting and fire support along the flanks of assault formations. The Command and Communications Boat provided the floating headquarters that coordinated the joint operation in terrain where radio communications were degraded by vegetation and terrain features. Each class of vessel had been designed for a specific tactical function in an environment where tactical function was defined by where the water was.",
-      "The tactical problem that dominated riverine operations was the ambush. A waterway is a linear obstacle with forced movement — boats cannot maneuver laterally the way infantry can maneuver on land. The Viet Cong understood this better than the task force planners had modeled it. A classic delta ambush placed weapons on both banks of a narrow waterway, with B-40 rocket teams covering the lead and trail elements and automatic weapons covering the center. The boats had no space to maneuver, no cover to use, and nowhere to go but forward or backward — both of which the ambush was designed to suppress. The answer that the task force developed was to make the first few seconds of an ambush as destructive as possible for the attackers: all weapons on both sides of every boat firing outboard simultaneously on contact, without waiting to acquire specific targets. The volume of fire suppressed the ambush long enough for the boats to push through or to land infantry directly into the ambush position. It worked better than the alternative. It did not make river movement safe.",
-      "Task Force 116, designated Operation Game Warden, ran the Patrol Boat Riverine program on the waterways where the Mobile Riverine Force was not operating. The PBR — Patrol Boat, River, Mark I and later Mark II — was a fiberglass-hulled craft driven by water-jet propulsion rather than conventional screws, which gave it the ability to operate in extremely shallow water and to reverse direction without turning. It carried twin .50 caliber machine guns forward, a single .50 or M60 aft, and could be crewed by four men. The water-jet propulsion eliminated the vulnerability to underwater obstructions and wire that had plagued propeller-driven craft. PBRs operated in two-boat sections, conducting round-the-clock patrols, inspecting sampan traffic for contraband and infiltrators, and responding to contact reports. They were fast enough to chase most waterborne Viet Cong logistics, and they were present at a scale the larger Task Force 117 craft could not match.",
-      "The CORONADO series of operations — CORONADO I through CORONADO IX, conducted between 1967 and 1968 — were the Mobile Riverine Force's primary operational commitment in the delta. The operations targeted Viet Cong main force units in the Mekong Delta provinces, seeking to fix them in place with the river assault force and destroy them with infantry and close air support. The results were mixed in the way that search-and-destroy results were consistently mixed throughout the war: contact was made, engagements were fought, casualties were inflicted. The Viet Cong's ability to disperse into the population and to break contact when it suited them limited the operations' ability to destroy units rather than attrit them. The terrain that made helicopter extraction difficult also made infantry pursuit after contact slow and predictable. The Viet Cong got away more often than the operation's concept required them to.",
-      "The intelligence problem in the delta was more acute than in other operational environments. The delta's population density — approximately ten million people in a relatively small area — created an intelligence environment in which distinguishing Viet Cong infrastructure from civilian population required the kind of granular, locally-sourced human intelligence that the Mobile Riverine Force, a conventional military organization operating in a foreign language environment, was structurally ill-positioned to develop. The CORDS program and its Provincial Reconnaissance Units, operating through Vietnamese intermediaries, had better access to that intelligence layer. The riverine force depended on CORDS intelligence for targeting, which meant it operated at the pace CORDS could produce, not at the pace the task force's operational tempo required.",
-      "What the Mobile Riverine Force demonstrated by 1968, and what the subsequent Naval history and Army CMH studies documented, was that riverine warfare in the delta required a different force structure than had been available at the program's start. The joint Army-Navy concept worked better than either service had expected; the boat crews and the infantry developed an operational relationship that produced effective tactical results under extremely difficult conditions. The limitation was not the concept. It was that the Mekong Delta could not be controlled by conventional military means alone — that the population density, the VC infrastructure, and the terrain created a military-political problem that the task force's firepower and mobility, however well applied, could not resolve without a parallel political and governance effort. The delta was the place in Vietnam where the mismatch between the military instrument and the political problem was most visible, most consistently, and most thoroughly documented."
+      "The Marine and the Vietnamese Popular Force soldiers have been living in the same village for seven months. He knows the family across the canal, and the elder who runs the hamlet committee, and the names of two Viet Cong — knows them because they are from families who have been in this place for generations, same as the people who are not Viet Cong. The infrastructure is not a mystery. It is a neighborhood. This is what the Combined Action Platoon program looks like from inside it: not a counterinsurgency theory but a daily argument about who belongs where, conducted in a language most of the Marines are still learning.",
+      "The CAP concept developed in I Corps — the five northernmost provinces of South Vietnam, the Marine Corps' area of responsibility — in 1965, during the same months that General Westmoreland was building the large-unit search-and-destroy architecture that would define American strategy for the next three years. The Marine Corps, led in the Pacific by General Victor Krulak and in III Marine Amphibious Force by General Lewis Walt, had a different read on the war. Their argument was simple and not popular at MACV: the war would be won or lost among the South Vietnamese population, not in the jungle engagements that search-and-destroy produced. An enemy who could draw from a sympathetic population for recruits, logistics, and intelligence was an enemy who could sustain losses indefinitely. The way to defeat that enemy was to deny him the population — not by sweeping through it and moving on, but by living in it.",
+      "A Combined Action Platoon consisted of approximately fifteen Marines and a Navy corpsman assigned to work alongside thirty-four South Vietnamese Popular Forces — the local militia organized at the village level. The Marines lived in the village. They ate what the villagers ate, slept where the villagers slept, and went out on patrol with the PF on the trails and rice paddy dikes that the PF had walked their whole lives. They were not guests who came and went. They were, to the degree that a foreign force with a language barrier can be, residents. The theory was that an American presence embedded in the village, combined with a Vietnamese force that already understood the local social geography, could provide security that a passing infantry company could not — because the passing infantry company left, and the Viet Cong came back.",
+      "The tactical reality of life in a CAP village was violent in a specific way. CAP units were small, isolated, and without the quick reaction force that a conventional battalion had on call. When the Viet Cong attacked a CAP village — which they did regularly, often at night, with mortar fire and ground assault — the Marines and PF were on their own until helicopter support arrived. The casualty rate in the Combined Action Program was high. The Marines who volunteered for it — it was a volunteer assignment — understood they were trading the relative safety of a large unit for the operational freedom and relationships that small unit embedded work allowed. The record of individual CAP engagements is documented in Marine Corps historical accounts that are detailed and specific about what it cost: ambushes on patrol, mortar attacks on the perimeter, sappers probing the wire at 0300.",
+      "The political conflict that ran underneath the CAP program was the argument between Krulak and Westmoreland that MACV's official positions never quite resolved. Westmoreland needed Marine battalions for the large-unit operations in the highlands and the DMZ area. Marines in individual-size embedments in delta and coastal villages were Marines not available for Operation HARVEST MOON or the battles along the DMZ. Krulak argued that search-and-destroy was producing tactical results — engagements won, body counts — and strategic stalemate, because the villages from which the NVA and VC drew their support remained contested or enemy-controlled. Westmoreland argued that destroying the NVA's main force units was the prerequisite for everything else. The argument went to the JCS and to Robert McNamara, and MACV's position prevailed. The CAP program remained small — never more than a few percent of the Marine Corps' Vietnam commitment — because the institutional preference for large-unit operations limited its resources.",
+      "In the villages where CAP units operated for extended periods, the results were measurable. Viet Cong access to the village — for taxation, recruiting, and intelligence — declined. Village-level governance strengthened. South Vietnamese Popular Forces, trained and mentored by the Marine NCOs and officers in the CAP, improved in tactical competence. The security that a CAP could provide was not absolute — Viet Cong mortar attacks on CAP villages happened throughout the program's life — but it was consistent in a way that a battalion sweep that moved on after three days was not. The CORDS program that Robert Komer built from 1967 applied similar logic at a larger scale, combining military and civilian resources in a coordinated pacification effort. By 1971-1972, the CORDS data showed significant improvements in hamlet security ratings across South Vietnam. The CAP was a precursor to and a model for that effort.",
+      "The limitation of the CAP program was scale. By 1968, the Marine Corps was running approximately 114 Combined Action Platoons covering a fraction of I Corps' villages. The delta provinces, which contained half of South Vietnam's population, were Army territory and the Army had no equivalent program. The villages that had CAP coverage were measurably more secure than those that did not. The villages that did not have CAP coverage were the majority. The program demonstrated that the approach worked. It did not demonstrate that the approach could be implemented at the scale the problem required within the time and resources available. That gap — between the proof of concept and the scale of application — is the consistent finding of retrospective analysis of the pacification effort in Vietnam.",
+      "The Marines who served in CAP units came home with a different experience of the war than the Marines who served in conventional infantry units — and a different kind of knowledge. They knew specific families in specific villages by name. They knew what the Viet Cong told the villagers about why the Americans were there, and they knew what the villagers actually believed, which was sometimes different and sometimes not. The program produced, in the people who went through it, a ground-level understanding of the political dimension of the conflict that conventional infantry service did not. Whether that understanding has shaped American counterinsurgency doctrine in subsequent decades is a question the doctrine itself does not entirely answer."
     ],
     "sources": [
       {
-        "title": "Mobile Riverine Force",
+        "title": "Combined Action Program",
         "publisher": "Wikipedia",
-        "href": "https://en.wikipedia.org/wiki/Mobile_Riverine_Force",
+        "href": "https://en.wikipedia.org/wiki/Combined_Action_Program",
         "date": "2024"
       },
       {
-        "title": "Riverine Operations 1966-1969",
-        "publisher": "U.S. Army Center of Military History, Vietnam Studies series",
-        "href": "https://history.army.mil/books/vietnam/riverine/index.htm",
-        "date": "1973"
-      },
-      {
-        "title": "Task Force 116",
+        "title": "Victor Krulak",
         "publisher": "Wikipedia",
-        "href": "https://en.wikipedia.org/wiki/Task_Force_116",
+        "href": "https://en.wikipedia.org/wiki/Victor_Krulak",
         "date": "2024"
       },
       {
-        "title": "Brown-water navy",
-        "publisher": "Wikipedia",
-        "href": "https://en.wikipedia.org/wiki/Brown-water_navy",
-        "date": "2024"
+        "title": "U.S. Marine Corps History Division: Vietnam",
+        "publisher": "Marine Corps University",
+        "href": "https://www.usmcu.edu/Research/Marine-Corps-History-Division/",
+        "date": "2023"
+      },
+      {
+        "title": "Foreign Relations of the United States, 1964-1968, Volume IV, Vietnam 1966",
+        "publisher": "U.S. Department of State, Office of the Historian",
+        "href": "https://history.state.gov/historicaldocuments/frus1964-68v04",
+        "date": "1998"
       }
     ],
     "primarySource": {
-      "title": "Riverine Operations 1966-1969",
-      "publisher": "U.S. Army Center of Military History, Vietnam Studies series",
-      "href": "https://history.army.mil/books/vietnam/riverine/index.htm",
-      "date": "1973",
-      "description": "Official Army Center of Military History study of the Mobile Riverine Force's operations in the Mekong Delta, covering tactics, lessons learned, and the joint Army-Navy command structure."
+      "title": "Foreign Relations of the United States, 1964-1968, Volume IV: Vietnam 1966",
+      "publisher": "U.S. Department of State, Office of the Historian",
+      "href": "https://history.state.gov/historicaldocuments/frus1964-68v04",
+      "date": "1998",
+      "description": "Declassified records covering the debate between Westmoreland's search-and-destroy approach and the Marine Corps' population-centric Combined Action Platoon program, including the 1966 Honolulu Conference discussions of pacification strategy."
     }
   },
   "shortForm": {
-    "title": "The Ambush on the Mekong: How the Viet Cong Fought the River War",
-    "slug": "viet-cong-river-ambush-dispatch",
-    "excerpt": "The Viet Cong had been fighting on the Mekong Delta's waterways since the early 1960s. Their ambush doctrine was adapted to the hydrography. When the Mobile Riverine Force arrived in 1967, they were ready.",
+    "title": "Victor Krulak vs. William Westmoreland: The Argument That Defined American Strategy in Vietnam",
+    "slug": "krulak-westmoreland-cap-dispatch",
+    "excerpt": "In 1965, Victor Krulak told anyone who would listen that the war would be won or lost in the villages, not in the jungle. Westmoreland said the NVA's main force units were the target. MACV won the argument. Krulak was right.",
     "era": "vietnam-war",
-    "voice": "tactician",
+    "voice": "correspondent",
     "difficulty": "intermediate",
     "tags": [
-      "Viet Cong",
-      "river ambush",
-      "Mekong Delta",
-      "PBR",
-      "riverine tactics",
-      "B-40 rocket",
-      "Mobile Riverine Force",
-      "mine warfare"
+      "Victor Krulak",
+      "William Westmoreland",
+      "Combined Action Program",
+      "counterinsurgency",
+      "pacification",
+      "MACV",
+      "Marine Corps strategy"
     ],
     "paragraphs": [
-      "The ambush geometry on a Vietnamese river canal was not improvised. The Viet Cong had been fighting on the delta's waterways since the early 1960s, and their ambush doctrine was adapted specifically to the hydrography — the width of the canals, the height of the vegetation on the banks, the distances at which B-40 rockets and RPGs were most effective against armored hulls. A standard ambush placed the main body on one bank, with a secondary position on the other bank to prevent the boats from using the far shore as cover. The primary weapons were B-40 rocket-propelled grenades, recoilless rifles for the larger craft, and automatic weapons — AK-47s and RPD machine guns — for suppressing the crews. The ambush was typically initiated by the rocket teams, with automatic weapons following immediately to prevent the crews from returning effective fire.",
-      "The tactical response that the riverine force developed was the 'mad minute' on contact — every weapon on every boat firing simultaneously outboard, into both banks, the moment an ambush was initiated. The response was not aimed fire. It was suppression: enough volume to force the ambush teams off their firing positions long enough for the boats to close the range or land infantry. The effectiveness of the response depended on crew training and crew cohesion. A boat crew that hesitated — trying to identify targets before firing — was a crew that was still taking organized fire from prepared positions while it hesitated. The crews who survived in the delta were the crews who did not hesitate. That is a training outcome, not a natural behavior, and it required sustained operational conditioning that the replacement rotation system consistently disrupted.",
-      "The Viet Cong countered the mad-minute response in two ways. The first was to initiate ambushes at ranges that made the suppression response less effective — at distances of 50 meters or less, where the ambush teams could engage through the suppression and where closing the range quickly was difficult in a narrow canal. The second was to use water mines — command-detonated and pressure-fused — at the ambush site, triggered simultaneously with the small-arms fire. A mine under or alongside an armored troop carrier changed the tactical equation significantly; the ATC could absorb RPG and automatic weapons fire, but it could not absorb a command-detonated mine under the hull. The tactical adaptation was, as in every phase of the war, an iterative process: American innovation producing a counter, Viet Cong counter-adaptation producing a response, and so on. The delta was where that iteration ran fastest because the terrain gave the Viet Cong the most consistent tactical advantage."
+      "The argument between Victor Krulak and William Westmoreland was not personal — they were professional officers making professional arguments about competing theories of how to win the same war. Krulak's position, articulated in a series of memoranda and briefings from 1965 through 1967, was that the war's center of gravity was the South Vietnamese population: control it, and the NVA and VC lost the support base that sustained them; fail to control it, and no number of jungle engagements would produce a strategic result. Westmoreland's position was that the NVA's main force units — the conventional military formations that could be located, fixed, and destroyed in set-piece battles — were the decisive element. Defeat them, and the guerrilla infrastructure would wither. Both men cited evidence for their positions. Both had evidence.",
+      "The institutional argument was resolved in Westmoreland's favor by the force structure available and the timelines expected. Large-unit search-and-destroy operations were what the Army and Marine Corps knew how to run. The CAP program required Marines who could operate in small isolated teams, learn enough Vietnamese to function in a village, and sustain the mission for months without the support infrastructure a conventional unit relied on. Training and selecting those Marines took time, and the Marines trained for it were unavailable for the operational priorities MACV was running simultaneously. Krulak's argument was strategically correct; Westmoreland's was institutionally executable. The institution chose what it could execute.",
+      "The retrospective assessments of both men's arguments have largely vindicated Krulak's analysis. The pacification programs that produced the most durable results — CORDS, the CAP, the Phoenix Program's village-level intelligence work — were built on the logic Krulak had been advancing since 1965. They matured in the early 1970s, when American political will to sustain the commitment was exhausting. The insight arrived at the right conclusion too late. The standard military history account frames the CAP-versus-attrition debate as a path not taken, with the implication that taking it would have changed the outcome. The more honest assessment is that taking it fully would have required a different American Army from the one that existed — differently trained, differently organized, differently motivated — and there was no mechanism for that transformation inside the timeline of the actual war."
     ],
     "sources": [
       {
-        "title": "PBR Mark II",
+        "title": "Victor Krulak",
         "publisher": "Wikipedia",
-        "href": "https://en.wikipedia.org/wiki/PBR_Mark_II",
+        "href": "https://en.wikipedia.org/wiki/Victor_Krulak",
         "date": "2024"
       },
       {
-        "title": "Task Force 116",
+        "title": "Combined Action Program",
         "publisher": "Wikipedia",
-        "href": "https://en.wikipedia.org/wiki/Task_Force_116",
+        "href": "https://en.wikipedia.org/wiki/Combined_Action_Program",
         "date": "2024"
       },
       {
-        "title": "Riverine Operations 1966-1969",
-        "publisher": "U.S. Army Center of Military History",
-        "href": "https://history.army.mil/books/vietnam/riverine/index.htm",
-        "date": "1973"
+        "title": "Foreign Relations of the United States, 1964-1968, Volume IV",
+        "publisher": "U.S. Department of State, Office of the Historian",
+        "href": "https://history.state.gov/historicaldocuments/frus1964-68v04",
+        "date": "1998"
       }
     ],
     "primarySource": {
-      "title": "Riverine Operations 1966-1969",
-      "publisher": "U.S. Army Center of Military History, Vietnam Studies series",
-      "href": "https://history.army.mil/books/vietnam/riverine/index.htm",
-      "date": "1973",
-      "description": "Official Army study of riverine operations in the Mekong Delta, including tactical analysis of Viet Cong ambush methods and the counter-tactics developed by the Mobile Riverine Force."
+      "title": "Foreign Relations of the United States, 1964-1968, Volume IV: Vietnam 1966",
+      "publisher": "U.S. Department of State, Office of the Historian",
+      "href": "https://history.state.gov/historicaldocuments/frus1964-68v04",
+      "date": "1998",
+      "description": "Declassified records covering the Krulak-Westmoreland strategic debate and the institutional decisions that determined American pacification policy in 1965-1966."
     }
   },
   "onThisDay": {
     "month": 5,
     "day": 4,
-    "year": 1953,
-    "headline": "Operation Little Switch Prisoner Exchange Concludes in Korea",
-    "body": "On May 3-4, 1953, Operation Little Switch — the exchange of sick and wounded prisoners of war between the United Nations Command and Communist forces in Korea — concluded at Panmunjom, with 684 UN prisoners repatriated and 6,670 North Korean and Chinese prisoners returned. The exchange was the first significant step toward the armistice signed July 27, 1953.",
-    "era": "korean-war",
+    "year": 1846,
+    "headline": "Mexican Artillery Besieges Fort Texas on the Rio Grande",
+    "body": "On May 4, 1846, Mexican artillery continued its bombardment of Fort Texas on the north bank of the Rio Grande, while General Zachary Taylor's main American force marched from Point Isabel to relieve the garrison. Taylor's army would engage Mexican forces at the Battle of Palo Alto on May 8 and at Resaca de la Palma on May 9, in the opening conventional engagements of the Mexican-American War.",
+    "era": "early-modern",
     "linkedArticleSlug": null
   }
 }

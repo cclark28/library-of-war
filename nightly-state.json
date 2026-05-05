@@ -1,7 +1,7 @@
 {
-  "voiceIndex": 0,
-  "lastRun": "2026-05-05T11:29:57.728Z",
-  "articlesWritten": 147,
+  "voiceIndex": 1,
+  "lastRun": "2026-05-05T11:32:01.955Z",
+  "articlesWritten": 149,
   "usedSlugs": [
     "battle-of-cannae",
     "battle-of-austerlitz",
@@ -101,7 +101,9 @@
     "attrition-strategy-vietnam",
     "body-count-vietnam-dispatch",
     "brown-water-navy-mekong-delta",
-    "viet-cong-river-ambush-dispatch"
+    "viet-cong-river-ambush-dispatch",
+    "marine-cap-program-vietnam",
+    "krulak-westmoreland-cap-dispatch"
   ],
   "_voices": [
     "correspondent",
