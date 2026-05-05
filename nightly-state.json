@@ -1,7 +1,7 @@
 {
-  "voiceIndex": 2,
-  "lastRun": "2026-05-05T11:22:38.935Z",
-  "articlesWritten": 141,
+  "voiceIndex": 3,
+  "lastRun": "2026-05-05T11:25:22.780Z",
+  "articlesWritten": 143,
   "usedSlugs": [
     "battle-of-cannae",
     "battle-of-austerlitz",
@@ -95,7 +95,9 @@
     "fall-of-saigon-1975",
     "graham-martin-saigon-dispatch",
     "operation-linebacker-ii-1972",
-    "sa2-b52-linebacker-dispatch"
+    "sa2-b52-linebacker-dispatch",
+    "mining-haiphong-harbor-1972",
+    "moscow-summit-haiphong-mining-dispatch"
   ],
   "_voices": [
     "correspondent",

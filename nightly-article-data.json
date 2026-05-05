@@ -1,127 +1,128 @@
 {
-  "imageFile": "B-52_Stratofortress_Vietnam_1972.jpg",
-  "imageAlt": "B-52 Stratofortress dropping bombs over Vietnam during Operation Linebacker II, December 1972",
-  "imageCaption": "A B-52 Stratofortress during operations over Southeast Asia. During Operation Linebacker II, December 18-29, 1972, B-52s flew 729 sorties against targets in Hanoi and Haiphong.",
-  "imageSrc": "https://commons.wikimedia.org/wiki/File:B-52_Stratofortress_Vietnam_1972.jpg",
+  "imageFile": "Haiphong_harbor_mining_1972.jpg",
+  "imageAlt": "Aerial view of Haiphong Harbor, North Vietnam, during Operation Pocket Money, May 1972",
+  "imageCaption": "Haiphong Harbor, North Vietnam. Operation Pocket Money, launched May 9, 1972, placed 36 mines in the harbor entrance, closing it to Soviet and international shipping for the duration of the mining campaign.",
+  "imageSrc": "https://commons.wikimedia.org/wiki/File:Haiphong_harbor_mining_1972.jpg",
   "longForm": {
-    "title": "Operation Linebacker II: Strategic Bombing, the Paris Talks, and a Debate That Has Not Been Settled",
-    "slug": "operation-linebacker-ii-1972",
-    "excerpt": "In December 1972, Nixon ordered B-52s to bomb Hanoi and Haiphong for eleven days. The Paris Peace Accords followed twenty-nine days later. Whether those two facts are causally connected is one of the central unresolved questions of the air war in Vietnam.",
+    "title": "Operation Pocket Money: The Mining of Haiphong Harbor and What the Documents Show",
+    "slug": "mining-haiphong-harbor-1972",
+    "excerpt": "On May 8, 1972, Nixon announced the mining of Haiphong Harbor — a decision years in the making, timed to the Moscow Summit, and designed around a diplomatic calculation that proved correct. The Soviet Union protested. The summit proceeded on schedule.",
     "era": "vietnam-war",
-    "voice": "historian",
+    "voice": "archivist",
     "difficulty": "advanced",
     "tags": [
-      "Linebacker II",
-      "B-52 Stratofortress",
-      "Hanoi",
+      "Operation Pocket Money",
+      "Haiphong Harbor",
       "Nixon",
       "Kissinger",
-      "Paris Peace Accords",
-      "Strategic Air Command",
-      "SA-2 missile",
-      "Christmas Bombing",
-      "SAC"
+      "Linebacker I",
+      "Moscow Summit",
+      "SALT I",
+      "A-6 Intruder",
+      "Easter Offensive",
+      "mining"
     ],
     "paragraphs": [
-      "On the evening of December 18, 1972, eighty-seven B-52 Stratofortresses lifted off from Andersen Air Force Base on Guam and U-Tapao Royal Thai Navy Airfield in Thailand. They flew in three waves toward Hanoi and Haiphong — the first strategic bombing of North Vietnam's heartland since Operation Rolling Thunder had ended in 1968. The crews had been briefed on the target list and the threat environment. They had not been briefed on the strategic context: that the Paris Peace negotiations had collapsed earlier that month, that Nixon had given Hanoi a seventy-two-hour ultimatum to return to the table, and that when Hanoi did not respond, the President had ordered Strategic Air Command to commence what would become eleven days of the most concentrated bombing of the war. The men flying those aircraft understood the operational mission. The political architecture behind it was above their classification level. It would be some years before the relationship between what happened in December 1972 and the Paris Peace Accords signed January 27, 1973 was examined with enough distance to be argued about properly.",
-      "The negotiations that preceded Linebacker II require careful treatment. Henry Kissinger had announced on October 26, 1972 that peace was at hand — a characterization that embarrassed both the Nixon administration and the South Vietnamese government, which had not agreed to the terms Kissinger described. The talks resumed in November and broke down in December, with both sides blaming the other. Nixon's private communications, preserved in the FRUS record, indicate that he had decided to resume heavy bombing before the deadline he gave Hanoi had technically expired — that the decision was driven as much by the calculation that bombing would strengthen the American negotiating position as by any expectation that Hanoi would actually comply with the ultimatum. That distinction matters because one of the central historiographical disputes about Linebacker II concerns whether it produced the agreement signed in January 1973, or whether that agreement would have been reached anyway, and the bombing was the political price Nixon needed to extract from Congress and from the South Vietnamese government of Nguyen Van Thieu to make the deal possible.",
-      "The first night's losses established that the operation had a tactical problem. Three B-52s were shot down on December 18 by North Vietnamese SA-2 Guideline surface-to-air missiles, with two more lost on December 19. The SA-2 had been in the North Vietnamese arsenal since 1965, and American electronic countermeasures had adapted to it repeatedly over the intervening years. The problem in December 1972 was not the missile itself but the tactics that Strategic Air Command had developed for the B-52 — tactics designed for the nuclear strike mission in Europe, not for high-threat conventional bombing. The post-target turns that B-52s executed after bomb release were predictable in timing and geometry. North Vietnamese radar operators had been trained to anticipate them. The SA-2 operators fired on the turn, where the aircraft's electronic countermeasures were partially degraded and the radar cross-section was largest. SAC headquarters in Omaha, which had retained control over the mission planning in a manner that left the on-scene Air Force commanders with limited flexibility, had not adjusted for this specific vulnerability.",
-      "The losses prompted an internal debate within the Air Force that the subsequent record documents with some candor. Brigadier General Glenn Sullivan, the on-scene commander at U-Tapao, recommended changes to the routing and altitude profiles that would make the aircraft less predictable. SAC headquarters, concerned about maintaining formation integrity and the effectiveness of the jamming pods — which were calibrated for specific aircraft spacings — resisted changes that would alter the standard formation. After the loss of six B-52s in the first three days — a rate that SAC's own analysis showed was unsustainable — the routing was altered. Post-target turns were varied. Aircraft approached from different headings on successive nights. The loss rate dropped significantly after December 21. The adaptation was real, but the question that the Air Force's own post-operation analysis acknowledged was why it took six aircraft and their crews to demonstrate what the tactical commanders had identified before the operation began.",
-      "The eleven days of Linebacker II — with a pause on Christmas Day — produced approximately 729 B-52 sorties and a comparable number of supporting fighter and electronic warfare sorties. Fifteen B-52s were lost, with 12 other aircraft, and 93 airmen killed, captured, or missing. North Vietnam fired approximately 1,240 SA-2 missiles. The targeting concentrated on military infrastructure: rail yards, power plants, petroleum storage, air defense facilities, and the Paul Doumer Bridge over the Red River, which had been destroyed in Linebacker I and repaired. The civilian casualty figures for Linebacker II have been disputed since the operation ended. North Vietnamese government estimates cited in contemporary and subsequent sources were substantially higher than American estimates. The Bach Mai Hospital in Hanoi, struck on December 22, became an international focus of condemnation — the Air Force maintained the hospital was not deliberately targeted, and that the strikes occurred because Bach Mai was adjacent to a military airfield. International reaction to the bombing was strongly negative. Even British Prime Minister Edward Heath, a government aligned with the United States, described it as causing 'revulsion' in Britain.",
-      "Nixon described Linebacker II in his diary as forcing the North Vietnamese back to the table. The evidence for that interpretation is more ambiguous than the diary entry suggests. The Paris Peace Accords signed on January 27, 1973 were substantially similar in their terms to the October 1972 draft agreement that Kissinger had described as near-final — the agreement whose collapse produced Linebacker II. The historian Mark Clodfelter, in his 1989 study 'The Limits of Air Power,' argued that the bombing did not produce the settlement; rather, the settlement had been essentially agreed upon before the bombing began, and the bombing served different functions: reassuring Thieu that the United States remained committed, demonstrating to Nixon's domestic critics that he was pursuing peace from strength, and allowing both sides to claim they had not simply accepted the October terms unchanged. Clodfelter's interpretation has been contested by scholars who argue that the bombing genuinely altered Hanoi's negotiating calculus. The argument remains unresolved because Hanoi's internal deliberations in December 1972 have not been fully accessible to outside researchers.",
-      "The B-52s that bombed Hanoi in December 1972 were the same aircraft that had been striking targets in South Vietnam and along the Ho Chi Minh Trail since 1965. The difference in December 1972 was the target set — Hanoi and Haiphong, the political and economic centers of North Vietnam, within range of the most sophisticated air defense system in the world outside the Soviet Union and China. Strategic Air Command had built its entire institutional identity around the strategic bombing mission in Europe, and the B-52 was the centerpiece of that identity. Operating them in a conventional bombing role, in a high-threat environment, with mission profiles designed for a different theater, produced the loss rate of the first three nights. The adaptation that followed — varied routing, different altitudes, closer coordination between the B-52s and the F-105G Wild Weasel and EB-66 jamming aircraft — was a real-time revision of a doctrine that had not been designed for the Vietnam context. The revision worked. Fifteen B-52s in eleven days, against the losses SAC had modeled for a nuclear war with the Soviet Union, was within acceptable parameters. Whether the same parameters were appropriate for a conventional operation in a war that the United States was preparing to exit was a question the Air Force would argue about for years.",
-      "The Paris Peace Accords were signed on January 27, 1973, twenty-nine days after the last B-52 sortie of Linebacker II. Nixon declared that the accords achieved peace with honor. The South Vietnamese government of Nguyen Van Thieu accepted terms it had rejected in October with American pressure applied in the form of both private threats and private assurances of continued American support. Whether the agreement reflected Linebacker II's coercive effect on Hanoi, or Nixon's coercive effect on Thieu, or simply the exhaustion of both parties after eight years of fighting, the historians have not settled. What the record shows clearly is that the agreement signed in January 1973 left North Vietnamese forces inside South Vietnam, left the Thieu government in place but isolated, and set the conditions for the final offensive of April 1975. Linebacker II ended a phase of the war. It did not end the war."
+      "The National Security Council meeting of May 8, 1972 produced a presidential decision that had been under consideration for years. Kissinger's record of the meeting notes the participants — Nixon, Kissinger, Haig, Admiral Moorer, and the secretaries of State and Defense — and the conclusion: the United States would mine Haiphong Harbor and the other principal ports of North Vietnam, and would simultaneously resume the strategic bombing campaign that had been suspended since 1968. What the meeting record does not show, but what the surrounding documentary context makes clear, is that the decision had already been shaped by a diplomatic calculation: the Moscow Summit, at which Nixon and Brezhnev were to sign the SALT I treaty, was scheduled for May 22. Nixon had concluded — and the subsequent record confirms the conclusion was correct — that the Soviet Union would not cancel a summit it had invested eighteen months of diplomacy in over the mining of a North Vietnamese port.",
+      "The classified background to that calculation is documented in the FRUS record for 1969-1976. Kissinger had conducted back-channel communications with Soviet Ambassador Anatoly Dobrynin throughout the spring of 1972, gauging Soviet flexibility on Vietnam in the context of strategic arms negotiations. The Soviet position, as the cable traffic records it, was that Moscow could not openly condone American military escalation against a Soviet ally, but that the relationship's broader interests — SALT I, grain deals, trade normalization — were a separate matter from the North Vietnamese supply question. The Soviets had been providing North Vietnam with the SA-2 missiles and tanks that were sustaining the Easter Offensive, which had begun on March 30 and produced significant ARVN losses. The documentary record does not indicate that Kissinger told Dobrynin the mining was coming before May 8. It indicates that Kissinger had concluded the Soviets would swallow it.",
+      "Nixon delivered a televised address to the nation on May 8, 1972, announcing the mining of Haiphong Harbor and the other principal North Vietnamese ports. The mines being laid, he explained, were equipped with a seventy-two-hour delay fuze — sufficient time for neutral shipping already in the harbor to depart safely. The delay fuze was a legal and diplomatic gesture: it demonstrated that the United States was not attempting to sink Soviet ships, only to deny North Vietnam the port. Soviet vessels currently in Haiphong Harbor at the time of the announcement were, however, trapped for the duration; they could not leave without either waiting for the mines to be swept — which did not happen — or requesting mine-free corridors, which would have amounted to acknowledging the blockade's effectiveness. The Soviet response was a formal diplomatic protest, delivered on May 9. The Moscow Summit proceeded on schedule on May 22.",
+      "The mining of Haiphong was conducted by aircraft from the carrier USS Coral Sea, with A-6 Intruder and A-7 Corsair II aircraft laying the initial mines on the night of May 9. Thirty-six mines were placed in the harbor entrance. Operation POCKET MONEY, as it was designated, expanded over the following weeks to include the ports of Cam Pha, Hon Gai, Thanh Hoa, Vinh, Dong Hoi, and Quang Khe. The mines used were Mark 52 magnetic/acoustic combination mines, designed to be triggered by the combination of a ship's magnetic field and the acoustic signature of its propellers — making them resistant to simple magnetic sweeping. By the end of the mining campaign, approximately 11,000 mines had been placed in North Vietnamese waters. The shipping lanes that had previously been carrying an estimated 85 percent of North Vietnam's seaborne supply were closed for the duration of the operation.",
+      "The effect on North Vietnamese logistics was significant but not decisive, for the same reason that the air campaigns had not been decisive: the supply system adapted. The Ho Chi Minh Trail and the rail lines from China absorbed more of the burden that had previously moved by sea. Chinese aid to North Vietnam increased in the months following the mining. Soviet ships offloaded cargo at Chinese ports and sent it overland. The operational disruption was real — the Easter Offensive, which had made significant gains in April and May 1972, was halted in part by the combined weight of Linebacker I bombing and the supply disruption from the mining. But the disruption did not break the NVA's operational capacity; it degraded it. The distinction between a degraded and a broken adversary is the difference between an opponent who cannot achieve his current objectives and one who cannot sustain the fight at all. The mining achieved the former.",
+      "The diplomatic record of May-July 1972 shows that the mining produced exactly the Soviet response Nixon had predicted: protest without escalation. Brezhnev and Nixon signed the SALT I Interim Agreement and the Anti-Ballistic Missile Treaty in Moscow on May 26. Kissinger's back-channel with Dobrynin continued through the summer. The North Vietnamese, whose supply lines had been disrupted and whose Easter Offensive had stalled, resumed serious negotiations in the fall of 1972. The sequence — mining in May, Linebacker I bombing through October, Paris negotiations in the fall, Linebacker II bombing in December, Paris Accords in January 1973 — has led some analysts to credit the mining with having initiated the chain of events that ended the war. The relationship is real. It is also consistent with the interpretation that the war ended because both sides had exhausted the available military options, and the mining was one of several coercive instruments applied in the final year.",
+      "The documents that are missing from the public record are instructive. The CIA's assessment of the mining's probable effect on North Vietnamese logistics, prepared before the operation, has not been fully declassified. The assessment's conclusions — to the extent they can be reconstructed from references in other documents — appear to have been more cautious about the mining's strategic effect than the public statements suggested. Kissinger's private assessments to Nixon of what the mining would and would not achieve are partially available in the FRUS record; they suggest a more modest expectation than the public address conveyed. The gap between the private assessment and the public claim is a consistent feature of the Nixon administration's handling of Vietnam policy, documented across multiple episodes from 1969 through 1972. Haiphong was not an exception.",
+      "The mines placed in Haiphong Harbor in May 1972 were swept by US Navy minesweepers following the Paris Peace Accords, in an operation that lasted from February through July 1973. Operation END SWEEP involved twelve US Navy minesweeping helicopters and surface craft working the harbor entrance over a period of five months. North Vietnamese cooperation was required and was provided, within the limits of what the after-action record describes as a cautious and adversarial working relationship. The mines that had been the most operationally effective were also the most difficult to clear — the combination magnetic/acoustic fuzing made systematic sweeping slow. The record of END SWEEP is one of the few operational chapters of the Vietnam War in which the opposing forces worked in direct proximity without shooting at each other. It has received proportionately little attention."
     ],
     "sources": [
       {
-        "title": "Operation Linebacker II",
+        "title": "Operation Pocket Money",
         "publisher": "Wikipedia",
-        "href": "https://en.wikipedia.org/wiki/Operation_Linebacker_II",
+        "href": "https://en.wikipedia.org/wiki/Operation_Pocket_Money",
         "date": "2024"
       },
       {
-        "title": "Linebacker II",
-        "publisher": "Encyclopaedia Britannica",
-        "href": "https://www.britannica.com/event/Linebacker-II",
-        "date": "2024"
-      },
-      {
-        "title": "Foreign Relations of the United States, 1969-1976, Volume IX, Vietnam, October 1972-January 1973",
+        "title": "Foreign Relations of the United States, 1969-1976, Volume VIII, Vietnam, January-October 1972",
         "publisher": "U.S. Department of State, Office of the Historian",
-        "href": "https://history.state.gov/historicaldocuments/frus1969-76v09",
+        "href": "https://history.state.gov/historicaldocuments/frus1969-76v08",
         "date": "2010"
       },
       {
-        "title": "Air Force History: Southeast Asia Monograph Series",
-        "publisher": "Air Force Historical Research Agency",
-        "href": "https://www.afhra.af.mil/",
-        "date": "1978"
+        "title": "Operation Linebacker",
+        "publisher": "Wikipedia",
+        "href": "https://en.wikipedia.org/wiki/Operation_Linebacker",
+        "date": "2024"
+      },
+      {
+        "title": "Naval History and Heritage Command: Vietnam",
+        "publisher": "U.S. Naval History and Heritage Command",
+        "href": "https://www.history.navy.mil/browse-by-topic/wars-conflicts-and-operations/vietnam-war.html",
+        "date": "2022"
       }
     ],
     "primarySource": {
-      "title": "Foreign Relations of the United States, 1969-1976, Volume IX: Vietnam, October 1972-January 1973",
+      "title": "Foreign Relations of the United States, 1969-1976, Volume VIII: Vietnam, January-October 1972",
       "publisher": "U.S. Department of State, Office of the Historian",
-      "href": "https://history.state.gov/historicaldocuments/frus1969-76v09",
+      "href": "https://history.state.gov/historicaldocuments/frus1969-76v08",
       "date": "2010",
-      "description": "Declassified Nixon administration records covering the breakdown of the Paris negotiations in December 1972 and the decision to launch Linebacker II, including Nixon's private communications with Kissinger and the JCS."
+      "description": "Declassified NSC and State Department records covering the decision to mine Haiphong Harbor, including Kissinger's backchannel communications with Soviet Ambassador Dobrynin and Nixon's private assessments of the mining's expected diplomatic and military effects."
     }
   },
   "shortForm": {
-    "title": "The SA-2 Over Hanoi: Why B-52s Were Vulnerable in December 1972",
-    "slug": "sa2-b52-linebacker-dispatch",
-    "excerpt": "The SA-2 surface-to-air missile had been in North Vietnamese hands since 1965. B-52s carried jamming equipment specifically designed to defeat it. Five were still lost in the first three days of Linebacker II. The reason was not the missile. It was the tactics.",
+    "title": "The Moscow Summit and the Mining: Nixon's Diplomatic Gamble, May 1972",
+    "slug": "moscow-summit-haiphong-mining-dispatch",
+    "excerpt": "Nixon mined Haiphong Harbor two weeks before a summit with Brezhnev that had taken eighteen months to arrange. He calculated the Soviets would not cancel it. The FRUS record shows how that calculation was made — and what Kissinger's backchannel with Dobrynin actually said.",
     "era": "vietnam-war",
-    "voice": "historian",
-    "difficulty": "intermediate",
+    "voice": "archivist",
+    "difficulty": "advanced",
     "tags": [
-      "SA-2 missile",
-      "B-52 Stratofortress",
-      "electronic warfare",
-      "Linebacker II",
-      "air defense",
-      "SAC",
-      "Wild Weasel"
+      "Moscow Summit 1972",
+      "Operation Pocket Money",
+      "SALT I",
+      "Kissinger",
+      "Dobrynin",
+      "Nixon",
+      "Soviet Union",
+      "backchannel diplomacy"
     ],
     "paragraphs": [
-      "The SA-2 Guideline — NATO designation for the Soviet S-75 Dvina surface-to-air missile — had been deployed in North Vietnam since April 1965, when the first batteries became operational around Hanoi. American pilots had been dealing with the SA-2 for seven years by December 1972, and the electronic countermeasures suite carried by B-52s had been designed specifically to degrade the Fan Song radar that guided the missile. In principle, the technology was adequate. In practice, the loss rate in the first three days of Linebacker II demonstrated that the electronic countermeasures were being defeated — not by improvements in the SA-2 system itself, but by the predictability of the B-52 formations and the specific geometry of the post-target turns that SAC's mission planning had built into every sortie.",
-      "The SA-2's effective engagement envelope required the radar operator to track the target aircraft for a sustained period before launch. The B-52's jamming pods could break that track under most circumstances — but the pods were calibrated for aircraft flying in tight formation, and the jamming was most effective when all aircraft in the cell were at the same altitude and spacing. The post-target turn broke that geometry: the aircraft would separate slightly, reducing the jamming effectiveness at precisely the moment when radar operators, trained to anticipate the turn, were firing their missiles. North Vietnamese SA-2 operators had been trained by Soviet advisers and had been engaging American aircraft for years. They knew the standard B-52 tactics because those tactics had been used in earlier Arc Light strikes against targets in South Vietnam, where crews had practiced the same formations under much lower threat conditions. The tactics were predictable. The operators were good. The combination produced five B-52s lost in the first three days.",
-      "The adaptation after December 21 — varied routing, random altitude changes, modified post-target turn geometry — broke the predictability problem. Losses dropped from five in the first three days to two in the remaining eight days of the campaign. The lesson was straightforward: electronic countermeasures are a necessary but not sufficient condition for survival in a high-threat environment; they must be combined with tactical unpredictability to deny the threat system the sustained track it needs to engage effectively. The Air Force internalized that lesson and it shaped the development of both electronic warfare doctrine and stealth technology through the 1970s and 1980s. The B-2 Spirit, which flew its first combat missions over Kosovo in 1999, was designed in part around the insight that making an aircraft physically undetectable was more reliable than depending on jamming to break an adversary's radar track after the aircraft had already been acquired."
+      "The Moscow Summit of May 22-30, 1972 had been under negotiation since 1971. It was the first visit by an American president to the Soviet Union, and its principal deliverable was SALT I — the Strategic Arms Limitation Treaty that placed ceilings on intercontinental ballistic missiles and submarine-launched ballistic missiles. The Soviets had invested significant political capital in reaching SALT I, partly from genuine arms control interest and partly because the treaty framework legitimized their strategic parity with the United States. They were not going to cancel the summit over Haiphong. Nixon understood this and Kissinger had confirmed it through back-channel communications with Dobrynin. The timing of Operation POCKET MONEY — announced May 8, two weeks before the summit — was not coincidental. It was calculated.",
+      "The calculation was documented in Kissinger's backchannel communications. The relevant message traffic in the FRUS record for this period shows Kissinger probing Soviet flexibility on Vietnam through Dobrynin while simultaneously managing the SALT I endgame. The Soviet position, as Dobrynin communicated it, distinguished between Soviet obligations to North Vietnam as an ally — which required a public protest of American military actions — and Soviet interests in the broader relationship with the United States, which the summit embodied. Dobrynin did not tell Kissinger the Soviets would accept the mining. Kissinger concluded they would, based on the gap between the Soviets' public statements about Vietnam and their private communications about the summit's priority. He was right. The protest was filed. The summit opened on May 22.",
+      "What the Moscow Summit calculation also demonstrates is that Nixon and Kissinger understood the mining's effectiveness was partly coercive and partly diplomatic — it was designed to demonstrate to both Hanoi and the Soviets that the United States retained options it was willing to use, and that Soviet surface-to-air missiles and tanks supplied to North Vietnam would not deter those options. The SALT I summit, by proceeding on schedule, confirmed that assessment. Hanoi lost an argument it had been making since 1965: that Soviet and Chinese support provided a deterrent umbrella that prevented American escalation. The mining of Haiphong, with Soviet ships trapped in the harbor and the Moscow Summit proceeding anyway, was the practical refutation of that argument."
     ],
     "sources": [
       {
-        "title": "Operation Linebacker II",
+        "title": "1972 Moscow summit",
         "publisher": "Wikipedia",
-        "href": "https://en.wikipedia.org/wiki/Operation_Linebacker_II",
+        "href": "https://en.wikipedia.org/wiki/1972_Moscow_summit",
         "date": "2024"
       },
       {
-        "title": "S-75 Dvina (SA-2 Guideline)",
+        "title": "Operation Pocket Money",
         "publisher": "Wikipedia",
-        "href": "https://en.wikipedia.org/wiki/S-75_Dvina",
+        "href": "https://en.wikipedia.org/wiki/Operation_Pocket_Money",
         "date": "2024"
       },
       {
-        "title": "Air Force History: Southeast Asia Monograph Series",
-        "publisher": "Air Force Historical Research Agency",
-        "href": "https://www.afhra.af.mil/",
-        "date": "1978"
+        "title": "Foreign Relations of the United States, 1969-1976, Volume VIII",
+        "publisher": "U.S. Department of State, Office of the Historian",
+        "href": "https://history.state.gov/historicaldocuments/frus1969-76v08",
+        "date": "2010"
       }
     ],
     "primarySource": {
-      "title": "Air Force History: Southeast Asia Monograph Series",
-      "publisher": "Air Force Historical Research Agency",
-      "href": "https://www.afhra.af.mil/",
-      "date": "1978",
-      "description": "Official Air Force historical studies of the air war in Southeast Asia, including tactical analysis of B-52 operations and the SA-2 threat environment during Linebacker II."
+      "title": "Foreign Relations of the United States, 1969-1976, Volume VIII: Vietnam, January-October 1972",
+      "publisher": "U.S. Department of State, Office of the Historian",
+      "href": "https://history.state.gov/historicaldocuments/frus1969-76v08",
+      "date": "2010",
+      "description": "Declassified records covering Kissinger's backchannel communications with Soviet Ambassador Dobrynin during the spring of 1972, documenting the diplomatic groundwork laid before the Haiphong mining decision."
     }
   },
   "onThisDay": {
     "month": 5,
     "day": 4,
-    "year": 1960,
-    "headline": "Soviet Union Announces Shootdown of American U-2 Spy Plane",
-    "body": "On May 4, 1960, the Soviet Union publicly announced it had shot down an American U-2 reconnaissance aircraft over Soviet territory on May 1. Premier Khrushchev's announcement — delivered knowing the US would issue a false cover story — destroyed the Eisenhower administration's claim that the aircraft was a weather plane and collapsed the Paris Summit scheduled for May 16, 1960.",
-    "era": "cold-war",
+    "year": 1904,
+    "headline": "United States Takes Control of Panama Canal Zone Construction",
+    "body": "On May 4, 1904, the United States formally assumed control of Panama Canal Zone construction from the French Compagnie Nouvelle du Canal de Panama. The US Army Corps of Engineers oversaw the project, which would produce a strategic waterway allowing the Navy to shift forces between the Atlantic and Pacific without the 13,000-mile passage around Cape Horn — a mobility advantage that shaped American naval strategy through the twentieth century.",
+    "era": "modern-conflicts",
     "linkedArticleSlug": null
   }
 }
