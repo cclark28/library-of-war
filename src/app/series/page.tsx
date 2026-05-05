@@ -20,13 +20,32 @@ export default async function SeriesIndexPage() {
         </div>
 
         {series.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {series.map((s: Parameters<typeof SeriesCard>[0]['series'], i: number) => (
-              <SeriesCard key={s._id} series={s} index={i} />
-            ))}
+          /*
+           * Asymmetric zig-zag grid — 5-col base, alternating 3/2 and 2/3 widths.
+           * Row 1: [item 0 — 60%] [item 1 — 40%]
+           * Row 2: [item 2 — 40%] [item 3 — 60%]
+           * Collapses to single-column on mobile (below md).
+           */
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-6 md:gap-8">
+            {series.map((s: Parameters<typeof SeriesCard>[0]['series'], i: number) => {
+              const colSpan =
+                i % 4 === 0 ? 'md:col-span-3' :
+                i % 4 === 1 ? 'md:col-span-2' :
+                i % 4 === 2 ? 'md:col-span-2' :
+                              'md:col-span-3'
+              return (
+                <div key={s._id} className={colSpan}>
+                  <SeriesCard series={s} index={i} />
+                </div>
+              )
+            })}
           </div>
         ) : (
-          <p className="text-center font-body text-mist py-20 tracking-widest uppercase">Series coming soon</p>
+          <div className="py-24 text-center border border-rule">
+            <p className="era-label mb-4">Archive</p>
+            <p className="font-headline font-bold text-ink text-2xl mb-2">No series yet</p>
+            <p className="font-body text-mist text-base">Series are added as multi-part investigations are completed.</p>
+          </div>
         )}
       </main>
       <Footer />

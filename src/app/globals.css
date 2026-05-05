@@ -52,6 +52,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-headline);
   line-height: 1.15;
+  text-wrap: balance;
 }
 
 /* ─── Rules ──────────────────────────────────────────────────────────────────── */
@@ -107,7 +108,7 @@ h1, h2, h3, h4, h5, h6 {
 .card-hover { transition: opacity 160ms ease; }
 .card-hover:hover { opacity: 0.82; }
 
-/* ─── Card lift (Framer-style physical hover) ────────────────────────────────── */
+/* ─── Card lift (Framer-style physical hover + active press) ─────────────────── */
 .card-lift {
   transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
               box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1);
@@ -115,6 +116,11 @@ h1, h2, h3, h4, h5, h6 {
 .card-lift:hover {
   transform: translateY(-4px);
   box-shadow: 0 16px 48px -12px rgba(10, 8, 6, 0.16);
+}
+.card-lift:active {
+  transform: scale(0.98) translateY(0);
+  box-shadow: 0 4px 12px -4px rgba(10, 8, 6, 0.10);
+  transition-duration: 0.1s;
 }
 
 /* ─── Tag pill ───────────────────────────────────────────────────────────────── */

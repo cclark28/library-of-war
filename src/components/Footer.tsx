@@ -136,9 +136,25 @@ export default async function Footer() {
       </div>
 
       {/* ── Bottom bar ──────────────────────────────────────────────────── */}
-      <div className="border-t border-paper/10 px-6 py-5 max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+      <div className="border-t border-paper/10 px-6 py-5 max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-3">
         <p className="font-body text-paper/25 text-xs">{copyright}</p>
-        <p className="font-body text-paper/15 text-xs tracking-widest uppercase">{domainLabel}</p>
+        <div className="flex items-center gap-5">
+          <Link
+            href="/privacy"
+            className="font-body text-paper/25 hover:text-paper/50 transition-colors text-xs tracking-wide"
+          >
+            Privacy Policy
+          </Link>
+          <span className="text-paper/15 text-xs" aria-hidden="true">·</span>
+          <Link
+            href="/terms"
+            className="font-body text-paper/25 hover:text-paper/50 transition-colors text-xs tracking-wide"
+          >
+            Terms of Use
+          </Link>
+          <span className="text-paper/15 text-xs" aria-hidden="true">·</span>
+          <p className="font-body text-paper/15 text-xs tracking-widest uppercase">{domainLabel}</p>
+        </div>
       </div>
     </footer>
   )

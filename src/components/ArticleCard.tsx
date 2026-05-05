@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { sanityImage } from '@/lib/sanity'
+import { formatDateShort } from '@/lib/utils'
 
 interface Article {
   _id: string
@@ -107,21 +108,21 @@ export default function ArticleCard({ article, size = 'md', showExcerpt = true, 
               <span className="tag-pill">{era.title}</span>
             )}
             {seriesLabel && (
-              <span
-                role={article.series?.slug?.current ? 'link' : undefined}
-                tabIndex={article.series?.slug?.current ? 0 : undefined}
-                onClick={article.series?.slug?.current ? (e) => {
-                  e.preventDefault()
-                  e.stopPropagation()
-                  router.push(`/series/${article.series!.slug.current}`)
-                } : undefined}
-                onKeyDown={article.series?.slug?.current ? (e) => {
-                  if (e.key === 'Enter') router.push(`/series/${article.series!.slug.current}`)
-                } : undefined}
-                className={`tag-pill tag-pill-accent${article.series?.slug?.current ? ' cursor-pointer hover:opacity-75 transition-opacity' : ''}`}
-              >
-                {seriesLabel}
-              </span>
+              article.series?.slug?.current ? (
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    e.stopPropagation()
+                    router.push(`/series/${article.series!.slug.current}`)
+                  }}
+                  className="tag-pill tag-pill-accent cursor-pointer hover:opacity-75 transition-opacity focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent"
+                >
+                  {seriesLabel}
+                </button>
+              ) : (
+                <span className="tag-pill tag-pill-accent">{seriesLabel}</span>
+              )
             )}
           </div>
         )}
@@ -135,6 +136,13 @@ export default function ArticleCard({ article, size = 'md', showExcerpt = true, 
         {showExcerpt && article.excerpt && size !== 'sm' && size !== 'hero-stack' && layout !== 'horizontal' && (
           <p className="font-body text-mist text-base leading-relaxed line-clamp-3 mb-2">
             {article.excerpt}
+          </p>
+        )}
+
+        {/* Publish date */}
+        {article.publishedAt && layout !== 'horizontal' && (
+          <p className="font-body text-[0.62rem] tracking-[0.18em] uppercase text-mist/60 mt-2">
+            {formatDateShort(article.publishedAt)}
           </p>
         )}
       </div>

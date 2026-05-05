@@ -1,13 +1,11 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { client, liveClient, articlesQuery, seriesQuery, siteSettingsQuery, homepageContentQuery, eraGridQuery, sanityImage } from '@/lib/sanity'
+import { client, liveClient, articlesQuery, seriesQuery, siteSettingsQuery, homepageContentQuery, sanityImage } from '@/lib/sanity'
 import HeaderWrapper from '@/components/HeaderWrapper'
 import Footer from '@/components/Footer'
 import ArticleCard from '@/components/ArticleCard'
 import FadeIn from '@/components/FadeIn'
 import OnThisDay from '@/components/OnThisDay'
-import EraGrid, { type EraGridItem } from '@/components/EraGrid'
-import { ERA_ORDER } from '@/lib/eras'
 
 // Edge runtime required for Cloudflare Pages.
 // force-dynamic ensures every request fetches fresh content from Sanity:
@@ -146,7 +144,6 @@ type SiteSettings = {
     showHero?: boolean
     showLatestDispatches?: boolean
     showFromArchive?: boolean
-    showEraGrid?: boolean
     showFlagshipSeries?: boolean
     showOnThisDay?: boolean
   }
@@ -164,49 +161,14 @@ type HomepageContent = {
   mastTagline?: string
 }
 
-// Raw shape returned by eraGridQuery — lean projection, image may be null/partial
-type RawEraArticle = {
-  era?: string
-  image?: { asset?: { _ref?: string } | null; alt?: string } | null
-}
-
-/**
- * Aggregates raw eraGridQuery results into per-era counts + representative images.
- * Raw data is ordered by publishedAt desc, so the first image encountered per era
- * is always the most recently published one.
- * Law 1 compliance: only articles with a valid mainImage asset _ref are used as
- * the background image source. Tiles with no image remain active and clickable.
- */
-function aggregateEraGrid(raw: RawEraArticle[]): EraGridItem[] {
-  const counts = new Map<string, number>()
-  const images = new Map<string, { asset: { _ref: string }; alt?: string }>()
-
-  for (const { era, image } of raw) {
-    if (!era) continue
-    counts.set(era, (counts.get(era) ?? 0) + 1)
-    // First valid image per era (raw is publishedAt desc — most recent first)
-    if (!images.has(era) && image?.asset?._ref) {
-      images.set(era, { asset: { _ref: image.asset._ref }, alt: image.alt ?? undefined })
-    }
-  }
-
-  return ERA_ORDER.map(slug => ({
-    era: slug,
-    count: counts.get(slug) ?? 0,
-    image: images.get(slug),
-  }))
-}
 
 export default async function HomePage() {
-  const [articles, series, settings, hpContent, rawEraArticles] = await Promise.all([
+  const [articles, series, settings, hpContent] = await Promise.all([
     client.fetch(articlesQuery).catch(() => []) as Promise<Article[]>,
     client.fetch(seriesQuery).catch(() => []) as Promise<Series[]>,
     liveClient.fetch(siteSettingsQuery).catch(() => null) as Promise<SiteSettings | null>,
     liveClient.fetch(homepageContentQuery).catch(() => null) as Promise<HomepageContent | null>,
-    client.fetch(eraGridQuery).catch(() => []) as Promise<RawEraArticle[]>,
   ])
-
-  const eraGridData = aggregateEraGrid(rawEraArticles)
 
   const labels = {
     latestDispatches: hpContent?.latestDispatchesLabel ?? 'Latest Dispatches',
@@ -224,7 +186,6 @@ export default async function HomePage() {
     showHero:              settings?.sections?.showHero              ?? true,
     showLatestDispatches:  settings?.sections?.showLatestDispatches  ?? true,
     showFromArchive:       settings?.sections?.showFromArchive        ?? true,
-    showEraGrid:           settings?.sections?.showEraGrid            ?? true,
     showFlagshipSeries:    settings?.sections?.showFlagshipSeries     ?? true,
     showOnThisDay:         settings?.sections?.showOnThisDay          ?? true,
   }
@@ -449,12 +410,6 @@ export default async function HomePage() {
               ))}
             </FadeIn>
           </>
-        )}
-
-        {/* ── Section 6: Era Grid — 13 era tiles, 4-col desktop / 3-col tablet / 2-col mobile ── */}
-        {/* Controlled by siteSettings.sections.showEraGrid. Omitted entirely when false.      */}
-        {flags.showEraGrid && (
-          <EraGrid data={eraGridData} />
         )}
 
         <div className="border-y border-rule py-10 text-center mt-14 mb-2">

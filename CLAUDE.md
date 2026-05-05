@@ -1,5 +1,32 @@
 # Library of War — Global Project Rules
 
+> **Design Taste Skill active** — `taste-skill/SKILL.md` is loaded for all frontend/UI work in this project. Default dials: DESIGN_VARIANCE: 8, MOTION_INTENSITY: 6, VISUAL_DENSITY: 4. All rules in that file are enforced on every component, page, and artifact.
+
+---
+
+## Frontend & UI Rules (taste-skill — enforced globally)
+
+All frontend code must follow the taste-skill rules at `taste-skill/SKILL.md`. Key non-negotiables:
+
+- **No Inter font.** Use Geist, Outfit, Cabinet Grotesk, or Satoshi.
+- **No pure black (`#000000`).** Use Zinc-950, Off-Black, or Charcoal.
+- **No AI purple/neon glows.** Neutral bases (Zinc/Slate) + single desaturated accent only.
+- **No centered hero H1s** (DESIGN_VARIANCE 8 — force asymmetric or split-screen layouts).
+- **No 3-equal-column card rows.** Use Zig-Zag, asymmetric grid, or horizontal scroll.
+- **No emojis anywhere** — icons via `@phosphor-icons/react` or `@radix-ui/react-icons`.
+- **No `h-screen`** — always `min-h-[100dvh]` for full-height sections.
+- **No Unsplash links** — use `https://picsum.photos/seed/{string}/800/600`.
+- **No generic placeholder data** — organic names, messy numbers, specific brand names.
+- **Framer Motion for UI interactions.** Spring physics: `stiffness: 100, damping: 20`.
+- **Animate only `transform` and `opacity`** — never top/left/width/height.
+- **All interactive states required:** loading (skeleton), empty, error, tactile feedback.
+- **Check `package.json` before any import** — output `npm install` command if missing.
+- **`'use client'` isolation** — any animated or interactive component is a leaf Client Component.
+
+Read `taste-skill/SKILL.md` for the full Creative Arsenal, Bento Motion Paradigm, and Pre-Flight checklist before building any UI.
+
+---
+
 ## ⚠️ GLOBAL LAWS — Non-Negotiable, Never Bypass
 
 These laws apply to every page, every component, every data query, every future change. No exceptions.
