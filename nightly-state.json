@@ -1,7 +1,7 @@
 {
-  "voiceIndex": 3,
-  "lastRun": "2026-05-05T10:55:08.117Z",
-  "articlesWritten": 123,
+  "voiceIndex": 4,
+  "lastRun": "2026-05-05T10:56:37.081Z",
+  "articlesWritten": 125,
   "usedSlugs": [
     "battle-of-cannae",
     "battle-of-austerlitz",
@@ -79,7 +79,9 @@
     "operation-phoenix-cia-vietnam",
     "william-colby-phoenix-dispatch",
     "macv-sog-cross-border-operations",
-    "project-delta-sog-dispatch"
+    "project-delta-sog-dispatch",
+    "arc-light-b52-vietnam",
+    "linebacker-i-1972-dispatch"
   ],
   "_voices": [
     "correspondent",
