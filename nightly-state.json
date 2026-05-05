@@ -1,7 +1,7 @@
 {
-  "voiceIndex": 4,
-  "lastRun": "2026-05-05T10:56:37.081Z",
-  "articlesWritten": 125,
+  "voiceIndex": 0,
+  "lastRun": "2026-05-05T10:58:02.502Z",
+  "articlesWritten": 127,
   "usedSlugs": [
     "battle-of-cannae",
     "battle-of-austerlitz",
@@ -81,7 +81,9 @@
     "macv-sog-cross-border-operations",
     "project-delta-sog-dispatch",
     "arc-light-b52-vietnam",
-    "linebacker-i-1972-dispatch"
+    "linebacker-i-1972-dispatch",
+    "battle-of-an-loc-1972",
+    "arvn-easter-offensive-dispatch"
   ],
   "_voices": [
     "correspondent",
