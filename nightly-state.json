@@ -1,7 +1,7 @@
 {
-  "voiceIndex": 1,
-  "lastRun": "2026-05-05T11:20:15.023Z",
-  "articlesWritten": 139,
+  "voiceIndex": 2,
+  "lastRun": "2026-05-05T11:22:38.935Z",
+  "articlesWritten": 141,
   "usedSlugs": [
     "battle-of-cannae",
     "battle-of-austerlitz",
@@ -93,7 +93,9 @@
     "battle-of-hamburger-hill-1969",
     "honeycutt-hamburger-hill-dispatch",
     "fall-of-saigon-1975",
-    "graham-martin-saigon-dispatch"
+    "graham-martin-saigon-dispatch",
+    "operation-linebacker-ii-1972",
+    "sa2-b52-linebacker-dispatch"
   ],
   "_voices": [
     "correspondent",
