@@ -1,7 +1,7 @@
 {
-  "voiceIndex": 4,
-  "lastRun": "2026-05-05T11:13:54.256Z",
-  "articlesWritten": 135,
+  "voiceIndex": 0,
+  "lastRun": "2026-05-05T11:17:53.460Z",
+  "articlesWritten": 137,
   "usedSlugs": [
     "battle-of-cannae",
     "battle-of-austerlitz",
@@ -89,7 +89,9 @@
     "battle-of-ap-bac-1963",
     "helicopter-tactics-vietnam-dispatch",
     "operation-lam-son-719-1971",
-    "cooper-church-amendment-vietnam-dispatch"
+    "cooper-church-amendment-vietnam-dispatch",
+    "battle-of-hamburger-hill-1969",
+    "honeycutt-hamburger-hill-dispatch"
   ],
   "_voices": [
     "correspondent",

@@ -1,150 +1,126 @@
 {
-  "imageFile": "Lam_Son_719_map.jpg",
-  "imageAlt": "Map of Operation Lam Son 719 showing ARVN advance into Laos toward Tchepone, February-March 1971",
-  "imageCaption": "Operation Lam Son 719, February-March 1971. ARVN forces crossed into Laos along Route 9 to cut the Ho Chi Minh Trail at Tchepone.",
-  "imageSrc": "https://commons.wikimedia.org/wiki/File:Lam_Son_719_map.jpg",
+  "imageFile": "Hamburger_Hill_assault.jpg",
+  "imageAlt": "US Army soldiers of the 101st Airborne Division on Hill 937 during the Battle of Hamburger Hill, May 1969",
+  "imageCaption": "Soldiers of the 101st Airborne Division on Hill 937 (Dong Ap Bia) during Operation Apache Snow, May 1969. The ten-day assault became a symbol of the costs of attrition warfare.",
+  "imageSrc": "https://commons.wikimedia.org/wiki/File:Hamburger_Hill_assault.jpg",
   "longForm": {
-    "title": "Operation Lam Son 719: The Structural Failure of Vietnamization",
-    "slug": "operation-lam-son-719-1971",
-    "excerpt": "In February 1971, South Vietnam's army crossed into Laos to cut the Ho Chi Minh Trail at Tchepone without US ground support. The operation failed not because of overreach but because it was designed around a version of the ARVN that did not yet exist.",
+    "title": "The Battle of Hamburger Hill: Terrain, Attrition, and the Decision That Would Not Be Revisited",
+    "slug": "battle-of-hamburger-hill-1969",
+    "excerpt": "In May 1969, the 101st Airborne Division made ten assaults on Hill 937 in the A Shau Valley. The hill was abandoned sixteen days after it was taken. The battle did not expose a tactical failure. It exposed an operational logic that had been running at cost for four years.",
     "era": "vietnam-war",
-    "voice": "analyst",
-    "difficulty": "advanced",
+    "voice": "tactician",
+    "difficulty": "intermediate",
     "tags": [
-      "Lam Son 719",
-      "Tchepone",
-      "Vietnamization",
-      "ARVN",
-      "Ho Chi Minh Trail",
-      "Cooper-Church Amendment",
-      "Nixon",
-      "Kissinger",
-      "PAVN 70B Corps",
-      "T-54 tank"
+      "Hamburger Hill",
+      "Hill 937",
+      "A Shau Valley",
+      "101st Airborne",
+      "3rd Battalion 187th Infantry",
+      "Weldon Honeycutt",
+      "Operation Apache Snow",
+      "29th NVA Regiment",
+      "attrition warfare"
     ],
     "paragraphs": [
-      {
-        "body": "The standard account of Operation Lam Son 719 frames it as a failure of ambition — a mission designed to cut the Ho Chi Minh Trail at Tchepone that overreached the capacity of the force assigned to execute it. The more precise diagnosis is structural: the operation failed because it was designed around a version of the ARVN that did not exist. By February 1971, Vietnamization had produced battalions capable of sustained defensive operations with American fire support, and brigades capable of limited offensive action in familiar terrain against light resistance. It had not produced a corps-level force capable of independent combined-arms operations in foreign terrain against a prepared NVA division complex, without American ground advisers, under the time pressure imposed by weather and political calendars. These are not equivalent capabilities. Treating them as equivalent was the central planning error, and the subsequent operational record documents that error with considerable precision."
-      },
-      {
-        "body": "The decision architecture that produced Lam Son 719 involved three overlapping constraints, none of which received adequate analytical weight. The first was political: the Cooper-Church Amendment, signed in January 1971, prohibited US ground troops from entering Laos or Cambodia. This meant that American advisers — the advisory presence that had compensated for ARVN command and control deficiencies throughout the war — would halt at the Laotian border on February 8, 1971. The second was meteorological: the dry season offered a limited operational window before the monsoon degraded helicopter operations and resupply. The third was political-strategic: the Nixon administration needed a demonstrable success for Vietnamization before the 1972 election cycle. Each constraint pushed toward a shorter, more aggressive operation than the force's independent capability justified. The interaction of the three produced a plan that was coherent on paper and fragile under the actual conditions of execution."
-      },
-      {
-        "body": "The intelligence picture available before the operation began was not uniformly favorable, and the evidence suggests it was not uniformly weighted. US aerial reconnaissance had identified a significant NVA buildup in the Tchepone corridor before the ARVN crossed the border. General Le Trong Tan's 70B Corps — comprising the 308th, 304th, and 320th Divisions — had been positioning in the operational area since at least October 1970, four months before the ARVN incursion. This was not a defensive scramble improvised in response to the ARVN crossing; it was a prepared defense. The operational plan's assumption that ARVN momentum would prevent NVA forces from concentrating against the advance was, given the intelligence available, an optimistic projection. Had that projection been stress-tested against the possibility of a prepared NVA defense — which the reconnaissance record supported — the timeline and force architecture of the operation would have required revision. The revision did not occur."
-      },
-      {
-        "body": "The operational design depended on two interdependent assumptions, both of which proved incorrect. The first was that ARVN units could maintain operational coherence at the brigade and division level without American ground advisers managing command and coordination functions. The second was that US air support — tactical air strikes, B-52 Arc Light missions, and helicopter resupply — could substitute for the advisory presence prohibited by Cooper-Church. The fire support base scheme along Route 9 was intended to provide the artillery umbrella that would enable the advance. When NVA forces attacked and overran Fire Support Base 31 on March 6, 1971 — capturing Lieutenant Colonel Nguyen Van Tho and destroying twelve 105mm howitzers — the scheme's fragility became operational. FSB Ranger North and FSB Ranger South fell under similar pressure. The artillery umbrella contracted. The ARVN columns advancing toward Tchepone found themselves in terrain they did not control, against an enemy who had chosen the ground and the timing."
-      },
-      {
-        "body": "The NVA armor problem deserves specific analysis. The PT-76 light tank had appeared at Lang Vei in February 1968, against a Special Forces camp with minimal anti-armor capability. MACV absorbed that lesson partially: it noted the NVA's willingness to use armor in the Vietnam context, but did not fully revise its estimates of what coordinated NVA armor operations might look like at scale. Lam Son 719 presented T-54 main battle tanks operating with coordinated infantry in the Laotian hill terrain — a combined-arms threat the ARVN's M41 Walker Bulldogs were not equipped to defeat. The TOW anti-tank missile system was deployed in its first operational combat use, mounted on UH-1 helicopters, and performed well against individual NVA armored vehicles. It did not compensate for the broader advisory and command deficit. The NVA armor's principal contribution to the battle was not in direct tank kills; it was in imposing a tempo on the engagement — forcing ARVN formations to respond to armor threats rather than maintain the offensive initiative — that ARVN commanders, without American advisers, found consistently difficult to manage."
-      },
-      {
-        "body": "The seizure of Tchepone on March 6, 1971, via helicopter insertion rather than overland advance, requires careful interpretation. The town was largely destroyed before the ARVN arrived. There was no intact logistical infrastructure to demolish, no operational objective achievable by the presence of ARVN soldiers in a ruined settlement. The seizure was a political objective — demonstrable evidence that Vietnamization could produce results — rather than a military one. Nixon's March 22 television statement, in which he declared Vietnamization proceeding on schedule and the South Vietnamese demonstrating they could 'hack it,' was calibrated to that political objective. The concurrent classified assessment reaching the NSC — describing the ARVN 1st Armored Brigade's performance as significantly below the standard required for independent combined-arms operations — was calibrated to the military reality. When political and military objectives diverge this sharply within the same operation, the planning process has failed."
-      },
-      {
-        "body": "The withdrawal produced evidence that the classified assessments were more accurate than the public statements. The ARVN 1st Airborne Division — one of the better formations in the South Vietnamese order of battle — sustained approximately forty percent casualties during the operation. The 1st Armored Brigade lost a substantial proportion of its armored vehicle fleet. The photographs of ARVN soldiers clinging to helicopter skids during the extraction became the public record of the operation; the Nixon administration's characterization of those soldiers as having panicked is not supported by the operational timeline. They were the survivors of fragmented units being extracted from contested landing zones under fire, making rational decisions under extreme constraint. The aggregate ARVN casualty figure of approximately 7,682 killed, wounded, and missing, against NVA losses estimated as substantially higher in absolute terms, produced the kind of attrition-positive arithmetic that MACV had been citing for years as evidence of progress. What it did not produce was the disruption of Ho Chi Minh Trail logistics that was the operation's stated purpose."
-      },
-      {
-        "body": "The analytical lesson of Lam Son 719 is not that Vietnamization was a fraud — it produced real improvements in ARVN tactical capability at the battalion level — but that it was presented to the public and to Congress as having produced capabilities it had not yet developed. The gap between what Vietnamization had achieved by 1971 and what the operation required was known to MACV and to the NSC. Kissinger's private assessments in the FRUS record are considerably more candid about ARVN command and control deficiencies than anything said publicly at the time. Had the Lam Son 719 operation been designed to the force's actual independent capability — a more limited incursion with more conservative objectives and a longer timeline — the result might have been different. Had the political constraints that compressed the timeline and prohibited the advisory presence been weighed as operational variables rather than fixed parameters, the design might have been adjusted. Neither revision occurred. Fourteen months later, the North Vietnamese launched the Easter Offensive of 1972 — an operation that was, in part, a rational extrapolation from what Lam Son 719 had demonstrated about ARVN's limits without American ground support."
-      }
+      "Hill 937 sits in the western end of the A Shau Valley, approximately two kilometers from the Laotian border. The terrain matters before anything else does. The hill rises steeply from the valley floor, triple-canopy jungle covering the upper slopes, with a series of ridgelines and draws that channel movement and give the defender observation of every approach. The 29th NVA Regiment had been using the A Shau Valley as a logistical corridor and staging area since at least 1966. By May 1969 they were occupying Hill 937 in strength, with a prepared bunker complex dug into the ridgelines and reinforced with overhead cover. Operation Apache Snow, launched by the 101st Airborne Division on May 10, 1969, was designed to clear the valley. Finding the hill occupied was not the plan. Finding it occupied by a regiment in prepared positions was a different problem still.",
+      "The initial contact on May 10 was made by 3rd Battalion, 187th Infantry \u2014 the Rakkasans \u2014 commanded by Lieutenant Colonel Weldon Honeycutt. Helicopter insertion into the valley placed the battalion at the hill's base. The first probe up the slope ran into automatic weapons and rocket-propelled grenade fire from positions that had been invisible from the air. One platoon took significant casualties before it could withdraw to defensible ground. The intelligence picture had underestimated both the size of the NVA force on the hill and the depth of their prepared positions. What the 101st Airborne had assumed was a screening force turned out to be a dug-in regiment with interlocking fields of fire, prepared fallback positions, and a logistics tail connected to Laos less than two kilometers away. Honeycutt reported the contact and requested support. The decision to assault the hill directly \u2014 rather than fix it in place and maneuver around it \u2014 was the central tactical choice of the battle, and it was not revisited for ten days.",
+      "The ground dictated the problem. The approaches to Hill 937's crest were narrow and dominated by the NVA positions above. Flanking maneuver required moving through jungle terrain that degraded unit cohesion and eliminated the fire superiority that the 101st depended upon. Air support \u2014 tactical strikes and B-52 Arc Light missions \u2014 hit the hill repeatedly but did not suppress the bunker complex. The bunkers were designed to survive. The NVA had dug into the reverse slope of each ridgeline, so that strikes hitting the forward slope detonated above and behind them. The hill had to be taken by infantry moving uphill through the bunker complex, and the NVA knew it. Between May 10 and May 19, the Rakkasans conducted nine assaults. Each time the leading elements got within reach of the crest, NVA fire from flanking positions drove them back. Each assault produced casualties. The terrain that made the hill tactically significant \u2014 observation over the valley \u2014 also made it extremely difficult to take.",
+      "Honeycutt's tactical situation was constrained in several directions simultaneously. He had one battalion on the objective, with additional battalions \u2014 1st Battalion 506th and 2nd Battalion 506th Infantry \u2014 available to maneuver against the flanks and seal the NVA's escape routes. The broader Operation Apache Snow concept was working: NVA units trying to move away from the hill through the valley were intercepted. But the hill itself absorbed the fight. Honeycutt continued assaulting because every pause gave the NVA time to reinforce and repair, and because the tactical geometry of the position \u2014 its height, its prepared defenses, its connection to Laos \u2014 meant that leaving it in NVA hands left the valley operation incomplete. His commander, Major General John Wright, did not order him to break off. The assault continued. By May 18, with nine failed attacks behind them and casualties mounting, the Rakkasans had earned a name from the meat-grinder logic of the operation: Hamburger Hill.",
+      "The final assault went in on May 20, 1969, with four battalions converging on the hill simultaneously from multiple directions. The 3/187 attacked from the northeast, the 1/506 from the south, the 2/506 and 1/501 securing the flanks and blocking routes. The NVA had been reinforcing the hill through the Laotian connection throughout the battle \u2014 an avenue that the operational design had not fully closed. The assault on May 20 pushed through the bunker complex under fire. By midmorning the summit was in American hands. The NVA withdrew to the west, toward the Laotian border and the positions they would use to reoccupy the hill later. American casualties for the ten-day operation were 70 killed and 372 wounded. The 29th NVA Regiment lost an estimated 630 killed, along with equipment and prepared positions representing months of construction. The hill was held briefly. It was abandoned on June 5, 1969.",
+      "The political response was immediate. Senator Edward Kennedy took the Senate floor on May 20 \u2014 the day of the final assault \u2014 to denounce the battle as senseless and irresponsible, questioning the operational logic of assaulting a prepared position for ten days and then abandoning the objective within two weeks. The Washington Post and other papers picked up the critique. General Creighton Abrams, who had replaced Westmoreland as MACV commander, defended the operation on the grounds that it had destroyed a regiment and disrupted NVA logistics in the valley. Both assessments were accurate as far as they went. The regiment was significantly degraded. The NVA was back on the hill within the month. The debate in the Senate and the press was not really about Hill 937. It was about the operational logic of hill-clearing operations in general \u2014 about whether taking a position at significant cost, then abandoning it, was a coherent use of American combat power.",
+      "The abandonment of Hamburger Hill on June 5 became the symbolic moment that crystallized the critique of attrition warfare in Vietnam. The tactical argument for the abandonment was straightforward: the hill had no permanent value once the NVA regiment was destroyed, and holding it permanently would require continuous supply by helicopter under fire from Laotian-based artillery. The operational argument was harder to make. If the hill had no permanent value, the question of whether it was worth seventy American lives and three hundred and seventy-two wounded depended entirely on the weight one assigned to degrading the 29th NVA Regiment. That calculation required a theory of how attrition produced political results \u2014 a theory that MACV had been applying for years and that had not produced results proportional to the cost. Hamburger Hill did not create that critique. It gave it a specific geography and a body count.",
+      "The operational lesson that Hamburger Hill demonstrated, and that the subsequent debate partly obscured, was specific: direct assault on prepared hilltop positions along the Laotian border produced high casualties and temporary results because the NVA could reinforce and re-occupy from Laos faster than ARVN or US forces could seal the border. The tactical problem was real. The operational design \u2014 repeated direct assaults on fortified high ground connected to an unsealable sanctuary \u2014 was the mismatch. Abrams, to his credit, shifted the emphasis of US operations after Hamburger Hill toward pacification and away from the large-scale search-and-destroy sweeps that Westmoreland had favored. The shift came four years into a war that had been fought largely on the attrition logic that Hamburger Hill exposed. The NVA was back on Hill 937 before the end of June."
     ],
     "sources": [
       {
-        "title": "Operation Lam Son 719",
+        "title": "Battle of Hamburger Hill",
         "publisher": "Wikipedia",
-        "href": "https://en.wikipedia.org/wiki/Operation_Lam_Son_719",
+        "href": "https://en.wikipedia.org/wiki/Battle_of_Hamburger_Hill",
         "date": "2024"
       },
       {
-        "title": "Lam Son 719: The South Vietnamese Incursion into Laos",
-        "publisher": "U.S. Army Center of Military History",
-        "href": "https://history.army.mil/brochures/lam-son/lam-son.htm",
-        "date": "1979"
+        "title": "Operation Apache Snow",
+        "publisher": "Wikipedia",
+        "href": "https://en.wikipedia.org/wiki/Operation_Apache_Snow",
+        "date": "2024"
       },
       {
-        "title": "Operation Lam Son 719, 50th Anniversary",
-        "publisher": "National Security Archive, George Washington University",
-        "href": "https://nsarchive.gwu.edu/briefing-book/vietnam/2021-02-08/operation-lam-son-719-50th-anniversary",
-        "date": "2021"
+        "title": "Tactical and Materiel Innovations",
+        "publisher": "U.S. Army Center of Military History, Vietnam Studies series",
+        "href": "https://history.army.mil/books/vietnam/tactical/index.htm",
+        "date": "1974"
       },
       {
-        "title": "Foreign Relations of the United States, 1969-1976, Volume VIII",
-        "publisher": "U.S. Department of State, Office of the Historian",
-        "href": "https://history.state.gov/historicaldocuments/frus1969-76v08",
-        "date": "2010"
+        "title": "Battle of Hamburger Hill",
+        "publisher": "Encyclopaedia Britannica",
+        "href": "https://www.britannica.com/event/Battle-of-Hamburger-Hill",
+        "date": "2024"
       }
     ],
     "primarySource": {
-      "title": "Foreign Relations of the United States, 1969-1976, Volume VIII: Vietnam, January-October 1972",
-      "publisher": "U.S. Department of State, Office of the Historian",
-      "href": "https://history.state.gov/historicaldocuments/frus1969-76v08",
-      "date": "2010",
-      "description": "Declassified NSC and State Department records, including Kissinger's private assessments of ARVN performance during Lam Son 719 and the divergence between public characterizations and classified evaluations."
+      "title": "Tactical and Materiel Innovations",
+      "publisher": "U.S. Army Center of Military History, Vietnam Studies series",
+      "href": "https://history.army.mil/books/vietnam/tactical/index.htm",
+      "date": "1974",
+      "description": "Army Center of Military History official study of tactical operations and lessons from the Vietnam War, covering the operational context of battles including Hamburger Hill."
     }
   },
   "shortForm": {
-    "title": "The Cooper-Church Amendment: When Political Constraints Become Operational Variables",
-    "slug": "cooper-church-amendment-vietnam-dispatch",
-    "excerpt": "The Cooper-Church Amendment of 1971 prohibited US ground troops from entering Laos or Cambodia. It was a domestic political decision with direct operational consequences — and those consequences were built into Operation Lam Son 719 from the planning stage.",
+    "title": "Weldon Honeycutt and the Command Decision at Hamburger Hill",
+    "slug": "honeycutt-hamburger-hill-dispatch",
+    "excerpt": "Lieutenant Colonel Weldon Honeycutt made nine assaults on Hill 937 before his battalion took it. The debate that followed conflated his tactical decisions with the operational commanders' strategic choices. They are not the same question.",
     "era": "vietnam-war",
-    "voice": "analyst",
+    "voice": "tactician",
     "difficulty": "intermediate",
     "tags": [
-      "Cooper-Church Amendment",
-      "Lam Son 719",
-      "Vietnamization",
-      "Congress",
-      "Nixon",
-      "Cambodia",
-      "Laos",
-      "operational constraint"
+      "Weldon Honeycutt",
+      "Hamburger Hill",
+      "101st Airborne",
+      "command decision",
+      "tactical command",
+      "A Shau Valley",
+      "attrition"
     ],
     "paragraphs": [
-      {
-        "body": "The Cooper-Church Amendment, passed by Congress and signed into law in January 1971, prohibited the use of US ground forces in Laos or Cambodia. It was a direct legislative response to Nixon's April 1970 incursion into Cambodia, which had been conducted without congressional authorization and had triggered the Kent State protests and a wave of campus unrest. Cooper-Church was Congress reasserting authority over the geographic scope of the war. As a political instrument, it was coherent. As an operational variable embedded in the planning for Lam Son 719, it was a liability that the planning documents did not adequately address. American advisers — who had, throughout the war, compensated for structural deficiencies in ARVN command and control — stopped at the Laotian border on February 8, 1971. The force that crossed into Laos that morning was the ARVN without the advisory layer that had made it effective."
-      },
-      {
-        "body": "The operational consequences of that constraint were not hypothetical. ARVN units that performed adequately at battalion level — where American advisers worked closest to the tactical action — showed degraded performance at brigade and division level, where the advisory presence had been thinner and where independent ARVN command and control was most important. The fire support coordination that US advisers had managed became entirely an ARVN responsibility in Laos. The helicopter resupply and casualty evacuation system — operated by US aviation assets and requested through US channels — required ARVN officers to navigate a system they had not previously managed without American intermediaries. These were not insurmountable problems, but they were real ones, and the operational timeline — compressed by weather and political considerations — gave ARVN commanders limited opportunity to adapt."
-      },
-      {
-        "body": "The analytical point is not that Cooper-Church was wrong as a matter of law or policy. It is that when political constraints are embedded in an operational plan as fixed parameters rather than as variables to be weighed against mission requirements, those constraints become military liabilities. A different design — one that accepted the advisory prohibition as a genuine capability constraint and reduced the operation's scope and ambition accordingly — might have produced a more limited but more sustainable result. The design chosen accepted the constraint and then planned as though it did not significantly alter the force's independent capability. It did. The subsequent record — the fire support base losses, the armor threat, the degraded command coordination, the withdrawal — is in substantial part a consequence of that planning error. Cooper-Church did not cause the failure of Lam Son 719. The failure to treat it as an operational variable did."
-      }
+      "Lieutenant Colonel Weldon Honeycutt made the decision to keep assaulting Hill 937 nine times before his unit took it on the tenth attempt. The decision has been criticized as inflexible, characterized in some accounts as a personal stubbornness that cost lives unnecessarily. The operational record does not entirely support that reading. Honeycutt's constraint was real: he was fighting a regiment in prepared positions on ground that offered no workable flanking option. The jungle terrain degraded unit cohesion on any approach that was not directly up the ridgeline. Flanking the hill would have required moving companies through thick vegetation with no aerial observation, against NVA forces who knew the ground and had secondary positions prepared. Fixing the NVA on the hill and maneuvering around it was the textbook option; in the terrain of the A Shau Valley in May 1969, it was not achievable at the platoon and company level.",
+      "The question Honeycutt faced was not whether to bypass \u2014 the terrain did not offer that option \u2014 but whether to continue direct assault or accept a tactical pause. Each pause gave the NVA time to reinforce through the Laotian connection and repair the bunker complex. B-52 Arc Light strikes on the hill between assaults produced significant blast damage and NVA casualties, but did not suppress the defended positions long enough for infantry to reach the crest before NVA survivors reoccupied firing positions. Honeycutt's professional judgment was that continuous pressure \u2014 maintaining contact and forcing the NVA to fight in place \u2014 was preferable to a pause that would be exploited. That judgment was defensible given the tactical geometry. Whether the broader operational decision to take the hill at all, given that it would be abandoned within two weeks, was worth the cost is a different question \u2014 one that rests with Major General Wright and above, not with the battalion commander on the ridge.",
+      "The debate that followed Hamburger Hill conflated the battalion commander's tactical decisions with the operational commanders' strategic choices. Honeycutt ran the assault as a professional. The question of whether the hill should have been assaulted at all \u2014 given the sanctuary problem, the temporary-objective logic, and the cost-to-benefit calculus of attrition warfare in 1969 \u2014 was not Honeycutt's to answer. He was given an objective. He took it. The critique that belongs at the battalion level is narrow: whether nine separate frontal assaults, with a tactical pause after each setback for consolidation and re-planning, might have produced a different result at lower cost. The more significant critique belongs one and two levels higher, where the decision to fight the 29th NVA Regiment on its prepared ground, in a valley connected to an unsealable sanctuary, was made and not revisited."
     ],
     "sources": [
       {
-        "title": "Cooper-Church Amendment",
+        "title": "Battle of Hamburger Hill",
         "publisher": "Wikipedia",
-        "href": "https://en.wikipedia.org/wiki/Cooper%E2%80%93Church_Amendment",
+        "href": "https://en.wikipedia.org/wiki/Battle_of_Hamburger_Hill",
         "date": "2024"
       },
       {
-        "title": "Operation Lam Son 719",
+        "title": "Weldon Honeycutt",
         "publisher": "Wikipedia",
-        "href": "https://en.wikipedia.org/wiki/Operation_Lam_Son_719",
+        "href": "https://en.wikipedia.org/wiki/Weldon_Honeycutt",
         "date": "2024"
       },
       {
-        "title": "Foreign Relations of the United States, 1969-1976, Volume VII",
-        "publisher": "U.S. Department of State, Office of the Historian",
-        "href": "https://history.state.gov/historicaldocuments/frus1969-76v07",
-        "date": "2010"
+        "title": "Tactical and Materiel Innovations",
+        "publisher": "U.S. Army Center of Military History",
+        "href": "https://history.army.mil/books/vietnam/tactical/index.htm",
+        "date": "1974"
       }
     ],
     "primarySource": {
-      "title": "Foreign Relations of the United States, 1969-1976, Volume VII: Vietnam, July 1970-January 1972",
-      "publisher": "U.S. Department of State, Office of the Historian",
-      "href": "https://history.state.gov/historicaldocuments/frus1969-76v07",
-      "date": "2010",
-      "description": "Declassified NSC and State Department records covering the period of the Cooper-Church Amendment's passage and the planning of Operation Lam Son 719."
+      "title": "Tactical and Materiel Innovations",
+      "publisher": "U.S. Army Center of Military History, Vietnam Studies series",
+      "href": "https://history.army.mil/books/vietnam/tactical/index.htm",
+      "date": "1974",
+      "description": "Official Army study covering tactical operations and command decision-making in Vietnam, including the operational context of the Hamburger Hill engagement."
     }
   },
   "onThisDay": {
     "month": 5,
     "day": 4,
-    "year": 1940,
-    "headline": "British Forces Complete Evacuation from Central Norway",
-    "body": "On May 4, 1940, British and French forces completed the evacuation of Andalsnes, Norway, ceding central Norway to German control after the failure of the Allied counteroffensive. The Norwegian Campaign's collapse contributed directly to the parliamentary confidence crisis that brought Winston Churchill to replace Neville Chamberlain as Prime Minister on May 10, 1940.",
-    "era": "world-war-ii",
+    "year": 1780,
+    "headline": "British Forces Complete the Encirclement of Charleston",
+    "body": "On May 4, 1780, British forces under General Henry Clinton completed the encirclement of Charleston, South Carolina, crossing the Cooper River and sealing the last American escape route. Major General Benjamin Lincoln's garrison of approximately 5,500 Continental soldiers surrendered on May 12, 1780, in the largest American defeat of the Revolutionary War.",
+    "era": "early-modern",
     "linkedArticleSlug": null
   }
 }
