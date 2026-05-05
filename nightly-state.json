@@ -1,7 +1,7 @@
 {
-  "voiceIndex": 2,
-  "lastRun": "2026-05-05T10:53:27.230Z",
-  "articlesWritten": 121,
+  "voiceIndex": 3,
+  "lastRun": "2026-05-05T10:55:08.117Z",
+  "articlesWritten": 123,
   "usedSlugs": [
     "battle-of-cannae",
     "battle-of-austerlitz",
@@ -77,7 +77,9 @@
     "my-lai-massacre-1968",
     "hugh-thompson-my-lai-dispatch",
     "operation-phoenix-cia-vietnam",
-    "william-colby-phoenix-dispatch"
+    "william-colby-phoenix-dispatch",
+    "macv-sog-cross-border-operations",
+    "project-delta-sog-dispatch"
   ],
   "_voices": [
     "correspondent",
