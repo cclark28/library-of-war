@@ -1,7 +1,7 @@
 {
-  "voiceIndex": 1,
-  "lastRun": "2026-05-05T10:51:48.798Z",
-  "articlesWritten": 119,
+  "voiceIndex": 2,
+  "lastRun": "2026-05-05T10:53:27.230Z",
+  "articlesWritten": 121,
   "usedSlugs": [
     "battle-of-cannae",
     "battle-of-austerlitz",
@@ -75,7 +75,9 @@
     "siege-of-khe-sanh-1968",
     "operation-niagara-khe-sanh-dispatch",
     "my-lai-massacre-1968",
-    "hugh-thompson-my-lai-dispatch"
+    "hugh-thompson-my-lai-dispatch",
+    "operation-phoenix-cia-vietnam",
+    "william-colby-phoenix-dispatch"
   ],
   "_voices": [
     "correspondent",
