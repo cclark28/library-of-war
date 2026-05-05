@@ -1,7 +1,7 @@
 {
-  "voiceIndex": 0,
-  "lastRun": "2026-05-05T10:50:16.576Z",
-  "articlesWritten": 117,
+  "voiceIndex": 1,
+  "lastRun": "2026-05-05T10:51:48.798Z",
+  "articlesWritten": 119,
   "usedSlugs": [
     "battle-of-cannae",
     "battle-of-austerlitz",
@@ -73,7 +73,9 @@
     "operation-rolling-thunder-1965",
     "paul-doumer-bridge-rolling-thunder-dispatch",
     "siege-of-khe-sanh-1968",
-    "operation-niagara-khe-sanh-dispatch"
+    "operation-niagara-khe-sanh-dispatch",
+    "my-lai-massacre-1968",
+    "hugh-thompson-my-lai-dispatch"
   ],
   "_voices": [
     "correspondent",
