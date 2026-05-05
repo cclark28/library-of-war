@@ -1,7 +1,7 @@
 {
-  "voiceIndex": 4,
-  "lastRun": "2026-05-05T11:27:44.400Z",
-  "articlesWritten": 145,
+  "voiceIndex": 0,
+  "lastRun": "2026-05-05T11:29:57.728Z",
+  "articlesWritten": 147,
   "usedSlugs": [
     "battle-of-cannae",
     "battle-of-austerlitz",
@@ -99,7 +99,9 @@
     "mining-haiphong-harbor-1972",
     "moscow-summit-haiphong-mining-dispatch",
     "attrition-strategy-vietnam",
-    "body-count-vietnam-dispatch"
+    "body-count-vietnam-dispatch",
+    "brown-water-navy-mekong-delta",
+    "viet-cong-river-ambush-dispatch"
   ],
   "_voices": [
     "correspondent",
