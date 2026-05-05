@@ -1,7 +1,7 @@
 {
-  "voiceIndex": 0,
-  "lastRun": "2026-05-05T11:17:53.460Z",
-  "articlesWritten": 137,
+  "voiceIndex": 1,
+  "lastRun": "2026-05-05T11:20:15.023Z",
+  "articlesWritten": 139,
   "usedSlugs": [
     "battle-of-cannae",
     "battle-of-austerlitz",
@@ -91,7 +91,9 @@
     "operation-lam-son-719-1971",
     "cooper-church-amendment-vietnam-dispatch",
     "battle-of-hamburger-hill-1969",
-    "honeycutt-hamburger-hill-dispatch"
+    "honeycutt-hamburger-hill-dispatch",
+    "fall-of-saigon-1975",
+    "graham-martin-saigon-dispatch"
   ],
   "_voices": [
     "correspondent",
