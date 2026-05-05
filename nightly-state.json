@@ -1,7 +1,7 @@
 {
-  "voiceIndex": 0,
-  "lastRun": "2026-05-05T03:19:32.951Z",
-  "articlesWritten": 107,
+  "voiceIndex": 1,
+  "lastRun": "2026-05-05T03:21:01.798Z",
+  "articlesWritten": 109,
   "usedSlugs": [
     "battle-of-cannae",
     "battle-of-austerlitz",
@@ -63,7 +63,9 @@
     "battle-of-lepanto-1571",
     "battle-of-rocroi-1643-dispatch",
     "battle-of-dak-to-1967",
-    "operation-starlite-1965-dispatch"
+    "operation-starlite-1965-dispatch",
+    "siege-of-badajoz-1812",
+    "battle-of-salamanca-1812-dispatch"
   ],
   "_voices": [
     "correspondent",
