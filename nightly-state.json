@@ -1,7 +1,7 @@
 {
-  "voiceIndex": 3,
-  "lastRun": "2026-05-05T10:46:31.292Z",
-  "articlesWritten": 113,
+  "voiceIndex": 4,
+  "lastRun": "2026-05-05T10:48:26.301Z",
+  "articlesWritten": 115,
   "usedSlugs": [
     "battle-of-cannae",
     "battle-of-austerlitz",
@@ -69,7 +69,9 @@
     "battle-of-ia-drang-1965",
     "lz-albany-ia-drang-dispatch",
     "gulf-of-tonkin-incident-1964",
-    "uss-maddox-tonkin-dispatch"
+    "uss-maddox-tonkin-dispatch",
+    "operation-rolling-thunder-1965",
+    "paul-doumer-bridge-rolling-thunder-dispatch"
   ],
   "_voices": [
     "correspondent",
