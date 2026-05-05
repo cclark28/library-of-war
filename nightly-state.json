@@ -1,7 +1,7 @@
 {
-  "voiceIndex": 4,
-  "lastRun": "2026-05-05T10:48:26.301Z",
-  "articlesWritten": 115,
+  "voiceIndex": 0,
+  "lastRun": "2026-05-05T10:50:16.576Z",
+  "articlesWritten": 117,
   "usedSlugs": [
     "battle-of-cannae",
     "battle-of-austerlitz",
@@ -71,7 +71,9 @@
     "gulf-of-tonkin-incident-1964",
     "uss-maddox-tonkin-dispatch",
     "operation-rolling-thunder-1965",
-    "paul-doumer-bridge-rolling-thunder-dispatch"
+    "paul-doumer-bridge-rolling-thunder-dispatch",
+    "siege-of-khe-sanh-1968",
+    "operation-niagara-khe-sanh-dispatch"
   ],
   "_voices": [
     "correspondent",
