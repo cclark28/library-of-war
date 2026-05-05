@@ -1,7 +1,7 @@
 {
-  "voiceIndex": 3,
-  "lastRun": "2026-05-04T11:21:23.926Z",
-  "articlesWritten": 103,
+  "voiceIndex": 4,
+  "lastRun": "2026-05-05T03:18:00.100Z",
+  "articlesWritten": 105,
   "usedSlugs": [
     "battle-of-cannae",
     "battle-of-austerlitz",
@@ -59,7 +59,9 @@
     "battle-of-the-berezina-1812",
     "pusan-perimeter-1950-dispatch",
     "operation-entebbe-1976",
-    "venona-project-cold-war-dispatch"
+    "venona-project-cold-war-dispatch",
+    "battle-of-lepanto-1571",
+    "battle-of-rocroi-1643-dispatch"
   ],
   "_voices": [
     "correspondent",
