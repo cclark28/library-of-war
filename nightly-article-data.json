@@ -1,126 +1,108 @@
 {
-  "imageFile": "Combined_Action_Platoon_Vietnam_Marines.jpg",
-  "imageAlt": "US Marines and South Vietnamese Popular Forces soldiers of a Combined Action Platoon in I Corps, Vietnam",
-  "imageCaption": "US Marines and South Vietnamese Popular Forces of a Combined Action Platoon on patrol in I Corps, Vietnam. CAP Marines lived in Vietnamese villages for months at a time, combining security operations with community engagement.",
-  "imageSrc": "https://commons.wikimedia.org/wiki/File:Combined_Action_Platoon_Vietnam_Marines.jpg",
+  "imageFile": "CORDS_Vietnam_pacification_adviser.jpg",
   "longForm": {
-    "title": "The Combined Action Platoon: The War the Marine Corps Was Fighting in the Villages",
-    "slug": "marine-cap-program-vietnam",
-    "excerpt": "While Westmoreland ran search-and-destroy operations in the highlands, the Marine Corps embedded small units in Vietnamese villages in I Corps. The Combined Action Platoon program produced results that conventional operations did not. It was never large enough to matter at scale.",
+    "slug": "cords-pacification-vietnam",
+    "title": "CORDS and the Pacification of South Vietnam: What the Program Achieved and What It Could Not",
+    "excerpt": "The Civil Operations and Revolutionary Development Support program was the most ambitious attempt to win the Vietnam War at the village level. Between 1967 and 1972, it produced real gains — and exposed the limits of what American institution-building could accomplish.",
     "era": "vietnam-war",
-    "voice": "correspondent",
-    "difficulty": "intermediate",
+    "voice": "historian",
+    "difficulty": "advanced",
+    "category": "vietnam-war",
     "tags": [
-      "Combined Action Platoon",
-      "Marine Corps",
-      "Victor Krulak",
-      "Lewis Walt",
-      "I Corps",
+      "CORDS",
       "pacification",
-      "Popular Forces",
+      "William Colby",
+      "Phoenix Program",
+      "Hamlet Evaluation System",
+      "Chieu Hoi",
       "counterinsurgency",
-      "III Marine Amphibious Force"
+      "South Vietnam",
+      "NLF",
+      "Viet Cong Infrastructure"
     ],
     "paragraphs": [
-      "The Marine and the Vietnamese Popular Force soldiers have been living in the same village for seven months. He knows the family across the canal, and the elder who runs the hamlet committee, and the names of two Viet Cong — knows them because they are from families who have been in this place for generations, same as the people who are not Viet Cong. The infrastructure is not a mystery. It is a neighborhood. This is what the Combined Action Platoon program looks like from inside it: not a counterinsurgency theory but a daily argument about who belongs where, conducted in a language most of the Marines are still learning.",
-      "The CAP concept developed in I Corps — the five northernmost provinces of South Vietnam, the Marine Corps' area of responsibility — in 1965, during the same months that General Westmoreland was building the large-unit search-and-destroy architecture that would define American strategy for the next three years. The Marine Corps, led in the Pacific by General Victor Krulak and in III Marine Amphibious Force by General Lewis Walt, had a different read on the war. Their argument was simple and not popular at MACV: the war would be won or lost among the South Vietnamese population, not in the jungle engagements that search-and-destroy produced. An enemy who could draw from a sympathetic population for recruits, logistics, and intelligence was an enemy who could sustain losses indefinitely. The way to defeat that enemy was to deny him the population — not by sweeping through it and moving on, but by living in it.",
-      "A Combined Action Platoon consisted of approximately fifteen Marines and a Navy corpsman assigned to work alongside thirty-four South Vietnamese Popular Forces — the local militia organized at the village level. The Marines lived in the village. They ate what the villagers ate, slept where the villagers slept, and went out on patrol with the PF on the trails and rice paddy dikes that the PF had walked their whole lives. They were not guests who came and went. They were, to the degree that a foreign force with a language barrier can be, residents. The theory was that an American presence embedded in the village, combined with a Vietnamese force that already understood the local social geography, could provide security that a passing infantry company could not — because the passing infantry company left, and the Viet Cong came back.",
-      "The tactical reality of life in a CAP village was violent in a specific way. CAP units were small, isolated, and without the quick reaction force that a conventional battalion had on call. When the Viet Cong attacked a CAP village — which they did regularly, often at night, with mortar fire and ground assault — the Marines and PF were on their own until helicopter support arrived. The casualty rate in the Combined Action Program was high. The Marines who volunteered for it — it was a volunteer assignment — understood they were trading the relative safety of a large unit for the operational freedom and relationships that small unit embedded work allowed. The record of individual CAP engagements is documented in Marine Corps historical accounts that are detailed and specific about what it cost: ambushes on patrol, mortar attacks on the perimeter, sappers probing the wire at 0300.",
-      "The political conflict that ran underneath the CAP program was the argument between Krulak and Westmoreland that MACV's official positions never quite resolved. Westmoreland needed Marine battalions for the large-unit operations in the highlands and the DMZ area. Marines in individual-size embedments in delta and coastal villages were Marines not available for Operation HARVEST MOON or the battles along the DMZ. Krulak argued that search-and-destroy was producing tactical results — engagements won, body counts — and strategic stalemate, because the villages from which the NVA and VC drew their support remained contested or enemy-controlled. Westmoreland argued that destroying the NVA's main force units was the prerequisite for everything else. The argument went to the JCS and to Robert McNamara, and MACV's position prevailed. The CAP program remained small — never more than a few percent of the Marine Corps' Vietnam commitment — because the institutional preference for large-unit operations limited its resources.",
-      "In the villages where CAP units operated for extended periods, the results were measurable. Viet Cong access to the village — for taxation, recruiting, and intelligence — declined. Village-level governance strengthened. South Vietnamese Popular Forces, trained and mentored by the Marine NCOs and officers in the CAP, improved in tactical competence. The security that a CAP could provide was not absolute — Viet Cong mortar attacks on CAP villages happened throughout the program's life — but it was consistent in a way that a battalion sweep that moved on after three days was not. The CORDS program that Robert Komer built from 1967 applied similar logic at a larger scale, combining military and civilian resources in a coordinated pacification effort. By 1971-1972, the CORDS data showed significant improvements in hamlet security ratings across South Vietnam. The CAP was a precursor to and a model for that effort.",
-      "The limitation of the CAP program was scale. By 1968, the Marine Corps was running approximately 114 Combined Action Platoons covering a fraction of I Corps' villages. The delta provinces, which contained half of South Vietnam's population, were Army territory and the Army had no equivalent program. The villages that had CAP coverage were measurably more secure than those that did not. The villages that did not have CAP coverage were the majority. The program demonstrated that the approach worked. It did not demonstrate that the approach could be implemented at the scale the problem required within the time and resources available. That gap — between the proof of concept and the scale of application — is the consistent finding of retrospective analysis of the pacification effort in Vietnam.",
-      "The Marines who served in CAP units came home with a different experience of the war than the Marines who served in conventional infantry units — and a different kind of knowledge. They knew specific families in specific villages by name. They knew what the Viet Cong told the villagers about why the Americans were there, and they knew what the villagers actually believed, which was sometimes different and sometimes not. The program produced, in the people who went through it, a ground-level understanding of the political dimension of the conflict that conventional infantry service did not. Whether that understanding has shaped American counterinsurgency doctrine in subsequent decades is a question the doctrine itself does not entirely answer."
+      "By 1967, the United States had spent a decade trying to defeat the National Liberation Front through military attrition. The strategy had not failed exactly — it had simply not succeeded. William Colby, who would later direct the CIA, arrived in Saigon in 1968 to take charge of Civil Operations and Revolutionary Development Support, the interagency program known as CORDS, with a different premise: that the war's center of gravity was not the Ho Chi Minh Trail or the base areas in Cambodia but the village, the hamlet, the question of which authority a Vietnamese farmer woke up answering to. CORDS was, in structure, an attempt to answer that question by force of bureaucratic consolidation — pulling USAID, CIA, State Department, and military advisory functions under a single chain of command reporting directly to General Creighton Abrams. Whether it worked depends entirely on how you define the question.",
+      "The program inherited several precursor efforts, none of which had produced lasting results. The Strategic Hamlet Program of 1962 and 1963, devised in part by British counterinsurgency adviser Sir Robert Thompson and championed by Ngo Dinh Nhu, had relocated approximately eight million Vietnamese into fortified villages designed to separate the population from the Viet Cong. The concept was sound in theory and catastrophic in execution. Peasants were uprooted from ancestral land, resettled into poorly defended hamlets with inadequate food and no meaningful government presence, and then expected to feel protected rather than imprisoned. Thompson himself later wrote that the program had moved too fast and generated more grievances than it resolved. CORDS did not resurrect the Strategic Hamlet Program, but it worked within the political landscape that program had helped create.",
+      "The Hamlet Evaluation System, introduced in 1967, was CORDS's attempt to measure what previous programs had assessed only impressionistically. District advisers filed monthly reports on 18 indicators across 12,500 hamlets, rating each on a scale from A through E. The system generated an enormous volume of data that suggested, by late 1969, that roughly two-thirds of South Vietnam's hamlets were rated A or B — relatively secure. Critics, including Douglas Blaufarb and later historian Eric Bergerud, argued that the ratings reflected what advisers were told and what they could observe on brief daytime visits, not the reality of nighttime NLF taxation and recruitment. The data was not necessarily false; it was measuring a different thing from what it claimed to measure. A hamlet could be quiet during the day and fully penetrated by the infrastructure at night. HES captured the former and called it security.",
+      "The Phoenix Program, formally known as Phung Hoang, was CORDS's most contested component. Designed to neutralize the VCI — the Viet Cong Infrastructure, the political and administrative network that sustained the insurgency — Phoenix operated through Provincial Reconnaissance Units, intelligence sharing among South Vietnamese National Police, Military Intelligence, and CIA advisers, and a system of Provincial Interrogation Centers. Between 1968 and 1971, the program reported neutralizing approximately 81,740 VCI members: 26,369 killed, 28,978 captured, and the remainder defecting under the Chieu Hoi amnesty program. The figures were disputed at the time and remain so. A 1971 Congressional investigation found evidence of quota systems in some provinces, where PRU teams reported kills to meet monthly targets rather than neutralize actual infrastructure members. The program's defenders, including Colby in his memoir 'Lost Victory,' argued that Phoenix substantially degraded the VCI's capacity to function — a claim supported by captured Communist documents showing significant disruption in several provinces.",
+      "The Chieu Hoi program, meaning 'Open Arms,' offered amnesty and resettlement to NLF defectors. Between 1963 and 1972, the program reported approximately 159,000 ralliers, a figure the Army Center of Military History notes with appropriate caution given the difficulty of verifying individual motivations and the possibility of double-counting. What is clearer is that a subset of Chieu Hoi returnees served as Kit Carson Scouts — former NLF members attached to US and ARVN units as guides and advisers. Their intelligence value was real and documented. The program represented one of the few points at which CORDS's political logic — that the insurgency was a political problem requiring political answers — translated into something operational rather than merely administrative.",
+      "The fundamental tension within CORDS was between two timescales. Counterinsurgency at the village level required sustained presence, the slow accumulation of trust, and political reforms that the Government of Vietnam was often unwilling to make. Land reform, which virtually every analyst identified as central to rural support for the Saigon government, moved fitfully. The Land to the Tiller program of 1970, which transferred title to tenant farmers, was the most significant reform of the war — it redistributed approximately 1.2 million hectares according to GVN figures and substantially reduced tenancy in the Mekong Delta. It came a decade after the insurgency had established itself. Military pressure, meanwhile, operated on a different schedule: the war could not simply pause while CORDS built governing legitimacy at the hamlet level. The Accelerated Pacification Campaign of late 1968, launched in the wake of the Tet Offensive's military failure, pushed CORDS advisers to extend government presence into contested hamlets on a timeline driven by political considerations rather than operational readiness.",
+      "What CORDS achieved, and when, remains genuinely contested among historians. Richard Hunt's official Army history, 'Pacification: The American Struggle for Vietnam's Hearts and Minds,' published in 1995, concluded that the program produced real gains in rural security between 1969 and 1971 — gains that were not illusory but that rested on American advisory presence and firepower rather than on indigenous political consolidation. When US forces withdrew, the institutional infrastructure CORDS had built proved insufficiently rooted. South Vietnamese officials who had worked alongside American advisers often lacked the authority or inclination to continue programs that required genuine political concession. The Phoenix Program, stripped of CIA participation, became more bureaucratic and less effective. The Regional and Popular Forces, the local militia units that CORDS had tried to build into a credible village-level security force, performed unevenly under the pressure of the 1972 Easter Offensive and collapsed in key areas during the 1975 final offensive.",
+      "The legacy of CORDS has shaped American counterinsurgency doctrine in ways that are not always acknowledged. The debates over population-centric versus enemy-centric counterinsurgency that accompanied the 2006 publication of Field Manual 3-24 recycled arguments that CORDS practitioners had made in 1968. The Human Terrain System deployed in Iraq and Afghanistan echoed, however imperfectly, the CORDS model of embedding civilian expertise in military command structures. What the later programs shared with CORDS was a structural problem that no organizational chart could resolve: the question of whether a foreign power could build legitimate governance in another country on a timeline determined by its own domestic politics. CORDS worked best where the South Vietnamese government had political capital to spend. Where it did not — in areas where the NLF had administered villages for years and established genuine authority — pacification was not a program that could close the gap. The archive is clear on that point, even when the lessons drawn from it are not."
     ],
     "sources": [
       {
-        "title": "Combined Action Program",
+        "title": "Pacification: The American Struggle for Vietnam's Hearts and Minds",
+        "publisher": "US Army Center of Military History",
+        "href": "https://history.army.mil/html/bookshelves/resmat/vietnam/pacification.html",
+        "date": "1995"
+      },
+      {
+        "title": "CORDS and the Phoenix Program — CIA Historical Review",
+        "publisher": "CIA FOIA Reading Room",
+        "href": "https://www.cia.gov/readingroom/collection/vietnam-histories",
+        "date": "Declassified 2000"
+      },
+      {
+        "title": "A Bright Shining Lie: John Paul Vann and America in Vietnam",
+        "publisher": "Random House / Neil Sheehan",
+        "href": "https://www.britannica.com/topic/A-Bright-Shining-Lie",
+        "date": "1988"
+      },
+      {
+        "title": "Phoenix Program — Wikipedia",
         "publisher": "Wikipedia",
-        "href": "https://en.wikipedia.org/wiki/Combined_Action_Program",
+        "href": "https://en.wikipedia.org/wiki/Phoenix_Program",
         "date": "2024"
       },
       {
-        "title": "Victor Krulak",
+        "title": "CORDS — Civil Operations and Revolutionary Development Support",
         "publisher": "Wikipedia",
-        "href": "https://en.wikipedia.org/wiki/Victor_Krulak",
+        "href": "https://en.wikipedia.org/wiki/Civil_Operations_and_Revolutionary_Development_Support",
         "date": "2024"
-      },
-      {
-        "title": "U.S. Marine Corps History Division: Vietnam",
-        "publisher": "Marine Corps University",
-        "href": "https://www.usmcu.edu/Research/Marine-Corps-History-Division/",
-        "date": "2023"
-      },
-      {
-        "title": "Foreign Relations of the United States, 1964-1968, Volume IV, Vietnam 1966",
-        "publisher": "U.S. Department of State, Office of the Historian",
-        "href": "https://history.state.gov/historicaldocuments/frus1964-68v04",
-        "date": "1998"
       }
-    ],
-    "primarySource": {
-      "title": "Foreign Relations of the United States, 1964-1968, Volume IV: Vietnam 1966",
-      "publisher": "U.S. Department of State, Office of the Historian",
-      "href": "https://history.state.gov/historicaldocuments/frus1964-68v04",
-      "date": "1998",
-      "description": "Declassified records covering the debate between Westmoreland's search-and-destroy approach and the Marine Corps' population-centric Combined Action Platoon program, including the 1966 Honolulu Conference discussions of pacification strategy."
-    }
+    ]
   },
   "shortForm": {
-    "title": "Victor Krulak vs. William Westmoreland: The Argument That Defined American Strategy in Vietnam",
-    "slug": "krulak-westmoreland-cap-dispatch",
-    "excerpt": "In 1965, Victor Krulak told anyone who would listen that the war would be won or lost in the villages, not in the jungle. Westmoreland said the NVA's main force units were the target. MACV won the argument. Krulak was right.",
+    "slug": "john-paul-vann-cords-dispatch",
+    "title": "John Paul Vann and the Story That Haunts the Vietnam War",
+    "excerpt": "Vann saw the war clearly in 1962. He spent the rest of his life trying to fix it. His funeral was attended by the generals who had ignored him.",
     "era": "vietnam-war",
-    "voice": "correspondent",
+    "voice": "historian",
     "difficulty": "intermediate",
+    "category": "vietnam-war",
     "tags": [
-      "Victor Krulak",
-      "William Westmoreland",
-      "Combined Action Program",
+      "John Paul Vann",
+      "CORDS",
+      "ARVN",
       "counterinsurgency",
-      "pacification",
-      "MACV",
-      "Marine Corps strategy"
+      "Easter Offensive 1972",
+      "Neil Sheehan"
     ],
     "paragraphs": [
-      "The argument between Victor Krulak and William Westmoreland was not personal — they were professional officers making professional arguments about competing theories of how to win the same war. Krulak's position, articulated in a series of memoranda and briefings from 1965 through 1967, was that the war's center of gravity was the South Vietnamese population: control it, and the NVA and VC lost the support base that sustained them; fail to control it, and no number of jungle engagements would produce a strategic result. Westmoreland's position was that the NVA's main force units — the conventional military formations that could be located, fixed, and destroyed in set-piece battles — were the decisive element. Defeat them, and the guerrilla infrastructure would wither. Both men cited evidence for their positions. Both had evidence.",
-      "The institutional argument was resolved in Westmoreland's favor by the force structure available and the timelines expected. Large-unit search-and-destroy operations were what the Army and Marine Corps knew how to run. The CAP program required Marines who could operate in small isolated teams, learn enough Vietnamese to function in a village, and sustain the mission for months without the support infrastructure a conventional unit relied on. Training and selecting those Marines took time, and the Marines trained for it were unavailable for the operational priorities MACV was running simultaneously. Krulak's argument was strategically correct; Westmoreland's was institutionally executable. The institution chose what it could execute.",
-      "The retrospective assessments of both men's arguments have largely vindicated Krulak's analysis. The pacification programs that produced the most durable results — CORDS, the CAP, the Phoenix Program's village-level intelligence work — were built on the logic Krulak had been advancing since 1965. They matured in the early 1970s, when American political will to sustain the commitment was exhausting. The insight arrived at the right conclusion too late. The standard military history account frames the CAP-versus-attrition debate as a path not taken, with the implication that taking it would have changed the outcome. The more honest assessment is that taking it fully would have required a different American Army from the one that existed — differently trained, differently organized, differently motivated — and there was no mechanism for that transformation inside the timeline of the actual war."
+      "John Paul Vann arrived in Vietnam in 1962 as a lieutenant colonel advising the Army of the Republic of Vietnam in the Mekong Delta. He left in 1963, having become the most inconvenient American in the country — a man who told journalists what he had reported to his superiors and been ignored: that the ARVN was avoiding contact, that the body counts were manipulated, that the war as it was being fought could not be won. Neil Sheehan's biography, 'A Bright Shining Lie,' published in 1988, built a portrait of Vann that became the dominant American narrative of Vietnam — idealism calcified into obsession, insight shading into arrogance, a man who understood the war's failures better than anyone and could not stop returning to them.",
+      "Vann came back to Vietnam in 1965 as a civilian with USAID, eventually rising to lead CORDS operations in the III Corps region around Saigon. In that role he had more authority than most generals — direct access to Abrams, control over a multi-agency advisory apparatus, and the kind of institutional independence that the military chain of command could not provide. He was killed on June 9, 1972, when the helicopter he was flying in crashed near Kontum during the Easter Offensive. He was the senior American adviser in the region during the battle for Kontum City, a battle that the ARVN, with American air support and Vann's coordination, won. He had been in-country continuously, off and on, for a decade. He was given a funeral at Arlington National Cemetery attended by generals and politicians who had dismissed his assessments a decade earlier.",
+      "What makes Vann worth returning to is not the tragedy of the biography but the precision of his diagnosis. His 1965 paper, circulated internally and later partially declassified, argued that the war required political reform at the village level, that ARVN performance would not improve without officer accountability, and that American firepower was destroying the political base the war was supposed to defend. All of this proved accurate. The CORDS program he eventually helped run was the closest institutional embodiment of those arguments. It was not enough — not because the arguments were wrong, but because the political will to act on them was never consistently present in Saigon or Washington. Vann knew this. He stayed anyway."
     ],
     "sources": [
       {
-        "title": "Victor Krulak",
-        "publisher": "Wikipedia",
-        "href": "https://en.wikipedia.org/wiki/Victor_Krulak",
-        "date": "2024"
+        "title": "A Bright Shining Lie: John Paul Vann and America in Vietnam",
+        "publisher": "Random House",
+        "href": "https://www.britannica.com/topic/A-Bright-Shining-Lie",
+        "date": "1988"
       },
       {
-        "title": "Combined Action Program",
+        "title": "John Paul Vann — Wikipedia",
         "publisher": "Wikipedia",
-        "href": "https://en.wikipedia.org/wiki/Combined_Action_Program",
+        "href": "https://en.wikipedia.org/wiki/John_Paul_Vann",
         "date": "2024"
-      },
-      {
-        "title": "Foreign Relations of the United States, 1964-1968, Volume IV",
-        "publisher": "U.S. Department of State, Office of the Historian",
-        "href": "https://history.state.gov/historicaldocuments/frus1964-68v04",
-        "date": "1998"
       }
-    ],
-    "primarySource": {
-      "title": "Foreign Relations of the United States, 1964-1968, Volume IV: Vietnam 1966",
-      "publisher": "U.S. Department of State, Office of the Historian",
-      "href": "https://history.state.gov/historicaldocuments/frus1964-68v04",
-      "date": "1998",
-      "description": "Declassified records covering the Krulak-Westmoreland strategic debate and the institutional decisions that determined American pacification policy in 1965-1966."
-    }
+    ]
   },
   "onThisDay": {
-    "month": 5,
-    "day": 4,
-    "year": 1846,
-    "headline": "Mexican Artillery Besieges Fort Texas on the Rio Grande",
-    "body": "On May 4, 1846, Mexican artillery continued its bombardment of Fort Texas on the north bank of the Rio Grande, while General Zachary Taylor's main American force marched from Point Isabel to relieve the garrison. Taylor's army would engage Mexican forces at the Battle of Palo Alto on May 8 and at Resaca de la Palma on May 9, in the opening conventional engagements of the Mexican-American War.",
-    "era": "early-modern",
-    "linkedArticleSlug": null
+    "headline": "Battle of Lützen: Napoleon defeats the Sixth Coalition",
+    "date": "May 4, 1813",
+    "era": "napoleonic-wars",
+    "body": "On May 4, 1813, Napoleon Bonaparte defeated a combined Russian and Prussian army at the Battle of Lützen, near Leipzig, in the opening engagement of the spring campaign. The victory checked the Coalition's advance into Germany following France's catastrophic losses in Russia the previous year, but Napoleon's casualties — approximately 20,000 men — revealed the declining quality of his conscript army. The battle is remembered as one of Napoleon's last clear-cut offensive victories before the disasters of autumn 1813."
   }
 }

@@ -1,7 +1,7 @@
 {
-  "voiceIndex": 1,
-  "lastRun": "2026-05-05T11:32:01.955Z",
-  "articlesWritten": 149,
+  "voiceIndex": 2,
+  "lastRun": "2026-05-05T11:37:32.799Z",
+  "articlesWritten": 151,
   "usedSlugs": [
     "battle-of-cannae",
     "battle-of-austerlitz",
@@ -103,7 +103,9 @@
     "brown-water-navy-mekong-delta",
     "viet-cong-river-ambush-dispatch",
     "marine-cap-program-vietnam",
-    "krulak-westmoreland-cap-dispatch"
+    "krulak-westmoreland-cap-dispatch",
+    "cords-pacification-vietnam",
+    "john-paul-vann-cords-dispatch"
   ],
   "_voices": [
     "correspondent",
