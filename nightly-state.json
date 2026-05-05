@@ -1,7 +1,7 @@
 {
-  "voiceIndex": 1,
-  "lastRun": "2026-05-05T03:21:01.798Z",
-  "articlesWritten": 109,
+  "voiceIndex": 2,
+  "lastRun": "2026-05-05T10:44:59.357Z",
+  "articlesWritten": 111,
   "usedSlugs": [
     "battle-of-cannae",
     "battle-of-austerlitz",
@@ -65,7 +65,9 @@
     "battle-of-dak-to-1967",
     "operation-starlite-1965-dispatch",
     "siege-of-badajoz-1812",
-    "battle-of-salamanca-1812-dispatch"
+    "battle-of-salamanca-1812-dispatch",
+    "battle-of-ia-drang-1965",
+    "lz-albany-ia-drang-dispatch"
   ],
   "_voices": [
     "correspondent",
