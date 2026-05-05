@@ -1,7 +1,7 @@
 {
-  "voiceIndex": 3,
-  "lastRun": "2026-05-05T11:25:22.780Z",
-  "articlesWritten": 143,
+  "voiceIndex": 4,
+  "lastRun": "2026-05-05T11:27:44.400Z",
+  "articlesWritten": 145,
   "usedSlugs": [
     "battle-of-cannae",
     "battle-of-austerlitz",
@@ -97,7 +97,9 @@
     "operation-linebacker-ii-1972",
     "sa2-b52-linebacker-dispatch",
     "mining-haiphong-harbor-1972",
-    "moscow-summit-haiphong-mining-dispatch"
+    "moscow-summit-haiphong-mining-dispatch",
+    "attrition-strategy-vietnam",
+    "body-count-vietnam-dispatch"
   ],
   "_voices": [
     "correspondent",

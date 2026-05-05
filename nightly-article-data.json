@@ -1,128 +1,127 @@
 {
-  "imageFile": "Haiphong_harbor_mining_1972.jpg",
-  "imageAlt": "Aerial view of Haiphong Harbor, North Vietnam, during Operation Pocket Money, May 1972",
-  "imageCaption": "Haiphong Harbor, North Vietnam. Operation Pocket Money, launched May 9, 1972, placed 36 mines in the harbor entrance, closing it to Soviet and international shipping for the duration of the mining campaign.",
-  "imageSrc": "https://commons.wikimedia.org/wiki/File:Haiphong_harbor_mining_1972.jpg",
+  "imageFile": "Vietnam_search_and_destroy_1966.jpg",
+  "imageAlt": "US Army soldiers conduct a search and destroy operation in Vietnam, 1966, as part of MACV's attrition strategy",
+  "imageCaption": "US Army soldiers on patrol in Vietnam, 1966. General Westmoreland's attrition strategy relied on search-and-destroy operations and body count as the primary measure of progress.",
+  "imageSrc": "https://commons.wikimedia.org/wiki/File:Vietnam_search_and_destroy_1966.jpg",
   "longForm": {
-    "title": "Operation Pocket Money: The Mining of Haiphong Harbor and What the Documents Show",
-    "slug": "mining-haiphong-harbor-1972",
-    "excerpt": "On May 8, 1972, Nixon announced the mining of Haiphong Harbor — a decision years in the making, timed to the Moscow Summit, and designed around a diplomatic calculation that proved correct. The Soviet Union protested. The summit proceeded on schedule.",
+    "title": "Search and Destroy: The Attrition Strategy in Vietnam and Why It Failed",
+    "slug": "attrition-strategy-vietnam",
+    "excerpt": "General Westmoreland's attrition strategy in Vietnam was built on the premise that killing enemy combatants faster than they could be replaced would eventually produce a crossover point. The crossover point was never reached. The strategy failed for two reasons that were knowable in advance.",
     "era": "vietnam-war",
-    "voice": "archivist",
+    "voice": "analyst",
     "difficulty": "advanced",
     "tags": [
-      "Operation Pocket Money",
-      "Haiphong Harbor",
-      "Nixon",
-      "Kissinger",
-      "Linebacker I",
-      "Moscow Summit",
-      "SALT I",
-      "A-6 Intruder",
-      "Easter Offensive",
-      "mining"
+      "attrition warfare",
+      "William Westmoreland",
+      "search and destroy",
+      "body count",
+      "crossover point",
+      "Victor Krulak",
+      "Robert Thompson",
+      "Tet Offensive",
+      "MACV",
+      "counterinsurgency"
     ],
     "paragraphs": [
-      "The National Security Council meeting of May 8, 1972 produced a presidential decision that had been under consideration for years. Kissinger's record of the meeting notes the participants — Nixon, Kissinger, Haig, Admiral Moorer, and the secretaries of State and Defense — and the conclusion: the United States would mine Haiphong Harbor and the other principal ports of North Vietnam, and would simultaneously resume the strategic bombing campaign that had been suspended since 1968. What the meeting record does not show, but what the surrounding documentary context makes clear, is that the decision had already been shaped by a diplomatic calculation: the Moscow Summit, at which Nixon and Brezhnev were to sign the SALT I treaty, was scheduled for May 22. Nixon had concluded — and the subsequent record confirms the conclusion was correct — that the Soviet Union would not cancel a summit it had invested eighteen months of diplomacy in over the mining of a North Vietnamese port.",
-      "The classified background to that calculation is documented in the FRUS record for 1969-1976. Kissinger had conducted back-channel communications with Soviet Ambassador Anatoly Dobrynin throughout the spring of 1972, gauging Soviet flexibility on Vietnam in the context of strategic arms negotiations. The Soviet position, as the cable traffic records it, was that Moscow could not openly condone American military escalation against a Soviet ally, but that the relationship's broader interests — SALT I, grain deals, trade normalization — were a separate matter from the North Vietnamese supply question. The Soviets had been providing North Vietnam with the SA-2 missiles and tanks that were sustaining the Easter Offensive, which had begun on March 30 and produced significant ARVN losses. The documentary record does not indicate that Kissinger told Dobrynin the mining was coming before May 8. It indicates that Kissinger had concluded the Soviets would swallow it.",
-      "Nixon delivered a televised address to the nation on May 8, 1972, announcing the mining of Haiphong Harbor and the other principal North Vietnamese ports. The mines being laid, he explained, were equipped with a seventy-two-hour delay fuze — sufficient time for neutral shipping already in the harbor to depart safely. The delay fuze was a legal and diplomatic gesture: it demonstrated that the United States was not attempting to sink Soviet ships, only to deny North Vietnam the port. Soviet vessels currently in Haiphong Harbor at the time of the announcement were, however, trapped for the duration; they could not leave without either waiting for the mines to be swept — which did not happen — or requesting mine-free corridors, which would have amounted to acknowledging the blockade's effectiveness. The Soviet response was a formal diplomatic protest, delivered on May 9. The Moscow Summit proceeded on schedule on May 22.",
-      "The mining of Haiphong was conducted by aircraft from the carrier USS Coral Sea, with A-6 Intruder and A-7 Corsair II aircraft laying the initial mines on the night of May 9. Thirty-six mines were placed in the harbor entrance. Operation POCKET MONEY, as it was designated, expanded over the following weeks to include the ports of Cam Pha, Hon Gai, Thanh Hoa, Vinh, Dong Hoi, and Quang Khe. The mines used were Mark 52 magnetic/acoustic combination mines, designed to be triggered by the combination of a ship's magnetic field and the acoustic signature of its propellers — making them resistant to simple magnetic sweeping. By the end of the mining campaign, approximately 11,000 mines had been placed in North Vietnamese waters. The shipping lanes that had previously been carrying an estimated 85 percent of North Vietnam's seaborne supply were closed for the duration of the operation.",
-      "The effect on North Vietnamese logistics was significant but not decisive, for the same reason that the air campaigns had not been decisive: the supply system adapted. The Ho Chi Minh Trail and the rail lines from China absorbed more of the burden that had previously moved by sea. Chinese aid to North Vietnam increased in the months following the mining. Soviet ships offloaded cargo at Chinese ports and sent it overland. The operational disruption was real — the Easter Offensive, which had made significant gains in April and May 1972, was halted in part by the combined weight of Linebacker I bombing and the supply disruption from the mining. But the disruption did not break the NVA's operational capacity; it degraded it. The distinction between a degraded and a broken adversary is the difference between an opponent who cannot achieve his current objectives and one who cannot sustain the fight at all. The mining achieved the former.",
-      "The diplomatic record of May-July 1972 shows that the mining produced exactly the Soviet response Nixon had predicted: protest without escalation. Brezhnev and Nixon signed the SALT I Interim Agreement and the Anti-Ballistic Missile Treaty in Moscow on May 26. Kissinger's back-channel with Dobrynin continued through the summer. The North Vietnamese, whose supply lines had been disrupted and whose Easter Offensive had stalled, resumed serious negotiations in the fall of 1972. The sequence — mining in May, Linebacker I bombing through October, Paris negotiations in the fall, Linebacker II bombing in December, Paris Accords in January 1973 — has led some analysts to credit the mining with having initiated the chain of events that ended the war. The relationship is real. It is also consistent with the interpretation that the war ended because both sides had exhausted the available military options, and the mining was one of several coercive instruments applied in the final year.",
-      "The documents that are missing from the public record are instructive. The CIA's assessment of the mining's probable effect on North Vietnamese logistics, prepared before the operation, has not been fully declassified. The assessment's conclusions — to the extent they can be reconstructed from references in other documents — appear to have been more cautious about the mining's strategic effect than the public statements suggested. Kissinger's private assessments to Nixon of what the mining would and would not achieve are partially available in the FRUS record; they suggest a more modest expectation than the public address conveyed. The gap between the private assessment and the public claim is a consistent feature of the Nixon administration's handling of Vietnam policy, documented across multiple episodes from 1969 through 1972. Haiphong was not an exception.",
-      "The mines placed in Haiphong Harbor in May 1972 were swept by US Navy minesweepers following the Paris Peace Accords, in an operation that lasted from February through July 1973. Operation END SWEEP involved twelve US Navy minesweeping helicopters and surface craft working the harbor entrance over a period of five months. North Vietnamese cooperation was required and was provided, within the limits of what the after-action record describes as a cautious and adversarial working relationship. The mines that had been the most operationally effective were also the most difficult to clear — the combination magnetic/acoustic fuzing made systematic sweeping slow. The record of END SWEEP is one of the few operational chapters of the Vietnam War in which the opposing forces worked in direct proximity without shooting at each other. It has received proportionately little attention."
+      "The attrition strategy that General William Westmoreland applied to Vietnam between 1965 and 1968 was built on a mathematical premise: if American forces could kill enemy combatants faster than North Vietnam could replace them, a crossover point would eventually be reached at which enemy strength was declining rather than growing. The premise was not irrational. It was wrong in two respects that the command structure was slow to acknowledge. The first was empirical: the crossover point was never reached. NVA and Viet Cong forces controlled the tempo of engagements sufficiently to keep their losses below the replacement threshold, and North Vietnam's willingness to absorb casualties, combined with its mobilization capacity, consistently exceeded MACV's estimates. The second was strategic: even if the crossover point had been reached, it would not have ended the war — because the war was not primarily about military attrition. It was about political will, and North Vietnam had more of it than the United States was prepared to match.",
+      "The institutional logic that produced the attrition strategy deserves examination rather than simply condemnation. Westmoreland inherited a command structure and a force optimized for conventional war in Europe, with secondary capability for counterinsurgency. The Army's training, doctrine, organization, and logistical systems had all been designed around the assumption that American forces would fight the Soviet ground forces in the Fulda Gap. Applying that force to an insurgency in Southeast Asia required either adapting the force or adapting the mission to fit the force. MACV chose to define the mission in terms the available force could execute: finding and destroying enemy main force units in set-piece engagements where American firepower superiority would be decisive. The counterinsurgency alternative — protecting the population, building South Vietnamese governance, denying the insurgency its political base — required time, patience, and a different institutional skill set. The Army's answer was to do what it knew how to do and hope that enough of it would eventually be sufficient.",
+      "The body count became the primary metric of progress because it was the one output of the attrition strategy that could be quantified and reported. The problem with body count as a metric was well understood within MACV before it became institutionalized as the primary measure of effectiveness. An enemy combatant killed in combat and an unarmed civilian killed under ambiguous circumstances both added to the count; the incentives that body count reporting created ran in the direction of maximum numbers rather than accurate numbers. Field commanders who produced high counts received positive evaluations; those who produced lower counts faced questions about their aggressiveness. The corruption of the metric did not require dishonesty at every level of the chain — it required only that the incentives consistently rewarded overstatement and punished understatement, which they did. The count that reached the Pentagon and the White House was not a reliable measure of enemy losses. It was a measure of the Army's institutional need to demonstrate progress in the metric that headquarters had chosen.",
+      "The core tactical problem with attrition strategy in Vietnam was that the enemy retained the initiative in deciding when to absorb casualties. Subsequent analysis of the war's engagements established that approximately 80 to 90 percent of firefights were initiated by NVA or Viet Cong forces — meaning the enemy chose when to fight and when to disengage. Against an opponent who controls engagement initiation, attrition works only if the attacker can force contact faster than the defender can break it. American airmobility made this possible in some circumstances but not consistently. The NVA response to American search-and-destroy operations was typically to withdraw, accept the firepower, and reconstitute in base areas across the Cambodian and Laotian borders where American forces could not follow without triggering a broader political crisis. The adversary had a sanctuary. The strategy had no answer for it.",
+      "The political will differential is the variable the attrition strategy's designers consistently underweighted. North Vietnam's willingness to absorb casualties was substantially higher than any estimate MACV's planning documents reflect. The historian Stanley Karnow estimated North Vietnamese losses through the war at approximately one million military dead — a figure that, applied to the American context proportionally, would correspond to approximately ten million American deaths. Ho Chi Minh had stated explicitly, and demonstrated through action, that North Vietnam was prepared to sustain those losses indefinitely if necessary. The American political system was not prepared to match that tolerance. Public opinion in the United States was not fixed; it tracked the perceived progress of the war, and as the progress was measured by body count and the body count was unreliable, American public opinion was tracking a fiction. The Tet Offensive of January 1968 did not expose a military defeat — Tet was, in tactical terms, an NVA and Viet Cong disaster. It exposed the gap between the official optimism that MACV had been communicating and the actual state of the war.",
+      "The alternative to attrition was articulated at the time, and the articulation was largely ignored. Marine Corps General Victor Krulak argued from 1965 that the war would be won or lost among the South Vietnamese population, not in the jungle engagements that search-and-destroy produced. Sir Robert Thompson, the British counterinsurgency expert who had directed the successful Malayan Emergency campaign, offered similar analysis to the Johnson administration and was similarly disregarded. The Marines' Combined Action Platoon program — small units embedded in Vietnamese villages to provide security and build local legitimacy — was a practical implementation of the population-centric alternative. It operated on a relatively small scale in I Corps and produced results that the Army's attrition operations in the highlands did not. The CORDS program, which Westmoreland's successor Creighton Abrams expanded after 1968, applied the Thompson-Krulak analysis at scale. By most assessments, it was achieving real results in 1972 and 1973 — after the attrition years had consumed the political will available to sustain American involvement.",
+      "Tet 1968 is properly understood not as the decisive battle of the Vietnam War but as the moment when the credibility claim underlying the attrition strategy collapsed. MACV had been reporting, through body counts and kill ratios and infiltration estimates, that the war was going well — that the crossover point was approaching, that enemy strength was degrading, that the end of the long fight was visible if not imminent. The coordinated NVA and Viet Cong attacks on 36 provincial capitals and 64 district towns on January 30-31, 1968 demonstrated that an enemy MACV had been describing as degraded and demoralized could mount a simultaneous nationwide offensive. The attacks were repelled. The Viet Cong infrastructure was, in many areas, severely damaged. Militarily, Tet was a costly NVA-VC failure. Politically, it was the end of Westmoreland's credibility and, within months, the end of Johnson's presidency. The metric had been wrong for years. Tet was the moment the error became publicly undeniable.",
+      "The analytical lesson that attrition strategy in Vietnam offers is not that attrition never works — it has worked, in different contexts, against adversaries for whom casualties translated into declining political will and declining military capacity. It is that attrition works only against adversaries who share the attacker's sensitivity to losses, and who cannot route around the attrition by controlling engagement tempo or drawing on sanctuary-based replacement pools. Against North Vietnam, the conditions for successful attrition were not met, and they were not going to be met within the political constraints that American strategy operated under. The commanders who identified this early — Krulak, Thompson, and eventually Abrams — were correct. The institutional preference for the strategy that matched the available force over the strategy that matched the actual problem was the failure that the body count numbers, however inflated, were never going to conceal."
     ],
     "sources": [
       {
-        "title": "Operation Pocket Money",
+        "title": "Attrition warfare in Vietnam",
         "publisher": "Wikipedia",
-        "href": "https://en.wikipedia.org/wiki/Operation_Pocket_Money",
+        "href": "https://en.wikipedia.org/wiki/Attrition_warfare",
         "date": "2024"
       },
       {
-        "title": "Foreign Relations of the United States, 1969-1976, Volume VIII, Vietnam, January-October 1972",
+        "title": "William C. Westmoreland",
+        "publisher": "Encyclopaedia Britannica",
+        "href": "https://www.britannica.com/biography/William-C-Westmoreland",
+        "date": "2024"
+      },
+      {
+        "title": "Foreign Relations of the United States, 1964-1968, Volume V, Vietnam 1967",
         "publisher": "U.S. Department of State, Office of the Historian",
-        "href": "https://history.state.gov/historicaldocuments/frus1969-76v08",
-        "date": "2010"
+        "href": "https://history.state.gov/historicaldocuments/frus1964-68v05",
+        "date": "2002"
       },
       {
-        "title": "Operation Linebacker",
+        "title": "William Westmoreland",
         "publisher": "Wikipedia",
-        "href": "https://en.wikipedia.org/wiki/Operation_Linebacker",
+        "href": "https://en.wikipedia.org/wiki/William_Westmoreland",
         "date": "2024"
-      },
-      {
-        "title": "Naval History and Heritage Command: Vietnam",
-        "publisher": "U.S. Naval History and Heritage Command",
-        "href": "https://www.history.navy.mil/browse-by-topic/wars-conflicts-and-operations/vietnam-war.html",
-        "date": "2022"
       }
     ],
     "primarySource": {
-      "title": "Foreign Relations of the United States, 1969-1976, Volume VIII: Vietnam, January-October 1972",
+      "title": "Foreign Relations of the United States, 1964-1968, Volume V: Vietnam 1967",
       "publisher": "U.S. Department of State, Office of the Historian",
-      "href": "https://history.state.gov/historicaldocuments/frus1969-76v08",
-      "date": "2010",
-      "description": "Declassified NSC and State Department records covering the decision to mine Haiphong Harbor, including Kissinger's backchannel communications with Soviet Ambassador Dobrynin and Nixon's private assessments of the mining's expected diplomatic and military effects."
+      "href": "https://history.state.gov/historicaldocuments/frus1964-68v05",
+      "date": "2002",
+      "description": "Declassified State Department, NSC, and MACV records covering the peak years of the attrition strategy, including internal assessments of body count methodology and the debate between proponents of attrition and advocates of population-centric counterinsurgency."
     }
   },
   "shortForm": {
-    "title": "The Moscow Summit and the Mining: Nixon's Diplomatic Gamble, May 1972",
-    "slug": "moscow-summit-haiphong-mining-dispatch",
-    "excerpt": "Nixon mined Haiphong Harbor two weeks before a summit with Brezhnev that had taken eighteen months to arrange. He calculated the Soviets would not cancel it. The FRUS record shows how that calculation was made — and what Kissinger's backchannel with Dobrynin actually said.",
+    "title": "The Body Count: What MACV's Primary Metric Actually Measured",
+    "slug": "body-count-vietnam-dispatch",
+    "excerpt": "The body count became MACV's primary measure of progress because it was quantifiable. The problem was not that the numbers were inflated — though they were. The problem was that an accurate body count would still have measured the wrong thing.",
     "era": "vietnam-war",
-    "voice": "archivist",
-    "difficulty": "advanced",
+    "voice": "analyst",
+    "difficulty": "intermediate",
     "tags": [
-      "Moscow Summit 1972",
-      "Operation Pocket Money",
-      "SALT I",
-      "Kissinger",
-      "Dobrynin",
-      "Nixon",
-      "Soviet Union",
-      "backchannel diplomacy"
+      "body count",
+      "MACV",
+      "Westmoreland",
+      "attrition",
+      "Five O'Clock Follies",
+      "metrics",
+      "Vietnam strategy"
     ],
     "paragraphs": [
-      "The Moscow Summit of May 22-30, 1972 had been under negotiation since 1971. It was the first visit by an American president to the Soviet Union, and its principal deliverable was SALT I — the Strategic Arms Limitation Treaty that placed ceilings on intercontinental ballistic missiles and submarine-launched ballistic missiles. The Soviets had invested significant political capital in reaching SALT I, partly from genuine arms control interest and partly because the treaty framework legitimized their strategic parity with the United States. They were not going to cancel the summit over Haiphong. Nixon understood this and Kissinger had confirmed it through back-channel communications with Dobrynin. The timing of Operation POCKET MONEY — announced May 8, two weeks before the summit — was not coincidental. It was calculated.",
-      "The calculation was documented in Kissinger's backchannel communications. The relevant message traffic in the FRUS record for this period shows Kissinger probing Soviet flexibility on Vietnam through Dobrynin while simultaneously managing the SALT I endgame. The Soviet position, as Dobrynin communicated it, distinguished between Soviet obligations to North Vietnam as an ally — which required a public protest of American military actions — and Soviet interests in the broader relationship with the United States, which the summit embodied. Dobrynin did not tell Kissinger the Soviets would accept the mining. Kissinger concluded they would, based on the gap between the Soviets' public statements about Vietnam and their private communications about the summit's priority. He was right. The protest was filed. The summit opened on May 22.",
-      "What the Moscow Summit calculation also demonstrates is that Nixon and Kissinger understood the mining's effectiveness was partly coercive and partly diplomatic — it was designed to demonstrate to both Hanoi and the Soviets that the United States retained options it was willing to use, and that Soviet surface-to-air missiles and tanks supplied to North Vietnam would not deter those options. The SALT I summit, by proceeding on schedule, confirmed that assessment. Hanoi lost an argument it had been making since 1965: that Soviet and Chinese support provided a deterrent umbrella that prevented American escalation. The mining of Haiphong, with Soviet ships trapped in the harbor and the Moscow Summit proceeding anyway, was the practical refutation of that argument."
+      "The body count was a metric that MACV created because it needed a metric. Search-and-destroy operations produced one measurable output — enemy dead — and headquarters needed something to report to Washington and to the press briefings that became known as the Five O'Clock Follies. The problems with the metric were understood within the Army from the beginning. The most fundamental was definitional: the category 'enemy killed in action' had no reliable method of verification in the field. A body found after an engagement might be an NVA regular, a Viet Cong guerrilla, a civilian caught in the fire, or a combatant from either side. Counting required a determination that field conditions under fire did not consistently allow. The incentive structure resolved this uncertainty consistently in one direction.",
+      "The Army had institutionalized a reporting system in which body count numbers moved up the chain of command, with each level having an interest in the numbers appearing adequate. A platoon leader who reported low counts might face questions about his unit's effectiveness. A company commander aggregated platoon reports with the same institutional pressure. By the time numbers reached MACV, they reflected not what had been verifiably killed in action but what the chain of command had agreed was a defensible count given the pressure to demonstrate progress. The gap between reported figures and actual enemy losses was noted in internal analyses and dismissed as an unavoidable imprecision in a messy war. It was not imprecision. It was systematic inflation of a metric that had been chosen precisely because it could be inflated.",
+      "The deeper problem was that body count, even if perfectly accurate, measured the wrong thing. The relevant question was not how many NVA and Viet Cong soldiers had been killed but whether killing them at the achieved rate was degrading enemy capacity faster than North Vietnam could replace it. The replacement question required knowing the enemy's order of battle, recruiting capacity, training pipeline, and willingness to continue sustaining losses — all of which MACV consistently underestimated. A metric that measures tactical output without measuring strategic effect is not a measure of progress. It is a measure of activity. The attrition strategy produced enormous activity. It did not produce the crossover point, because the crossover point depended on assumptions about enemy behavior that the enemy consistently failed to validate."
     ],
     "sources": [
       {
-        "title": "1972 Moscow summit",
+        "title": "Body count (military term)",
         "publisher": "Wikipedia",
-        "href": "https://en.wikipedia.org/wiki/1972_Moscow_summit",
+        "href": "https://en.wikipedia.org/wiki/Body_count_(military_term)",
         "date": "2024"
       },
       {
-        "title": "Operation Pocket Money",
+        "title": "William Westmoreland",
         "publisher": "Wikipedia",
-        "href": "https://en.wikipedia.org/wiki/Operation_Pocket_Money",
+        "href": "https://en.wikipedia.org/wiki/William_Westmoreland",
         "date": "2024"
       },
       {
-        "title": "Foreign Relations of the United States, 1969-1976, Volume VIII",
+        "title": "Foreign Relations of the United States, 1964-1968, Volume V",
         "publisher": "U.S. Department of State, Office of the Historian",
-        "href": "https://history.state.gov/historicaldocuments/frus1969-76v08",
-        "date": "2010"
+        "href": "https://history.state.gov/historicaldocuments/frus1964-68v05",
+        "date": "2002"
       }
     ],
     "primarySource": {
-      "title": "Foreign Relations of the United States, 1969-1976, Volume VIII: Vietnam, January-October 1972",
+      "title": "Foreign Relations of the United States, 1964-1968, Volume V: Vietnam 1967",
       "publisher": "U.S. Department of State, Office of the Historian",
-      "href": "https://history.state.gov/historicaldocuments/frus1969-76v08",
-      "date": "2010",
-      "description": "Declassified records covering Kissinger's backchannel communications with Soviet Ambassador Dobrynin during the spring of 1972, documenting the diplomatic groundwork laid before the Haiphong mining decision."
+      "href": "https://history.state.gov/historicaldocuments/frus1964-68v05",
+      "date": "2002",
+      "description": "Declassified records including internal MACV and Pentagon assessments of body count methodology and the reliability of progress metrics during the attrition strategy years."
     }
   },
   "onThisDay": {
     "month": 5,
     "day": 4,
-    "year": 1904,
-    "headline": "United States Takes Control of Panama Canal Zone Construction",
-    "body": "On May 4, 1904, the United States formally assumed control of Panama Canal Zone construction from the French Compagnie Nouvelle du Canal de Panama. The US Army Corps of Engineers oversaw the project, which would produce a strategic waterway allowing the Navy to shift forces between the Atlantic and Pacific without the 13,000-mile passage around Cape Horn — a mobility advantage that shaped American naval strategy through the twentieth century.",
-    "era": "modern-conflicts",
+    "year": 1919,
+    "headline": "May Fourth Movement Demonstrations Begin in Beijing",
+    "body": "On May 4, 1919, thousands of Chinese students demonstrated in Beijing against the Treaty of Versailles, which awarded Germany's Chinese concessions to Japan rather than returning them to China. The May Fourth Movement radicalized a generation of Chinese nationalists and intellectuals who would go on to found the Chinese Communist Party and shape the military forces that fought the subsequent decades of civil war.",
+    "era": "world-war-i",
     "linkedArticleSlug": null
   }
 }
