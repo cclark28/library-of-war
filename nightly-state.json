@@ -1,7 +1,7 @@
 {
-  "voiceIndex": 4,
-  "lastRun": "2026-05-05T03:18:00.100Z",
-  "articlesWritten": 105,
+  "voiceIndex": 0,
+  "lastRun": "2026-05-05T03:19:32.951Z",
+  "articlesWritten": 107,
   "usedSlugs": [
     "battle-of-cannae",
     "battle-of-austerlitz",
@@ -61,7 +61,9 @@
     "operation-entebbe-1976",
     "venona-project-cold-war-dispatch",
     "battle-of-lepanto-1571",
-    "battle-of-rocroi-1643-dispatch"
+    "battle-of-rocroi-1643-dispatch",
+    "battle-of-dak-to-1967",
+    "operation-starlite-1965-dispatch"
   ],
   "_voices": [
     "correspondent",
