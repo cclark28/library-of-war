@@ -1,7 +1,7 @@
 {
-  "voiceIndex": 3,
-  "lastRun": "2026-05-05T11:10:01.607Z",
-  "articlesWritten": 133,
+  "voiceIndex": 4,
+  "lastRun": "2026-05-05T11:13:54.256Z",
+  "articlesWritten": 135,
   "usedSlugs": [
     "battle-of-cannae",
     "battle-of-austerlitz",
@@ -87,7 +87,9 @@
     "ho-chi-minh-trail",
     "operation-commando-hunt-dispatch",
     "battle-of-ap-bac-1963",
-    "helicopter-tactics-vietnam-dispatch"
+    "helicopter-tactics-vietnam-dispatch",
+    "operation-lam-son-719-1971",
+    "cooper-church-amendment-vietnam-dispatch"
   ],
   "_voices": [
     "correspondent",
