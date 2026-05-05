@@ -1,7 +1,7 @@
 {
-  "voiceIndex": 2,
-  "lastRun": "2026-05-05T10:44:59.357Z",
-  "articlesWritten": 111,
+  "voiceIndex": 3,
+  "lastRun": "2026-05-05T10:46:31.292Z",
+  "articlesWritten": 113,
   "usedSlugs": [
     "battle-of-cannae",
     "battle-of-austerlitz",
@@ -67,7 +67,9 @@
     "siege-of-badajoz-1812",
     "battle-of-salamanca-1812-dispatch",
     "battle-of-ia-drang-1965",
-    "lz-albany-ia-drang-dispatch"
+    "lz-albany-ia-drang-dispatch",
+    "gulf-of-tonkin-incident-1964",
+    "uss-maddox-tonkin-dispatch"
   ],
   "_voices": [
     "correspondent",
