@@ -1,7 +1,7 @@
 {
-  "voiceIndex": 4,
-  "lastRun": "2026-05-05T10:48:26.301Z",
-  "articlesWritten": 115,
+  "voiceIndex": 3,
+  "lastRun": "2026-05-05T11:10:01.607Z",
+  "articlesWritten": 133,
   "usedSlugs": [
     "battle-of-cannae",
     "battle-of-austerlitz",
@@ -71,7 +71,23 @@
     "gulf-of-tonkin-incident-1964",
     "uss-maddox-tonkin-dispatch",
     "operation-rolling-thunder-1965",
-    "paul-doumer-bridge-rolling-thunder-dispatch"
+    "paul-doumer-bridge-rolling-thunder-dispatch",
+    "siege-of-khe-sanh-1968",
+    "operation-niagara-khe-sanh-dispatch",
+    "my-lai-massacre-1968",
+    "hugh-thompson-my-lai-dispatch",
+    "operation-phoenix-cia-vietnam",
+    "william-colby-phoenix-dispatch",
+    "macv-sog-cross-border-operations",
+    "project-delta-sog-dispatch",
+    "arc-light-b52-vietnam",
+    "linebacker-i-1972-dispatch",
+    "battle-of-an-loc-1972",
+    "arvn-easter-offensive-dispatch",
+    "ho-chi-minh-trail",
+    "operation-commando-hunt-dispatch",
+    "battle-of-ap-bac-1963",
+    "helicopter-tactics-vietnam-dispatch"
   ],
   "_voices": [
     "correspondent",
