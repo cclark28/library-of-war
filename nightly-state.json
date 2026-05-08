@@ -1,7 +1,7 @@
 {
-  "voiceIndex": 2,
-  "lastRun": "2026-05-08T11:12:02.754Z",
-  "articlesWritten": 161,
+  "voiceIndex": 3,
+  "lastRun": "2026-05-08T11:13:55.856Z",
+  "articlesWritten": 163,
   "usedSlugs": [
     "battle-of-cannae",
     "battle-of-austerlitz",
@@ -115,7 +115,9 @@
     "operation-luttich-mortain-1944",
     "volkssturm-formation-1944-dispatch",
     "battle-jena-auerstedt-1806",
-    "battle-rossbach-1757-dispatch"
+    "battle-rossbach-1757-dispatch",
+    "bay-of-pigs-1961",
+    "u2-incident-1960-dispatch"
   ],
   "_voices": [
     "correspondent",
