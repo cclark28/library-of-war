@@ -6,6 +6,7 @@ import Footer from '@/components/Footer'
 import ArticleCard from '@/components/ArticleCard'
 import FadeIn from '@/components/FadeIn'
 import OnThisDay from '@/components/OnThisDay'
+import TrendingStrip from '@/components/TrendingStrip'
 
 // Edge runtime required for Cloudflare Pages.
 // force-dynamic ensures every request fetches fresh content from Sanity:
@@ -146,6 +147,7 @@ type SiteSettings = {
     showFromArchive?: boolean
     showFlagshipSeries?: boolean
     showOnThisDay?: boolean
+    showTrending?: boolean
   }
 }
 
@@ -188,6 +190,7 @@ export default async function HomePage() {
     showFromArchive:       settings?.sections?.showFromArchive        ?? true,
     showFlagshipSeries:    settings?.sections?.showFlagshipSeries     ?? true,
     showOnThisDay:         settings?.sections?.showOnThisDay          ?? true,
+    showTrending:          settings?.sections?.showTrending           ?? true,
   }
 
   if (settings?.maintenanceMode) {
@@ -421,7 +424,20 @@ export default async function HomePage() {
           </Link>
         </div>
 
-        </div>{/* end constrained content wrapper */}
+        </div>{/* end constrained wrapper — TrendingStrip is full-width */}
+
+        {/* ── Section 6: Trending — 5 popular articles, full-width strip ───── */}
+        {flags.showTrending && (() => {
+          // Pick up to 5 articles not already displayed anywhere on the page.
+          // No view-count signal yet — weekly stable shuffle gives impression of rotation.
+          const weekBucket = Math.floor(Date.now() / (1000 * 60 * 60 * 24 * 7))
+          const pool = featuredArticles.filter(a => !globalSeen.has(a._id))
+          const weekly = [...pool].sort((a, b) => {
+            const ai = pool.indexOf(a), bi = pool.indexOf(b)
+            return ((ai + weekBucket) % Math.max(pool.length, 1)) - ((bi + weekBucket) % Math.max(pool.length, 1))
+          })
+          return weekly.length > 0 ? <TrendingStrip articles={weekly} /> : null
+        })()}
 
       </main>
 

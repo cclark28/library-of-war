@@ -346,8 +346,17 @@ export default function Header({ navData }: { navData?: NavData | null }) {
               <Link href="/id-drill" className={NAV_LINK}>{labels.idDrill}</Link>
             </li>
 
-            <li className="flex items-center">
+            <li className="border-r border-rule flex items-center">
               <Link href="/about" className={NAV_LINK}>{labels.mission}</Link>
+            </li>
+
+            <li className="flex items-center">
+              <Link
+                href="/contributor"
+                className={`${NAV_LINK} text-accent hover:text-accent/70`}
+              >
+                Write for Us
+              </Link>
             </li>
 
           </ul>
@@ -477,8 +486,13 @@ export default function Header({ navData }: { navData?: NavData | null }) {
             </Link>
 
             <Link href="/about" onClick={() => setMobileOpen(false)}
-              className="block px-6 py-3.5 font-body text-[0.72rem] tracking-[0.14em] uppercase text-ink hover:text-accent transition-colors">
+              className="block px-6 py-3.5 font-body text-[0.72rem] tracking-[0.14em] uppercase text-ink hover:text-accent transition-colors border-b border-rule">
               {labels.mission}
+            </Link>
+
+            <Link href="/contributor" onClick={() => setMobileOpen(false)}
+              className="block px-6 py-3.5 font-body text-[0.72rem] tracking-[0.14em] uppercase text-accent hover:text-accent/70 transition-colors">
+              Write for Us
             </Link>
 
           </nav>

@@ -109,6 +109,20 @@ export default defineType({
           type: 'boolean',
           initialValue: true,
         }),
+        defineField({
+          name: 'showOnThisDay',
+          title: 'On This Day strip',
+          type: 'boolean',
+          description: 'Full-width dark strip showing historical events for today\'s date.',
+          initialValue: true,
+        }),
+        defineField({
+          name: 'showTrending',
+          title: 'Popular / Trending strip',
+          type: 'boolean',
+          description: 'Five-column strip showing popular articles below the archive link.',
+          initialValue: true,
+        }),
       ],
     }),
 
