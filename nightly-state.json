@@ -1,7 +1,7 @@
 {
-  "voiceIndex": 2,
-  "lastRun": "2026-05-05T11:37:32.799Z",
-  "articlesWritten": 151,
+  "voiceIndex": 3,
+  "lastRun": "2026-05-08T11:06:36.989Z",
+  "articlesWritten": 153,
   "usedSlugs": [
     "battle-of-cannae",
     "battle-of-austerlitz",
@@ -105,7 +105,9 @@
     "marine-cap-program-vietnam",
     "krulak-westmoreland-cap-dispatch",
     "cords-pacification-vietnam",
-    "john-paul-vann-cords-dispatch"
+    "john-paul-vann-cords-dispatch",
+    "marathon-inscription-490bc",
+    "marathon-inscription-490bc-dispatch"
   ],
   "_voices": [
     "correspondent",

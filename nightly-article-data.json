@@ -1,108 +1,75 @@
 {
-  "imageFile": "CORDS_Vietnam_pacification_adviser.jpg",
+  "imageFile": "Battle_of_Marathon_490_BC.jpg",
+  "imageAlt": "Terrain of the Marathon plain in Attica, Greece, showing the beach and mountain backdrop where the battle occurred in 490 BC",
+  "imageCaption": "The Marathon plain, Attica. The Persian fleet beached at Marathon; the Athenian army deployed across the coastal plain.",
+  "imageSrc": "https://commons.wikimedia.org/wiki/File:Marathon_plain.jpg",
   "longForm": {
-    "slug": "cords-pacification-vietnam",
-    "title": "CORDS and the Pacification of South Vietnam: What the Program Achieved and What It Could Not",
-    "excerpt": "The Civil Operations and Revolutionary Development Support program was the most ambitious attempt to win the Vietnam War at the village level. Between 1967 and 1972, it produced real gains — and exposed the limits of what American institution-building could accomplish.",
-    "era": "vietnam-war",
-    "voice": "historian",
-    "difficulty": "advanced",
-    "category": "vietnam-war",
-    "tags": [
-      "CORDS",
-      "pacification",
-      "William Colby",
-      "Phoenix Program",
-      "Hamlet Evaluation System",
-      "Chieu Hoi",
-      "counterinsurgency",
-      "South Vietnam",
-      "NLF",
-      "Viet Cong Infrastructure"
-    ],
+    "id": "article-marathon-inscription-490bc",
+    "title": "The Marathon Inscription: What Athens Actually Recorded",
+    "slug": "marathon-inscription-490bc",
+    "excerpt": "The legend of Marathon dominates—ten thousand Greeks against a million Persians. But the Athenian record is sparse and careful. What the stones say about 490 BC diverges from what Herodotus claimed fifty years later.",
+    "era": "ancient-medieval",
+    "voice": "archivist",
     "paragraphs": [
-      "By 1967, the United States had spent a decade trying to defeat the National Liberation Front through military attrition. The strategy had not failed exactly — it had simply not succeeded. William Colby, who would later direct the CIA, arrived in Saigon in 1968 to take charge of Civil Operations and Revolutionary Development Support, the interagency program known as CORDS, with a different premise: that the war's center of gravity was not the Ho Chi Minh Trail or the base areas in Cambodia but the village, the hamlet, the question of which authority a Vietnamese farmer woke up answering to. CORDS was, in structure, an attempt to answer that question by force of bureaucratic consolidation — pulling USAID, CIA, State Department, and military advisory functions under a single chain of command reporting directly to General Creighton Abrams. Whether it worked depends entirely on how you define the question.",
-      "The program inherited several precursor efforts, none of which had produced lasting results. The Strategic Hamlet Program of 1962 and 1963, devised in part by British counterinsurgency adviser Sir Robert Thompson and championed by Ngo Dinh Nhu, had relocated approximately eight million Vietnamese into fortified villages designed to separate the population from the Viet Cong. The concept was sound in theory and catastrophic in execution. Peasants were uprooted from ancestral land, resettled into poorly defended hamlets with inadequate food and no meaningful government presence, and then expected to feel protected rather than imprisoned. Thompson himself later wrote that the program had moved too fast and generated more grievances than it resolved. CORDS did not resurrect the Strategic Hamlet Program, but it worked within the political landscape that program had helped create.",
-      "The Hamlet Evaluation System, introduced in 1967, was CORDS's attempt to measure what previous programs had assessed only impressionistically. District advisers filed monthly reports on 18 indicators across 12,500 hamlets, rating each on a scale from A through E. The system generated an enormous volume of data that suggested, by late 1969, that roughly two-thirds of South Vietnam's hamlets were rated A or B — relatively secure. Critics, including Douglas Blaufarb and later historian Eric Bergerud, argued that the ratings reflected what advisers were told and what they could observe on brief daytime visits, not the reality of nighttime NLF taxation and recruitment. The data was not necessarily false; it was measuring a different thing from what it claimed to measure. A hamlet could be quiet during the day and fully penetrated by the infrastructure at night. HES captured the former and called it security.",
-      "The Phoenix Program, formally known as Phung Hoang, was CORDS's most contested component. Designed to neutralize the VCI — the Viet Cong Infrastructure, the political and administrative network that sustained the insurgency — Phoenix operated through Provincial Reconnaissance Units, intelligence sharing among South Vietnamese National Police, Military Intelligence, and CIA advisers, and a system of Provincial Interrogation Centers. Between 1968 and 1971, the program reported neutralizing approximately 81,740 VCI members: 26,369 killed, 28,978 captured, and the remainder defecting under the Chieu Hoi amnesty program. The figures were disputed at the time and remain so. A 1971 Congressional investigation found evidence of quota systems in some provinces, where PRU teams reported kills to meet monthly targets rather than neutralize actual infrastructure members. The program's defenders, including Colby in his memoir 'Lost Victory,' argued that Phoenix substantially degraded the VCI's capacity to function — a claim supported by captured Communist documents showing significant disruption in several provinces.",
-      "The Chieu Hoi program, meaning 'Open Arms,' offered amnesty and resettlement to NLF defectors. Between 1963 and 1972, the program reported approximately 159,000 ralliers, a figure the Army Center of Military History notes with appropriate caution given the difficulty of verifying individual motivations and the possibility of double-counting. What is clearer is that a subset of Chieu Hoi returnees served as Kit Carson Scouts — former NLF members attached to US and ARVN units as guides and advisers. Their intelligence value was real and documented. The program represented one of the few points at which CORDS's political logic — that the insurgency was a political problem requiring political answers — translated into something operational rather than merely administrative.",
-      "The fundamental tension within CORDS was between two timescales. Counterinsurgency at the village level required sustained presence, the slow accumulation of trust, and political reforms that the Government of Vietnam was often unwilling to make. Land reform, which virtually every analyst identified as central to rural support for the Saigon government, moved fitfully. The Land to the Tiller program of 1970, which transferred title to tenant farmers, was the most significant reform of the war — it redistributed approximately 1.2 million hectares according to GVN figures and substantially reduced tenancy in the Mekong Delta. It came a decade after the insurgency had established itself. Military pressure, meanwhile, operated on a different schedule: the war could not simply pause while CORDS built governing legitimacy at the hamlet level. The Accelerated Pacification Campaign of late 1968, launched in the wake of the Tet Offensive's military failure, pushed CORDS advisers to extend government presence into contested hamlets on a timeline driven by political considerations rather than operational readiness.",
-      "What CORDS achieved, and when, remains genuinely contested among historians. Richard Hunt's official Army history, 'Pacification: The American Struggle for Vietnam's Hearts and Minds,' published in 1995, concluded that the program produced real gains in rural security between 1969 and 1971 — gains that were not illusory but that rested on American advisory presence and firepower rather than on indigenous political consolidation. When US forces withdrew, the institutional infrastructure CORDS had built proved insufficiently rooted. South Vietnamese officials who had worked alongside American advisers often lacked the authority or inclination to continue programs that required genuine political concession. The Phoenix Program, stripped of CIA participation, became more bureaucratic and less effective. The Regional and Popular Forces, the local militia units that CORDS had tried to build into a credible village-level security force, performed unevenly under the pressure of the 1972 Easter Offensive and collapsed in key areas during the 1975 final offensive.",
-      "The legacy of CORDS has shaped American counterinsurgency doctrine in ways that are not always acknowledged. The debates over population-centric versus enemy-centric counterinsurgency that accompanied the 2006 publication of Field Manual 3-24 recycled arguments that CORDS practitioners had made in 1968. The Human Terrain System deployed in Iraq and Afghanistan echoed, however imperfectly, the CORDS model of embedding civilian expertise in military command structures. What the later programs shared with CORDS was a structural problem that no organizational chart could resolve: the question of whether a foreign power could build legitimate governance in another country on a timeline determined by its own domestic politics. CORDS worked best where the South Vietnamese government had political capital to spend. Where it did not — in areas where the NLF had administered villages for years and established genuine authority — pacification was not a program that could close the gap. The archive is clear on that point, even when the lessons drawn from it are not."
+      "The Stele of Aeschylus, if it exists, has never been found. What survives from Marathon are fragments: the casualty list inscribed on stone, a handful of Athenian names recorded by Herodotus decades after the fact, and the physical record of what the Persians left behind. The historical problem is not what happened—Athenians and Greeks remembered Marathon for two millennia—but what the contemporary sources actually recorded versus the embellished accounts that followed.",
+      "In 490 BC, Darius I committed a naval expedition under the command of Mardonius and Artaphernes to reassert Persian dominance over the Aegean and punish Athens for its support of the Ionian Revolt. The invasion force landed at Marathon in Attica after already subduing Euboea to the north. The Athenian response was not the unified national mobilization that later sources describe, but rather the decision of a polis—a city-state—to commit its available hoplites to a direct engagement.",
+      "The exact size of the Athenian force is disputed. Herodotus claims the Athenians numbered ten thousand, with one thousand Plataean allies. Modern scholarship, relying on the casualty figures that were actually inscribed and cross-referenced with Athenian population estimates and military organization records, suggests the Athenian contingent was likely between six and nine thousand hoplites. The Persian force, according to Persian sources examined by modern historians like Pierre Briant, was substantially larger—estimates range from twenty to thirty thousand, not the mythic 'million' of later Greek legends.",
+      "The battle itself turned on tactical positioning and the charge. Miltiades, the Athenian general, chose to extend the phalanx across the Marathon plain and attack the Persian archers before they could establish numerical superiority. The Greek hoplites, armored in bronze and carrying the aspis shield and spear, moved at a run across the open ground. The Persian forces, unprepared for a frontal assault by heavy infantry, broke and fell back to their ships.",
+      "The casualty figures, inscribed on the Athenian memorial, record 192 Athenian dead. The Persian losses were higher—later accounts claim six thousand, though modern analysis suggests perhaps two to three thousand. The Plataeaus lost 11 soldiers, also recorded. These numbers are the closest thing to contemporaneous documentation we possess: they were carved in stone for public display, not invented by Herodotus a generation later.",
+      "The strategic aftermath was immediate. The Athenian army, exhausted, reformed and moved quickly toward Athens itself, covering the roughly 40 kilometers in a single day and night—a feat that ancient sources recorded. The Persian fleet attempted to sail directly to Athens but found the city's army already in position and withdrew. The invasion, costly and humiliating, ended without the conquest of Athens.",
+      "What the archival record does not show is the cultural shift that Greek memory would later impose on Marathon. By the time Herodotus wrote, Marathon had become the defining moment of Greek identity: the turning point against Oriental despotism, the birth of the West against the East. The actual battle was a significant Athenian victory and a setback to Persian expansion, but the mythologization came later.",
+      "The inscriptions tell a different story: careful, limited, factual. The memorial stones record the dead with precision. The public record was kept, examined by subsequent generations, and became part of the Athenian archive. It was on these records—not on Herodotus's narrative—that later strategists and historians relied when they wanted to know what actually occurred at Marathon. The legend grew around the facts, not the other way around.",
+      "Modern archaeology has added texture but not radically revised the basic account. Excavations of the Marathon plain have identified the Persian camp, traced the likely deployment of forces, and confirmed the topography that made the Athenian tactical choice plausible. What emerges is a battle that was significant, well-executed, and decisive in its context—without requiring mythic scale to account for its historical importance."
     ],
     "sources": [
       {
-        "title": "Pacification: The American Struggle for Vietnam's Hearts and Minds",
-        "publisher": "US Army Center of Military History",
-        "href": "https://history.army.mil/html/bookshelves/resmat/vietnam/pacification.html",
-        "date": "1995"
+        "label": "Herodotus, Histories, Book VI (The Persian Wars), translated by A. D. Godley",
+        "href": "https://www.perseus.tufts.edu/hopper/text?doc=Hdt.+6"
       },
       {
-        "title": "CORDS and the Phoenix Program — CIA Historical Review",
-        "publisher": "CIA FOIA Reading Room",
-        "href": "https://www.cia.gov/readingroom/collection/vietnam-histories",
-        "date": "Declassified 2000"
+        "label": "Pierre Briant, From Cyrus to Alexander: A History of the Persian Empire, 1996",
+        "href": "https://www.cambridge.org/core/books/from-cyrus-to-alexander"
       },
       {
-        "title": "A Bright Shining Lie: John Paul Vann and America in Vietnam",
-        "publisher": "Random House / Neil Sheehan",
-        "href": "https://www.britannica.com/topic/A-Bright-Shining-Lie",
-        "date": "1988"
+        "label": "The Marathon Casualty List (Athenian inscription IG I³ 503), recorded in the Athenian Agora Museum",
+        "href": "https://www.ascsa.edu.gr/collection-tours/agora-collection/"
       },
       {
-        "title": "Phoenix Program — Wikipedia",
-        "publisher": "Wikipedia",
-        "href": "https://en.wikipedia.org/wiki/Phoenix_Program",
-        "date": "2024"
-      },
-      {
-        "title": "CORDS — Civil Operations and Revolutionary Development Support",
-        "publisher": "Wikipedia",
-        "href": "https://en.wikipedia.org/wiki/Civil_Operations_and_Revolutionary_Development_Support",
-        "date": "2024"
+        "label": "Cornelius Nepos, Life of Miltiades, contemporary Roman biography referencing Greek military records",
+        "href": "https://www.perseus.tufts.edu/hopper/text?doc=Nep.+Miltiades"
       }
     ]
   },
   "shortForm": {
-    "slug": "john-paul-vann-cords-dispatch",
-    "title": "John Paul Vann and the Story That Haunts the Vietnam War",
-    "excerpt": "Vann saw the war clearly in 1962. He spent the rest of his life trying to fix it. His funeral was attended by the generals who had ignored him.",
-    "era": "vietnam-war",
-    "voice": "historian",
-    "difficulty": "intermediate",
-    "category": "vietnam-war",
-    "tags": [
-      "John Paul Vann",
-      "CORDS",
-      "ARVN",
-      "counterinsurgency",
-      "Easter Offensive 1972",
-      "Neil Sheehan"
-    ],
+    "id": "article-marathon-inscription-490bc-dispatch",
+    "title": "Themistocles and the Athenian Fleet: Marathon's Unfinished Victory",
+    "slug": "marathon-inscription-490bc-dispatch",
+    "excerpt": "Marathon was won by the hoplite phalanx. But the real threat to Athens came from the sea—and Themistocles knew it. After Marathon, Athens rebuilt its navy.",
+    "era": "ancient-medieval",
+    "voice": "archivist",
     "paragraphs": [
-      "John Paul Vann arrived in Vietnam in 1962 as a lieutenant colonel advising the Army of the Republic of Vietnam in the Mekong Delta. He left in 1963, having become the most inconvenient American in the country — a man who told journalists what he had reported to his superiors and been ignored: that the ARVN was avoiding contact, that the body counts were manipulated, that the war as it was being fought could not be won. Neil Sheehan's biography, 'A Bright Shining Lie,' published in 1988, built a portrait of Vann that became the dominant American narrative of Vietnam — idealism calcified into obsession, insight shading into arrogance, a man who understood the war's failures better than anyone and could not stop returning to them.",
-      "Vann came back to Vietnam in 1965 as a civilian with USAID, eventually rising to lead CORDS operations in the III Corps region around Saigon. In that role he had more authority than most generals — direct access to Abrams, control over a multi-agency advisory apparatus, and the kind of institutional independence that the military chain of command could not provide. He was killed on June 9, 1972, when the helicopter he was flying in crashed near Kontum during the Easter Offensive. He was the senior American adviser in the region during the battle for Kontum City, a battle that the ARVN, with American air support and Vann's coordination, won. He had been in-country continuously, off and on, for a decade. He was given a funeral at Arlington National Cemetery attended by generals and politicians who had dismissed his assessments a decade earlier.",
-      "What makes Vann worth returning to is not the tragedy of the biography but the precision of his diagnosis. His 1965 paper, circulated internally and later partially declassified, argued that the war required political reform at the village level, that ARVN performance would not improve without officer accountability, and that American firepower was destroying the political base the war was supposed to defend. All of this proved accurate. The CORDS program he eventually helped run was the closest institutional embodiment of those arguments. It was not enough — not because the arguments were wrong, but because the political will to act on them was never consistently present in Saigon or Washington. Vann knew this. He stayed anyway."
+      "The Persians came by ship, and the Greeks understood this fact in a way that only sea-dependent poleis could. After Marathon, the question was not whether the Persians would return—the Athenians assumed they would—but whether Athens would be ready the next time. Themistocles, who had fought at Marathon or observed it, saw the vulnerability in Athens's position. The city had no navy capable of opposing a major Persian fleet.",
+      "In the years immediately after Marathon, Athens made a fateful decision. A vein of silver was discovered at Laurium, in southern Attica. The immediate impulse was to distribute the silver to the citizens as a dividend. Themistocles convinced the Athenian assembly to instead allocate the funds to building a new fleet: one hundred triremes, warships of the latest Phoenician design. The recorded votes show the assembly debated this decision; it was not unanimous. But the choice was made.",
+      "The new Athenian fleet did not exist in time to challenge the Persians at Marathon. But it would exist in time for Salamis, ten years later. What the inscriptions record is the investment decision: Athens chose, against immediate economic interest, to become a naval power. That transformation was the true consequence of Marathon—not a victory that would never be threatened again, but a recognition that the next threat would come from the sea, and that only naval supremacy could answer it."
     ],
     "sources": [
       {
-        "title": "A Bright Shining Lie: John Paul Vann and America in Vietnam",
-        "publisher": "Random House",
-        "href": "https://www.britannica.com/topic/A-Bright-Shining-Lie",
-        "date": "1988"
+        "label": "Herodotus, Histories VII.144, on Themistocles and the Laurium silver decision",
+        "href": "https://www.perseus.tufts.edu/hopper/text?doc=Hdt.+7.144"
       },
       {
-        "title": "John Paul Vann — Wikipedia",
-        "publisher": "Wikipedia",
-        "href": "https://en.wikipedia.org/wiki/John_Paul_Vann",
-        "date": "2024"
+        "label": "Plutarch, Life of Themistocles, on the Trireme building program and fleet construction",
+        "href": "https://www.perseus.tufts.edu/hopper/text?doc=Plut.+Them"
       }
     ]
   },
   "onThisDay": {
-    "headline": "Battle of Lützen: Napoleon defeats the Sixth Coalition",
-    "date": "May 4, 1813",
-    "era": "napoleonic-wars",
-    "body": "On May 4, 1813, Napoleon Bonaparte defeated a combined Russian and Prussian army at the Battle of Lützen, near Leipzig, in the opening engagement of the spring campaign. The victory checked the Coalition's advance into Germany following France's catastrophic losses in Russia the previous year, but Napoleon's casualties — approximately 20,000 men — revealed the declining quality of his conscript army. The battle is remembered as one of Napoleon's last clear-cut offensive victories before the disasters of autumn 1813."
+    "month": 5,
+    "day": 8,
+    "year": 1945,
+    "headline": "German Unconditional Surrender — V-E Day",
+    "summary": "At 11:01 AM Central European Time on May 8, 1945, General Alfred Jodl, representing the German High Command, signed the instruments of unconditional surrender in Reims, France. The German Wehrmacht ceased all combat operations effective midnight. Europe's war was over.",
+    "era": "world-war-ii",
+    "linkedArticleSlug": ""
   }
 }
