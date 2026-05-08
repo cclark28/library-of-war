@@ -1,7 +1,7 @@
 {
-  "voiceIndex": 3,
-  "lastRun": "2026-05-08T11:06:36.989Z",
-  "articlesWritten": 153,
+  "voiceIndex": 4,
+  "lastRun": "2026-05-08T11:07:30.488Z",
+  "articlesWritten": 155,
   "usedSlugs": [
     "battle-of-cannae",
     "battle-of-austerlitz",
@@ -107,7 +107,9 @@
     "cords-pacification-vietnam",
     "john-paul-vann-cords-dispatch",
     "marathon-inscription-490bc",
-    "marathon-inscription-490bc-dispatch"
+    "marathon-inscription-490bc-dispatch",
+    "eylau-pyrrhic-1807",
+    "monitor-ironclad-dispatch"
   ],
   "_voices": [
     "correspondent",

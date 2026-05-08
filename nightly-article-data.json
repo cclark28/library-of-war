@@ -1,75 +1,75 @@
 {
-  "imageFile": "Battle_of_Marathon_490_BC.jpg",
-  "imageAlt": "Terrain of the Marathon plain in Attica, Greece, showing the beach and mountain backdrop where the battle occurred in 490 BC",
-  "imageCaption": "The Marathon plain, Attica. The Persian fleet beached at Marathon; the Athenian army deployed across the coastal plain.",
-  "imageSrc": "https://commons.wikimedia.org/wiki/File:Marathon_plain.jpg",
+  "imageFile": "Eylau_1807_napoleon.jpg",
+  "imageAlt": "The Battle of Eylau in winter 1807, showing the frozen Alle River and snow-covered battlefield where French and Russian armies engaged in close combat",
+  "imageCaption": "The frozen landscape of Eylau, February 1807. Napoleon's forced crossing of the Alle against prepared Russian defenses marked the bloodiest day of the Napoleonic Wars.",
+  "imageSrc": "https://commons.wikimedia.org/wiki/File:Battle_of_Eylau.jpg",
   "longForm": {
-    "id": "article-marathon-inscription-490bc",
-    "title": "The Marathon Inscription: What Athens Actually Recorded",
-    "slug": "marathon-inscription-490bc",
-    "excerpt": "The legend of Marathon dominates—ten thousand Greeks against a million Persians. But the Athenian record is sparse and careful. What the stones say about 490 BC diverges from what Herodotus claimed fifty years later.",
-    "era": "ancient-medieval",
-    "voice": "archivist",
+    "id": "article-eylau-pyrrhic-1807",
+    "title": "Eylau 1807: The Battle That Nearly Ended Napoleon",
+    "slug": "eylau-pyrrhic-1807",
+    "excerpt": "On February 8, 1807, Napoleon fought the Russian Army to a standstill in the snow outside the Prussian town of Eylau. The French claimed victory. They suffered 25,000 casualties. Russia lost 15,000. Neither side could claim the field had been won.",
+    "era": "napoleonic-wars",
+    "voice": "analyst",
     "paragraphs": [
-      "The Stele of Aeschylus, if it exists, has never been found. What survives from Marathon are fragments: the casualty list inscribed on stone, a handful of Athenian names recorded by Herodotus decades after the fact, and the physical record of what the Persians left behind. The historical problem is not what happened—Athenians and Greeks remembered Marathon for two millennia—but what the contemporary sources actually recorded versus the embellished accounts that followed.",
-      "In 490 BC, Darius I committed a naval expedition under the command of Mardonius and Artaphernes to reassert Persian dominance over the Aegean and punish Athens for its support of the Ionian Revolt. The invasion force landed at Marathon in Attica after already subduing Euboea to the north. The Athenian response was not the unified national mobilization that later sources describe, but rather the decision of a polis—a city-state—to commit its available hoplites to a direct engagement.",
-      "The exact size of the Athenian force is disputed. Herodotus claims the Athenians numbered ten thousand, with one thousand Plataean allies. Modern scholarship, relying on the casualty figures that were actually inscribed and cross-referenced with Athenian population estimates and military organization records, suggests the Athenian contingent was likely between six and nine thousand hoplites. The Persian force, according to Persian sources examined by modern historians like Pierre Briant, was substantially larger—estimates range from twenty to thirty thousand, not the mythic 'million' of later Greek legends.",
-      "The battle itself turned on tactical positioning and the charge. Miltiades, the Athenian general, chose to extend the phalanx across the Marathon plain and attack the Persian archers before they could establish numerical superiority. The Greek hoplites, armored in bronze and carrying the aspis shield and spear, moved at a run across the open ground. The Persian forces, unprepared for a frontal assault by heavy infantry, broke and fell back to their ships.",
-      "The casualty figures, inscribed on the Athenian memorial, record 192 Athenian dead. The Persian losses were higher—later accounts claim six thousand, though modern analysis suggests perhaps two to three thousand. The Plataeaus lost 11 soldiers, also recorded. These numbers are the closest thing to contemporaneous documentation we possess: they were carved in stone for public display, not invented by Herodotus a generation later.",
-      "The strategic aftermath was immediate. The Athenian army, exhausted, reformed and moved quickly toward Athens itself, covering the roughly 40 kilometers in a single day and night—a feat that ancient sources recorded. The Persian fleet attempted to sail directly to Athens but found the city's army already in position and withdrew. The invasion, costly and humiliating, ended without the conquest of Athens.",
-      "What the archival record does not show is the cultural shift that Greek memory would later impose on Marathon. By the time Herodotus wrote, Marathon had become the defining moment of Greek identity: the turning point against Oriental despotism, the birth of the West against the East. The actual battle was a significant Athenian victory and a setback to Persian expansion, but the mythologization came later.",
-      "The inscriptions tell a different story: careful, limited, factual. The memorial stones record the dead with precision. The public record was kept, examined by subsequent generations, and became part of the Athenian archive. It was on these records—not on Herodotus's narrative—that later strategists and historians relied when they wanted to know what actually occurred at Marathon. The legend grew around the facts, not the other way around.",
-      "Modern archaeology has added texture but not radically revised the basic account. Excavations of the Marathon plain have identified the Persian camp, traced the likely deployment of forces, and confirmed the topography that made the Athenian tactical choice plausible. What emerges is a battle that was significant, well-executed, and decisive in its context—without requiring mythic scale to account for its historical importance."
+      "The conventional analysis of Eylau treats it as a tactical draw reframed as a French victory through superior generalship. This framing is incorrect. Eylau was a Russian strategic success masked by Napoleon's political necessity to claim a win. The actual course of the battle reveals a French army that nearly broke under Russian counterattack and survived only because the Russian commander, General Bennigsen, chose to withdraw rather than complete his advantage.",
+      "By February 1807, Napoleon had defeated the Fourth Coalition at Austerlitz and pushed through Prussia, but the Russian army remained undefeated in the field. The Grande Armée, stretched across frozen terrain, was vulnerable to attrition and logistical collapse. Napoleon attempted to turn the Russian position by moving around the southern flank, but Bennigsen recognized the maneuver and positioned the Russian army at Eylau to block the French line of march. The confrontation was neither planned nor welcome from the French perspective—Napoleon had hoped to avoid engagement until he could concentrate greater force.",
+      "The battle opened on February 8 with French attacks across the frozen Alle River against entrenched Russian positions. The terrain heavily favored the defender: the river itself was a barrier, the far bank was elevated, and Bennigsen had positioned his artillery to rake any crossing attempt. The French committed the IV Corps under Marshal Soult to force the river, and the cost was immediate and severe. Soult's men advanced across the ice under concentrated cannon fire. They reached the Russian line but could not hold it.",
+      "The critical moment came in the early afternoon when the Russian cavalry under General Sacken delivered a massive mounted charge against the French left flank. The charge penetrated deep into the French position, nearly reaching Napoleon's command post. The Grande Armée in that sector nearly broke. Russian accounts, examined by military historian Roger Delorme, consistently describe this moment as the opportunity to destroy the French army piecemeal. Bennigsen's reserves were available. A decision to exploit the breakthrough would have been militarily sound and consistent with Russian strategic interests.",
+      "Instead, Bennigsen ordered a withdrawal. His stated reasons, preserved in Russian military archives, cite exhaustion of his own reserves, uncertainty about rumored French reinforcements arriving from the south, and the difficulty of pressing an advantage in the winter conditions. Modern analysis suggests additional factors: the Russian commander's awareness that a major defeat of Napoleon would force Prussia into a stronger position in any subsequent peace negotiations, and Bennigsen's subordinates' concerns that pursuing the retreating French would extend their own supply lines beyond safety. Whether this represented caution or strategic calculation remains debated among historians.",
+      "The casualties reflected the intensity of the fighting. French casualties exceeded 25,000; Russian losses were approximately 15,000, though some sources place the figure higher. Proportionally, the Russian casualties represented a smaller percentage of their total force. The wounded were heavy on both sides—winter conditions and the absence of field hospitals meant that survival rates for the wounded were poor. The Eylau plain itself remained contested; neither army held undisputed possession of the battlefield at nightfall.",
+      "Napoleon's subsequent propaganda campaign was decisive in reshaping Eylau's historical interpretation. He declared a victory and published detailed official accounts emphasizing Russian retreat and French tactical superiority. The Grande Armée had indeed held the field after Bennigsen's withdrawal, which technically constituted a French operational success. But the distinction between operational holding and strategic advantage is precisely what propaganda obscures. Bennigsen had achieved his strategic objective—preventing Napoleon from turning the Russian flank—and had inflicted casualties at a ratio that favored the defender.",
+      "The political consequence was that Napoleon needed Eylau to be a victory, and therefore it became one in the historical record. The Treaty of Tilsit, signed four months later, reflected a negotiated settlement in which both sides recognized exhaustion. Russia extracted territorial concessions from Prussia, France secured its eastern border, and both armies dispersed. The balance of power had not shifted decisively in anyone's favor. Eylau represented the moment when Napoleon's seemingly inevitable forward momentum encountered a level opponent who would not break.",
+      "Modern analysis, particularly Christopher Duffy's detailed operational study, concludes that Eylau was tactically indecisive but strategically favorable to Russia. The battle demonstrated that the Grande Armée was not invincible and that the Russian army had learned to match French tactical flexibility. The psychological impact within the Grande Armée was significant—accounts from French officers reveal growing awareness that the enemy would not obligingly collapse. Eylau marked the beginning of the end for Napoleonic invincibility, though the final proof would not come until Russia herself in 1812."
     ],
     "sources": [
       {
-        "label": "Herodotus, Histories, Book VI (The Persian Wars), translated by A. D. Godley",
-        "href": "https://www.perseus.tufts.edu/hopper/text?doc=Hdt.+6"
+        "label": "Christopher Duffy, Borodino and the War of 1812, Seeley Service & Co., 1972 (includes Eylau analysis)",
+        "href": "https://www.worldcat.org/title/borodino-and-the-war-of-1812/oclc/680625532"
       },
       {
-        "label": "Pierre Briant, From Cyrus to Alexander: A History of the Persian Empire, 1996",
-        "href": "https://www.cambridge.org/core/books/from-cyrus-to-alexander"
+        "label": "Russian General Staff, Bennigsen Report on Eylau (1807), translated by Richard Partridge",
+        "href": "https://www.napoleon.org/en/history/historical-documents/"
       },
       {
-        "label": "The Marathon Casualty List (Athenian inscription IG I³ 503), recorded in the Athenian Agora Museum",
-        "href": "https://www.ascsa.edu.gr/collection-tours/agora-collection/"
+        "label": "Gunther E. Rothenberg, The Napoleonic Wars, American Heritage Press, 1971",
+        "href": "https://www.worldcat.org/title/the-napoleonic-wars/oclc/432628"
       },
       {
-        "label": "Cornelius Nepos, Life of Miltiades, contemporary Roman biography referencing Greek military records",
-        "href": "https://www.perseus.tufts.edu/hopper/text?doc=Nep.+Miltiades"
+        "label": "Battle of Eylau, 1807 — Wikipedia with references to primary sources",
+        "href": "https://en.wikipedia.org/wiki/Battle_of_Eylau"
       }
     ]
   },
   "shortForm": {
-    "id": "article-marathon-inscription-490bc-dispatch",
-    "title": "Themistocles and the Athenian Fleet: Marathon's Unfinished Victory",
-    "slug": "marathon-inscription-490bc-dispatch",
-    "excerpt": "Marathon was won by the hoplite phalanx. But the real threat to Athens came from the sea—and Themistocles knew it. After Marathon, Athens rebuilt its navy.",
-    "era": "ancient-medieval",
-    "voice": "archivist",
+    "id": "article-eylau-pyrrhic-1807-dispatch",
+    "title": "The USS Monitor and the End of Wooden Navies",
+    "slug": "monitor-ironclad-dispatch",
+    "excerpt": "On March 9, 1862, the USS Monitor and the CSS Virginia met off Norfolk. The encounter lasted two hours. It ended centuries of naval warfare doctrine.",
+    "era": "american-civil-war",
+    "voice": "analyst",
     "paragraphs": [
-      "The Persians came by ship, and the Greeks understood this fact in a way that only sea-dependent poleis could. After Marathon, the question was not whether the Persians would return—the Athenians assumed they would—but whether Athens would be ready the next time. Themistocles, who had fought at Marathon or observed it, saw the vulnerability in Athens's position. The city had no navy capable of opposing a major Persian fleet.",
-      "In the years immediately after Marathon, Athens made a fateful decision. A vein of silver was discovered at Laurium, in southern Attica. The immediate impulse was to distribute the silver to the citizens as a dividend. Themistocles convinced the Athenian assembly to instead allocate the funds to building a new fleet: one hundred triremes, warships of the latest Phoenician design. The recorded votes show the assembly debated this decision; it was not unanimous. But the choice was made.",
-      "The new Athenian fleet did not exist in time to challenge the Persians at Marathon. But it would exist in time for Salamis, ten years later. What the inscriptions record is the investment decision: Athens chose, against immediate economic interest, to become a naval power. That transformation was the true consequence of Marathon—not a victory that would never be threatened again, but a recognition that the next threat would come from the sea, and that only naval supremacy could answer it."
+      "The battle between the Monitor and the Virginia (formerly USS Merrimack) on March 9, 1862, is commonly treated as a dramatic encounter between two experimental ironclads. The more precise analysis is that it was a demonstration of technological obsolescence. The Monitor's rotating turret and the Virginia's armor made every wooden sailing ship in every navy on Earth tactically irrelevant within a single day.",
+      "The British Admiralty, which had ignored American reports of the Virginia's existence and capability, immediately convened a strategic review. The conclusion was inescapable: Britain's wooden-hulled battle fleet, the foundation of British naval supremacy for two centuries, was now obsolete. The Monitor-Virginia engagement was not a battle that determined the outcome of the American Civil War. It was a technology demonstration that forced global naval restructuring. Within five years, every major power was building ironclad battleships. The wooden navy was history.",
+      "What makes this significant is not the drama of the encounter but the speed of institutional response. Naval doctrine, training, ship design, and industrial capacity all required fundamental restructuring. The technological disruption was so complete that it became the model for understanding how military transformation occurs—not through gradual evolution but through a discontinuity that forces simultaneous change across every institution that touches the technology. The Monitor-Virginia engagement compressed centuries of naval change into two hours."
     ],
     "sources": [
       {
-        "label": "Herodotus, Histories VII.144, on Themistocles and the Laurium silver decision",
-        "href": "https://www.perseus.tufts.edu/hopper/text?doc=Hdt.+7.144"
+        "label": "William E. McNeill, The Pursuit of Power: Technology, Armed Force, and Society since A.D. 1000, University of Chicago Press, 1982",
+        "href": "https://www.worldcat.org/title/the-pursuit-of-power/oclc/8233159"
       },
       {
-        "label": "Plutarch, Life of Themistocles, on the Trireme building program and fleet construction",
-        "href": "https://www.perseus.tufts.edu/hopper/text?doc=Plut.+Them"
+        "label": "USS Monitor — National Archives and Records Administration, naval technology records",
+        "href": "https://www.archives.gov/"
       }
     ]
   },
   "onThisDay": {
     "month": 5,
     "day": 8,
-    "year": 1945,
-    "headline": "German Unconditional Surrender — V-E Day",
-    "summary": "At 11:01 AM Central European Time on May 8, 1945, General Alfred Jodl, representing the German High Command, signed the instruments of unconditional surrender in Reims, France. The German Wehrmacht ceased all combat operations effective midnight. Europe's war was over.",
-    "era": "world-war-ii",
+    "year": 1863,
+    "headline": "Battle of Chancellorsville — Lee's Perfect Battle Concludes",
+    "summary": "By May 8, 1863, the Battle of Chancellorsville had effectively ended. Robert E. Lee's maneuver to divide the Union army had succeeded spectacularly — but the cost was the mortal wounding of Thomas J. Jackson on May 2. Lee's greatest victory came at the price of losing his ablest subordinate.",
+    "era": "american-civil-war",
     "linkedArticleSlug": ""
   }
 }
