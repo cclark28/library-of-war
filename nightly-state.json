@@ -1,7 +1,7 @@
 {
-  "voiceIndex": 0,
-  "lastRun": "2026-05-08T11:08:19.070Z",
-  "articlesWritten": 157,
+  "voiceIndex": 1,
+  "lastRun": "2026-05-08T11:10:41.889Z",
+  "articlesWritten": 159,
   "usedSlugs": [
     "battle-of-cannae",
     "battle-of-austerlitz",
@@ -111,7 +111,9 @@
     "eylau-pyrrhic-1807",
     "monitor-ironclad-dispatch",
     "pork-chop-hill-1953",
-    "chosin-withdrawal-1950-dispatch"
+    "chosin-withdrawal-1950-dispatch",
+    "operation-luttich-mortain-1944",
+    "volkssturm-formation-1944-dispatch"
   ],
   "_voices": [
     "correspondent",
