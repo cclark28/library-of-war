@@ -1,7 +1,7 @@
 {
-  "voiceIndex": 2,
-  "lastRun": "2026-05-09T03:13:58.578Z",
-  "articlesWritten": 173,
+  "voiceIndex": 3,
+  "lastRun": "2026-05-09T03:16:14.164Z",
+  "articlesWritten": 175,
   "usedSlugs": [
     "battle-of-cannae",
     "battle-of-austerlitz",
@@ -125,7 +125,9 @@
     "battle-of-salamis-480bc",
     "battle-of-poltava-1709-dispatch",
     "battle-of-borodino-1812",
-    "battle-of-kapyong-1951-dispatch"
+    "battle-of-kapyong-1951-dispatch",
+    "operation-lusty-1945",
+    "mig-15-intelligence-korean-war-dispatch"
   ],
   "_voices": [
     "correspondent",
