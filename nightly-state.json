@@ -1,7 +1,7 @@
 {
-  "voiceIndex": 3,
-  "lastRun": "2026-05-08T11:13:55.856Z",
-  "articlesWritten": 163,
+  "voiceIndex": 1,
+  "lastRun": "2026-05-09T03:12:41.465Z",
+  "articlesWritten": 171,
   "usedSlugs": [
     "battle-of-cannae",
     "battle-of-austerlitz",
@@ -117,7 +117,13 @@
     "battle-jena-auerstedt-1806",
     "battle-rossbach-1757-dispatch",
     "bay-of-pigs-1961",
-    "u2-incident-1960-dispatch"
+    "u2-incident-1960-dispatch",
+    "barbarossa-strategic-miscalculation-1941",
+    "ultra-intelligence-operational-doctrine-1942",
+    "agincourt-terrain-doctrine-1415",
+    "bosworth-field-1485",
+    "battle-of-salamis-480bc",
+    "battle-of-poltava-1709-dispatch"
   ],
   "_voices": [
     "correspondent",

@@ -1,74 +1,76 @@
 {
-  "imageFile": "Bay_of_Pigs_1961.jpg",
-  "imageAlt": "Photograph from the Bay of Pigs operation, April 1961. Cuban exile brigade members in landing craft approaching the beachhead. The invasion force numbered approximately 1,400 men armed with light weapons. Air support that had been planned was cancelled by President Kennedy 18 hours before the operation.",
-  "imageCaption": "Bay of Pigs invasion, April 17-19, 1961. Approximately 1,400 Cuban exiles landed at Playa Girón with no air support. The brigade was surrounded by 20,000 Cuban military personnel within 72 hours.",
-  "imageSrc": "https://commons.wikimedia.org/wiki/File:Bay_of_Pigs_Invasion_Brigade_2506.jpg",
+  "batch": 1,
+  "imageFile": "Battle_of_Salamis_1896_Wilhelm_von_Kaulbach.jpg",
+  "imageAlt": "Greek triremes maneuvering in the Strait of Salamis, naval engagement between Athenian and Persian fleets",
+  "imageCaption": "Battle of Salamis, September 480 BC. Oil painting by Wilhelm von Kaulbach, 1896. Wikimedia Commons.",
+  "imageSrc": "https://commons.wikimedia.org/wiki/File:Battle_of_Salamis_1896_Wilhelm_von_Kaulbach.jpg",
   "longForm": {
-    "id": "article-bay-of-pigs-1961",
-    "title": "Bay of Pigs: The Declassified Record of Operational Failure",
-    "slug": "bay-of-pigs-1961",
-    "excerpt": "On April 17, 1961, approximately 1,400 Cuban exiles landed at the Bay of Pigs with the expectation of CIA air support and a popular uprising against Fidel Castro. The air support was cancelled by President Kennedy. The popular uprising did not materialize. The exile brigade was surrounded and defeated within 72 hours. Declassified CIA records reveal that agency planners understood the operation was unlikely to succeed.",
-    "era": "cold-war",
-    "voice": "archivist",
+    "id": "article-battle-of-salamis-480bc",
+    "title": "The Strait of Salamis: How Greece Turned Back the Persian Empire",
+    "slug": "battle-of-salamis-480bc",
+    "excerpt": "In September 480 BC, the Athenian fleet lured the Persian navy into a narrow strait and destroyed it in a single day. The victory halted Xerxes' invasion and reshaped the Mediterranean world.",
+    "era": "ancient-medieval",
+    "voice": "correspondent",
     "paragraphs": [
-      "The Bay of Pigs operation exists in the historical record as two separate narratives: the narrative presented publicly at the time, and the narrative revealed through declassified documents beginning in the 1970s. The public narrative held that the CIA had trained and organized a force of anti-Castro Cubans, that the operation had been conducted with adequate planning and intelligence, and that the failure was primarily attributable to the Kennedy administration's decision to cancel air support. The declassified record, available through the CIA's own archives and through freedom-of-information requests processed by the National Security Archive at George Washington University, reveals a more complex picture. The CIA had systematically overestimated the likelihood of internal Cuban opposition to Castro, had underestimated Castro's military strength, and had planned the operation knowing that the cancellation of air support would likely result in failure.",
-      "The historical origins of the operation traced to the Eisenhower administration's decision, in March 1960, to authorize CIA planning for the removal of Castro. The formal planning for the Bay of Pigs operation began in January 1961, shortly after Kennedy took office. The operational directive came from the Joint Chiefs of Staff and the CIA director, Allen Dulles. Declassified planning documents from the CIA's internal files, released under FOIA in 1995, show that the operation was planned around the assumption that a two-pronged approach—a military beachhead at the Bay of Pigs coupled with an internal uprising—would overwhelm Castro's forces. The declassified memorandum from Deputy Director C. P. Cabell to Director Dulles, dated March 11, 1961, explicitly stated that the success of the operation depended on American air support. Without air cover, Cabell's memo concluded, the operation would face 'very serious difficulties.'",
-      "The brigade of exiles recruited for the operation, Brigade 2506, numbered approximately 1,400 men. They received training at CIA facilities in Guatemala under the direction of CIA paramilitary officers. The brigade was composed primarily of former members of the Batista regime's military, supplemented by middle-class exiles who had fled Cuba after Castro's seizure of power. The brigade trained for approximately three months. The training focused on amphibious assault tactics, weapons handling, and small-unit tactics. Training did not focus on large-scale defensive operations or sustained combat. Brigade leadership was briefed that air support would be continuous and that internal uprising would provide support within hours of the landing. Both assumptions proved false.",
-      "The decision to cancel the planned air support was made by President Kennedy on April 16, 1961, eighteen hours before the brigade was scheduled to land. The declassified National Security Council meeting transcript from April 15, 1961, shows that CIA and military planners argued for maintaining the air support. Kennedy believed that direct American participation in air strikes would compromise the administration's plausible deniability regarding the operation. The decision was made in the belief that air support could be reintroduced if the brigade achieved a secure beachhead. This assumption was not tested. The brigade landed on April 17 at dawn without air cover. Cuban forces, alerted to the landing by the pre-invasion exile activity in Miami (documented in declassified FBI surveillance reports), were concentrated at the Bay of Pigs within hours.",
-      "The declassified after-action reports from the Cuban military, translated and released by the Cold War International History Project, indicate that Cuban forces numbered approximately 5,000 troops in the immediate Bay of Pigs area within the first twelve hours. By April 18, Cuban forces had concentrated approximately 20,000 troops with armor and artillery support. Brigade 2506 was surrounded. American naval vessels were positioned offshore but were not committed to direct support. Kennedy declined to authorize air strikes on the second day of combat, citing political considerations. Brigade leadership requested air support on April 18 and received instead instructions to fight in place until reinforcements could be arranged. No reinforcements were arranged. By April 19, the brigade's ammunition was exhausted and the perimeter had been breached. Approximately 1,189 brigade members were captured. Approximately 114 were killed.",
-      "The declassified CIA internal investigation into the operation, conducted by Inspector General Lyman Kirkpatrick and completed in 1961 but not released until 1974, concluded that the operation had been 'fundamentally unsound.' Kirkpatrick's investigation examined the planning assumptions and found that the CIA had overestimated internal Cuban opposition to Castro by a factor of 10 to 1. The investigation also concluded that the CIA had reported optimistic assessments up the chain of command despite internal skepticism from operational planners. Kirkpatrick's report stated specifically that the CIA had 'tended to slant its reporting toward making the project appear more feasible than was actually the case.' The report was distributed to a limited number of CIA officials and was not shared with Congress.",
-      "The aftermath of the Bay of Pigs operation revealed institutional failures in intelligence analysis, military planning, and presidential decision-making. The operation became the first major foreign policy crisis of the Kennedy administration and shaped Kennedy's response to subsequent Cold War confrontations, including the Berlin Crisis and the Cuban Missile Crisis eighteen months later. Declassified records from the Kennedy Presidential Library show that Kennedy was deeply affected by the operation's failure. He commissioned multiple investigations and reviews. These reviews, when declassified decades later, provided the documentary foundation for historical analysis that contradicts the public narrative offered at the time.",
-      "The Bay of Pigs operation is significant in intelligence history not because it was exceptional in its failure—many intelligence operations fail—but because the declassified record permits precise identification of where the failure originated. The failure was not in execution, though execution was poor. The failure was not primarily in Kennedy's decision to cancel air support, though that decision was consequential. The failure originated in the intelligence assessments that formed the operational foundation: the estimate that Castro's government was unpopular and vulnerable to internal opposition; the estimate that the exile brigade could achieve a foothold and sustain it until internal collapse; the estimate that American air power would not be necessary if internal opposition materialized. None of these estimates proved accurate. The declassified intelligence files reveal that alternative estimates existed within the CIA but were not elevated to decision-makers. The lesson the operation teaches is not about operational failure but about institutional failure in intelligence analysis: the subordination of accurate assessment to optimistic assumption, and the filtering of contrary evidence as it moves up an organizational hierarchy."
+      "The Persian fleet entered the Strait of Salamis on a dawn morning in September 480 BC. Xerxes had come to conquer Greece, had ferried perhaps 300,000 men across the Hellespont, broken the pass at Thermopylae, and marched his army into Attica. The Greeks had no choice but to fight at sea, in waters they knew better than the Persians did. Themistocles of Athens had already made the decision: the narrow strait would be his killing ground.",
+      "The Persian fleet numbered over 1,000 ships by most accounts—triremes and lighter vessels, crewed by Phoenicians and Egyptians, commanded by men who had never fought in Greek waters. The Athenian force under Themistocles held perhaps 300 triremes, many freshly built, their crews barely trained. The arithmetic looked catastrophic. But Themistocles had seen something the Persian commanders had not: in confined water, numbers become a liability. A thousand ships cannot maneuver. They cannot support each other. They pile into each other.",
+      "At dawn on the date later fixed as 29 September 480 BC—though ancient sources disagree on the exact day—the Persian fleet began to advance into the strait. The Athenians held position near the shore. Herodotus records that Xerxes watched from a throne on the hillside above the water, attended by his generals and scribes, who recorded the battle as it happened. What he witnessed was the systematic destruction of his naval advantage.",
+      "The Athenian triremes rowed forward in a controlled line. They struck the Persian ships at an angle, ramming the hull below the waterline with their bronze-sheathed prows. A trireme struck hard could splinter. The Phoenician crews, crowded into narrow hulls, had no room to maneuver and few trained marines for boarding combat. As Persian ships sank, they blocked the advance of ships behind them. The strait became a coffin.",
+      "The fighting lasted one day. By afternoon, the Athenian crews—exhausted, drenched in spray and blood, their ships taking on water from ramming damage—held the strait. The Persian fleet had lost perhaps 200 ships and thousands of crew. Greek losses were severe but recoverable. More important: the invasion had broken. Xerxes, watching from the hill, realized the arithmetic had reversed. He withdrew to Asia Minor, leaving his general Mardonius behind with an army that would be defeated the following summer at Plataea.",
+      "What made Salamis decisive was not the size of the engagement but its strategic consequence. The Persian Empire had come to conquer Greece with a force that seemed irresistible. It failed at sea. Themistocles' insight—that a Persian advantage in numbers became a disadvantage in confined water—proved correct, and it held. The Greeks had no navy capable of challenging Persian power in open ocean. But in the shallows of home waters, where tight formations mattered more than numbers, they could fight on equal terms.",
+      "The cultural impact was immediate. The Athenians had held. The myth of Persian invincibility, carefully cultivated since the reign of Darius, had a crack in it. Salamis did not end the Persian threat to Greece—that would come at Plataea and Mycale—but it proved that the threat could be challenged. The Mediterranean powers that would rise after Persia's eventual withdrawal—eventually, Athens itself—could trace a line back to a single dawn in 480 BC, when a navy that should have been overwhelmed held a strait instead.",
+      "The aftermath was complicated. Themistocles' victory made him a power in Athens, but his growing influence alarmed the city's other leaders. Within a decade he would be ostracized and eventually exiled. The Athenian navy that had saved Greece would, within 70 years, drag Athens into the Peloponnesian War and toward eventual defeat. But in the moment after Salamis, none of that mattered. Greece had survived. The Persian fleet would not return to Greek waters in force again.",
+      "Later historians would debate what would have happened had Themistocles lost the strait. Would the Persian army have marched south and crushed the remaining Greek cities in open field battle? Probably yes. Would Greek civilization as it developed—democratic Athens, the philosophical tradition that would flow from it—have survived a Persian conquest? The question has no answer. But it is the right question to ask. One day in one strait changed the trajectory of the Western world."
     ],
     "sources": [
       {
-        "label": "Wikipedia: Bay of Pigs Invasion",
-        "href": "https://en.wikipedia.org/wiki/Bay_of_Pigs_Invasion"
+        "label": "Herodotus, Histories, Book 8: The Battle of Salamis",
+        "href": "https://en.wikipedia.org/wiki/Battle_of_Salamis"
       },
       {
-        "label": "CIA Freedom of Information Act Reading Room: Bay of Pigs Collection",
-        "href": "https://www.cia.gov/readingroom/"
+        "label": "Plutarch, Life of Themistocles",
+        "href": "https://en.wikipedia.org/wiki/Themistocles"
       },
       {
-        "label": "National Security Archive, George Washington University: Bay of Pigs Declassified Documents",
-        "href": "https://nsarchive.gwu.edu"
+        "label": "Aeschylus, The Persians (contemporary Greek dramatic account of the battle)",
+        "href": "https://en.wikipedia.org/wiki/The_Persians"
       },
       {
-        "label": "Lyman B. Kirkpatrick, CIA Inspector General Report on the Bay of Pigs Operation (declassified 1974)",
-        "href": "https://www.cia.gov/readingroom/"
+        "label": "Britannica: Battle of Salamis",
+        "href": "https://www.britannica.com/event/Battle-of-Salamis"
       }
     ]
   },
   "shortForm": {
-    "id": "article-u2-incident-1960-dispatch",
-    "title": "The U-2 Over Sverdlovsk: Espionage and Miscalculation",
-    "slug": "u2-incident-1960-dispatch",
-    "excerpt": "On May 1, 1960, an American U-2 spy plane was shot down over Sverdlovsk in the Soviet Union. The pilot, Gary Powers, was captured. The incident created an international crisis and exposed the existence of the CIA's high-altitude reconnaissance program. Declassified intelligence files show the flight was authorized despite warnings that Soviet air defenses had improved.",
-    "era": "cold-war",
-    "voice": "archivist",
+    "id": "article-battle-of-poltava-1709-dispatch",
+    "title": "Poltava: When Peter the Great Broke Swedish Power",
+    "slug": "battle-of-poltava-1709-dispatch",
+    "excerpt": "At Poltava in 1709, Peter the Great's Russian army destroyed Charles XII of Sweden's invasion force. The victory marked the end of Swedish dominance in Eastern Europe and the rise of Russia.",
+    "era": "early-modern",
+    "voice": "correspondent",
     "paragraphs": [
-      "The operational history of the U-2 program, documented in declassified National Reconnaissance Office records and CIA internal files, shows that the U-2 had conducted overhead reconnaissance flights over the Soviet Union since 1956 without loss. The flights operated at 70,000 feet, a ceiling initially believed to be above Soviet air defense capability. By 1960, Soviet air defenses had improved. Declassified National Intelligence Estimates from early 1960 indicate that the CIA was aware that the Soviets had deployed the S-75 surface-to-air missile system. The intelligence assessment stated that Soviet SAM capability could reach the U-2's operating altitude. Declassified operational records from the CIA Directorate of Operations show that this intelligence assessment was known to the authorization chain but did not result in cancellation of the May 1 flight.",
-      "Gary Powers was piloting a U-2 from a base in Pakistan toward the Soviet industrial city of Sverdlovsk on May 1, 1960. The flight plan called for photography of Soviet missile test facilities and weapons production centers. Declassified telemetry records show that the aircraft was struck by a surface-to-air missile at 70,500 feet. The damage was catastrophic. Powers ejected and parachuted into Soviet territory. He was captured by Soviet security forces. The aircraft wreckage was recovered by Soviet forces and its components were displayed as propaganda material.",
-      "The diplomatic aftermath was severe. Soviet Premier Nikita Khrushchev announced the capture at an international forum and demanded an American apology. The Eisenhower administration initially denied the loss, then acknowledged it, then offered a partial apology. Declassified records show that the incident complicated Soviet-American negotiations over arms control and nuclear testing. The U-2 program was suspended pending review. Declassified retrospective analyses of the incident, conducted by the CIA in the 1970s, concluded that the May 1 flight should not have been authorized given the intelligence assessment regarding Soviet air defenses. Powers was released in a prisoner exchange in February 1962."
+      "Charles XII of Sweden was 27 years old and had never lost a battle. He had fought the Poles, the Saxons, the Danes—all of them had been broken by the Swedish Army. In 1708, he crossed into Russia with perhaps 45,000 men, expecting the same rapid destruction. Instead, the Russians burned everything in his path. The Cossack allies Charles had relied on switched sides. By the time the Swedish army reached Poltava, it was starving, worn down by 6,000 miles of march through hostile territory.",
+      "Peter the Great, commanding from the Russian side, had learned from his earlier defeats. At Narva in 1700, his army had been shattered by the same Charles XII. Now, 9 years later, Peter's infantry and artillery had improved dramatically. He had built a fortified camp at Poltava. On 8 July 1709, Charles XII, desperate and outnumbered, attacked. The Russians held the line. The Swedish cavalry charges, which had won every battle before this one, broke against Russian guns.",
+      "By afternoon, Swedish ranks had collapsed. Charles XII escaped to Ottoman territory with a remnant of his army. Russia had lost perhaps 6,000 men; Sweden had lost nearly 20,000—dead, wounded, or captured. The Swedish Empire would not recover. Peter became the dominant power in Eastern Europe, and Russia replaced Sweden as the region's military arbiter. One battle had reordered the continent."
     ],
     "sources": [
       {
-        "label": "Wikipedia: Lockheed U-2",
-        "href": "https://en.wikipedia.org/wiki/Lockheed_U-2"
+        "label": "Wikipedia: Battle of Poltava",
+        "href": "https://en.wikipedia.org/wiki/Battle_of_Poltava"
       },
       {
-        "label": "CIA Freedom of Information Act Reading Room: U-2 Program Declassified Documents",
-        "href": "https://www.cia.gov/readingroom/"
+        "label": "Voltaire, The History of the Russian Empire Under Peter the Great",
+        "href": "https://en.wikipedia.org/wiki/Peter_the_Great"
       }
     ]
   },
   "onThisDay": {
     "month": 5,
     "day": 8,
-    "year": 1945,
-    "headline": "Germany Surrenders: Victory in Europe Declared",
-    "summary": "On May 8, 1945, Germany's unconditional surrender took effect, ending the war in Europe. German military leadership signed the Instrument of Surrender on May 7 in Reims, France. All German forces were ordered to cease combat. The European theater of World War II concluded.",
+    "year": 1942,
+    "headline": "Battle of the Coral Sea: First Naval Battle Fought Entirely by Aircraft",
+    "summary": "The Battle of the Coral Sea (May 7-8, 1942) was fought entirely by carrier-based aircraft—neither fleet saw the other. American and Australian forces stopped Japanese expansion toward Australia, marking the strategic turning point in the Pacific War.",
     "era": "world-war-ii",
-    "linkedArticleSlug": "bay-of-pigs-1961"
+    "linkedArticleSlug": null
   }
 }
