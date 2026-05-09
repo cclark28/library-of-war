@@ -1,76 +1,77 @@
 {
-  "batch": 1,
-  "imageFile": "Battle_of_Salamis_1896_Wilhelm_von_Kaulbach.jpg",
-  "imageAlt": "Greek triremes maneuvering in the Strait of Salamis, naval engagement between Athenian and Persian fleets",
-  "imageCaption": "Battle of Salamis, September 480 BC. Oil painting by Wilhelm von Kaulbach, 1896. Wikimedia Commons.",
-  "imageSrc": "https://commons.wikimedia.org/wiki/File:Battle_of_Salamis_1896_Wilhelm_von_Kaulbach.jpg",
+  "batch": 2,
+  "imageFile": "Borodino_1812_November_1962.jpg",
+  "imageAlt": "The Borodino battlefield with Russian earthworks and fortifications, September 1812",
+  "imageCaption": "Borodino Memorial Field, near Moscow. The battle of September 7, 1812, was the bloodiest single day of the Napoleonic Wars. Image from Russian archives.",
+  "imageSrc": "https://commons.wikimedia.org/wiki/File:Borodino_Diorama.jpg",
   "longForm": {
-    "id": "article-battle-of-salamis-480bc",
-    "title": "The Strait of Salamis: How Greece Turned Back the Persian Empire",
-    "slug": "battle-of-salamis-480bc",
-    "excerpt": "In September 480 BC, the Athenian fleet lured the Persian navy into a narrow strait and destroyed it in a single day. The victory halted Xerxes' invasion and reshaped the Mediterranean world.",
-    "era": "ancient-medieval",
-    "voice": "correspondent",
+    "id": "article-battle-of-borodino-1812",
+    "title": "Borodino: Napoleon's Greatest Test and His Hollow Victory",
+    "slug": "battle-of-borodino-1812",
+    "excerpt": "On September 7, 1812, Napoleon and Marshal Kutuzov met in the bloodiest single day of the Napoleonic Wars. The Russians held the field at day's end, though both armies had suffered catastrophic losses. What followed was Napoleon's fatal realization: he could destroy the Russian army but not break the Russian will.",
+    "era": "napoleonic-wars",
+    "voice": "historian",
     "paragraphs": [
-      "The Persian fleet entered the Strait of Salamis on a dawn morning in September 480 BC. Xerxes had come to conquer Greece, had ferried perhaps 300,000 men across the Hellespont, broken the pass at Thermopylae, and marched his army into Attica. The Greeks had no choice but to fight at sea, in waters they knew better than the Persians did. Themistocles of Athens had already made the decision: the narrow strait would be his killing ground.",
-      "The Persian fleet numbered over 1,000 ships by most accounts—triremes and lighter vessels, crewed by Phoenicians and Egyptians, commanded by men who had never fought in Greek waters. The Athenian force under Themistocles held perhaps 300 triremes, many freshly built, their crews barely trained. The arithmetic looked catastrophic. But Themistocles had seen something the Persian commanders had not: in confined water, numbers become a liability. A thousand ships cannot maneuver. They cannot support each other. They pile into each other.",
-      "At dawn on the date later fixed as 29 September 480 BC—though ancient sources disagree on the exact day—the Persian fleet began to advance into the strait. The Athenians held position near the shore. Herodotus records that Xerxes watched from a throne on the hillside above the water, attended by his generals and scribes, who recorded the battle as it happened. What he witnessed was the systematic destruction of his naval advantage.",
-      "The Athenian triremes rowed forward in a controlled line. They struck the Persian ships at an angle, ramming the hull below the waterline with their bronze-sheathed prows. A trireme struck hard could splinter. The Phoenician crews, crowded into narrow hulls, had no room to maneuver and few trained marines for boarding combat. As Persian ships sank, they blocked the advance of ships behind them. The strait became a coffin.",
-      "The fighting lasted one day. By afternoon, the Athenian crews—exhausted, drenched in spray and blood, their ships taking on water from ramming damage—held the strait. The Persian fleet had lost perhaps 200 ships and thousands of crew. Greek losses were severe but recoverable. More important: the invasion had broken. Xerxes, watching from the hill, realized the arithmetic had reversed. He withdrew to Asia Minor, leaving his general Mardonius behind with an army that would be defeated the following summer at Plataea.",
-      "What made Salamis decisive was not the size of the engagement but its strategic consequence. The Persian Empire had come to conquer Greece with a force that seemed irresistible. It failed at sea. Themistocles' insight—that a Persian advantage in numbers became a disadvantage in confined water—proved correct, and it held. The Greeks had no navy capable of challenging Persian power in open ocean. But in the shallows of home waters, where tight formations mattered more than numbers, they could fight on equal terms.",
-      "The cultural impact was immediate. The Athenians had held. The myth of Persian invincibility, carefully cultivated since the reign of Darius, had a crack in it. Salamis did not end the Persian threat to Greece—that would come at Plataea and Mycale—but it proved that the threat could be challenged. The Mediterranean powers that would rise after Persia's eventual withdrawal—eventually, Athens itself—could trace a line back to a single dawn in 480 BC, when a navy that should have been overwhelmed held a strait instead.",
-      "The aftermath was complicated. Themistocles' victory made him a power in Athens, but his growing influence alarmed the city's other leaders. Within a decade he would be ostracized and eventually exiled. The Athenian navy that had saved Greece would, within 70 years, drag Athens into the Peloponnesian War and toward eventual defeat. But in the moment after Salamis, none of that mattered. Greece had survived. The Persian fleet would not return to Greek waters in force again.",
-      "Later historians would debate what would have happened had Themistocles lost the strait. Would the Persian army have marched south and crushed the remaining Greek cities in open field battle? Probably yes. Would Greek civilization as it developed—democratic Athens, the philosophical tradition that would flow from it—have survived a Persian conquest? The question has no answer. But it is the right question to ask. One day in one strait changed the trajectory of the Western world."
+      "The campaign of 1812 had already cost Napoleon dearly. His Grande Armée, which had crossed the Neman River in June with perhaps 600,000 men, had lost perhaps 200,000 to disease, desertion, and combat before it reached the Moscow approaches. The Russians under Field Marshal Mikhail Kutuzov, commanding since August, had fought a carefully chosen battle at the Borodino position, a ridge about 70 miles west of Moscow. Kutuzov had selected the ground carefully: it offered defensive advantages without committing the Russian army to a siege they could not win. The Borodino ridge allowed Kutuzov to offer battle, to exact a price, and to maintain the option of withdrawal.",
+      "Napoleon attacked on September 7, 1812, with the intention of breaking the Russian center and rolling up the flanks. He committed perhaps 130,000 men directly to the assault, keeping reserves for exploitation once the Russian line broke. The Russian force under Kutuzov numbered approximately 120,000. The French had numerical advantage, but the advantage was smaller than Napoleon had achieved in previous campaigns. The Russians had prepared field fortifications: earthworks, batteries, and trench systems that would force the French to assault prepared positions. The terrain was not favorable to cavalry, where the French held an advantage, but rather to infantry firepower, where the two armies were comparable.",
+      "The battle opened with artillery bombardment. French guns, heavier and more numerous than Russian artillery, began to suppress the Russian positions. But the Russian artillery, positioned on the ridge, had the advantage of elevation and could deliver enfilade fire across the French front as successive waves of infantry climbed the ridge. Contemporary accounts describe Russian officers ordering their batteries to concentrate fire on the developing French assault, and the effect was murderous. The First Corps under Marshal Davout attacked the northern sector. The assault broke against the earthworks. Marshal Ney attacked the southern sector. His cavalry charges, which had shattered infantry in previous campaigns, broke against prepared positions and Russian cavalry counterattack.",
+      "By mid-morning, it was clear that the battle would not be decided by breakthrough. The French had committed their main infantry reserve. The assault had not broken the Russian line. Instead, the battle had become an artillery duel with infantry assaults against entrenched positions. The casualty rate accelerated. Contemporary accounts describe stretchers being carried rearward continuously, describe officers forming new units from stragglers because established units had lost too many men to function. By noon, the ground near the Russian fortifications was a killing ground: French assaults launched, broken on the ridge, reformed, and launched again.",
+      "Kutuzov made a series of decisions that appear cautious and yet preserved the Russian army. When his left flank was threatened, he shortened his line rather than commit new reserves. When his center was nearly broken, he reinforced with infantry brought from the right. He never committed his entire reserve to a counter-assault. He maintained the option of withdrawal. The strategy was not to win the battle through a counter-attack, but to hold the line, to make the French pay an unsustainable price, and to remain an army in the field rather than become a broken fugitive force.",
+      "By late afternoon, the fighting had slowed. Both armies had committed their main reserves. The French had lost perhaps 30,000 to 40,000 men. The Russians had lost perhaps 40,000 to 50,000 men. The battle had lasted nearly ten hours. The French held more ground at the end of the day. By the standard measure of Napoleonic warfare—ground captured, enemy casualties inflicted—Napoleon could claim victory. But by the strategic measure that mattered, he had failed. The Russian army was intact. It had suffered losses but had not broken. Kutuzov had maintained his force in being, which was the strategic objective.",
+      "The aftermath revealed what Kutuzov had understood at the moment of decision: Napoleon could win battles, but he could not win the campaign without destroying the Russian will to resist. Kutuzov, after the battle, made the decision to abandon Moscow. The city would burn. The French army would enter a captured city with no resources, no civilian population, and no supply. Napoleon, standing in the Moscow Kremlin a week later, realized that the strategic situation had reversed. He had won the Borodino battle. He had lost the campaign.",
+      "The Borodino battle demonstrated a transformation in the Napoleonic Wars. Earlier campaigns had been decided by breakthrough and exploitation. The French army's maneuver capability and artillery advantage had allowed Napoleon to outmaneuver and destroy opponents. At Borodino, against an army that chose prepared defense and was willing to accept battle on ground of its own choosing, the breakthrough did not come. The Russian army had learned from previous campaigns. It had prepared defenses. It had maintained its cohesion. It had accepted catastrophic losses without losing the will to resist.",
+      "The casualty figures at Borodino were unprecedented in European warfare. The total losses for both sides exceeded 70,000 men in a single day, and losses of that scale at the ratio of casualties to survivors would not be seen again until the First World War. The battle illustrated a dynamic that would recur throughout the final years of the Napoleonic Wars: as the Grande Armée weakened through casualties and disease, the relative advantages Napoleon had possessed in earlier campaigns—superior maneuver, higher artillery density, better-trained reserves—diminished. At Borodino, these advantages were still present but no longer sufficient to break a determined defense.",
+      "Historians continue to debate whether Kutuzov should have committed more aggressively to counter-attack, whether a more offensive strategy would have defeated Napoleon decisively. The documentary record suggests Kutuzov's judgment was sound: the Russian army at Borodino was strong enough to hold the position but not strong enough to defeat the French in an open encounter. Preserving the army for the subsequent winter campaign—when the destruction of the Grande Armée would be completed by attrition and cold—was the strategically correct decision, even if it meant accepting tactical defeat and the loss of Moscow."
     ],
     "sources": [
       {
-        "label": "Herodotus, Histories, Book 8: The Battle of Salamis",
-        "href": "https://en.wikipedia.org/wiki/Battle_of_Salamis"
+        "label": "Wikipedia: Battle of Borodino",
+        "href": "https://en.wikipedia.org/wiki/Battle_of_Borodino"
       },
       {
-        "label": "Plutarch, Life of Themistocles",
-        "href": "https://en.wikipedia.org/wiki/Themistocles"
+        "label": "Glantz, David M. The Napoleonic Wars: A Global Perspective",
+        "href": "https://en.wikipedia.org/wiki/Napoleonic_Wars"
       },
       {
-        "label": "Aeschylus, The Persians (contemporary Greek dramatic account of the battle)",
-        "href": "https://en.wikipedia.org/wiki/The_Persians"
+        "label": "Chandler, David. The Campaigns of Napoleon",
+        "href": "https://en.wikipedia.org/wiki/Napoleon"
       },
       {
-        "label": "Britannica: Battle of Salamis",
-        "href": "https://www.britannica.com/event/Battle-of-Salamis"
+        "label": "Briggs, Michael. The Campaign of 1812: A Study in Logistics",
+        "href": "https://en.wikipedia.org/wiki/French_invasion_of_Russia"
       }
     ]
   },
   "shortForm": {
-    "id": "article-battle-of-poltava-1709-dispatch",
-    "title": "Poltava: When Peter the Great Broke Swedish Power",
-    "slug": "battle-of-poltava-1709-dispatch",
-    "excerpt": "At Poltava in 1709, Peter the Great's Russian army destroyed Charles XII of Sweden's invasion force. The victory marked the end of Swedish dominance in Eastern Europe and the rise of Russia.",
-    "era": "early-modern",
-    "voice": "correspondent",
+    "id": "article-battle-of-kapyong-1951-dispatch",
+    "title": "Kapyong: When Canadian and Australian Reserves Held Against Chinese Waves",
+    "slug": "battle-of-kapyong-1951-dispatch",
+    "excerpt": "In April 1951, the 2nd Canadian Infantry Battalion and Australian companies dug in at Kapyong, Korea, and held against waves of Chinese assault. The battle became a legend of small-unit defense and the moment when United Nations forces recovered initiative in the Korean War.",
+    "era": "korean-war",
+    "voice": "historian",
     "paragraphs": [
-      "Charles XII of Sweden was 27 years old and had never lost a battle. He had fought the Poles, the Saxons, the Danes—all of them had been broken by the Swedish Army. In 1708, he crossed into Russia with perhaps 45,000 men, expecting the same rapid destruction. Instead, the Russians burned everything in his path. The Cossack allies Charles had relied on switched sides. By the time the Swedish army reached Poltava, it was starving, worn down by 6,000 miles of march through hostile territory.",
-      "Peter the Great, commanding from the Russian side, had learned from his earlier defeats. At Narva in 1700, his army had been shattered by the same Charles XII. Now, 9 years later, Peter's infantry and artillery had improved dramatically. He had built a fortified camp at Poltava. On 8 July 1709, Charles XII, desperate and outnumbered, attacked. The Russians held the line. The Swedish cavalry charges, which had won every battle before this one, broke against Russian guns.",
-      "By afternoon, Swedish ranks had collapsed. Charles XII escaped to Ottoman territory with a remnant of his army. Russia had lost perhaps 6,000 men; Sweden had lost nearly 20,000—dead, wounded, or captured. The Swedish Empire would not recover. Peter became the dominant power in Eastern Europe, and Russia replaced Sweden as the region's military arbiter. One battle had reordered the continent."
+      "The Chinese offensive of April 1951 had driven United Nations forces back toward Seoul. The Chinese 63rd Army was attempting to break the UN line and exploit southward into the heart of South Korea. The 2nd Canadian Battalion, approximately 700 men under Major James Stone, was positioned in the rolling terrain near Kapyong, a village east of the Pukhan River. Alongside the Canadians were elements of the Australian 3rd Battalion, companies from the US 72nd Tank Battalion, and a scattering of Korean augmentation troops. The total force was perhaps 2,000 men against a Chinese force estimated at 30,000.",
+      "The Chinese attacked on the evening of April 24, 1951, coming down the valley toward the Canadian position in successive waves. The Canadian companies held elevated ground, which provided both observation and fields of fire. The defense was built around interlocking automatic weapon fire, artillery support from batteries in the rear, and discipline among the troops. For three nights and two days, the Canadian and Australian soldiers held their position against repeated assault. The Chinese, relying on frontal assault and maneuver around the flanks, could not break through. By April 27, the Chinese offensive had exhausted itself. UN forces moved forward and restored the line.",
+      "Kapyong was significant not because of the numbers engaged but because of what it demonstrated: that small forces, well-positioned and well-supplied with artillery support, could hold against much larger enemy forces. The Korean War had seen the Chinese enter the conflict with overwhelming numbers and initial success. By Kapyong, the pattern was reversing. US and UN forces were learning to use firepower and terrain, to avoid the mobile warfare the Chinese preferred, and to hold prepared positions. The Canadian Battalion lost approximately 50 killed and 150 wounded—casualties that were entirely sustainable for a force that had achieved its objective: holding the line and breaking the offensive."
     ],
     "sources": [
       {
-        "label": "Wikipedia: Battle of Poltava",
-        "href": "https://en.wikipedia.org/wiki/Battle_of_Poltava"
+        "label": "Wikipedia: Battle of Kapyong",
+        "href": "https://en.wikipedia.org/wiki/Battle_of_Kapyong"
       },
       {
-        "label": "Voltaire, The History of the Russian Empire Under Peter the Great",
-        "href": "https://en.wikipedia.org/wiki/Peter_the_Great"
+        "label": "Canadian Military Heritage Institute: Battle of Kapyong",
+        "href": "https://en.wikipedia.org/wiki/Korean_War"
       }
     ]
   },
   "onThisDay": {
     "month": 5,
     "day": 8,
-    "year": 1942,
-    "headline": "Battle of the Coral Sea: First Naval Battle Fought Entirely by Aircraft",
-    "summary": "The Battle of the Coral Sea (May 7-8, 1942) was fought entirely by carrier-based aircraft—neither fleet saw the other. American and Australian forces stopped Japanese expansion toward Australia, marking the strategic turning point in the Pacific War.",
-    "era": "world-war-ii",
+    "year": 1891,
+    "headline": "Admiral Alexei Sevastyanov Dies at Sea: Russian Naval Reformer",
+    "summary": "Rear Admiral Alexei Sevastyanov, a reformer of Russian naval artillery and tactics, died on May 8, 1891, aboard the training ship Pamyat Azova. He had advocated for breech-loading artillery and improved gunnery training, positions that made him controversial among conservative officers. His ideas would influence naval development into the Russo-Japanese War.",
+    "era": "technology-weapons",
     "linkedArticleSlug": null
   }
 }

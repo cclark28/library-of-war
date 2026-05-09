@@ -1,7 +1,7 @@
 {
-  "voiceIndex": 1,
-  "lastRun": "2026-05-09T03:12:41.465Z",
-  "articlesWritten": 171,
+  "voiceIndex": 2,
+  "lastRun": "2026-05-09T03:13:58.578Z",
+  "articlesWritten": 173,
   "usedSlugs": [
     "battle-of-cannae",
     "battle-of-austerlitz",
@@ -123,7 +123,9 @@
     "agincourt-terrain-doctrine-1415",
     "bosworth-field-1485",
     "battle-of-salamis-480bc",
-    "battle-of-poltava-1709-dispatch"
+    "battle-of-poltava-1709-dispatch",
+    "battle-of-borodino-1812",
+    "battle-of-kapyong-1951-dispatch"
   ],
   "_voices": [
     "correspondent",
