@@ -2,9 +2,30 @@ import { NextRequest, NextResponse } from 'next/server'
 
 export const runtime = 'edge'
 
-const ALERT_EMAIL = 'charlieclark@gmail.com'
+const ALERT_EMAIL = 'ufocosmosadmin@gmail.com'
 const ALLOWED_IMAGE_TYPES = ['image/jpeg', 'image/png', 'image/webp']
 const MAX_IMAGE_BYTES = 10 * 1024 * 1024 // 10 MB
+
+// ── Simple token signing (Web Crypto for edge runtime) ───────────────────────
+async function signToken(draftId: string): Promise<string> {
+  const secret = process.env.APPROVAL_TOKEN_SECRET || 'default-secret-change-me'
+  const encoder = new TextEncoder()
+  const key = await crypto.subtle.importKey(
+    'raw',
+    encoder.encode(secret),
+    { name: 'HMAC', hash: 'SHA-256' },
+    false,
+    ['sign']
+  )
+  const signature = await crypto.subtle.sign(
+    'HMAC',
+    key,
+    encoder.encode(draftId)
+  )
+  const hashArray = Array.from(new Uint8Array(signature))
+  const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('')
+  return `${draftId}:${hashHex}`
+}
 
 // ── In-memory rate limiter (resets on cold start, good enough for edge) ───────
 // 5 submissions per IP per hour window
@@ -192,6 +213,14 @@ export async function POST(request: NextRequest) {
   // ── Email alert via Resend ────────────────────────────────────────────────────
   const resendKey = process.env.RESEND_API_KEY
 
+  // Generate approval token
+  let approvalToken = ''
+  try {
+    approvalToken = await signToken(draftId)
+  } catch (err) {
+    console.error('Token signing failed:', err)
+  }
+
   if (resendKey) {
     const seriesLine = series
       ? `<tr style="border-bottom:1px solid #C8B89A;">
@@ -233,12 +262,17 @@ export async function POST(request: NextRequest) {
           </tr>
         </table>
 
-        <div style="background:#F5F3F0;border-left:3px solid #8B1A1A;padding:16px 20px;">
+        <div style="background:#F5F3F0;border-left:3px solid #8B1A1A;padding:16px 20px;margin-bottom:24px;">
           <p style="margin:0;font-size:13px;line-height:1.6;">
             Review the full submission in <a href="https://www.sanity.io/manage" style="color:#8B1A1A;text-decoration:none;font-weight:bold;">Sanity Studio</a>
             under <strong>Contributor Submissions</strong>.
             ${imageAssetRef ? '<br><br>⬛ An image was uploaded with this submission.' : ''}
           </p>
+        </div>
+
+        <div style="text-align:center;">
+          <a href="https://www.ufocosmos.com/api/approve?token=${approvalToken}" style="display:inline-block;background:#8B1A1A;color:#FFFFFF;padding:14px 32px;text-decoration:none;border-radius:4px;font-weight:bold;font-size:14px;letter-spacing:0.05em;">APPROVE & PUBLISH</a>
+          <p style="font-size:12px;color:#888078;margin-top:16px;">One-click approval link — valid for 7 days</p>
         </div>
 
         <p style="font-size:11px;color:#C8B89A;margin-top:32px;letter-spacing:0.12em;">
