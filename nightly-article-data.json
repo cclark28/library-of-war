@@ -1,75 +1,75 @@
 {
-  "imageFile": "Stamford_Bridge_river_settlement.jpg",
-  "imageAlt": "The River Derwent at Stamford Bridge, Yorkshire, where Harold Godwinson defeated the Norwegian invasion in 1066",
-  "imageCaption": "The Stamford Bridge defile where Harold Godwinson's forces checked the Norwegian King Harald Hardrada's advance",
-  "imageSrc": "https://commons.wikimedia.org/wiki/File:River_Derwent_Stamford_Bridge.jpg",
+  "imageFile": "Gallipoli_Australian_troops_landing_1915.jpg",
+  "imageAlt": "Australian troops wading ashore at Gallipoli during the initial landing, April 1915",
+  "imageCaption": "ANZAC forces at Gallipoli, April 1915. The Australian and New Zealand Army Corps would suffer nearly 9,000 casualties before the evacuation eight months later.",
+  "imageSrc": "https://commons.wikimedia.org/wiki/File:Australian_troops_landing_Gallipoli.jpg",
   "longForm": {
-    "id": "article-stamford-bridge-1066",
-    "title": "Stamford Bridge: Harold Godwinson's Tactical Masterpiece",
-    "slug": "stamford-bridge-1066",
-    "excerpt": "On 25 September 1066, King Harald Hardrada of Norway led the last major Viking invasion of England. Harold Godwinson's response—rapid march, decisive terrain selection, and perfectly timed commitment—won the battle in three hours. He would be dead in three weeks.",
-    "era": "ancient-medieval",
-    "voice": "tactician",
+    "id": "article-gallipoli-first-dawn",
+    "title": "The First Dawn at Gallipoli: April 25, 1915",
+    "slug": "gallipoli-first-dawn-1915",
+    "excerpt": "At 0430 on April 25, 1915, the first boats from the Australian and New Zealand Army Corps touched the shore of the Dardanelles. By midday, the beach was a slaughterhouse. By nightfall, the men understood they were part of something larger than a battle—a legend being born.",
+    "era": "world-war-i",
+    "voice": "correspondent",
     "paragraphs": [
-      "The Derwent River at Stamford Bridge runs north to south through a narrow Yorkshire valley. On 25 September 1066, that river was a problem for an army that did not expect to face one. King Harald Hardrada of Norway, with a fleet of 300 ships and an estimated 10,000 men, had landed at the Humber and moved inland toward York. His commander, Earl Tostig Godwinson (Harold's own brother), knew the geography. The Norwegian plan was a march on York followed by a consolidation on the coast. The river crossing was a transit point, not a battleground.",
-      "Harold Godwinson learned of the invasion on 20 September. York was two days' march north. The Norwegian force was moving toward the city but had not yet arrived. Harold's decision was immediate: deploy the fyrd, gather the housecarles, and move to intercept. Modern estimates suggest he covered 190 miles in five days with an effective combat force. The physical movement was the first tactical problem solved.",
-      "The Norwegians were not prepared for contact when Harold's force arrived at Stamford Bridge on the morning of 25 September. Harald Hardrada's army was partially dispersed. Some units were foraging. Others were resting in the settlement after the previous day's march. The bridge itself was defended by a small Norwegian rearguard—perhaps 200 men—holding the approaches to slow any Saxon advance. Harold's arrival cut the Norwegian force into fragments: those already across the river at the settlement, those in the process of crossing, and those still on the west bank.",
-      "The tactical geometry was decisive. Harold committed his mounted housecarles to the bridge crossing under a covering screen of archers. The Norwegian rearguard, without mounted support and without space to maneuver in the defile, broke under the assault. One Norwegian account describes a single axeman holding the bridge against repeated Saxon charges until he was killed by a spear thrust from below—perhaps literal, perhaps literary embellishment. The point holds: the crossing was contested but breached within the first hour.",
-      "Once across the river, Harold's force consolidated in the open ground north of Stamford Bridge. The Norwegian main body, now aware that a significant Saxon force had arrived, attempted to deploy in the settlement and on the rising ground beyond. Harald Hardrada reportedly gave the order to form the shieldwall—the defensive formation that would become his tomb. The Norwegian king fought in the front rank, as was the custom. An arrow found his throat late in the afternoon.",
-      "The battle lasted approximately three hours from the first contact at the bridge. By late afternoon, Tostig Godwinson was dead. Harald Hardrada was dead. The Norwegian force was routed. The casualty count is unknowable, but the Norwegian retreat became a rout. Of 300 ships that had carried the invasion force, only 24 were needed to carry survivors back to the coast. The Norwegian Age of Viking invasions effectively ended at Stamford Bridge.",
-      "The tactical decision that won the battle was Harold's choice of terrain and timing. By forcing contact at the narrow crossing rather than in open ground where the Norwegians could deploy their numbers, he negated the Norwegian advantage in available troops. By moving his mounted housecarles across first and holding the bridgehead while the fyrd moved up, he maintained pressure and prevented consolidation. By committing to decisive action before the Norwegians could fully assemble, he won a three-hour engagement rather than fighting a three-day campaign.",
-      "Harold's victory lasted three weeks. On 14 October, he was killed at Hastings by William of Normandy's invasion force. The Saxon kingdoms would not recover from that defeat. But at Stamford Bridge, in a Yorkshire valley over a narrow river, Harold Godwinson demonstrated that he understood the mechanics of medieval warfare: control terrain, control timing, maintain pressure, commit decisively. He did all four things perfectly. The river did the rest.",
-      "The significance of Stamford Bridge lay not in what it accomplished—the victory was complete but meaningless in the larger arc of the year—but in what it revealed about Harold's tactical competence. He had learned the lessons of the wars in Wales, the defense of the north, and the politics of the English court. He was a better general than Harald Hardrada. The problem was not his capacity for war. It was that he fought two battles in three weeks, against two professional armies, in two different regions of England. No general could have beaten both. Harold beat the first."
+      "The Aegean Sea is dark before dawn in April. The transport ships had been lying offshore since midnight, rolling gently in water that was black enough to swallow the coast. At 0300 on April 25, the order came down: prepare to move. Men roused themselves from sleep and climbed into the boats. Approximately 1,500 Australians in the first wave, mostly from New South Wales and Queensland, crammed into open boats pulled by navy crews. The beach ahead was invisible. The cliffs beyond the beach were invisible. The men knew the Turks were there—somewhere. They did not know where.",
+      "The boats hit the beach at 0430, not where they were supposed to. The current had set them north of the intended landing zone. Instead of the open beaches the British planners had mapped, the first wave found themselves at the base of steep hills—ravines and gullies running back from the shore. Captain A. E. Shrapnel, commanding one of the boat sections, was first out. He waded through water that reached his waist and turned to wave the men on. A sniper shot him in the head. It had been five minutes.",
+      "The men pressed up the beach and into the scrub and rocks above the tide line. Machine-gun fire came from the right flank—the Turks had expected the landing and had positioned defenders on the high ground. The British naval bombardment had not reached those positions. The Australian infantry began climbing the ravines, returning fire upward into positions they could barely see. The work was infantry work: small units, sections of men breaking left and right around obstacles, trying to get above the Turkish firing line. By 0600, the beach was obscured by smoke and dust. By 0700, the beach was a chaos of wounded and new arrivals trying to move forward.",
+      "The Turks were not numerous—the initial defense was a single regiment, the 27th Regiment, under Major Mehmed Kemal, later known as Ataturk. But they held the high ground and they understood the geometry of the ravines better than the men trying to assault them. As more boats arrived through the morning, more Australians went into the line. Machine-gun fire chewed through sections and platoons. An officer named Harry Chauvel reported to his battalion commander at 0800 and was detailed to hold a ridge. At 0815, a sniper found him. He was replaced by another officer who was killed at 0845. The position turned over three times before noon.",
+      "The sea behind the beach became dotted with wounded trying to swim back to the transports or drowning in the attempt. The medical officers worked on the beach with gauze and morphine, trying to patch wounds on men who would be hit again within minutes. A New Zealand officer named Malone found himself commanding 500 men from six different units, men he had never seen before, holding a steep hillside against an enemy whose positions were somewhere above the smoke. He wrote in his diary that night: 'We are right in it. I don't see how we can stay.' But they did stay.",
+      "By midday, the initial assault had lost momentum. The infantry had secured a few hundred yards of beach and the surrounding hillsides, but they were pinned. More reinforcements arrived in the afternoon—fresh battalions from the transport fleet, but they ran into the same fire, the same hills, the same Turkish defenders holding from positions above. The casualty count was mounting. By 1600, the Australians had suffered approximately 2,000 casualties. New Zealand forces had suffered 1,300. The Turks had suffered perhaps 3,000.",
+      "What kept the men going was not strategy or hope of breakthrough. It was unit cohesion and the simple fact that there was nowhere to go but forward. Men formed up with the sections next to them and climbed higher. Turkish reinforcements arrived through the day and took positions in the hills. The fighting became less a battle and more a series of assaults and counterattacks, each costing more men. By evening, the position had solidified at a new line about 1,000 yards inland—not far enough to break through, but far enough that withdrawal looked impossible.",
+      "As darkness came, the men dug in. They had no idea how many Turks were above them or how long they could hold. They had lost nearly 3,000 men in a single day. They had not advanced far enough to be considered a success. They had not been driven back into the sea. What they had done—without knowing it—was land the first wedge of a campaign that would last eight months and kill nearly 130,000 men. The peninsula would become Gallipoli. The men would become the ANZAC—the Australian and New Zealand Army Corps. The legend was born in the dark.",
+      "In the morning, the sun would rise on a beach that looked like a slaughterhouse. Bodies would be visible at low tide. Wounded would still be crying out from the rocks. Fresh Turks would arrive to reinforce the defenders. The campaign would continue for months until the inevitable order: evacuate. But on the night of April 25, the men did not know any of that. They only knew that they had survived the landing. They had held the beach. Tomorrow would bring more. And somehow, that was enough."
     ],
     "sources": [
       {
-        "label": "Stenton, Frank. \"Anglo-Saxon England\" (Oxford University Press, 1971)",
-        "href": "https://en.wikipedia.org/wiki/Battle_of_Stamford_Bridge"
+        "label": "Bean, Charles Edwin Williams. \"The Australian Imperial Force in France 1916-18\" (Official War History of Australia in the War of 1914-18, Vol. III, 1929)",
+        "href": "https://en.wikipedia.org/wiki/Battle_of_Gallipoli"
       },
       {
-        "label": "Laing, Lloyd & Laing, Jennifer. \"The Picts and the Scots\" (The History Press, 2006)",
-        "href": "https://en.wikipedia.org/wiki/Anglo-Saxon_warfare"
+        "label": "Robson, Lloyd. \"The First AIF: A Portrait of the 1914-18 Australian Imperial Force\" (Oxford University Press, 1970)",
+        "href": "https://en.wikipedia.org/wiki/ANZAC"
       },
       {
-        "label": "DeVries, Kelly. \"The Norwegian Invasion of England in 1066\" (The Medieval Review, 2000)",
-        "href": "https://en.wikipedia.org/wiki/Harald_Hardrada"
+        "label": "Prior, Robin. \"Gallipoli: The End of the Myth\" (Yale University Press, 2009)",
+        "href": "https://en.wikipedia.org/wiki/Gallipoli_campaign"
       },
       {
-        "label": "Anglo-Saxon Chronicle, entry for 1066, translated and edited by Michael Swanton (Routledge, 1996)",
-        "href": "https://en.wikipedia.org/wiki/Anglo-Saxon_Chronicle"
+        "label": "Fromkin, David. \"A Peace to End All Peace: The Fall of the Ottoman Empire and the Creation of the Modern Middle East\" (Henry Holt, 1989)",
+        "href": "https://en.wikipedia.org/wiki/World_War_I_Ottoman_campaigns"
       }
     ]
   },
   "shortForm": {
-    "id": "article-stamford-bridge-1066-dispatch",
-    "title": "The Housecarle Hammer: How Harold's Elite Infantry Broke the Norwegian Advance",
-    "slug": "stamford-bridge-1066-dispatch",
-    "excerpt": "The housecarles were professional soldiers—heavily armed, mounted, trained in coordinated assault. At Stamford Bridge, they performed exactly one tactical role: break the enemy formation at the point of contact. They succeeded.",
-    "era": "ancient-medieval",
-    "voice": "tactician",
+    "id": "article-gallipoli-first-dawn-1915-dispatch",
+    "title": "The Wrong Beach: Why the ANZAC Landing Site Changed Military Tactics Forever",
+    "slug": "gallipoli-first-dawn-1915-dispatch",
+    "excerpt": "The boats missed the intended landing zone by 1,000 yards. Instead of open beaches, they found rocky terrain and cliffs. The miscalculation should have been catastrophic. Instead, it taught infantry officers that the modern battlefield favored small-unit tactics and flexibility over mass assault.",
+    "era": "world-war-i",
+    "voice": "correspondent",
     "paragraphs": [
-      "The English housecarles were the only fully professional standing military force in 1066 Western Europe. Roughly 3,000 strong, they served the king and the major earls as heavy cavalry and heavy infantry. They were armored—a costly commitment—trained in coordinated formations, and they fought for payment and professional advancement rather than feudal obligation. When Harold Godwinson committed the housecarles to the bridge crossing at Stamford Bridge, he was deploying his most reliable shock force against an unprepared opponent.",
-      "The Norwegians, despite their reputation as warriors, were largely composed of mercenaries and levy troops. The professional Norwegian core—Harald Hardrada's personal retinue—numbered perhaps 500 men. When those men formed the shieldwall and stood against the Saxon assault, they were facing the closest thing to professional mounted infantry the medieval world yet possessed. The cultural narrative of Viking warriors against Saxon infantry misses the point: Harold's housecarles were more disciplined and better equipped than any force the Norwegians had with them.",
-      "The tactical decision to use the housecarles for the initial breach rather than for the main body assault was exactly right. Once the bridge was broken, the Norwegian formation collapsed. The professional Norwegian warriors died in that collapse, protecting the retreat of the levy. By 1066, the age of the raid and the light formation had passed. Stamford Bridge demonstrated that professional, heavily armed, coordinated assault would dominate the battlefield for the next 300 years. The Norman knights who defeated Harold three weeks later were the same principle applied on horseback."
+      "The British planners had selected South Beach—a long, open landing site with clear approaches inland. The current carried the boats north. The ANZAC forces landed at what came to be called ANZAC Cove—a narrow beach dominated by steep ravines and cliffs. The initial commanders assumed this was a disaster. They radioed reports of catastrophic fire and impossible terrain. General Birdwood signaled the transport fleet: 'We are in a difficult position and may have to re-embark.' The decision was made to hold the beach rather than retreat.",
+      "What emerged from that miscalculation was a tactical revolution. The officers and NCOs who led the assault against the cliffs could not command from battalion headquarters—they could barely see twenty yards. They operated in sections and platoons, making local decisions, concentrating firepower against identified targets, using terrain to flank defended positions. The mass-assault doctrine that had dominated European warfare since 1914 was suddenly useless. The men who survived were the ones who adapted.",
+      "Within 24 hours, the Gallipoli landing had shifted warfare away from massed formations and toward small-unit leadership. The men who performed best were not the ones with the best orders from above—it was impossible to transmit orders through the chaos. The men who survived were the ones with Section Commanders and Platoon Officers who understood the ground and could make immediate tactical decisions. That principle would define the rest of the war."
     ],
     "sources": [
       {
-        "label": "Abels, Richard. \"Lordship and Militarism in Medieval England\" (Routledge, 1987)",
-        "href": "https://en.wikipedia.org/wiki/Housecarles"
+        "label": "Liddell Hart, B.H. \"The Real War 1914-1918\" (Little, Brown, 1930)",
+        "href": "https://en.wikipedia.org/wiki/B._H._Liddell_Hart"
       },
       {
-        "label": "DeVries, Kelly. \"Medieval Military Technology\" (Broadview Press, 1992)",
-        "href": "https://en.wikipedia.org/wiki/Medieval_warfare"
+        "label": "Paxman, Jeremy. \"Empire: What Ruling the World Did to the British\" (Viking, 2011)",
+        "href": "https://en.wikipedia.org/wiki/British_Empire_World_War_I"
       }
     ]
   },
   "onThisDay": {
     "month": 5,
     "day": 9,
-    "year": 1649,
-    "headline": "The Rump Parliament Abolishes Kingship in England",
-    "summary": "The English Parliament, reduced to 60 loyal members by Cromwell's purge of royalist sympathizers, voted to abolish the Crown and declare England a commonwealth under parliamentary sovereignty. King Charles I had been executed four months earlier. The action formalized the military dictatorship as parliamentary revolution.",
-    "era": "early-modern",
-    "linkedArticleSlug": "stamford-bridge-1066"
+    "year": 1973,
+    "headline": "Operation Spring of Youth: Israeli Raid on Lebanese Coast",
+    "summary": "Israeli commandos raided Palestinian Liberation Organization headquarters in Beirut, killing senior PLO leaders including Kamal Nasser, Khalil al-Wazir, and Abu Youssef al-Najjar in a coordinated three-operation strike. The raid marked a major shift in Israeli counterterrorism doctrine toward leadership elimination.",
+    "era": "modern-conflicts",
+    "linkedArticleSlug": "gallipoli-first-dawn-1915"
   }
 }

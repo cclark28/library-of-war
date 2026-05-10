@@ -1,7 +1,7 @@
 {
-  "voiceIndex": 0,
-  "lastRun": "2026-05-10T03:13:04.788Z",
-  "articlesWritten": 179,
+  "voiceIndex": 1,
+  "lastRun": "2026-05-10T03:14:07.573Z",
+  "articlesWritten": 181,
   "usedSlugs": [
     "battle-of-cannae",
     "battle-of-austerlitz",
@@ -131,7 +131,9 @@
     "enigma-the-compromise",
     "enigma-the-compromise-dispatch",
     "stamford-bridge-1066",
-    "stamford-bridge-1066-dispatch"
+    "stamford-bridge-1066-dispatch",
+    "gallipoli-first-dawn-1915",
+    "gallipoli-first-dawn-1915-dispatch"
   ],
   "_voices": [
     "correspondent",
