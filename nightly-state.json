@@ -1,7 +1,7 @@
 {
-  "voiceIndex": 3,
-  "lastRun": "2026-05-09T03:16:14.164Z",
-  "articlesWritten": 175,
+  "voiceIndex": 4,
+  "lastRun": "2026-05-10T03:12:15.653Z",
+  "articlesWritten": 177,
   "usedSlugs": [
     "battle-of-cannae",
     "battle-of-austerlitz",
@@ -127,7 +127,9 @@
     "battle-of-borodino-1812",
     "battle-of-kapyong-1951-dispatch",
     "operation-lusty-1945",
-    "mig-15-intelligence-korean-war-dispatch"
+    "mig-15-intelligence-korean-war-dispatch",
+    "enigma-the-compromise",
+    "enigma-the-compromise-dispatch"
   ],
   "_voices": [
     "correspondent",
