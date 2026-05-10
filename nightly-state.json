@@ -1,7 +1,7 @@
 {
-  "voiceIndex": 4,
-  "lastRun": "2026-05-10T03:12:15.653Z",
-  "articlesWritten": 177,
+  "voiceIndex": 0,
+  "lastRun": "2026-05-10T03:13:04.788Z",
+  "articlesWritten": 179,
   "usedSlugs": [
     "battle-of-cannae",
     "battle-of-austerlitz",
@@ -129,7 +129,9 @@
     "operation-lusty-1945",
     "mig-15-intelligence-korean-war-dispatch",
     "enigma-the-compromise",
-    "enigma-the-compromise-dispatch"
+    "enigma-the-compromise-dispatch",
+    "stamford-bridge-1066",
+    "stamford-bridge-1066-dispatch"
   ],
   "_voices": [
     "correspondent",
